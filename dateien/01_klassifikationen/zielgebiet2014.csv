@@ -1,0 +1,151 @@
+﻿Code;Name
+1.;ZNS
+1.1.;Ganzhirn
+1.2.;Teilhirn
+1.3.;Neuroachse
+2.;Kopf-Hals
+2.+;Kopf-Hals mit Lk
+2.-;Kopf-Hals ohne Lk
+2.1.;Orbita, o.n.A.
+2.1.+;Orbita mit Lk
+2.1.-;Orbita ohne Lk
+2.2.;Nase/ Nasennebenhöhle, o.n.A.
+2.2.+;Nase/ Nasennebenhöhle mit Lk
+2.2.-;Nase/ Nasennebenhöhle ohne Lk
+2.3.;Mundhöhle, o.n.A.
+2.3.+;Mundhöhle mit Lk
+2.3.-;Mundhöhle ohne Lk
+2.4.;Ohr, o.n.A.
+2.4.+;Ohr mit Lk
+2.4.-;Ohr ohne Lk
+2.5.;Speicheldrüse, o.n.A.
+2.5.+;Speicheldrüse mit Lk
+2.5.-;Speicheldrüse ohne Lk
+2.6.;Pharynx, o.n.A.
+2.6.+;Pharynx mit Lk
+2.6.-;Pharynx ohne Lk
+2.7.;Larynx, o.n.A.
+2.7.+;Larynx mit Lk
+2.7.-;Larynx ohne Lk
+2.8.;Schilddrüse, o.n.A.
+2.8.+;Schilddrüse mit Lk
+2.8.-;Schilddrüse ohne Lk
+2.9.;Halslymphknoten
+3.;Thorax
+3.+;Thorax mit Lk
+3.-;Thorax ohne Lk
+3.1.;Mamma als Ganzbrust, o.n.A.
+3.1.+;Mamma als Ganzbrust mit Lk
+3.1.-;Mamma als Ganzbrust ohne Lk
+3.2.;Mamma als Teilbrust, o.n.A.
+3.2.+;Mamma als Teilbrust mit Lk
+3.2.-;Mamma als Teilbrust ohne Lk
+3.3.;Brustwand
+3.3.+;Brustwand mit Lk
+3.3.-;Brustwand ohne Lk
+3.4.;Lunge, o.n.A.
+3.4.+;Lunge mit Lk
+3.4.-;Lunge ohne Lk
+3.5.;Ösophagus, o.n.A.
+3.5.+;Ösophagus mit Lk
+3.5.-;Ösophagus ohne Lk
+3.6.;Thymus, o.n.A.
+3.6.+;Thymus mit Lk
+3.6.-;Thymus ohne Lk
+3.7.;Mediastinale Lymphknoten
+4.;Abdomen (ohne Becken)
+4.+;Abdomen (ohne Becken) mit Lk
+4.-;Abdomen (ohne Becken) ohne Lk
+4.1.;Magen, o.n.A.
+4.1.+;Magen mit Lk
+4.1.-;Magen ohne Lk
+4.2.;Pankreas, o.n.A.
+4.2.+;Pankreas mit Lk
+4.2.-;Pankreas ohne Lk
+4.3.;Leber, o.n.A.
+4.3.+;Leber mit Lk
+4.3.-;Leber ohne Lk
+4.4.;Milz, o.n.A.
+4.4.+;Milz mit Lk
+4.4.-;Milz ohne Lk
+4.5.;Niere, o.n.A.
+4.5.+;Niere mit Lk
+4.5.-;Niere ohne Lk
+4.6.;Nebenniere, o.n.A.
+4.6.+;Nebenniere mit Lk
+4.6.-;Nebenniere ohne Lk
+4.7.;Retroperitoneale Lymphknoten
+4.8.;Retroperitoneum, o.n.A.
+4.8.+;Retroperitoneum mit Lk
+4.8.-;Retroperitoneum ohne Lk
+4.9.;Bauchwand, o.n.A.
+4.9.+;Bauchwand mit Lk
+4.9.-;Bauchwand ohne Lk
+5.;Becken
+5.+;Becken mit Lk
+5.-;Becken ohne Lk
+5.1.;Rektum, o.n.A.
+5.1.+;Rektum mit Lk
+5.1.-;Rektum ohne Lk
+5.2.;Analbereich, o.n.A.
+5.2.-;Analbereich ohne Lk
+5.2.+;Analbereich mit Lk
+5.3.;Harnblase, o.n.A.
+5.3.-;Harnblase ohne Lk
+5.3.+;Harnblase mit Lk
+5.4.;Prostata, o.n.A.
+5.4.+;Prostata mit Lk
+5.4.-;Prostata ohne Lk
+5.5.;Hoden, o.n.A.
+5.5.+;Hoden mit Lk
+5.5.-;Hoden ohne Lk
+5.6.;Penis, o.n.A.
+5.6.+;Penis mit Lk
+5.6.-;Penis ohne Lk
+5.7.;Uterus und Zervix, o.n.A.
+5.7.+;Uterus und Zervix mit Lk
+5.7.2.-;Zervix ohne Lymphknoten
+5.7.2.+;Zervix mit Lymphknoten
+5.7.2.;Zervix
+5.7.1.-;Uterus ohne Lymphknoten
+5.7.1.+;Uterus mit Lymphknoten
+5.7.1.;Uterus
+5.7.-;Uterus und Zervix ohne Lk
+5.8.;Ovar, o.n.A.
+5.8.-;Ovar ohne Lk
+5.8.+;Ovar mit Lk
+5.9.;Vulva, o.n.A.
+5.9.-;Vulva ohne Lk
+5.9.+;Vulva mit Lk
+5.10.;Vagina, o.n.A.
+5.10.+;Vagina mit Lk
+5.10.-;Vagina ohne Lk
+5.11.;Beckenwand, o.n.A.
+5.11.+;Beckenwand mit Lk
+5.11.-;Beckenwand ohne Lk
+5.12.;Beckenlymphkn. (ohne Primtu.)
+6.;Stütz-/Bewegungsapparat
+6.1.;Schädelknochen
+6.2.;Rippen
+6.3.;Sternum
+6.4.;HWS
+6.5.;BWS
+6.6.;LWS
+6.7.;knöchernes Becken
+6.8.;Hüfte
+6.9.;Achsel
+6.10.;Oberarm
+6.11.;Unterarm
+6.12.;Hand
+6.13.;Leiste
+6.14.;Oberschenkel
+6.15.;Unterschenkel
+6.16.;Fuß
+7.;Haut
+7.+;Haut mit Lymphknoten
+7.-;Haut ohne Lymphknoten
+7.1.;Primärer Hauttumor
+7.2.;Hautmetastasen
+8.;Sonstiges
+8.1.;Ganzkörperbestrahlung
+8.2.;Mantelfeldbestrahlung

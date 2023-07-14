@@ -1,0 +1,9 @@
+﻿Code;Name;Description
+0;DCO;Information ist der Todesbescheinigung entnommen
+1;klinisch unspezifisch;Klinisch ohne tumorspezifische Diagnostik (nur körperliche Untersuchung)
+2;klinisch spezifisch;Klinisch: Klinische Diagnose vor dem Sterbedatum durchgeführt schließt diagnostische Techniken, inklusive Röntgen, Endoskopie, weitere bildgebende Verfahren, Ultraschall, exploratorische Chirurgie (Laparatomie, etc.) und Autopsie, ohne mikroskopische Gewebediagnose
+4;Tumormarker;Spezifische Tumormarker
+5;Zytologie;Zytologisch: Untersuchung von Zellen aus primären Lokalisationen inklusive Flüssigkeitsaspirationen mittels Endoskopien oder Nadeln. Schließt mikroskopische Untersuchungen von peripheren Blutausstrichen und Ausstrichen von Beckenkammaspirationen ein
+6;Histologie Metastase;Histologie einer Metastase
+7;Histologie Primärtumor;Histologisch: Histologie des Primärtumors: Histologische Untersuchung von Gewebe des Primärtumors einschließlich aller Schnitttechniken und Knochenmarksbiopsien. Dies schließt Proben des Primärtumors aus Autopsien ein. Histologische Untersuchung des Gewebes aus einer Metastase, einschließlich bei Autopsie
+9;Unbekannt;Unbekannt
