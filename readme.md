@@ -42,6 +42,8 @@ Unser Informationsangebot richtet sich an alle, die Daten beitragen und/oder die
 
 ### Gliederung des Repository
 
+<!-- todo needs update, explain sample again -->
+
 📦repository  
 ┣ 📂dateien  
 ┃ ┣ 📂01_klassifikationen  
