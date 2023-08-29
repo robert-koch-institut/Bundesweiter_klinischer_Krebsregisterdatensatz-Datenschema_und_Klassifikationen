@@ -42,8 +42,6 @@ Unser Informationsangebot richtet sich an alle, die Daten beitragen und/oder die
 
 ### Gliederung des Repository
 
-<!-- todo needs update, explain sample again -->
-
 📦repository  
 ┣ 📂dateien  
 ┃ ┣ 📂01_klassifikationen  
@@ -330,8 +328,12 @@ Stadium IB nach TNM8: T0, T1 N1mi M0
 ## Beispieldaten
 
 In diesem Repository soll der [Beantragungsprozess](https://www.krebsdaten.de/info_antrag) für klinisch-epidemiologische Daten veranschaulicht werden.
-Zum einen ist ein [Spieldatensatz](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Sample.xml) hinterlegt für die Lieferung der Daten aus den klinischen Krebsregistern der Länder. Dieser entspricht den gemeinsam erarbeiteten Vorgaben des `oBDS-RKI `und wird im ZfKD zu einem deutschlandweiten Gesamtdatensatz verarbeitet.
 
-Auf Antrag wird eine definierte Teilmenge dieses Gesamtdatensatzes übermittelt. Beispielhaft ist im Ordner `04_sample-output` eine solche Bereitstellung simuliert. Antragstellende Personen würden die Daten in einer vergleichbaren Form erhalten. Involvierte Elemente der XML-Struktur werden jeweils als Dateien hinterlegt, deren Identifikatoren in einem relationalen Modell wieder korrekt zusammengeführt werden können (so sind etwa Einträge der Tumortabelle den jeweiligen Patienten zuordenbar). Die Identifikatoren selbst sind verfremdet.
+Zum einen ist ein [Spieldatensatz](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Sample.xml) hinterlegt für die Lieferung der Daten aus den klinischen Krebsregistern der Länder. Dieser entspricht den gemeinsam erarbeiteten Vorgaben des `oBDS-RKI` und wird im ZfKD zu einem deutschlandweiten Gesamtdatensatz verarbeitet. Der "rohe" Datensatz bestehend aus xml-Dateien bildet den Ausgangspunkt der weiteren Verarbeitung, wird aber vom ZfKD nicht ausgegeben.
 
-_(Die in den Beispieldateien hinterlegten Daten sind künstlich erzeugt, folgen einfachen Verteilungen und berücksichtigen keine medizinischen Zusammenhänge.)_
+Zum anderen wird hier simuliert, wie eine definierte Teilmenge des verarbeiteten Gesamtdatensatzes auf Antrag übermittelt wird.
+Beispielhaft enthält der Ordner `04_sample-output` unter `data` eine Sammlung von csv-Dateien. Format und Aufbau dieser Dateien entsprechen exakt einer Datenlieferung auf Antrag.
+
+Verwendete Identifikatoren können in einem relationalen Modell wieder korrekt zusammengeführt werden (so sind etwa Einträge der Tumortabelle den jeweiligen Patienten zuordenbar). Hilfestellung bietet hier das angehangene [ER-Modell](dateien/04_sample-output/erm.jpg).
+
+_(Die in den Beispieldateien hinterlegten Daten sind künstlich erzeugt, folgen einfachen Verteilungen und berücksichtigen keine medizinischen Zusammenhänge. Die Identifikatoren sind zufällig erzeugt)_
