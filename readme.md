@@ -1,4 +1,4 @@
-# Metadaten zum bundesweiten klinisch-epidemiologischen Krebsdatensatz
+# Metainformationen zum bundesweiten klinischen Krebsregisterdatensatz
 
 **Robert Koch-Institut | RKI**  
 Nordufer 20  
@@ -14,27 +14,27 @@ Karsten Berg (Data Analyst)
 
 E-Mail-Adresse für Rückmeldungen: krebsdaten@rki.de
 
-## Der klinisch-epidemiologische Datensatz
+## Der klinische Datensatz
 
 <img src="img/2023-06-28-10-14-25.png" width="800" alt="tree">
 
 > Abbildung 1: Übersicht zum XML-Schema des klinischen Datensatzes
 
-Das Zentrum für Krebsregisterdaten (ZfKD) führt nach Vorgabe des [Bundeskrebsregisterdatengesetzes (BKRG)](https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) Daten der Landeskrebsregister zu einem bundesweiten klinisch-epidemiologischen Datensatz zusammen und stellt sie [auf Antrag für wissenschaftliche Forschungsprojekte](https://www.krebsdaten.de/info_antrag) zur Verfügung.
+Das Zentrum für Krebsregisterdaten (ZfKD) führt nach Vorgabe des [Bundeskrebsregisterdatengesetzes (BKRG)](https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) Daten der Landeskrebsregister zu einem bundesweiten klinischen Datensatz zusammen und stellt sie [auf Antrag für wissenschaftliche Forschungsprojekte](https://www.krebsdaten.de/info_antrag) zur Verfügung.
 
-Die obenstehende Abbildung veranschaulicht die Struktur des klinisch-epidemiologischen Datensatzes.
+Die obenstehende Abbildung veranschaulicht die Struktur des klinischen Datensatzes.
 
-Das [XML-Schema](#xml-schema) des klinisch-epidemiologischen Datensatzes wird als `oBDS-RKI` bezeichnet. Die Bezeichnung geht zurück auf den zwischen der Arbeitsgemeinschaft Deutscher Tumorzentren e. V. (ADT), der Gesellschaft der epidemiologischen Krebsregister in Deutschland (GEKID) und der Plattform § 65c abgestimmten `einheitlichen onkologischen Basisdatensatz` (`oBDS`), der für die Entwicklung des `oBDS-RKI` als Vorlage und Arbeitsgrundlage diente. An der Entwicklung des `oBDS-RKI` waren Vertreterinnen und Vertreter der Plattform § 65c, der ADT, der GEKID und des ZfKD beteiligt.
+Das [XML-Schema](#xml-schema) des klinischen Datensatzes wird als `oBDS-RKI` bezeichnet. Die Bezeichnung geht zurück auf den zwischen der Arbeitsgemeinschaft Deutscher Tumorzentren e. V. (ADT), der Gesellschaft der epidemiologischen Krebsregister in Deutschland (GEKID) und der Plattform § 65c abgestimmten `einheitlichen onkologischen Basisdatensatz` (`oBDS`), der für die Entwicklung des `oBDS-RKI` als Vorlage und Arbeitsgrundlage diente. An der Entwicklung des `oBDS-RKI` waren Vertreterinnen und Vertreter der Plattform § 65c, der ADT, der GEKID und des ZfKD beteiligt.
 
 Weil er die Struktur und Inhalte der von den Landeskrebsregistern ans ZfKD zu liefernden Daten definiert, wird der `oBDS-RKI` auch als `ZfKD-Lieferdatensatz` bezeichnet.
 
-Näheres zur Abstimmung und Entwicklung des klinisch-epidemiologischen Datensatzes erfahren Sie auf den Internetseiten der [Plattform § 65c](https://plattform65c.atlassian.net/wiki/spaces/P6/overview).
+Näheres zur Abstimmung und Entwicklung des klinischen Datensatzes erfahren Sie auf den Internetseiten der [Plattform § 65c](https://plattform65c.atlassian.net/wiki/spaces/P6/overview).
 
 ## Datenangebot und Navigation
 
-In diesem Repository stellen wir _Metadaten_ und begleitende Informationen zur [Struktur](#struktur-des-datensatzes) und zu [Inhalten](#inhalte-des-datensatzes) des bundesweiten klinisch-epidemiologischen Datensatzes zur Verfügung.
+In diesem Repository stellen wir _Metadaten_ und begleitende Informationen zur [Struktur](#struktur-des-datensatzes) und zu [Inhalten](#inhalte-des-datensatzes) des bundesweiten klinischen Datensatzes zur Verfügung.
 
-💡 Der Datensatz selbst ist nicht öffentlich zugänglich, kann aber auf Antrag für wissenschaftliche Forschungszwecke genutzt werden. Bitte verwenden Sie für Fragen zur Antragstellung das auf der Internetseite des ZfKD bereitgestellte [Kontaktformular](https://www.krebsdaten.de/SharedDocs/Kontaktformulare/A/Antrag-krebsdaten/Integrator_SCU.html). Informationen zum gesetzlichen Auftrag, zu Methoden und Veröffentlichungen des ZfKD erhalten Sie ebenfalls auf den [Internetseiten des ZfKD](https://www.krebsdaten.de/).
+> 💡 Der Datensatz selbst ist nicht öffentlich zugänglich, kann aber auf Antrag für wissenschaftliche Forschungszwecke genutzt werden. Bitte verwenden Sie für Fragen zur Antragstellung das auf der Internetseite des ZfKD bereitgestellte [Kontaktformular](https://www.krebsdaten.de/SharedDocs/Kontaktformulare/A/Antrag-krebsdaten/Integrator_SCU.html). Informationen zum gesetzlichen Auftrag, zu Methoden und Veröffentlichungen des ZfKD erhalten Sie ebenfalls auf den [Internetseiten des ZfKD](https://www.krebsdaten.de/).
 
 Bei der Navigation innerhalb dieses Dokuments hilft das Inhaltsverzeichnis oben links (Icon neben dem Namen dieser Readme-Datei).
 
@@ -58,7 +58,7 @@ Unser Informationsangebot richtet sich an alle, die Daten beitragen und/oder die
 
 > Abbildung 2: Gliederung des Repository.
 
-Das Repository ist in folgende Ordner 📁 gegliedert:
+Das Repository ist in folgende Ordner gegliedert:
 
 - **dateien**: alle hier beschrieben Dateien zum Download
 - **01_klassifikationen**: Referenztabellen für Variablen des Datensatzes und ihre definierten Ausprägungen, näheres [hier](#inhalte-des-datensatzes)
@@ -69,9 +69,9 @@ Das Repository ist in folgende Ordner 📁 gegliedert:
 
 ## Struktur des Datensatzes
 
-Die klinisch-epidemiologischen Daten werden nicht - wie ursprünglich die [epidemiologischen Daten des ZfKD](https://www.krebsdaten.de/Krebs/DE/Content/Forschungsdatensatz/Informationen_datensatz/epidemiologischer_datensatz/epidemiologischer_datensatz_node.html) (basierend auf dem BKRG in seiner Fassung vom 18.08.2009) - in einer einfachen „Rechtecktabelle“ abgebildet, in der Erkrankungsfälle als Zeilen und Variablen als Spalten dargestellt sind. Im klinisch-epidemiologischen Datensatz sind die Daten in einem verschachtelten XML-Schema strukturiert.
+Die klinischen Daten werden nicht - wie ursprünglich die [epidemiologischen Daten des ZfKD](https://www.krebsdaten.de/Krebs/DE/Content/Forschungsdatensatz/Informationen_datensatz/epidemiologischer_datensatz/epidemiologischer_datensatz_node.html) (basierend auf dem BKRG in seiner Fassung vom 18.08.2009) - in einer einfachen „Rechtecktabelle“ abgebildet, in der Erkrankungsfälle als Zeilen und Variablen als Spalten dargestellt sind. Im klinischen Datensatz sind die Daten in einem verschachtelten XML-Schema strukturiert.
 
-Der klinisch-epidemiologische Datensatz wird durch folgende Elemente gegliedert:
+Der klinische Datensatz wird durch folgende Elemente gegliedert:
 
 - Die _Person_ bildet die grundlegende Einheit im Datensatz.
 - Der Person zugeordnet ist mindestens ein Element _Tumor_.
@@ -97,8 +97,8 @@ An dieser Stelle können die XML-Schema-Definition und weitere ergänzende Datei
 | Datei                                | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Download                                                 |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
 | Schemadatei                          | Die XML-Schema-Definition `.xsd` als eindeutige, vollständige und maschinenlesbare Repräsentation des gesamten Schemas mit allen Details. Zur Betrachtung der Inhalte dieser Datei ist die Verwendung einer geeigneten Software empfohlen. Detaillierte [technische Informationen zum XML-Schema](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/2064400/XML-Schema) sind auf der Internetseite der Plattform § 65c abrufbar (bis Version `3.0.0.8_RKI`). | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Schema.xsd)    |
-| Abbildung                            | Die grafische Darstellung des XML-Schemas als `.pdf`. Nicht alle Elemente sind abgebildet. Hinweise zur Notation des XML-Schemas sind [hier](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden.                                                                                                                                                                                          | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Bild.pdf)      |
-| Differenzdatei ("diff")              | Eine `.txt` Datei als Extrakt der wesentlichen Schemainformationen. Die Datei wird generiert durch eine Transformation des Schemas und ermöglicht einen schnellen Überblick sowie die Differenzbildung zwischen Versionen.                                                                                                                                                                                                                                         | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Diff.txt)      |
+| Abbildung                            | Die grafische Darstellung des XML-Schemas als `.pdf`. Nicht alle Elemente sind abgebildet. Hinweise zur Notation des XML-Schemas sind [hier](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden.                                                                                                                                                                                          | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Abbildung.pdf) |
+| Text                                 | Eine `.txt` Datei als Extrakt der wesentlichen Schemainformationen. Die Datei wird generiert durch eine Transformation des Schemas und ermöglicht einen schnellen Überblick sowie die Differenzbildung zwischen Versionen.                                                                                                                                                                                                                                         | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Text.txt)      |
 | Variablenübersicht                   | Variablen und mögliche Ausprägungen in tabellarischer Darstellung als `.csv`.                                                                                                                                                                                                                                                                                                                                                                                      | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Variablen.csv) |
 | Variablenübersicht als "Cheat sheet" | Kurzübersicht über Variablen und mögliche Ausprägungen als `.pdf`.                                                                                                                                                                                                                                                                                                                                                                                                 | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Variablen.pdf) |
 | Testdatensatz                        | Ein einfacher Testdatensatz als `.xml`-Datei mit Werten in zufälliger Verteilung. Medizinische Zusammenhänge sind nicht berücksichtigt. Näheres unter [Beispieldaten](#beispieldaten)                                                                                                                                                                                                                                                                              | [💾](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Sample.xml)    |
@@ -217,7 +217,7 @@ Spalten der Referenztabelle:
 - `name`: Beschreibung der Diagnose (deutschsprachig)
 - `id3`: 3-stelliger Diagnoseschlüssel
 - `epi_valide`: TRUE = Diagnose ist im [epidemiologischen Datensatz](https://www.krebsdaten.de/Krebs/DE/Content/Forschungsdatensatz/Informationen_datensatz/epidemiologischer_datensatz/epidemiologischer_datensatz_node.html) des ZfKD enthalten
-- `p65_valide`: TRUE = es besteht eine Meldepflicht für den klinisch-epidemiologischen Datensatz (lt. Plattform § 65c-Umsetzungsleitfaden)
+- `p65_valide`: TRUE = es besteht eine Meldepflicht für den klinischen Datensatz (lt. Plattform § 65c-Umsetzungsleitfaden)
 
 > Referenzen:
 > (1) ICD-10-GM, BfArM: https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html -- **[Nutzungsbedingungen](nutzungsbedingungen/bfarm_tou_icd10_ops.pdf)**
@@ -240,7 +240,6 @@ Spalten der Referenztabelle:
 
 > Referenzen:
 > (1) ICD-10-GM, BfArM: https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html -- **[Nutzungsbedingungen](nutzungsbedingungen/bfarm_tou_icd10_ops.pdf)**
->
 > (2) BfArM, Todesursachenstatistik: https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/ICD/ICD-10-WHO/Todesursachenstatistik/_node.html
 
 #### [ICD-O Topographie](dateien/01_klassifikationen/topographie.csv)
@@ -327,7 +326,7 @@ Stadium IB nach TNM8: T0, T1 N1mi M0
 
 ## Beispieldaten
 
-In diesem Repository soll der [Beantragungsprozess](https://www.krebsdaten.de/info_antrag) für klinisch-epidemiologische Daten veranschaulicht werden.
+In diesem Repository soll der [Beantragungsprozess](https://www.krebsdaten.de/info_antrag) für klinische Daten veranschaulicht werden.
 
 Zum einen ist ein [Spieldatensatz](dateien/02_schema/oBDS_v3.0.0.8a_RKI_Sample.xml) hinterlegt für die Lieferung der Daten aus den klinischen Krebsregistern der Länder. Dieser entspricht den gemeinsam erarbeiteten Vorgaben des `oBDS-RKI` und wird im ZfKD zu einem deutschlandweiten Gesamtdatensatz verarbeitet. Der "rohe" Datensatz bestehend aus xml-Dateien bildet den Ausgangspunkt der weiteren Verarbeitung, wird aber vom ZfKD nicht ausgegeben.
 
