@@ -1,0 +1,13 @@
+code	name
+0	Malignes Melanom der Konjunktiva
+1	Gut differenziert
+2	Mäßig differenziert
+3	Schlecht differenziert
+4	Undifferenziert
+X	Nicht bestimmbar
+L	Low grade (G1 oder G2)
+M	Intermediate (G2 oder G3)
+H	High grade (G3 oder G4)
+B	Borderline
+U	Unbekannt
+T	Trifft nicht zu

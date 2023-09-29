@@ -1,0 +1,165 @@
+code	therapieart	substanz_1	substanz_2	substanz_3	substanz_4	substanz_5	substanz_6	substanz_7
+ABVD	CH	Bleomycin	Dacarbazin	Doxorubicin	Vinblastin			
+AC	CH	Cyclophosphamid	Doxorubicin					
+ACO	CH	Cyclophosphamid	Doxorubicin	Vincristin				
+ADORE	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+ADR-IFO	CH	Doxorubicin	Ifosfamid	Mesna				
+AIO	CH	Fluorouracil	Folinsäure					
+AIO-04	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+AIO-Irinotecan	CH	Fluorouracil	Folinsäure	Irinotecan				
+ARO	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+AVD	CH	Dacarbazin	Doxorubicin	Vinblastin				
+BCD	CH	Actinomycin D	Bleomycin	Cyclophosphamid				
+BEACOPP basis	CH	Bleomycin	Cyclophosphamid	Doxorubicin	Etoposid	Procarbazin	Vincristin	Prednison
+BEACOPP eskaliert	CH	Bleomycin	Cyclophosphamid	Doxorubicin	Etoposid	Procarbazin	Vincristin	Prednison
+BEAM	CH	BCNU	Cytarabin	Etoposid	Melphalan			
+BOLD	CH	Bleomycin	Dacarbazin	Lomustin	Vincristin			
+BP	CH	Bendamustin	Prednison					
+BR	CI	Bendamustin	Rituximab					
+BrECADD	CI	Brentuximab	Cyclophosphamid	Dacarbacin	Doxorubicin	Etoposid	Dexamethason	
+BuCy	CH	Busulfan	Cyclophoshamid					
+CAD	CH	Cyclophosphamid	Doxorubicin	Dexamethason				
+CAO	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+CapeOx	CH	Capecitabin	Oxaliplatin					
+Cap-Schema	CH	Capecitabin						
+CarboTax	CH	Carboplatin	Paclitaxel					
+CEV	CH	Carboplatin	Etoposid	Vincristin				
+CHOEP	CH	Cyclophosphamid	Doxorubicin	Etoposid	Vincristin	Prednison		
+CHOEP-14	CH	Cyclophosphamid	Doxorubicin	Etoposid	Vincristin	Prednison	G-CSF	
+CHOEP-21	CH	Cyclophosphamid	Doxorubicin	Etoposid	Vincristin	Prednison	G-CSF	
+CHOP	CH	Cyclophosphamid	Doxorubicin	Vincristin	Prednison			
+CHOP-14	CH	Cyclophosphamid	Doxorubicin	Vincristin	Prednison	G-CSF		
+CHOP-21	CH	Cyclophosphamid	Doxorubicin	Vincristin	Prednison	G-CSF		
+CMF	CH	Cyclophosphamid	Fluorouracil	Methotrexat				
+COPP	CH	Cyclophosphamid	Procarbazin	Vincristin	Prednison			
+CV	CH	Cisplatin	Vinorelbin					
+DA	CH	Cytarabin	Daunorubicin					
+DAC	CH	Cyclophosphamid	Docetaxel	Doxorubicin				
+DC (Doce/Carbo)	CH	Carboplatin	Docetaxel					
+DC (Doce/Cyclo)	CH	Cyclophosphamid	Docetaxel					
+DCbH	CI	Carboplatin	Docetaxel	Trastuzumab				
+DeVIC	CH	Carboplatin	Etoposid	Ifosfamid	Dexamethason			
+Dexa-BEAM	CH	Carmustin	Cytarabin	Etoposid	Melphalan	Dexamethason		
+DHAP	CH	Cisplatin	Cytarabin	Dexamethason				
+DRC	CI	Cyclophosphamid	Rituximab	Dexamethason				
+DVP	CH	Cisplatin	Dacarbazin	Vindesin				
+EC	CH	Cyclophosphamid	Epirubicin					
+EC-D	CH	Cyclophosphamid	Docetaxel	Epirubicin				
+ECF	CH	Cisplatin	Epirubicin	Fluorouracil				
+EC-P	CH	Cyclophosphamid	Epirubicin	Paclitaxel				
+ELO-Rd	IZ	Elotuzumab	Lenalidomid	Dexamethason				
+EOX	CH	Capecitabin	Epirubicin	Oxaliplatin				
+EXTREME mit Carboplatin	CI	Carboplatin	Cetuximab	Fluorouracil				
+EXTREME mit Cisplatin	CI	Cetuximab	Cisplatin	Fluorouracil				
+FAC	CH	Cyclophosphamid	Doxorubicin	Flurouracil				
+FC	CH	Cyclophosphamid	Fludarabin					
+FCR	CI	Cyclophosphamid	Flurarabin	Rituximab				
+FEC	CH	Cyclophosphamid	Epirubicin	Fluorouracil				
+FEC-Doc	CH	Cyclophosphamid	Docetaxel	Epirubicin	Fluorouracil			
+FLAG-Ida	CH	Cytarabin	Fludarabin	Idarubicin	Lenogastrim			
+FLO	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+FLOT	CH	Docetaxel	Fluorouracil	Folinsäure	Oxaliplatin			
+Flu-Cam	CI	Alemtuzumab	Fludarabin					
+FOLFIRI	CH	Fluorouracil	Folinsäure	Irinotecan				
+Folfirinox	CH	Fluorouracil	Folinsäure	Irinotecan	Oxaliplatin			
+FOLFOX4	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+FOLFOX-6	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+FOLFOXIRI	CH	Fluorouracil	Folinsäure	Irinotecan	Oxaliplatin			
+FUFAMI	CH	Flurouracil	Folinsäure	Mitomycin				
+FUFIRI	CH	Fluorouracil	Folinsäure	Irinotecan				
+FUFOX	CH	Fluorouracil	Folinsäure	Oxaliplatin				
+GC-B	CI	Bevacizumab	Carboplatin	Gemcitabin				
+GDP-Schema	CH	Cisplatin	Gemcitabin	Dexamethason				
+GELOX	CH	Asparaginase	Gemcitabin	Oxaliplatin				
+Gem-Carbo	CH	Carboplatin	Gemcitabin					
+Gem-Cis	CH	Cisplatin	Gemcitabin					
+GemTreo	CH	Gemcitabin	Treosulfan					
+GOP	CH	Gemcitabin	Oxaliplatin	Paclitaxel				
+HAM-Cytarabin	CH	Cytarabin 	Mitoxantron					
+HD-Protokoll	CI	BCNU	Rituximab	Thiotepa				
+ICE	CH	Carboplatin	Etoposid	Ifosfamid				
+IEV	CH	Epirubicin	Etoposid	Ifosfamid				
+IMVP-16	CH	Etoposid	Ifosfamid	Methotrexat				
+IRd	ZS	Ixazomib	Lenalidomid	Dexamethason				
+Knospe	CH	Chlorambucil	Prednison					
+Knospe modifiziert	CI	Chlorambucil	Rituximab					
+KRD	ZS	Carfilzomib	Lenalidomid	Dexamethason				
+LV5FU2	CH	Fluorouracil	Folinsäure					
+LV5FU2 modif.	CH	Fluorouracil	Folinsäure					
+MAMAC	CH	Amsacrin	Cytarabin					
+MATRix	CI	Cytarabin	Methotrexat	Rituximab	Thiotepa			
+MAV	CH	Cytarabin	Etoposid	Mitoxantron				
+Mayo-Protokoll	CH	Fluorouracil	Folinsäure					
+M-Cavi	CH	Carboplatin	Methotrexat	Vinblastin				
+MPT	CZ	Melphalan	Thalidomid	Prednison				
+M-VAC	CH	Cisplatin	Doxorubicin	Methotrexat	Vinblastin			
+PAC	CH	Cisplatin	Cyclophosphamid	Doxorubicin				
+PC	CI	Bevacizumab	Carboplatin	Paclitaxel				
+PC mit Bevacizumab	CI	Bevacizumab	Carboplatin	Paclitaxel				
+PC ohne Bevacizumab	CH	Carboplatin	Paclitaxel					
+PCV	CH	Lomustin	Procarbazin	Vincristin				
+PE	CH	Cisplatin	Etoposid					
+PEB	CH	Bleomycin	Cisplatin	Etoposid				
+Peg. DoxC	CH	Carboplatin	Doxorubicin					
+PEI	CH	Cisplatin	Etoposid	Ifosfamid				
+P-GEMOX	CH	Asparaginase (peg)	Gemcitabin	Oxaliplatin				
+PLF	CH	Cisplatin	Fluorouracil	Folinsäure				
+PVAG-Schema	CH	Doxorubicin	Gemcitabin	Vinblastin	Prednison			
+PVBI	CH	Cisplatin	Ifosfamid	Vinblastin				
+R-BAC	CI	Bendamustin	Cytarabin	Rituximab				
+R-Bendamustin	CI	Bendamustin	Rituximab					
+R-CHOP	CI	Cyclophosphamid	Doxorubicin	Vincristin	Rituximab	Prednison		
+R-DeVIC	CI	Carboplatin	Etoposid	Ifosfamid	Rituximab	Dexamethason		
+R-DHAP	CI	Cisplatin	Cytarabin	Rituximab	Dexamethason			
+RD-Schema	ZS	Lenalidomid	Dexamethason					
+Rev/Dex	ZS	Lenalidomid	Dexamethason					
+R-GemOx	CI	Gemcitabin	Oxaliplatin	Rituximab				
+R-HAD	CI	Cytarabin	Rituximab	Dexamt				
+R-ICE	CI	Carboplatin	Etoposid	Ifosfamid	Rituximab			
+R-MCP	CI	Chlorambucil	Mitoxantron	Rituximab	Prednison			
+R-MP	CI	Methotrexat	Procarbazin	Rituximab				
+S-HAI	CH	Cytarabin	Idarubicin	G-CSF				
+S-HAM	CH	Cytarabin	Mitoxantron	G-CSF 				
+SMILE	CH	Asparaginase	Etoposid	Ifosfamid	Methotrexat	Dexamethason		
+TAC 	CH	Cyclophosphamid	Docetaxel	Doxorubicin				
+TCED	CZ	Cyclophosphamid	Etoposid	Thalidomid	Dexamethason			
+TCH	CI	Carboplatin	Docetaxel	Trastuzumab				
+TIP	CH	Cisplatin	Ifosfamid	Paclitaxel				
+TMZ	CH	Temozolomid						
+TPF	CH	Cisplatin	Docetaxel	Fluorouracil				
+VCD	CZ	Bortezomib	Cyclophoshamid	Dexamethason				
+VFD	ZS	Bortezomib	Panobinostat	Dexamethason				
+VIPD	CH	Carboplatin	Etoposid	Ifosfamid	Dexamethason			
+VMP	CZ	Bortezomib	Melphalan	Prednison				
+VRD	ZS	Bortezomib	Lenalidomid	Dexamethason				
+VTD	ZS	Bortezomib	Thalidomid	Dexamethason				
+XELOX	CH	Capecitabin	Oxaliplatin					
+XP	CH	Capecitabin	Cisplatin					
+Konditionierung,  myeloablativ (MAC)	CH	<Substanz(en) manuell wählen>						
+Konditionierung, nicht myeloablativ (NMA)	CH	<Substanz(en) manuell wählen>						
+Konditionierung, reduzierte Intensität (RIC)	CH	<Substanz(en) manuell wählen>						
+Konditionierung, reduzierte Toxizität (RTC)	CH	<Substanz(en) manuell wählen>						
+TACE Doxorubicin-Mitomycin	CH	Doxorubicin	Mitomycin					
+TACE Doxorubicin  	CH	Doxorubicin						
+TACE	CH	<Substanz(en) manuell wählen>						
+HIPEC Cisplatin-Mitomycin	CH	Cisplatin	Mitomycin					
+HIPEC Mitomycin	CH	Mitomycin						
+HIPEC	CH	<Substanz(en) manuell wählen>						
+HITOC	CH	<Substanz(en) manuell wählen>						
+PIPAC Cisplatin-Doxorubicin	CH	Cisplatin	Doxorubicin					
+PIPAC Cisplatin-Paclitaxel	CH	Cisplatin	Paclitaxel					
+PIPAC	CH	<Substanz(en) manuell wählen>						
+Instillation Harnblase Mitomycin	CH	Mitomycin						
+Instillation Harnblase Doxorubicin	CH	Doxorubicin						
+Instillation Harnblase Chemotherapeutikum	CH	<Substanz(en) manuell wählen>						
+Instillation Harnblase (BCG)	IM	BCG						
+Instillation Intrathekal Tripel	CH	Cytarabin	Methotrexat	Dexamethason				
+Instillation Intrathekal Quadrupel	CI	Cytarabin	Methotrexat	Dexamethason	Rituximab			
+Instillation intrathekal	?	<Substanz(en) manuell wählen>						
+PUVA systemisch oral	SO	Psoralen						
+(Bade-) PUVA (topisch)	SO	Psoralen						
+Aderlass	SO							
+Leukapherese	SO							
+Plasmapherese	SO							
+TTFields	SO							
+CAR-T-Zelltherapie	IM	<manuell wählen>						
