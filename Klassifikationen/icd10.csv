@@ -1,0 +1,943 @@
+id;code;name;id3;epi_valide;p65_valide
+C00;C00;Bösartige Neubildung der Lippe;C00;TRUE;
+C000;C00.0;Bösartige Neubildung: Äußere Oberlippe;C00;TRUE;TRUE
+C001;C00.1;Bösartige Neubildung: Äußere Unterlippe;C00;TRUE;TRUE
+C002;C00.2;Bösartige Neubildung: Äußere Lippe, nicht näher bezeichnet;C00;TRUE;TRUE
+C003;C00.3;Bösartige Neubildung: Oberlippe, Innenseite;C00;TRUE;TRUE
+C004;C00.4;Bösartige Neubildung: Unterlippe, Innenseite;C00;TRUE;TRUE
+C005;C00.5;Bösartige Neubildung: Lippe, nicht näher bezeichnet, Innenseite;C00;TRUE;TRUE
+C006;C00.6;Bösartige Neubildung: Lippenkommissur;C00;TRUE;TRUE
+C008;C00.8;Bösartige Neubildung: Lippe, mehrere Teilbereiche überlappend;C00;TRUE;TRUE
+C009;C00.9;Bösartige Neubildung: Lippe, nicht näher bezeichnet;C00;TRUE;TRUE
+C01;C01;Bösartige Neubildung des Zungengrundes;C01;TRUE;TRUE
+C02;C02;Bösartige Neubildung sonstiger und nicht näher bezeichneter Teile der Zunge;C02;TRUE;
+C020;C02.0;Bösartige Neubildung: Zungenrücken;C02;TRUE;TRUE
+C021;C02.1;Bösartige Neubildung: Zungenrand;C02;TRUE;TRUE
+C022;C02.2;Bösartige Neubildung: Zungenunterfläche;C02;TRUE;TRUE
+C023;C02.3;Bösartige Neubildung: Vordere zwei Drittel der Zunge, Bereich nicht näher bezeichnet;C02;TRUE;TRUE
+C024;C02.4;Bösartige Neubildung: Zungentonsille;C02;TRUE;TRUE
+C028;C02.8;Bösartige Neubildung: Zunge, mehrere Teilbereiche überlappend;C02;TRUE;TRUE
+C029;C02.9;Bösartige Neubildung: Zunge, nicht näher bezeichnet;C02;TRUE;TRUE
+C03;C03;Bösartige Neubildung des Zahnfleisches;C03;TRUE;
+C030;C03.0;Bösartige Neubildung: Oberkieferzahnfleisch;C03;TRUE;TRUE
+C031;C03.1;Bösartige Neubildung: Unterkieferzahnfleisch;C03;TRUE;TRUE
+C039;C03.9;Bösartige Neubildung: Zahnfleisch, nicht näher bezeichnet;C03;TRUE;TRUE
+C04;C04;Bösartige Neubildung des Mundbodens;C04;TRUE;
+C040;C04.0;Bösartige Neubildung: Vorderer Teil des Mundbodens;C04;TRUE;TRUE
+C041;C04.1;Bösartige Neubildung: Seitlicher Teil des Mundbodens;C04;TRUE;TRUE
+C048;C04.8;Bösartige Neubildung: Mundboden, mehrere Teilbereiche überlappend;C04;TRUE;TRUE
+C049;C04.9;Bösartige Neubildung: Mundboden, nicht näher bezeichnet;C04;TRUE;TRUE
+C05;C05;Bösartige Neubildung des Gaumens;C05;TRUE;
+C050;C05.0;Bösartige Neubildung: Harter Gaumen;C05;TRUE;TRUE
+C051;C05.1;Bösartige Neubildung: Weicher Gaumen;C05;TRUE;TRUE
+C052;C05.2;Bösartige Neubildung: Uvula;C05;TRUE;TRUE
+C058;C05.8;Bösartige Neubildung: Gaumen, mehrere Teilbereiche überlappend;C05;TRUE;TRUE
+C059;C05.9;Bösartige Neubildung: Gaumen, nicht näher bezeichnet;C05;TRUE;TRUE
+C06;C06;Bösartige Neubildung sonstiger und nicht näher bezeichneter Teile des Mundes;C06;TRUE;
+C060;C06.0;Bösartige Neubildung: Wangenschleimhaut;C06;TRUE;TRUE
+C061;C06.1;Bösartige Neubildung: Vestibulum oris;C06;TRUE;TRUE
+C062;C06.2;Bösartige Neubildung: Retromolarregion;C06;TRUE;TRUE
+C068;C06.8;Bösartige Neubildung: Sonstige und nicht näher bezeichnete Teile des Mundes, mehrere Teilbereiche überlappend;C06;TRUE;TRUE
+C069;C06.9;Bösartige Neubildung: Mund, nicht näher bezeichnet;C06;TRUE;TRUE
+C07;C07;Bösartige Neubildung der Parotis;C07;TRUE;TRUE
+C08;C08;Bösartige Neubildung sonstiger und nicht näher bezeichneter großer Speicheldrüsen;C08;TRUE;
+C080;C08.0;Bösartige Neubildung: Glandula submandibularis;C08;TRUE;TRUE
+C081;C08.1;Bösartige Neubildung: Glandula sublingualis;C08;TRUE;TRUE
+C088;C08.8;Bösartige Neubildung: Große Speicheldrüsen, mehrere Teilbereiche überlappend;C08;TRUE;TRUE
+C089;C08.9;Bösartige Neubildung: Große Speicheldrüse, nicht näher bezeichnet;C08;TRUE;TRUE
+C09;C09;Bösartige Neubildung der Tonsille;C09;TRUE;
+C090;C09.0;Bösartige Neubildung: Fossa tonsillaris;C09;TRUE;TRUE
+C091;C09.1;Bösartige Neubildung: Gaumenbogen (vorderer) (hinterer);C09;TRUE;TRUE
+C098;C09.8;Bösartige Neubildung: Tonsille, mehrere Teilbereiche überlappend;C09;TRUE;TRUE
+C099;C09.9;Bösartige Neubildung: Tonsille, nicht näher bezeichnet;C09;TRUE;TRUE
+C10;C10;Bösartige Neubildung des Oropharynx;C10;TRUE;
+C100;C10.0;Bösartige Neubildung: Vallecula epiglottica;C10;TRUE;TRUE
+C101;C10.1;Bösartige Neubildung: Vorderfläche der Epiglottis;C10;TRUE;TRUE
+C102;C10.2;Bösartige Neubildung: Seitenwand des Oropharynx;C10;TRUE;TRUE
+C103;C10.3;Bösartige Neubildung: Hinterwand des Oropharynx;C10;TRUE;TRUE
+C104;C10.4;Bösartige Neubildung: Kiemengang;C10;TRUE;TRUE
+C108;C10.8;Bösartige Neubildung: Oropharynx, mehrere Teilbereiche überlappend;C10;TRUE;TRUE
+C109;C10.9;Bösartige Neubildung: Oropharynx, nicht näher bezeichnet;C10;TRUE;TRUE
+C11;C11;Bösartige Neubildung des Nasopharynx;C11;TRUE;
+C110;C11.0;Bösartige Neubildung: Obere Wand des Nasopharynx;C11;TRUE;TRUE
+C111;C11.1;Bösartige Neubildung: Hinterwand des Nasopharynx;C11;TRUE;TRUE
+C112;C11.2;Bösartige Neubildung: Seitenwand des Nasopharynx;C11;TRUE;TRUE
+C113;C11.3;Bösartige Neubildung: Vorderwand des Nasopharynx;C11;TRUE;TRUE
+C118;C11.8;Bösartige Neubildung: Nasopharynx, mehrere Teilbereiche überlappend;C11;TRUE;TRUE
+C119;C11.9;Bösartige Neubildung: Nasopharynx, nicht näher bezeichnet;C11;TRUE;TRUE
+C12;C12;Bösartige Neubildung des Recessus piriformis;C12;TRUE;TRUE
+C13;C13;Bösartige Neubildung des Hypopharynx;C13;TRUE;
+C130;C13.0;Bösartige Neubildung: Regio postcricoidea;C13;TRUE;TRUE
+C131;C13.1;Bösartige Neubildung: Aryepiglottische Falte, hypopharyngeale Seite;C13;TRUE;TRUE
+C132;C13.2;Bösartige Neubildung: Hinterwand des Hypopharynx;C13;TRUE;TRUE
+C138;C13.8;Bösartige Neubildung: Hypopharynx, mehrere Teilbereiche überlappend;C13;TRUE;TRUE
+C139;C13.9;Bösartige Neubildung: Hypopharynx, nicht näher bezeichnet;C13;TRUE;TRUE
+C14;C14;Bösartige Neubildung sonstiger und ungenau bezeichneter Lokalisationen der Lippe, der Mundhöhle und des Pharynx;C14;TRUE;
+C140;C14.0;Bösartige Neubildung: Pharynx, nicht näher bezeichnet;C14;TRUE;TRUE
+C142;C14.2;Bösartige Neubildung: Lymphatischer Rachenring [Waldeyer];C14;TRUE;TRUE
+C148;C14.8;Bösartige Neubildung: Lippe, Mundhöhle und Pharynx, mehrere Teilbereiche überlappend;C14;TRUE;TRUE
+C15;C15;Bösartige Neubildung des Ösophagus;C15;TRUE;
+C150;C15.0;Bösartige Neubildung: Zervikaler Ösophagus;C15;TRUE;TRUE
+C151;C15.1;Bösartige Neubildung: Thorakaler Ösophagus;C15;TRUE;TRUE
+C152;C15.2;Bösartige Neubildung: Abdominaler Ösophagus;C15;TRUE;TRUE
+C153;C15.3;Bösartige Neubildung: Ösophagus, oberes Drittel;C15;TRUE;TRUE
+C154;C15.4;Bösartige Neubildung: Ösophagus, mittleres Drittel;C15;TRUE;TRUE
+C155;C15.5;Bösartige Neubildung: Ösophagus, unteres Drittel;C15;TRUE;TRUE
+C158;C15.8;Bösartige Neubildung: Ösophagus, mehrere Teilbereiche überlappend;C15;TRUE;TRUE
+C159;C15.9;Bösartige Neubildung: Ösophagus, nicht näher bezeichnet;C15;TRUE;TRUE
+C16;C16;Bösartige Neubildung des Magens;C16;TRUE;
+C160;C16.0;Bösartige Neubildung: Kardia;C16;TRUE;TRUE
+C161;C16.1;Bösartige Neubildung: Fundus ventriculi;C16;TRUE;TRUE
+C162;C16.2;Bösartige Neubildung: Corpus ventriculi;C16;TRUE;TRUE
+C163;C16.3;Bösartige Neubildung: Antrum pyloricum;C16;TRUE;TRUE
+C164;C16.4;Bösartige Neubildung: Pylorus;C16;TRUE;TRUE
+C165;C16.5;Bösartige Neubildung: Kleine Kurvatur des Magens, nicht näher bezeichnet;C16;TRUE;TRUE
+C166;C16.6;Bösartige Neubildung: Große Kurvatur des Magens, nicht näher bezeichnet;C16;TRUE;TRUE
+C168;C16.8;Bösartige Neubildung: Magen, mehrere Teilbereiche überlappend;C16;TRUE;TRUE
+C169;C16.9;Bösartige Neubildung: Magen, nicht näher bezeichnet;C16;TRUE;TRUE
+C17;C17;Bösartige Neubildung des Dünndarmes;C17;TRUE;
+C170;C17.0;Bösartige Neubildung: Duodenum;C17;TRUE;TRUE
+C171;C17.1;Bösartige Neubildung: Jejunum;C17;TRUE;TRUE
+C172;C17.2;Bösartige Neubildung: Ileum;C17;TRUE;TRUE
+C173;C17.3;Bösartige Neubildung: Meckel-Divertikel;C17;TRUE;TRUE
+C178;C17.8;Bösartige Neubildung: Dünndarm, mehrere Teilbereiche überlappend;C17;TRUE;TRUE
+C179;C17.9;Bösartige Neubildung: Dünndarm, nicht näher bezeichnet;C17;TRUE;TRUE
+C18;C18;Bösartige Neubildung des Kolons;C18;TRUE;
+C180;C18.0;Bösartige Neubildung: Zäkum;C18;TRUE;TRUE
+C181;C18.1;Bösartige Neubildung: Appendix vermiformis;C18;TRUE;TRUE
+C182;C18.2;Bösartige Neubildung: Colon ascendens;C18;TRUE;TRUE
+C183;C18.3;Bösartige Neubildung: Flexura coli dextra [hepatica];C18;TRUE;TRUE
+C184;C18.4;Bösartige Neubildung: Colon transversum;C18;TRUE;TRUE
+C185;C18.5;Bösartige Neubildung: Flexura coli sinistra [lienalis];C18;TRUE;TRUE
+C186;C18.6;Bösartige Neubildung: Colon descendens;C18;TRUE;TRUE
+C187;C18.7;Bösartige Neubildung: Colon sigmoideum;C18;TRUE;TRUE
+C188;C18.8;Bösartige Neubildung: Kolon, mehrere Teilbereiche überlappend;C18;TRUE;TRUE
+C189;C18.9;Bösartige Neubildung: Kolon, nicht näher bezeichnet;C18;TRUE;TRUE
+C19;C19;Bösartige Neubildung am Rektosigmoid, Übergang;C19;TRUE;TRUE
+C20;C20;Bösartige Neubildung des Rektums;C20;TRUE;TRUE
+C21;C21;Bösartige Neubildung des Anus und des Analkanals;C21;TRUE;
+C210;C21.0;Bösartige Neubildung: Anus, nicht näher bezeichnet;C21;TRUE;TRUE
+C211;C21.1;Bösartige Neubildung: Analkanal;C21;TRUE;TRUE
+C212;C21.2;Bösartige Neubildung: Kloakenregion;C21;TRUE;TRUE
+C218;C21.8;Bösartige Neubildung: Rektum, Anus und Analkanal, mehrere Teilbereiche überlappend;C21;TRUE;TRUE
+C22;C22;Bösartige Neubildung der Leber und der intrahepatischen Gallengänge;C22;TRUE;
+C220;C22.0;Bösartige Neubildung: Leberzellkarzinom;C22;TRUE;TRUE
+C221;C22.1;Bösartige Neubildung: Intrahepatisches Gallengangskarzinom;C22;TRUE;TRUE
+C222;C22.2;Bösartige Neubildung: Hepatoblastom;C22;TRUE;TRUE
+C223;C22.3;Bösartige Neubildung: Angiosarkom der Leber;C22;TRUE;TRUE
+C224;C22.4;Bösartige Neubildung: Sonstige Sarkome der Leber;C22;TRUE;TRUE
+C227;C22.7;Bösartige Neubildung: Sonstige näher bezeichnete Karzinome der Leber;C22;TRUE;TRUE
+C229;C22.9;Bösartige Neubildung: Leber, nicht näher bezeichnet;C22;TRUE;TRUE
+C23;C23;Bösartige Neubildung der Gallenblase;C23;TRUE;TRUE
+C24;C24;Bösartige Neubildung sonstiger und nicht näher bezeichneter Teile der Gallenwege;C24;TRUE;
+C240;C24.0;Bösartige Neubildung: Extrahepatischer Gallengang;C24;TRUE;TRUE
+C241;C24.1;Bösartige Neubildung: Ampulla hepatopancreatica [Ampulla Vateri];C24;TRUE;TRUE
+C248;C24.8;Bösartige Neubildung: Gallenwege, mehrere Teilbereiche überlappend;C24;TRUE;TRUE
+C249;C24.9;Bösartige Neubildung: Gallenwege, nicht näher bezeichnet;C24;TRUE;TRUE
+C25;C25;Bösartige Neubildung des Pankreas;C25;TRUE;
+C250;C25.0;Bösartige Neubildung: Pankreaskopf;C25;TRUE;TRUE
+C251;C25.1;Bösartige Neubildung: Pankreaskörper;C25;TRUE;TRUE
+C252;C25.2;Bösartige Neubildung: Pankreasschwanz;C25;TRUE;TRUE
+C253;C25.3;Bösartige Neubildung: Ductus pancreaticus;C25;TRUE;TRUE
+C254;C25.4;Bösartige Neubildung: Endokriner Drüsenanteil des Pankreas;C25;TRUE;TRUE
+C257;C25.7;Bösartige Neubildung: Sonstige Teile des Pankreas;C25;TRUE;TRUE
+C258;C25.8;Bösartige Neubildung: Pankreas, mehrere Teilbereiche überlappend;C25;TRUE;TRUE
+C259;C25.9;Bösartige Neubildung: Pankreas, nicht näher bezeichnet;C25;TRUE;TRUE
+C26;C26;Bösartige Neubildung sonstiger und ungenau bezeichneter Verdauungsorgane;C26;TRUE;
+C260;C26.0;Bösartige Neubildung: Intestinaltrakt, Teil nicht näher bezeichnet;C26;TRUE;TRUE
+C261;C26.1;Bösartige Neubildung: Milz;C26;TRUE;TRUE
+C268;C26.8;Bösartige Neubildung: Verdauungssystem, mehrere Teilbereiche überlappend;C26;TRUE;TRUE
+C269;C26.9;Bösartige Neubildung: Ungenau bezeichnete Lokalisationen des Verdauungssystems;C26;TRUE;TRUE
+C30;C30;Bösartige Neubildung der Nasenhöhle und des Mittelohres;C30;TRUE;
+C300;C30.0;Bösartige Neubildung: Nasenhöhle;C30;TRUE;TRUE
+C301;C30.1;Bösartige Neubildung: Mittelohr;C30;TRUE;TRUE
+C31;C31;Bösartige Neubildung der Nasennebenhöhlen;C31;TRUE;
+C310;C31.0;Bösartige Neubildung: Sinus maxillaris [Kieferhöhle];C31;TRUE;TRUE
+C311;C31.1;Bösartige Neubildung: Sinus ethmoidalis [Siebbeinzellen];C31;TRUE;TRUE
+C312;C31.2;Bösartige Neubildung: Sinus frontalis [Stirnhöhle];C31;TRUE;TRUE
+C313;C31.3;Bösartige Neubildung: Sinus sphenoidalis [Keilbeinhöhle];C31;TRUE;TRUE
+C318;C31.8;Bösartige Neubildung: Nasennebenhöhlen, mehrere Teilbereiche überlappend;C31;TRUE;TRUE
+C319;C31.9;Bösartige Neubildung: Nasennebenhöhle, nicht näher bezeichnet;C31;TRUE;TRUE
+C32;C32;Bösartige Neubildung des Larynx;C32;TRUE;
+C320;C32.0;Bösartige Neubildung: Glottis;C32;TRUE;TRUE
+C321;C32.1;Bösartige Neubildung: Supraglottis;C32;TRUE;TRUE
+C322;C32.2;Bösartige Neubildung: Subglottis;C32;TRUE;TRUE
+C323;C32.3;Bösartige Neubildung: Larynxknorpel;C32;TRUE;TRUE
+C328;C32.8;Bösartige Neubildung: Larynx, mehrere Teilbereiche überlappend;C32;TRUE;TRUE
+C329;C32.9;Bösartige Neubildung: Larynx, nicht näher bezeichnet;C32;TRUE;TRUE
+C33;C33;Bösartige Neubildung der Trachea;C33;TRUE;TRUE
+C34;C34;Bösartige Neubildung der Bronchien und der Lunge;C34;TRUE;
+C340;C34.0;Bösartige Neubildung: Hauptbronchus;C34;TRUE;TRUE
+C341;C34.1;Bösartige Neubildung: Oberlappen (-Bronchus);C34;TRUE;TRUE
+C342;C34.2;Bösartige Neubildung: Mittellappen (-Bronchus);C34;TRUE;TRUE
+C343;C34.3;Bösartige Neubildung: Unterlappen (-Bronchus);C34;TRUE;TRUE
+C348;C34.8;Bösartige Neubildung: Bronchus und Lunge, mehrere Teilbereiche überlappend;C34;TRUE;TRUE
+C349;C34.9;Bösartige Neubildung: Bronchus oder Lunge, nicht näher bezeichnet;C34;TRUE;TRUE
+C37;C37;Bösartige Neubildung des Thymus;C37;TRUE;TRUE
+C38;C38;Bösartige Neubildung des Herzens, des Mediastinums und der Pleura;C38;TRUE;
+C380;C38.0;Bösartige Neubildung: Herz;C38;TRUE;TRUE
+C381;C38.1;Bösartige Neubildung: Vorderes Mediastinum;C38;TRUE;TRUE
+C382;C38.2;Bösartige Neubildung: Hinteres Mediastinum;C38;TRUE;TRUE
+C383;C38.3;Bösartige Neubildung: Mediastinum, Teil nicht näher bezeichnet;C38;TRUE;TRUE
+C384;C38.4;Bösartige Neubildung: Pleura;C38;TRUE;TRUE
+C388;C38.8;Bösartige Neubildung: Herz, Mediastinum und Pleura, mehrere Teilbereiche überlappend;C38;TRUE;TRUE
+C39;C39;Bösartige Neubildung sonstiger und ungenau bezeichneter Lokalisationen des Atmungssystems und sonstiger intrathorakaler Organe;C39;TRUE;
+C390;C39.0;Bösartige Neubildung: Obere Atemwege, Teil nicht näher bezeichnet;C39;TRUE;TRUE
+C398;C39.8;Bösartige Neubildung: Atmungsorgane und sonstige intrathorakale Organe, mehrere Teilbereiche überlappend;C39;TRUE;TRUE
+C399;C39.9;Bösartige Neubildung: Ungenau bezeichnete Lokalisationen des Atmungssystems;C39;TRUE;TRUE
+C40;C40;Bösartige Neubildung des Knochens und des Gelenkknorpels der Extremitäten;C40;TRUE;
+C400;C40.0;Bösartige Neubildung des Knochens und des Gelenkknorpels: Skapula und lange Knochen der oberen Extremität;C40;TRUE;TRUE
+C401;C40.1;Bösartige Neubildung des Knochens und des Gelenkknorpels: Kurze Knochen der oberen Extremität;C40;TRUE;TRUE
+C402;C40.2;Bösartige Neubildung des Knochens und des Gelenkknorpels: Lange Knochen der unteren Extremität;C40;TRUE;TRUE
+C403;C40.3;Bösartige Neubildung des Knochens und des Gelenkknorpels: Kurze Knochen der unteren Extremität;C40;TRUE;TRUE
+C408;C40.8;Bösartige Neubildung: Knochen und Gelenkknorpel der Extremitäten, mehrere Teilbereiche überlappend;C40;TRUE;TRUE
+C409;C40.9;Bösartige Neubildung: Knochen und Gelenkknorpel einer Extremität, nicht näher bezeichnet;C40;TRUE;TRUE
+C41;C41;Bösartige Neubildung des Knochens und des Gelenkknorpels sonstiger und nicht näher bezeichneter Lokalisationen;C41;TRUE;
+C410;C41.0;Bösartige Neubildung des Knochens und des Gelenkknorpels: Knochen des Hirn- und Gesichtsschädels;C41;TRUE;TRUE
+C411;C41.1;Bösartige Neubildung des Knochens und des Gelenkknorpels: Unterkieferknochen;C41;TRUE;TRUE
+C412;C41.2;Bösartige Neubildung des Knochens und des Gelenkknorpels: Wirbelsäule;C41;TRUE;TRUE
+C413;C41.3;Bösartige Neubildung des Knochens und des Gelenkknorpels: Rippen, Sternum und Klavikula;C41;TRUE;TRUE
+C414;C41.4;Bösartige Neubildung des Knochens und des Gelenkknorpels: Beckenknochen;C41;TRUE;TRUE
+C418;C41.8;Bösartige Neubildung: Knochen und Gelenkknorpel, mehrere Teilbereiche überlappend;C41;TRUE;TRUE
+C419;C41.9;Bösartige Neubildung: Knochen und Gelenkknorpel, nicht näher bezeichnet;C41;TRUE;TRUE
+C43;C43;Bösartiges Melanom der Haut;C43;TRUE;
+C430;C43.0;Bösartiges Melanom der Lippe;C43;TRUE;TRUE
+C431;C43.1;Bösartiges Melanom des Augenlides, einschließlich Kanthus;C43;TRUE;TRUE
+C432;C43.2;Bösartiges Melanom des Ohres und des äußeren Gehörganges;C43;TRUE;TRUE
+C433;C43.3;Bösartiges Melanom sonstiger und nicht näher bezeichneter Teile des Gesichtes;C43;TRUE;TRUE
+C434;C43.4;Bösartiges Melanom der behaarten Kopfhaut und des Halses;C43;TRUE;TRUE
+C435;C43.5;Bösartiges Melanom des Rumpfes;C43;TRUE;TRUE
+C436;C43.6;Bösartiges Melanom der oberen Extremität, einschließlich Schulter;C43;TRUE;TRUE
+C437;C43.7;Bösartiges Melanom der unteren Extremität, einschließlich Hüfte;C43;TRUE;TRUE
+C438;C43.8;Bösartiges Melanom der Haut, mehrere Teilbereiche überlappend;C43;TRUE;TRUE
+C439;C43.9;Bösartiges Melanom der Haut, nicht näher bezeichnet;C43;TRUE;TRUE
+C44;C44;Sonstige bösartige Neubildungen der Haut;C44;TRUE;
+C440;C44.0;Sonstige bösartige Neubildungen: Lippenhaut;C44;TRUE;FALSE
+C441;C44.1;Sonstige bösartige Neubildungen: Haut des Augenlides, einschließlich Kanthus;C44;TRUE;FALSE
+C442;C44.2;Sonstige bösartige Neubildungen: Haut des Ohres und des äußeren Gehörganges;C44;TRUE;FALSE
+C443;C44.3;Sonstige bösartige Neubildungen: Haut sonstiger und nicht näher bezeichneter Teile des Gesichtes;C44;TRUE;FALSE
+C444;C44.4;Sonstige bösartige Neubildungen: Behaarte Kopfhaut und Haut des Halses;C44;TRUE;FALSE
+C445;C44.5;Sonstige bösartige Neubildungen: Haut des Rumpfes;C44;TRUE;FALSE
+C446;C44.6;Sonstige bösartige Neubildungen: Haut der oberen Extremität, einschließlich Schulter;C44;TRUE;FALSE
+C447;C44.7;Sonstige bösartige Neubildungen: Haut der unteren Extremität, einschließlich Hüfte;C44;TRUE;FALSE
+C448;C44.8;Sonstige bösartige Neubildungen: Haut, mehrere Teilbereiche überlappend;C44;TRUE;FALSE
+C449;C44.9;Bösartige Neubildung der Haut, nicht näher bezeichnet;C44;TRUE;FALSE
+C45;C45;Mesotheliom;C45;TRUE;
+C450;C45.0;Mesotheliom der Pleura;C45;TRUE;TRUE
+C451;C45.1;Mesotheliom des Peritoneums;C45;TRUE;TRUE
+C452;C45.2;Mesotheliom des Perikards;C45;TRUE;TRUE
+C457;C45.7;Mesotheliom sonstiger Lokalisationen;C45;TRUE;TRUE
+C459;C45.9;Mesotheliom, nicht näher bezeichnet;C45;TRUE;TRUE
+C46;C46;Kaposi-Sarkom [Sarcoma idiopathicum multiplex haemorrhagicum];C46;TRUE;
+C460;C46.0;Kaposi-Sarkom der Haut;C46;TRUE;TRUE
+C461;C46.1;Kaposi-Sarkom des Weichteilgewebes;C46;TRUE;TRUE
+C462;C46.2;Kaposi-Sarkom des Gaumens;C46;TRUE;TRUE
+C463;C46.3;Kaposi-Sarkom der Lymphknoten;C46;TRUE;TRUE
+C467;C46.7;Kaposi-Sarkom sonstiger Lokalisationen;C46;TRUE;TRUE
+C468;C46.8;Kaposi-Sarkom mehrerer Organe;C46;TRUE;TRUE
+C469;C46.9;Kaposi-Sarkom, nicht näher bezeichnet;C46;TRUE;TRUE
+C47;C47;Bösartige Neubildung der peripheren Nerven und des autonomen Nervensystems;C47;TRUE;
+C470;C47.0;Bösartige Neubildung: Periphere Nerven des Kopfes, des Gesichtes und des Halses;C47;TRUE;TRUE
+C471;C47.1;Bösartige Neubildung: Periphere Nerven der oberen Extremität, einschließlich Schulter;C47;TRUE;TRUE
+C472;C47.2;Bösartige Neubildung: Periphere Nerven der unteren Extremität, einschließlich Hüfte;C47;TRUE;TRUE
+C473;C47.3;Bösartige Neubildung: Periphere Nerven des Thorax;C47;TRUE;TRUE
+C474;C47.4;Bösartige Neubildung: Periphere Nerven des Abdomens;C47;TRUE;TRUE
+C475;C47.5;Bösartige Neubildung: Periphere Nerven des Beckens;C47;TRUE;TRUE
+C476;C47.6;Bösartige Neubildung: Periphere Nerven des Rumpfes, nicht näher bezeichnet;C47;TRUE;TRUE
+C478;C47.8;Bösartige Neubildung: Periphere Nerven und autonomes Nervensystem, mehrere Teilbereiche überlappend;C47;TRUE;TRUE
+C479;C47.9;Bösartige Neubildung: Periphere Nerven und autonomes Nervensystem, nicht näher bezeichnet;C47;TRUE;TRUE
+C48;C48;Bösartige Neubildung des Retroperitoneums und des Peritoneums;C48;TRUE;
+C480;C48.0;Bösartige Neubildung: Retroperitoneum;C48;TRUE;TRUE
+C481;C48.1;Bösartige Neubildung: Näher bezeichnete Teile des Peritoneums;C48;TRUE;TRUE
+C482;C48.2;Bösartige Neubildung: Peritoneum, nicht näher bezeichnet;C48;TRUE;TRUE
+C488;C48.8;Bösartige Neubildung: Retroperitoneum und Peritoneum, mehrere Teilbereiche überlappend;C48;TRUE;TRUE
+C49;C49;Bösartige Neubildung sonstigen Bindegewebes und anderer Weichteilgewebe;C49;TRUE;
+C490;C49.0;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe des Kopfes, des Gesichtes und des Halses;C49;TRUE;TRUE
+C491;C49.1;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe der oberen Extremität, einschließlich Schulter;C49;TRUE;TRUE
+C492;C49.2;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe der unteren Extremität, einschließlich Hüfte;C49;TRUE;TRUE
+C493;C49.3;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe des Thorax;C49;TRUE;TRUE
+C494;C49.4;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe des Abdomens;C49;TRUE;TRUE
+C495;C49.5;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe des Beckens;C49;TRUE;TRUE
+C496;C49.6;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe des Rumpfes, nicht näher bezeichnet;C49;TRUE;TRUE
+C498;C49.8;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe, mehrere Teilbereiche überlappend;C49;TRUE;TRUE
+C499;C49.9;Bösartige Neubildung: Bindegewebe und andere Weichteilgewebe, nicht näher bezeichnet;C49;TRUE;TRUE
+C50;C50;Bösartige Neubildung der Brustdrüse [Mamma];C50;TRUE;
+C500;C50.0;Bösartige Neubildung: Brustwarze und Warzenhof;C50;TRUE;TRUE
+C501;C50.1;Bösartige Neubildung: Zentraler Drüsenkörper der Brustdrüse;C50;TRUE;TRUE
+C502;C50.2;Bösartige Neubildung: Oberer innerer Quadrant der Brustdrüse;C50;TRUE;TRUE
+C503;C50.3;Bösartige Neubildung: Unterer innerer Quadrant der Brustdrüse;C50;TRUE;TRUE
+C504;C50.4;Bösartige Neubildung: Oberer äußerer Quadrant der Brustdrüse;C50;TRUE;TRUE
+C505;C50.5;Bösartige Neubildung: Unterer äußerer Quadrant der Brustdrüse;C50;TRUE;TRUE
+C506;C50.6;Bösartige Neubildung: Recessus axillaris der Brustdrüse;C50;TRUE;TRUE
+C508;C50.8;Bösartige Neubildung: Brustdrüse, mehrere Teilbereiche überlappend;C50;TRUE;TRUE
+C509;C50.9;Bösartige Neubildung: Brustdrüse, nicht näher bezeichnet;C50;TRUE;TRUE
+C51;C51;Bösartige Neubildung der Vulva;C51;TRUE;
+C510;C51.0;Bösartige Neubildung der Vulva: Labium majus;C51;TRUE;TRUE
+C511;C51.1;Bösartige Neubildung der Vulva: Labium minus;C51;TRUE;TRUE
+C512;C51.2;Bösartige Neubildung der Vulva: Klitoris;C51;TRUE;TRUE
+C518;C51.8;Bösartige Neubildung: Vulva, mehrere Teilbereiche überlappend;C51;TRUE;TRUE
+C519;C51.9;Bösartige Neubildung: Vulva, nicht näher bezeichnet;C51;TRUE;TRUE
+C52;C52;Bösartige Neubildung der Vagina;C52;TRUE;TRUE
+C53;C53;Bösartige Neubildung der Cervix uteri;C53;TRUE;
+C530;C53.0;Bösartige Neubildung: Endozervix;C53;TRUE;TRUE
+C531;C53.1;Bösartige Neubildung: Ektozervix;C53;TRUE;TRUE
+C538;C53.8;Bösartige Neubildung: Cervix uteri, mehrere Teilbereiche überlappend;C53;TRUE;TRUE
+C539;C53.9;Bösartige Neubildung: Cervix uteri, nicht näher bezeichnet;C53;TRUE;TRUE
+C54;C54;Bösartige Neubildung des Corpus uteri;C54;TRUE;
+C540;C54.0;Bösartige Neubildung: Isthmus uteri;C54;TRUE;TRUE
+C541;C54.1;Bösartige Neubildung: Endometrium;C54;TRUE;TRUE
+C542;C54.2;Bösartige Neubildung: Myometrium;C54;TRUE;TRUE
+C543;C54.3;Bösartige Neubildung: Fundus uteri;C54;TRUE;TRUE
+C548;C54.8;Bösartige Neubildung: Corpus uteri, mehrere Teilbereiche überlappend;C54;TRUE;TRUE
+C549;C54.9;Bösartige Neubildung: Corpus uteri, nicht näher bezeichnet;C54;TRUE;TRUE
+C55;C55;Bösartige Neubildung des Uterus, Teil nicht näher bezeichnet;C55;TRUE;TRUE
+C56;C56;Bösartige Neubildung des Ovars;C56;TRUE;TRUE
+C57;C57;Bösartige Neubildung sonstiger und nicht näher bezeichneter weiblicher Genitalorgane;C57;TRUE;
+C570;C57.0;Bösartige Neubildung: Tuba uterina [Falloppio];C57;TRUE;TRUE
+C571;C57.1;Bösartige Neubildung: Lig. latum uteri;C57;TRUE;TRUE
+C572;C57.2;Bösartige Neubildung: Lig. teres uteri;C57;TRUE;TRUE
+C573;C57.3;Bösartige Neubildung: Parametrium;C57;TRUE;TRUE
+C574;C57.4;Bösartige Neubildung: Uterine Adnexe, nicht näher bezeichnet;C57;TRUE;TRUE
+C577;C57.7;Bösartige Neubildung: Sonstige näher bezeichnete weibliche Genitalorgane;C57;TRUE;TRUE
+C578;C57.8;Bösartige Neubildung: Weibliche Genitalorgane, mehrere Teilbereiche überlappend;C57;TRUE;TRUE
+C579;C57.9;Bösartige Neubildung: Weibliches Genitalorgan, nicht näher bezeichnet;C57;TRUE;TRUE
+C58;C58;Bösartige Neubildung der Plazenta;C58;TRUE;TRUE
+C60;C60;Bösartige Neubildung des Penis;C60;TRUE;
+C600;C60.0;Bösartige Neubildung: Praeputium penis;C60;TRUE;TRUE
+C601;C60.1;Bösartige Neubildung: Glans penis;C60;TRUE;TRUE
+C602;C60.2;Bösartige Neubildung: Penisschaft;C60;TRUE;TRUE
+C608;C60.8;Bösartige Neubildung: Penis, mehrere Teilbereiche überlappend;C60;TRUE;TRUE
+C609;C60.9;Bösartige Neubildung: Penis, nicht näher bezeichnet;C60;TRUE;TRUE
+C61;C61;Bösartige Neubildung der Prostata;C61;TRUE;TRUE
+C62;C62;Bösartige Neubildung des Hodens;C62;TRUE;
+C620;C62.0;Bösartige Neubildung: Dystoper Hoden;C62;TRUE;TRUE
+C621;C62.1;Bösartige Neubildung: Deszendierter Hoden;C62;TRUE;TRUE
+C629;C62.9;Bösartige Neubildung: Hoden, nicht näher bezeichnet;C62;TRUE;TRUE
+C63;C63;Bösartige Neubildung sonstiger und nicht näher bezeichneter männlicher Genitalorgane;C63;TRUE;
+C630;C63.0;Bösartige Neubildung: Nebenhoden [Epididymis];C63;TRUE;TRUE
+C631;C63.1;Bösartige Neubildung: Samenstrang;C63;TRUE;TRUE
+C632;C63.2;Bösartige Neubildung: Skrotum;C63;TRUE;TRUE
+C637;C63.7;Bösartige Neubildung: Sonstige näher bezeichnete männliche Genitalorgane;C63;TRUE;TRUE
+C638;C63.8;Bösartige Neubildung: Männliche Genitalorgane, mehrere Teilbereiche überlappend;C63;TRUE;TRUE
+C639;C63.9;Bösartige Neubildung: Männliches Genitalorgan, nicht näher bezeichnet;C63;TRUE;TRUE
+C64;C64;Bösartige Neubildung der Niere, ausgenommen Nierenbecken;C64;TRUE;TRUE
+C65;C65;Bösartige Neubildung des Nierenbeckens;C65;TRUE;TRUE
+C66;C66;Bösartige Neubildung des Ureters;C66;TRUE;TRUE
+C67;C67;Bösartige Neubildung der Harnblase;C67;TRUE;
+C670;C67.0;Bösartige Neubildung: Trigonum vesicae;C67;TRUE;TRUE
+C671;C67.1;Bösartige Neubildung: Apex vesicae;C67;TRUE;TRUE
+C672;C67.2;Bösartige Neubildung: Laterale Harnblasenwand;C67;TRUE;TRUE
+C673;C67.3;Bösartige Neubildung: Vordere Harnblasenwand;C67;TRUE;TRUE
+C674;C67.4;Bösartige Neubildung: Hintere Harnblasenwand;C67;TRUE;TRUE
+C675;C67.5;Bösartige Neubildung: Harnblasenhals;C67;TRUE;TRUE
+C676;C67.6;Bösartige Neubildung: Ostium ureteris;C67;TRUE;TRUE
+C677;C67.7;Bösartige Neubildung: Urachus;C67;TRUE;TRUE
+C678;C67.8;Bösartige Neubildung: Harnblase, mehrere Teilbereiche überlappend;C67;TRUE;TRUE
+C679;C67.9;Bösartige Neubildung: Harnblase, nicht näher bezeichnet;C67;TRUE;TRUE
+C68;C68;Bösartige Neubildung sonstiger und nicht näher bezeichneter Harnorgane;C68;TRUE;
+C680;C68.0;Bösartige Neubildung: Urethra;C68;TRUE;TRUE
+C681;C68.1;Bösartige Neubildung: Paraurethrale Drüse;C68;TRUE;TRUE
+C688;C68.8;Bösartige Neubildung: Harnorgane, mehrere Teilbereiche überlappend;C68;TRUE;TRUE
+C689;C68.9;Bösartige Neubildung: Harnorgan, nicht näher bezeichnet;C68;TRUE;TRUE
+C69;C69;Bösartige Neubildung des Auges und der Augenanhangsgebilde;C69;TRUE;
+C690;C69.0;Bösartige Neubildung: Konjunktiva;C69;TRUE;TRUE
+C691;C69.1;Bösartige Neubildung: Kornea;C69;TRUE;TRUE
+C692;C69.2;Bösartige Neubildung: Retina;C69;TRUE;TRUE
+C693;C69.3;Bösartige Neubildung: Chorioidea;C69;TRUE;TRUE
+C694;C69.4;Bösartige Neubildung: Ziliarkörper;C69;TRUE;TRUE
+C695;C69.5;Bösartige Neubildung: Tränendrüse und Tränenwege;C69;TRUE;TRUE
+C696;C69.6;Bösartige Neubildung: Orbita;C69;TRUE;TRUE
+C698;C69.8;Bösartige Neubildung: Auge und Augenanhangsgebilde, mehrere Teilbereiche überlappend;C69;TRUE;TRUE
+C699;C69.9;Bösartige Neubildung: Auge, nicht näher bezeichnet;C69;TRUE;TRUE
+C70;C70;Bösartige Neubildung der Meningen;C70;TRUE;
+C700;C70.0;Bösartige Neubildung: Hirnhäute;C70;TRUE;TRUE
+C701;C70.1;Bösartige Neubildung: Rückenmarkhäute;C70;TRUE;TRUE
+C709;C70.9;Bösartige Neubildung: Meningen, nicht näher bezeichnet;C70;TRUE;TRUE
+C71;C71;Bösartige Neubildung des Gehirns;C71;TRUE;
+C710;C71.0;Bösartige Neubildung: Zerebrum, ausgenommen Hirnlappen und Ventrikel;C71;TRUE;TRUE
+C711;C71.1;Bösartige Neubildung: Frontallappen;C71;TRUE;TRUE
+C712;C71.2;Bösartige Neubildung: Temporallappen;C71;TRUE;TRUE
+C713;C71.3;Bösartige Neubildung: Parietallappen;C71;TRUE;TRUE
+C714;C71.4;Bösartige Neubildung: Okzipitallappen;C71;TRUE;TRUE
+C715;C71.5;Bösartige Neubildung: Hirnventrikel;C71;TRUE;TRUE
+C716;C71.6;Bösartige Neubildung: Zerebellum;C71;TRUE;TRUE
+C717;C71.7;Bösartige Neubildung: Hirnstamm;C71;TRUE;TRUE
+C718;C71.8;Bösartige Neubildung: Gehirn, mehrere Teilbereiche überlappend;C71;TRUE;TRUE
+C719;C71.9;Bösartige Neubildung: Gehirn, nicht näher bezeichnet;C71;TRUE;TRUE
+C72;C72;Bösartige Neubildung des Rückenmarkes, der Hirnnerven und anderer Teile des Zentralnervensystems;C72;TRUE;
+C720;C72.0;Bösartige Neubildung: Rückenmark;C72;TRUE;TRUE
+C721;C72.1;Bösartige Neubildung: Cauda equina;C72;TRUE;TRUE
+C722;C72.2;Bösartige Neubildung: Nn. olfactorii [I. Hirnnerv];C72;TRUE;TRUE
+C723;C72.3;Bösartige Neubildung: N. opticus [II. Hirnnerv];C72;TRUE;TRUE
+C724;C72.4;Bösartige Neubildung: N. vestibulocochlearis [VIII. Hirnnerv];C72;TRUE;TRUE
+C725;C72.5;Bösartige Neubildung: Sonstige und nicht näher bezeichnete Hirnnerven;C72;TRUE;TRUE
+C728;C72.8;Bösartige Neubildung: Gehirn und andere Teile des Zentralnervensystems, mehrere Teilbereiche überlappend;C72;TRUE;TRUE
+C729;C72.9;Bösartige Neubildung: Zentralnervensystem, nicht näher bezeichnet;C72;TRUE;TRUE
+C73;C73;Bösartige Neubildung der Schilddrüse;C73;TRUE;TRUE
+C74;C74;Bösartige Neubildung der Nebenniere;C74;TRUE;
+C740;C74.0;Bösartige Neubildung: Nebennierenrinde;C74;TRUE;TRUE
+C741;C74.1;Bösartige Neubildung: Nebennierenmark;C74;TRUE;TRUE
+C749;C74.9;Bösartige Neubildung: Nebenniere, nicht näher bezeichnet;C74;TRUE;TRUE
+C75;C75;Bösartige Neubildung sonstiger endokriner Drüsen und verwandter Strukturen;C75;TRUE;
+C750;C75.0;Bösartige Neubildung: Nebenschilddrüse;C75;TRUE;TRUE
+C751;C75.1;Bösartige Neubildung: Hypophyse;C75;TRUE;TRUE
+C752;C75.2;Bösartige Neubildung: Ductus craniopharyngealis;C75;TRUE;TRUE
+C753;C75.3;Bösartige Neubildung: Epiphyse [Glandula pinealis] [Zirbeldrüse];C75;TRUE;TRUE
+C754;C75.4;Bösartige Neubildung: Glomus caroticum;C75;TRUE;TRUE
+C755;C75.5;Bösartige Neubildung: Glomus aorticum und sonstige Paraganglien;C75;TRUE;TRUE
+C758;C75.8;Bösartige Neubildung: Beteiligung mehrerer endokriner Drüsen, nicht näher bezeichnet;C75;TRUE;TRUE
+C759;C75.9;Bösartige Neubildung: Endokrine Drüse, nicht näher bezeichnet;C75;TRUE;TRUE
+C76;C76;Bösartige Neubildung sonstiger und ungenau bezeichneter Lokalisationen;C76;TRUE;
+C760;C76.0;Bösartige Neubildung ungenau bezeichneter Lokalisationen: Kopf, Gesicht und Hals;C76;TRUE;TRUE
+C761;C76.1;Bösartige Neubildung ungenau bezeichneter Lokalisationen: Thorax;C76;TRUE;TRUE
+C762;C76.2;Bösartige Neubildung ungenau bezeichneter Lokalisationen: Abdomen;C76;TRUE;TRUE
+C763;C76.3;Bösartige Neubildung ungenau bezeichneter Lokalisationen: Becken;C76;TRUE;TRUE
+C764;C76.4;Bösartige Neubildung ungenau bezeichneter Lokalisationen: Obere Extremität;C76;TRUE;TRUE
+C765;C76.5;Bösartige Neubildung ungenau bezeichneter Lokalisationen: Untere Extremität;C76;TRUE;TRUE
+C767;C76.7;Bösartige Neubildung: Sonstige ungenau bezeichnete Lokalisationen;C76;TRUE;TRUE
+C768;C76.8;Bösartige Neubildung: Sonstige und ungenau bezeichnete Lokalisationen, mehrere Teilbereiche überlappend;C76;TRUE;TRUE
+C77;C77;Sekundäre und nicht näher bezeichnete bösartige Neubildung der Lymphknoten;C77;FALSE;
+C770;C77.0;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Lymphknoten des Kopfes, des Gesichtes und des Halses;C77;FALSE;FALSE
+C771;C77.1;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Intrathorakale Lymphknoten;C77;FALSE;FALSE
+C772;C77.2;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Intraabdominale Lymphknoten;C77;FALSE;FALSE
+C773;C77.3;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Axilläre Lymphknoten und Lymphknoten der oberen Extremität;C77;FALSE;FALSE
+C774;C77.4;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Inguinale Lymphknoten und Lymphknoten der unteren Extremität;C77;FALSE;FALSE
+C775;C77.5;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Intrapelvine Lymphknoten;C77;FALSE;FALSE
+C778;C77.8;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Lymphknoten mehrerer Regionen;C77;FALSE;FALSE
+C779;C77.9;Sekundäre und nicht näher bezeichnete bösartige Neubildung: Lymphknoten, nicht näher bezeichnet;C77;FALSE;FALSE
+C78;C78;Sekundäre bösartige Neubildung der Atmungs- und Verdauungsorgane;C78;FALSE;
+C780;C78.0;Sekundäre bösartige Neubildung der Lunge;C78;FALSE;FALSE
+C781;C78.1;Sekundäre bösartige Neubildung des Mediastinums;C78;FALSE;FALSE
+C782;C78.2;Sekundäre bösartige Neubildung der Pleura;C78;FALSE;FALSE
+C783;C78.3;Sekundäre bösartige Neubildung sonstiger und nicht näher bezeichneter Atmungsorgane;C78;FALSE;FALSE
+C784;C78.4;Sekundäre bösartige Neubildung des Dünndarmes;C78;FALSE;FALSE
+C785;C78.5;Sekundäre bösartige Neubildung des Dickdarmes und des Rektums;C78;FALSE;FALSE
+C786;C78.6;Sekundäre bösartige Neubildung des Retroperitoneums und des Peritoneums;C78;FALSE;FALSE
+C787;C78.7;Sekundäre bösartige Neubildung der Leber und der intrahepatischen Gallengänge;C78;FALSE;FALSE
+C787;C78.7;Sekundäre bösartige Neubildung der Leber und der intrahepatischen Gallengänge;C78;FALSE;FALSE
+C788;C78.8;Sekundäre bösartige Neubildung sonstiger und nicht näher bezeichneter Verdauungsorgane;C78;FALSE;FALSE
+C79;C79;Sekundäre bösartige Neubildung an sonstigen und nicht näher bezeichneten Lokalisationen;C79;FALSE;
+C790;C79.0;Sekundäre bösartige Neubildung der Niere und des Nierenbeckens;C79;FALSE;FALSE
+C791;C79.1;Sekundäre bösartige Neubildung der Harnblase sowie sonstiger und nicht näher bezeichneter Harnorgane;C79;FALSE;FALSE
+C792;C79.2;Sekundäre bösartige Neubildung der Haut;C79;FALSE;FALSE
+C793;C79.3;Sekundäre bösartige Neubildung des Gehirns und der Hirnhäute;C79;FALSE;FALSE
+C794;C79.4;Sekundäre bösartige Neubildung sonstiger und nicht näher bezeichneter Teile des Nervensystems;C79;FALSE;FALSE
+C795;C79.5;Sekundäre bösartige Neubildung des Knochens und des Knochenmarkes;C79;FALSE;FALSE
+C796;C79.6;Sekundäre bösartige Neubildung des Ovars;C79;FALSE;FALSE
+C797;C79.7;Sekundäre bösartige Neubildung der Nebenniere;C79;FALSE;FALSE
+C798;C79.8;Sekundäre bösartige Neubildung sonstiger näher bezeichneter Lokalisationen;C79;FALSE;FALSE
+C799;C79.9;Sekundäre bösartige Neubildung nicht näher bezeichneter Lokalisation;C79;FALSE;FALSE
+C80;C80;Bösartige Neubildung ohne Angabe der Lokalisation;C80;TRUE;TRUE
+C800;C80.0;Bösartige Neubildung, primäre Lokalisation unbekannt, so bezeichnet;C80;TRUE;TRUE
+C800;C80.0;Bösartige Neubildung, primäre Lokalisation unbekannt, so bezeichnet;C80;TRUE;TRUE
+C809;C80.9;Bösartige Neubildung, nicht näher bezeichnet;C80;TRUE;TRUE
+C809;C80.9;Bösartige Neubildung, nicht näher bezeichnet;C80;TRUE;TRUE
+C81;C81;Hodgkin-Krankheit [Lymphogranulomatose];C81;TRUE;
+C810;C81.0;Hodgkin-Krankheit [Lymphogranulomatose]: Noduläres lymphozytenprädominantes Hodgkin-Lymphom;C81;TRUE;TRUE
+C810;C81.0;Hodgkin-Krankheit [Lymphogranulomatose]: Noduläres lymphozytenprädominantes Hodgkin-Lymphom;C81;TRUE;TRUE
+C811;C81.1;Hodgkin-Krankheit [Lymphogranulomatose]: Nodulär-sklerosierendes klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C811;C81.1;Hodgkin-Krankheit [Lymphogranulomatose]: Nodulär-sklerosierendes klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C811;C81.1;Hodgkin-Krankheit [Lymphogranulomatose]: Nodulär-sklerosierendes klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C812;C81.2;Hodgkin-Krankheit [Lymphogranulomatose]: Gemischtzelliges klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C812;C81.2;Hodgkin-Krankheit [Lymphogranulomatose]: Gemischtzelliges klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C812;C81.2;Hodgkin-Krankheit [Lymphogranulomatose]: Gemischtzelliges klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C813;C81.3;Hodgkin-Krankheit [Lymphogranulomatose]: Lymphozytenarmes klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C813;C81.3;Hodgkin-Krankheit [Lymphogranulomatose]: Lymphozytenarmes klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C813;C81.3;Hodgkin-Krankheit [Lymphogranulomatose]: Lymphozytenarmes klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C814;C81.4;Hodgkin-Krankheit [Lymphogranulomatose]: Lymphozytenreiches klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C814;C81.4;Hodgkin-Krankheit [Lymphogranulomatose]: Lymphozytenreiches klassisches Hodgkin-Lymphom;C81;TRUE;TRUE
+C817;C81.7;Hodgkin-Krankheit [Lymphogranulomatose]: Sonstige Typen des klassischen Hodgkin-Lymphoms;C81;TRUE;TRUE
+C817;C81.7;Hodgkin-Krankheit [Lymphogranulomatose]: Sonstige Typen des klassischen Hodgkin-Lymphoms;C81;TRUE;TRUE
+C817;C81.7;Hodgkin-Krankheit [Lymphogranulomatose]: Sonstige Typen des klassischen Hodgkin-Lymphoms;C81;TRUE;TRUE
+C819;C81.9;Hodgkin-Krankheit [Lymphogranulomatose]: Hodgkin-Lymphom, nicht näher bezeichnet;C81;TRUE;TRUE
+C819;C81.9;Hodgkin-Krankheit [Lymphogranulomatose]: Hodgkin-Lymphom, nicht näher bezeichnet;C81;TRUE;TRUE
+C82;C82;Follikuläres [noduläres] Non-Hodgkin-Lymphom;C82;TRUE;
+C820;C82.0;Follikuläres Lymphom Grad I;C82;TRUE;TRUE
+C820;C82.0;Follikuläres Lymphom Grad I;C82;TRUE;TRUE
+C821;C82.1;Follikuläres Lymphom Grad II;C82;TRUE;TRUE
+C821;C82.1;Follikuläres Lymphom Grad II;C82;TRUE;TRUE
+C822;C82.2;Follikuläres Lymphom Grad III;C82;TRUE;TRUE
+C822;C82.2;Follikuläres Lymphom Grad III;C82;TRUE;TRUE
+C823;C82.3;Follikuläres Lymphom Grad IIIa;C82;TRUE;TRUE
+C824;C82.4;Follikuläres Lymphom Grad IIIb;C82;TRUE;TRUE
+C825;C82.5;Diffuses Follikelzentrumslymphom;C82;TRUE;TRUE
+C826;C82.6;Kutanes Follikelzentrumslymphom;C82;TRUE;TRUE
+C827;C82.7;Sonstige Typen des follikulären Lymphoms;C82;TRUE;TRUE
+C827;C82.7;Sonstige Typen des follikulären Lymphoms;C82;TRUE;TRUE
+C829;C82.9;Follikuläres Lymphom, nicht näher bezeichnet;C82;TRUE;TRUE
+C829;C82.9;Follikuläres Lymphom, nicht näher bezeichnet;C82;TRUE;TRUE
+C83;C83;Diffuses Non-Hodgkin-Lymphom;C83;TRUE;
+C830;C83.0;Nicht follikuläres Lymphom: Kleinzelliges B-Zell-Lymphom;C83;TRUE;TRUE
+C830;C83.0;Nicht follikuläres Lymphom: Kleinzelliges B-Zell-Lymphom;C83;TRUE;TRUE
+C831;C83.1;Nicht follikuläres Lymphom: Mantelzell-Lymphom;C83;TRUE;TRUE
+C831;C83.1;Nicht follikuläres Lymphom: Mantelzell-Lymphom;C83;TRUE;TRUE
+C832;C83.2;Non-Hodgkin-Lymphom: Gemischt klein- und großzellig (diffus);C83;;TRUE
+C833;C83.3;Nicht follikuläres Lymphom: Diffuses großzelliges B-Zell-Lymphom;C83;TRUE;TRUE
+C833;C83.3;Nicht follikuläres Lymphom: Diffuses großzelliges B-Zell-Lymphom;C83;TRUE;TRUE
+C834;C83.4;Non-Hodgkin-Lymphom: Immunoblastisch (diffus);C83;;TRUE
+C835;C83.5;Nicht follikuläres Lymphom: Lymphoblastisches Lymphom;C83;TRUE;TRUE
+C835;C83.5;Nicht follikuläres Lymphom: Lymphoblastisches Lymphom;C83;TRUE;TRUE
+C836;C83.6;Non-Hodgkin-Lymphom: Undifferenziert (diffus);C83;;TRUE
+C837;C83.7;Nicht follikuläres Lymphom: Burkitt-Tumor;C83;TRUE;TRUE
+C837;C83.7;Nicht follikuläres Lymphom: Burkitt-Tumor;C83;TRUE;TRUE
+C838;C83.8;Sonstige nicht follikuläre Lymphome;C83;TRUE;TRUE
+C838;C83.8;Sonstige nicht follikuläre Lymphome;C83;TRUE;TRUE
+C839;C83.9;Nicht follikuläres Lymphom, nicht näher bezeichnet;C83;TRUE;TRUE
+C839;C83.9;Nicht follikuläres Lymphom, nicht näher bezeichnet;C83;TRUE;TRUE
+C84;C84;Periphere und kutane T-Zell-Lymphome;C84;TRUE;
+C840;C84.0;Reifzellige T/NK-Zell-Lymphome: Mycosis fungoides;C84;TRUE;TRUE
+C841;C84.1;Reifzellige T/NK-Zell-Lymphome: Sézary-Syndrom;C84;TRUE;TRUE
+C842;C84.2;T-Zonen-Lymphom;C84;;TRUE
+C843;C84.3;Lymphoepitheloides Lymphom;C84;;TRUE
+C844;C84.4;Reifzellige T/NK-Zell-Lymphome: Peripheres T-Zell-Lymphom, nicht spezifiziert;C84;TRUE;TRUE
+C844;C84.4;Reifzellige T/NK-Zell-Lymphome: Peripheres T-Zell-Lymphom, nicht spezifiziert;C84;TRUE;TRUE
+C845;C84.5;Sonstige reifzellige T/NK-Zell-Lymphome;C84;TRUE;TRUE
+C845;C84.5;Sonstige reifzellige T/NK-Zell-Lymphome;C84;TRUE;TRUE
+C846;C84.6;Reifzellige T/NK-Zell-Lymphome: Anaplastisches großzelliges Lymphom, ALK-positiv;C84;TRUE;TRUE
+C847;C84.7;Reifzellige T/NK-Zell-Lymphome: Anaplastisches großzelliges Lymphom, ALK-negativ;C84;TRUE;TRUE
+C848;C84.8;Reifzellige T/NK-Zell-Lymphome: Kutanes T-Zell-Lymphom, nicht näher bezeichnet;C84;TRUE;TRUE
+C849;C84.9;Reifzelliges T/NK-Zell-Lymphom, nicht näher bezeichnet;C84;TRUE;TRUE
+C85;C85;Sonstige und nicht näher bezeichnete Typen des Non-Hodgkin-Lymphoms;C85;TRUE;
+C850;C85.0;Lymphosarkom;C85;;TRUE
+C851;C85.1;B-Zell-Lymphom, nicht näher bezeichnet;C85;TRUE;TRUE
+C852;C85.2;Mediastinales (thymisches) großzelliges B-Zell-Lymphom;C85;TRUE;TRUE
+C857;C85.7;Sonstige näher bezeichnete Typen des Non-Hodgkin-Lymphoms;C85;TRUE;TRUE
+C859;C85.9;Non-Hodgkin-Lymphom, nicht näher bezeichnet;C85;TRUE;TRUE
+C859;C85.9;Non-Hodgkin-Lymphom, nicht näher bezeichnet;C85;TRUE;TRUE
+C86;C86;Weitere spezifizierte T/NK-Zell-Lymphome;C86;TRUE;
+C860;C86.0;Extranodales NK/T-Zell-Lymphom, nasaler Typ;C86;TRUE;TRUE
+C861;C86.1;Hepatosplenisches T-Zell-Lymphom;C86;TRUE;TRUE
+C862;C86.2;T-Zell-Lymphom vom Enteropathie-Typ;C86;TRUE;TRUE
+C863;C86.3;Subkutanes pannikulitisches T-Zell-Lymphom;C86;TRUE;TRUE
+C864;C86.4;Blastisches NK-Zell-Lymphom;C86;TRUE;TRUE
+C865;C86.5;Angioimmunoblastisches T-Zell-Lymphom;C86;TRUE;TRUE
+C866;C86.6;Primäre kutane CD30-positive T-Zell-Proliferationen;C86;TRUE;TRUE
+C88;C88;Bösartige immunproliferative Krankheiten;C88;TRUE;
+C880;C88.0;Bösartige immunproliferative Krankheiten: Makroglobulinämie Waldenström;C88;TRUE;TRUE
+C881;C88.1;Alpha-Schwerkettenkrankheit;C88;;TRUE
+C882;C88.2;Bösartige immunproliferative Krankheiten: Sonstige Schwerkettenkrankheit;C88;TRUE;TRUE
+C882;C88.2;Bösartige immunproliferative Krankheiten: Sonstige Schwerkettenkrankheit;C88;TRUE;TRUE
+C883;C88.3;Bösartige immunproliferative Krankheiten: Immunproliferative Dünndarmkrankheit;C88;TRUE;TRUE
+C884;C88.4;Extranodales Marginalzonen-B-Zell-Lymphom des Mukosa-assoziierten lymphatischen Gewebes (Malt-Lymphom);C88;TRUE;TRUE
+C887;C88.7;Sonstige bösartige immunproliferative Krankheiten;C88;TRUE;TRUE
+C889;C88.9;Bösartige immunproliferative Krankheit, nicht näher bezeichnet;C88;TRUE;TRUE
+C90;C90;Plasmozytom und bösartige Plasmazellen-Neubildungen;C90;TRUE;
+C900;C90.0;Plasmozytom [Multiples Myelom];C90;TRUE;TRUE
+C900;C90.0;Plasmozytom [Multiples Myelom];C90;TRUE;TRUE
+C900;C90.0;Plasmozytom [Multiples Myelom];C90;TRUE;TRUE
+C901;C90.1;Plasmazellenleukämie;C90;TRUE;TRUE
+C902;C90.2;Plasmozytom, extramedullär;C90;TRUE;TRUE
+C902;C90.2;Plasmozytom, extramedullär;C90;TRUE;TRUE
+C903;C90.3;Solitäres Plasmozytom;C90;TRUE;TRUE
+C91;C91;Lymphatische Leukämie;C91;TRUE;
+C910;C91.0;Akute lymphatische Leukämie [ALL];C91;TRUE;TRUE
+C910;C91.0;Akute lymphatische Leukämie [ALL];C91;TRUE;TRUE
+C911;C91.1;Chronische lymphatische Leukämie vom B-Zell-Typ [CLL];C91;TRUE;TRUE
+C911;C91.1;Chronische lymphatische Leukämie vom B-Zell-Typ [CLL];C91;TRUE;TRUE
+C912;C91.2;Subakute lymphatische Leukämie;C91;;TRUE
+C913;C91.3;Prolymphozytäre Leukämie vom B-Zell-Typ;C91;TRUE;TRUE
+C913;C91.3;Prolymphozytäre Leukämie vom B-Zell-Typ;C91;TRUE;TRUE
+C914;C91.4;Haarzellenleukämie;C91;TRUE;TRUE
+C915;C91.5;Adulte(s) T-Zell-Lymphom/Leukämie (HTLV-1-assoziiert);C91;TRUE;TRUE
+C915;C91.5;Adulte(s) T-Zell-Lymphom/Leukämie (HTLV-1-assoziiert);C91;TRUE;TRUE
+C916;C91.6;Prolymphozyten-Leukämie vom T-Zell-Typ;C91;TRUE;TRUE
+C917;C91.7;Sonstige lymphatische Leukämie;C91;TRUE;TRUE
+C918;C91.8;Reifzellige B-ALL vom Burkitt-Typ;C91;TRUE;TRUE
+C919;C91.9;Lymphatische Leukämie, nicht näher bezeichnet;C91;TRUE;TRUE
+C92;C92;Myeloische Leukämie;C92;TRUE;
+C920;C92.0;Akute myeloblastische Leukämie [AML];C92;TRUE;TRUE
+C920;C92.0;Akute myeloblastische Leukämie [AML];C92;TRUE;TRUE
+C921;C92.1;Chronische myeloische Leukämie [CML], BCR/ABL-positiv;C92;TRUE;TRUE
+C921;C92.1;Chronische myeloische Leukämie [CML], BCR/ABL-positiv;C92;TRUE;TRUE
+C922;C92.2;Atypische chronische myeloische Leukämie, BCR/ABL-negativ;C92;TRUE;TRUE
+C922;C92.2;Atypische chronische myeloische Leukämie, BCR/ABL-negativ;C92;TRUE;TRUE
+C923;C92.3;Myelosarkom;C92;TRUE;TRUE
+C924;C92.4;Akute Promyelozyten-Leukämie [PCL];C92;TRUE;TRUE
+C924;C92.4;Akute Promyelozyten-Leukämie [PCL];C92;TRUE;TRUE
+C925;C92.5;Akute myelomonozytäre Leukämie;C92;TRUE;TRUE
+C926;C92.6;Akute myeloische Leukämie mit 11q23-Abnormität;C92;TRUE;TRUE
+C927;C92.7;Sonstige myeloische Leukämie;C92;TRUE;TRUE
+C928;C92.8;Akute myeloische Leukämie mit multilineärer Dysplasie;C92;TRUE;TRUE
+C929;C92.9;Myeloische Leukämie, nicht näher bezeichnet;C92;TRUE;TRUE
+C93;C93;Monozytenleukämie;C93;TRUE;
+C930;C93.0;Akute Monoblasten/Monozytenleukämie;C93;TRUE;TRUE
+C930;C93.0;Akute Monoblasten/Monozytenleukämie;C93;TRUE;TRUE
+C930;C93.0;Akute Monoblasten/Monozytenleukämie;C93;TRUE;TRUE
+C931;C93.1;Chronische myelomonozytäre Leukämie;C93;TRUE;TRUE
+C931;C93.1;Chronische myelomonozytäre Leukämie;C93;TRUE;TRUE
+C932;C93.2;Subakute Monozytenleukämie;C93;TRUE;TRUE
+C933;C93.3;Juvenile myelomonozytäre Leukämie;C93;TRUE;TRUE
+C937;C93.7;Sonstige Monozytenleukämie;C93;TRUE;TRUE
+C939;C93.9;Monozytenleukämie, nicht näher bezeichnet;C93;TRUE;TRUE
+C94;C94;Sonstige Leukämien näher bezeichneten Zelltyps;C94;TRUE;
+C940;C94.0;Akute Erythroleukämie;C94;TRUE;TRUE
+C940;C94.0;Akute Erythroleukämie;C94;TRUE;TRUE
+C941;C94.1;Chronische Erythrämie;C94;;TRUE
+C942;C94.2;Akute Megakaryoblastenleukämie;C94;TRUE;TRUE
+C943;C94.3;Mastzellenleukämie;C94;TRUE;TRUE
+C944;C94.4;Akute Panmyelose mit Myelofibrose;C94;TRUE;TRUE
+C944;C94.4;Akute Panmyelose mit Myelofibrose;C94;TRUE;TRUE
+C945;C94.5;Akute Myelofibrose;C94;;TRUE
+C946;C94.6;Myelodysplastische und myeloproliferative Krankheit, nicht klassifizierbar;C94;TRUE;TRUE
+C947;C94.7;Sonstige näher bezeichnete Leukämien;C94;TRUE;TRUE
+C948;C94.8;Blastenkrise bei chronischer myeloischer Leukämie [CML];C94;TRUE;TRUE
+C95;C95;Leukämie nicht näher bezeichneten Zelltyps;C95;TRUE;
+C950;C95.0;Akute Leukämie nicht näher bezeichneten Zelltyps;C95;TRUE;TRUE
+C951;C95.1;Chronische Leukämie nicht näher bezeichneten Zelltyps;C95;TRUE;TRUE
+C952;C95.2;Subakute Leukämie nicht näher bezeichneten Zelltyps;C95;;TRUE
+C957;C95.7;Sonstige Leukämie nicht näher bezeichneten Zelltyps;C95;TRUE;TRUE
+C958;C95.8;Leukämie, refraktär auf Standard-Induktionstherapie;C95;TRUE;TRUE
+C959;C95.9;Leukämie, nicht näher bezeichnet;C95;TRUE;TRUE
+C96;C96;Sonstige und nicht näher bezeichnete bösartige Neubildungen des lymphatischen, blutbildenden und verwandten Gewebes;C96;TRUE;
+C960;C96.0;Multifokale und multisystemische (disseminierte) Langerhans-Zell-Histiozytose [Abt-Letterer-Siwe-Krankheit];C96;TRUE;TRUE
+C960;C96.0;Multifokale und multisystemische (disseminierte) Langerhans-Zell-Histiozytose [Abt-Letterer-Siwe-Krankheit];C96;TRUE;TRUE
+C961;C96.1;Bösartige Histiozytose;C96;;TRUE
+C962;C96.2;Bösartiger Mastzelltumor;C96;TRUE;TRUE
+C963;C96.3;Echtes histiozytäres Lymphom;C96;;TRUE
+C964;C96.4;Sarkom der dendritischen Zellen (akzessorische Zellen);C96;TRUE;TRUE
+C965;C96.5;Multifokale und unisystemische Langerhans-Zell-Histiozytose;C96;TRUE;TRUE
+C966;C96.6;Unifokale Langerhans-Zell-Histiozytose;C96;TRUE;TRUE
+C967;C96.7;Sonstige näher bezeichnete bösartige Neubildungen des lymphatischen, blutbildenden und verwandten Gewebes;C96;TRUE;TRUE
+C968;C96.8;Histiozytisches Sarkom;C96;TRUE;TRUE
+C969;C96.9;Bösartige Neubildung des lymphatischen, blutbildenden und verwandten Gewebes, nicht näher bezeichnet;C96;TRUE;TRUE
+C97;C97;Bösartige Neubildungen als Primärtumoren an mehreren Lokalisationen;C97;FALSE;
+D00;D00;Carcinoma in situ der Mundhöhle, des Ösophagus und des Magens;D00;TRUE;
+D000;D00.0;Carcinoma in situ: Lippe, Mundhöhle und Pharynx;D00;TRUE;TRUE
+D001;D00.1;Carcinoma in situ: Ösophagus;D00;TRUE;TRUE
+D002;D00.2;Carcinoma in situ: Magen;D00;TRUE;TRUE
+D01;D01;Carcinoma in situ sonstiger und nicht näher bezeichneter Verdauungsorgane;D01;TRUE;
+D010;D01.0;Carcinoma in situ: Kolon;D01;TRUE;TRUE
+D011;D01.1;Carcinoma in situ: Rektosigmoid, Übergang;D01;TRUE;TRUE
+D012;D01.2;Carcinoma in situ: Rektum;D01;TRUE;TRUE
+D013;D01.3;Carcinoma in situ: Analkanal und Anus;D01;TRUE;TRUE
+D014;D01.4;Carcinoma in situ: Sonstige und nicht näher bezeichnete Teile des Darmes;D01;TRUE;TRUE
+D015;D01.5;Carcinoma in situ: Leber, Gallenblase und Gallengänge;D01;TRUE;TRUE
+D017;D01.7;Carcinoma in situ: Sonstige näher bezeichnete Verdauungsorgane;D01;TRUE;TRUE
+D019;D01.9;Carcinoma in situ: Verdauungsorgan, nicht näher bezeichnet;D01;TRUE;TRUE
+D02;D02;Carcinoma in situ des Mittelohres und des Atmungssystems;D02;TRUE;
+D020;D02.0;Carcinoma in situ: Larynx;D02;TRUE;TRUE
+D021;D02.1;Carcinoma in situ: Trachea;D02;TRUE;TRUE
+D022;D02.2;Carcinoma in situ: Bronchus und Lunge;D02;TRUE;TRUE
+D023;D02.3;Carcinoma in situ: Sonstige Teile des Atmungssystems;D02;TRUE;TRUE
+D024;D02.4;Carcinoma in situ: Atmungssystem, nicht näher bezeichnet;D02;TRUE;TRUE
+D03;D03;Melanoma in situ;D03;TRUE;
+D030;D03.0;Melanoma in situ der Lippe;D03;TRUE;TRUE
+D031;D03.1;Melanoma in situ des Augenlides, einschließlich Kanthus;D03;TRUE;TRUE
+D032;D03.2;Melanoma in situ des Ohres und des äußeren Gehörganges;D03;TRUE;TRUE
+D033;D03.3;Melanoma in situ sonstiger und nicht näher bezeichneter Teile des Gesichtes;D03;TRUE;TRUE
+D034;D03.4;Melanoma in situ der behaarten Kopfhaut und des Halses;D03;TRUE;TRUE
+D035;D03.5;Melanoma in situ des Rumpfes;D03;TRUE;TRUE
+D036;D03.6;Melanoma in situ der oberen Extremität, einschließlich Schulter;D03;TRUE;TRUE
+D037;D03.7;Melanoma in situ der unteren Extremität, einschließlich Hüfte;D03;TRUE;TRUE
+D038;D03.8;Melanoma in situ an sonstigen Lokalisationen;D03;TRUE;TRUE
+D039;D03.9;Melanoma in situ, nicht näher bezeichnet;D03;TRUE;TRUE
+D04;D04;Carcinoma in situ der Haut;D04;TRUE;
+D040;D04.0;Carcinoma in situ: Lippenhaut;D04;TRUE;FALSE
+D041;D04.1;Carcinoma in situ: Haut des Augenlides, einschließlich Kanthus;D04;TRUE;FALSE
+D042;D04.2;Carcinoma in situ: Haut des Ohres und des äußeren Gehörganges;D04;TRUE;FALSE
+D043;D04.3;Carcinoma in situ: Haut sonstiger und nicht näher bezeichneter Teile des Gesichtes;D04;TRUE;FALSE
+D044;D04.4;Carcinoma in situ: Behaarte Kopfhaut und Haut des Halses;D04;TRUE;FALSE
+D045;D04.5;Carcinoma in situ: Haut des Rumpfes;D04;TRUE;FALSE
+D046;D04.6;Carcinoma in situ: Haut der oberen Extremität, einschließlich Schulter;D04;TRUE;FALSE
+D047;D04.7;Carcinoma in situ: Haut der unteren Extremität, einschließlich Hüfte;D04;TRUE;FALSE
+D048;D04.8;Carcinoma in situ: Haut an sonstigen Lokalisationen;D04;TRUE;FALSE
+D049;D04.9;Carcinoma in situ: Haut, nicht näher bezeichnet;D04;TRUE;FALSE
+D05;D05;Carcinoma in situ der Brustdrüse [Mamma];D05;TRUE;
+D050;D05.0;Lobuläres Carcinoma in situ der Brustdrüse;D05;TRUE;TRUE
+D051;D05.1;Carcinoma in situ der Milchgänge;D05;TRUE;TRUE
+D057;D05.7;Sonstiges Carcinoma in situ der Brustdrüse;D05;TRUE;TRUE
+D059;D05.9;Carcinoma in situ der Brustdrüse, nicht näher bezeichnet;D05;TRUE;TRUE
+D06;D06;Carcinoma in situ der Cervix uteri;D06;TRUE;
+D060;D06.0;Carcinoma in situ: Endozervix;D06;TRUE;TRUE
+D061;D06.1;Carcinoma in situ: Ektozervix;D06;TRUE;TRUE
+D067;D06.7;Carcinoma in situ: Sonstige Teile der Cervix uteri;D06;TRUE;TRUE
+D069;D06.9;Carcinoma in situ: Cervix uteri, nicht näher bezeichnet;D06;TRUE;TRUE
+D07;D07;Carcinoma in situ sonstiger und nicht näher bezeichneter Genitalorgane;D07;TRUE;
+D070;D07.0;Carcinoma in situ: Endometrium;D07;TRUE;TRUE
+D071;D07.1;Carcinoma in situ: Vulva;D07;TRUE;TRUE
+D072;D07.2;Carcinoma in situ: Vagina;D07;TRUE;TRUE
+D073;D07.3;Carcinoma in situ: Sonstige und nicht näher bezeichnete weibliche Genitalorgane;D07;TRUE;TRUE
+D074;D07.4;Carcinoma in situ: Penis;D07;TRUE;TRUE
+D075;D07.5;Carcinoma in situ: Prostata;D07;TRUE;TRUE
+D076;D07.6;Carcinoma in situ: Sonstige und nicht näher bezeichnete männliche Genitalorgane;D07;TRUE;TRUE
+D09;D09;Carcinoma in situ sonstiger und nicht näher bezeichneter Lokalisationen;D09;TRUE;
+D090;D09.0;Carcinoma in situ: Harnblase;D09;TRUE;TRUE
+D091;D09.1;Carcinoma in situ: Sonstige und nicht näher bezeichnete Harnorgane;D09;TRUE;TRUE
+D092;D09.2;Carcinoma in situ: Auge;D09;TRUE;TRUE
+D093;D09.3;Carcinoma in situ: Schilddrüse und sonstige endokrine Drüsen;D09;TRUE;TRUE
+D097;D09.7;Carcinoma in situ sonstiger näher bezeichneter Lokalisationen;D09;TRUE;TRUE
+D099;D09.9;Carcinoma in situ, nicht näher bezeichnet;D09;TRUE;TRUE
+D10;D10;Gutartige Neubildung des Mundes und des Pharynx;D10;FALSE;
+D100;D10.0;Gutartige Neubildung: Lippe;D10;FALSE;
+D101;D10.1;Gutartige Neubildung: Zunge;D10;FALSE;
+D102;D10.2;Gutartige Neubildung: Mundboden;D10;FALSE;
+D103;D10.3;Gutartige Neubildung: Sonstige und nicht näher bezeichnete Teile des Mundes;D10;FALSE;
+D104;D10.4;Gutartige Neubildung: Tonsille;D10;FALSE;
+D105;D10.5;Gutartige Neubildung: Sonstige Teile des Oropharynx;D10;FALSE;
+D106;D10.6;Gutartige Neubildung: Nasopharynx;D10;FALSE;
+D107;D10.7;Gutartige Neubildung: Hypopharynx;D10;FALSE;
+D109;D10.9;Gutartige Neubildung: Pharynx, nicht näher bezeichnet;D10;FALSE;
+D11;D11;Gutartige Neubildung der großen Speicheldrüsen;D11;FALSE;
+D110;D11.0;Gutartige Neubildung: Parotis;D11;FALSE;
+D117;D11.7;Gutartige Neubildung: Sonstige große Speicheldrüsen;D11;FALSE;
+D119;D11.9;Gutartige Neubildung: Große Speicheldrüse, nicht näher bezeichnet;D11;FALSE;
+D12;D12;Gutartige Neubildung des Kolons, des Rektums, des Analkanals und des Anus;D12;FALSE;
+D120;D12.0;Gutartige Neubildung: Zäkum;D12;FALSE;
+D121;D12.1;Gutartige Neubildung: Appendix vermiformis;D12;FALSE;
+D122;D12.2;Gutartige Neubildung: Colon ascendens;D12;FALSE;
+D123;D12.3;Gutartige Neubildung: Colon transversum;D12;FALSE;
+D124;D12.4;Gutartige Neubildung: Colon descendens;D12;FALSE;
+D125;D12.5;Gutartige Neubildung: Colon sigmoideum;D12;FALSE;
+D126;D12.6;Gutartige Neubildung: Kolon, nicht näher bezeichnet;D12;FALSE;
+D127;D12.7;Gutartige Neubildung: Rektosigmoid, Übergang;D12;FALSE;
+D128;D12.8;Gutartige Neubildung: Rektum;D12;FALSE;
+D129;D12.9;Gutartige Neubildung: Analkanal und Anus;D12;FALSE;
+D13;D13;Gutartige Neubildung sonstiger und ungenau bezeichneter Teile des Verdauungssystems;D13;FALSE;
+D130;D13.0;Gutartige Neubildung: Ösophagus;D13;FALSE;
+D131;D13.1;Gutartige Neubildung: Magen;D13;FALSE;
+D132;D13.2;Gutartige Neubildung: Duodenum;D13;FALSE;
+D133;D13.3;Gutartige Neubildung: Sonstige und nicht näher bezeichnete Teile des Dünndarmes;D13;FALSE;
+D134;D13.4;Gutartige Neubildung: Leber;D13;FALSE;
+D135;D13.5;Gutartige Neubildung: Extrahepatische Gallengänge und Gallenblase;D13;FALSE;
+D136;D13.6;Gutartige Neubildung: Pankreas;D13;FALSE;
+D137;D13.7;Gutartige Neubildung: Endokriner Drüsenanteil des Pankreas;D13;FALSE;
+D139;D13.9;Gutartige Neubildung: Ungenau bezeichnete Lokalisationen innerhalb des Verdauungssystems;D13;FALSE;
+D14;D14;Gutartige Neubildung des Mittelohres und des Atmungssystems;D14;FALSE;
+D140;D14.0;Gutartige Neubildung: Mittelohr, Nasenhöhle und Nasennebenhöhlen;D14;FALSE;
+D141;D14.1;Gutartige Neubildung: Larynx;D14;FALSE;
+D142;D14.2;Gutartige Neubildung: Trachea;D14;FALSE;
+D143;D14.3;Gutartige Neubildung: Bronchus und Lunge;D14;FALSE;
+D144;D14.4;Gutartige Neubildung: Atmungssystem, nicht näher bezeichnet;D14;FALSE;
+D15;D15;Gutartige Neubildung sonstiger und nicht näher bezeichneter intrathorakaler Organe;D15;FALSE;
+D150;D15.0;Gutartige Neubildung: Thymus;D15;FALSE;
+D151;D15.1;Gutartige Neubildung: Herz;D15;FALSE;
+D152;D15.2;Gutartige Neubildung: Mediastinum;D15;FALSE;
+D157;D15.7;Gutartige Neubildung: Sonstige näher bezeichnete intrathorakale Organe;D15;FALSE;
+D159;D15.9;Gutartige Neubildung: Intrathorakales Organ, nicht näher bezeichnet;D15;FALSE;
+D16;D16;Gutartige Neubildung des Knochens und des Gelenkknorpels;D16;FALSE;
+D160;D16.0;Gutartige Neubildung des Knochens und des Gelenkknorpels: Skapula und lange Knochen der oberen Extremität;D16;FALSE;
+D161;D16.1;Gutartige Neubildung des Knochens und des Gelenkknorpels: Kurze Knochen der oberen Extremität;D16;FALSE;
+D162;D16.2;Gutartige Neubildung des Knochens und des Gelenkknorpels: Lange Knochen der unteren Extremität;D16;FALSE;
+D163;D16.3;Gutartige Neubildung des Knochens und des Gelenkknorpels: Kurze Knochen der unteren Extremität;D16;FALSE;
+D164;D16.4;Gutartige Neubildung des Knochens und des Gelenkknorpels: Knochen des Hirn- und Gesichtsschädels;D16;FALSE;
+D165;D16.5;Gutartige Neubildung des Knochens und des Gelenkknorpels: Unterkieferknochen;D16;FALSE;
+D166;D16.6;Gutartige Neubildung des Knochens und des Gelenkknorpels: Wirbelsäule;D16;FALSE;
+D167;D16.7;Gutartige Neubildung des Knochens und des Gelenkknorpels: Rippen, Sternum und Klavikula;D16;FALSE;
+D168;D16.8;Gutartige Neubildung des Knochens und des Gelenkknorpels: Knöchernes Becken;D16;FALSE;
+D169;D16.9;Gutartige Neubildung: Knochen und Gelenkknorpel, nicht näher bezeichnet;D16;FALSE;
+D17;D17;Gutartige Neubildung des Fettgewebes;D17;FALSE;
+D170;D17.0;Gutartige Neubildung des Fettgewebes der Haut und der Unterhaut des Kopfes, des Gesichtes und des Halses;D17;FALSE;
+D171;D17.1;Gutartige Neubildung des Fettgewebes der Haut und der Unterhaut des Rumpfes;D17;FALSE;
+D172;D17.2;Gutartige Neubildung des Fettgewebes der Haut und der Unterhaut der Extremitäten;D17;FALSE;
+D173;D17.3;Gutartige Neubildung des Fettgewebes der Haut und der Unterhaut an sonstigen und nicht näher bezeichneten Lokalisationen;D17;FALSE;
+D174;D17.4;Gutartige Neubildung des Fettgewebes der intrathorakalen Organe;D17;FALSE;
+D175;D17.5;Gutartige Neubildung des Fettgewebes der intraabdominalen Organe;D17;FALSE;
+D176;D17.6;Gutartige Neubildung des Fettgewebes des Samenstrangs;D17;FALSE;
+D177;D17.7;Gutartige Neubildung des Fettgewebes an sonstigen Lokalisationen;D17;FALSE;
+D179;D17.9;Gutartige Neubildung des Fettgewebes, nicht näher bezeichnet;D17;FALSE;
+D18;D18;Hämangiom und Lymphangiom;D18;FALSE;
+D180;D18.0;Hämangiom;D18;FALSE;
+D181;D18.1;Lymphangiom;D18;FALSE;
+D19;D19;Gutartige Neubildung des mesothelialen Gewebes;D19;FALSE;
+D190;D19.0;Gutartige Neubildung: Mesotheliales Gewebe der Pleura;D19;FALSE;
+D191;D19.1;Gutartige Neubildung: Mesotheliales Gewebe des Peritoneums;D19;FALSE;
+D197;D19.7;Gutartige Neubildung: Mesotheliales Gewebe an sonstigen Lokalisationen;D19;FALSE;
+D199;D19.9;Gutartige Neubildung: Mesotheliales Gewebe, nicht näher bezeichnet;D19;FALSE;
+D20;D20;Gutartige Neubildung des Weichteilgewebes des Retroperitoneums und des Peritoneums;D20;FALSE;
+D200;D20.0;Gutartige Neubildung: Retroperitoneum;D20;FALSE;
+D201;D20.1;Gutartige Neubildung: Peritoneum;D20;FALSE;
+D21;D21;Sonstige gutartige Neubildungen des Bindegewebes und anderer Weichteilgewebe;D21;FALSE;
+D210;D21.0;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe des Kopfes, des Gesichtes und des Halses;D21;FALSE;
+D211;D21.1;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe der oberen Extremität, einschließlich Schulter;D21;FALSE;
+D212;D21.2;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe der unteren Extremität, einschließlich Hüfte;D21;FALSE;
+D213;D21.3;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe des Thorax;D21;FALSE;
+D214;D21.4;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe des Abdomens;D21;FALSE;
+D215;D21.5;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe des Beckens;D21;FALSE;
+D216;D21.6;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe des Rumpfes, nicht näher bezeichnet;D21;FALSE;
+D219;D21.9;Sonstige gutartige Neubildungen: Bindegewebe und andere Weichteilgewebe, nicht näher bezeichnet;D21;FALSE;
+D22;D22;Melanozytennävus;D22;FALSE;
+D220;D22.0;Melanozytennävus der Lippe;D22;FALSE;
+D221;D22.1;Melanozytennävus des Augenlides, einschließlich Kanthus;D22;FALSE;
+D222;D22.2;Melanozytennävus des Ohres und des äußeren Gehörganges;D22;FALSE;
+D223;D22.3;Melanozytennävus sonstiger und nicht näher bezeichneter Teile des Gesichtes;D22;FALSE;
+D224;D22.4;Melanozytennävus der behaarten Kopfhaut und des Halses;D22;FALSE;
+D225;D22.5;Melanozytennävus des Rumpfes;D22;FALSE;
+D226;D22.6;Melanozytennävus der oberen Extremität, einschließlich Schulter;D22;FALSE;
+D227;D22.7;Melanozytennävus der unteren Extremität, einschließlich Hüfte;D22;FALSE;
+D229;D22.9;Melanozytennävus, nicht näher bezeichnet;D22;FALSE;
+D23;D23;Sonstige gutartige Neubildungen der Haut;D23;FALSE;
+D230;D23.0;Sonstige gutartige Neubildungen: Lippenhaut;D23;FALSE;
+D231;D23.1;Sonstige gutartige Neubildungen: Haut des Augenlides, einschließlich Kanthus;D23;FALSE;
+D232;D23.2;Sonstige gutartige Neubildungen: Haut des Ohres und des äußeren Gehörganges;D23;FALSE;
+D233;D23.3;Sonstige gutartige Neubildungen: Haut sonstiger und nicht näher bezeichneter Teile des Gesichtes;D23;FALSE;
+D234;D23.4;Sonstige gutartige Neubildungen: Behaarte Kopfhaut und Haut des Halses;D23;FALSE;
+D235;D23.5;Sonstige gutartige Neubildungen: Haut des Rumpfes;D23;FALSE;
+D236;D23.6;Sonstige gutartige Neubildungen: Haut der oberen Extremität, einschließlich Schulter;D23;FALSE;
+D237;D23.7;Sonstige gutartige Neubildungen: Haut der unteren Extremität, einschließlich Hüfte;D23;FALSE;
+D239;D23.9;Sonstige gutartige Neubildungen: Haut, nicht näher bezeichnet;D23;FALSE;
+D24;D24;Gutartige Neubildung der Brustdrüse [Mamma];D24;FALSE;
+D25;D25;Leiomyom des Uterus;D25;FALSE;
+D250;D25.0;Submuköses Leiomyom des Uterus;D25;FALSE;
+D251;D25.1;Intramurales Leiomyom des Uterus;D25;FALSE;
+D252;D25.2;Subseröses Leiomyom des Uterus;D25;FALSE;
+D259;D25.9;Leiomyom des Uterus, nicht näher bezeichnet;D25;FALSE;
+D26;D26;Sonstige gutartige Neubildungen des Uterus;D26;FALSE;
+D260;D26.0;Sonstige gutartige Neubildungen: Cervix uteri;D26;FALSE;
+D261;D26.1;Sonstige gutartige Neubildungen: Corpus uteri;D26;FALSE;
+D267;D26.7;Sonstige gutartige Neubildungen: Sonstige Teile des Uterus;D26;FALSE;
+D269;D26.9;Sonstige gutartige Neubildungen: Uterus, nicht näher bezeichnet;D26;FALSE;
+D27;D27;Gutartige Neubildung des Ovars;D27;FALSE;
+D28;D28;Gutartige Neubildung sonstiger und nicht näher bezeichneter weiblicher Genitalorgane;D28;FALSE;
+D280;D28.0;Gutartige Neubildung: Vulva;D28;FALSE;
+D281;D28.1;Gutartige Neubildung: Vagina;D28;FALSE;
+D282;D28.2;Gutartige Neubildung: Tubae uterinae und Ligamenta;D28;FALSE;
+D287;D28.7;Gutartige Neubildung: Sonstige näher bezeichnete weibliche Genitalorgane;D28;FALSE;
+D289;D28.9;Gutartige Neubildung: Weibliches Genitalorgan, nicht näher bezeichnet;D28;FALSE;
+D29;D29;Gutartige Neubildung der männlichen Genitalorgane;D29;FALSE;
+D290;D29.0;Gutartige Neubildung: Penis;D29;FALSE;
+D291;D29.1;Gutartige Neubildung: Prostata;D29;FALSE;
+D292;D29.2;Gutartige Neubildung: Hoden;D29;FALSE;
+D293;D29.3;Gutartige Neubildung: Nebenhoden;D29;FALSE;
+D294;D29.4;Gutartige Neubildung: Skrotum;D29;FALSE;
+D297;D29.7;Gutartige Neubildung: Sonstige männliche Genitalorgane;D29;FALSE;
+D299;D29.9;Gutartige Neubildung: Männliches Genitalorgan, nicht näher bezeichnet;D29;FALSE;
+D30;D30;Gutartige Neubildung der Harnorgane;D30;FALSE;
+D300;D30.0;Gutartige Neubildung: Niere;D30;FALSE;FALSE
+D301;D30.1;Gutartige Neubildung: Nierenbecken;D30;FALSE;
+D302;D30.2;Gutartige Neubildung: Ureter;D30;FALSE;
+D303;D30.3;Gutartige Neubildung: Harnblase;D30;FALSE;
+D304;D30.4;Gutartige Neubildung: Urethra;D30;FALSE;
+D307;D30.7;Gutartige Neubildung: Sonstige Harnorgane;D30;FALSE;
+D309;D30.9;Gutartige Neubildung: Harnorgan, nicht näher bezeichnet;D30;FALSE;
+D31;D31;Gutartige Neubildung des Auges und der Augenanhangsgebilde;D31;FALSE;
+D310;D31.0;Gutartige Neubildung: Konjunktiva;D31;FALSE;
+D311;D31.1;Gutartige Neubildung: Kornea;D31;FALSE;
+D312;D31.2;Gutartige Neubildung: Retina;D31;FALSE;
+D313;D31.3;Gutartige Neubildung: Chorioidea;D31;FALSE;
+D314;D31.4;Gutartige Neubildung: Ziliarkörper;D31;FALSE;
+D315;D31.5;Gutartige Neubildung: Tränendrüse und Tränenwege;D31;FALSE;
+D316;D31.6;Gutartige Neubildung: Orbita, nicht näher bezeichnet;D31;FALSE;
+D319;D31.9;Gutartige Neubildung: Auge, nicht näher bezeichnet;D31;FALSE;
+D32;D32;Gutartige Neubildung der Meningen;D32;TRUE;
+D320;D32.0;Gutartige Neubildung: Hirnhäute;D32;TRUE;TRUE
+D321;D32.1;Gutartige Neubildung: Rückenmarkhäute;D32;TRUE;TRUE
+D329;D32.9;Gutartige Neubildung: Meningen, nicht näher bezeichnet;D32;TRUE;TRUE
+D33;D33;Gutartige Neubildung des Gehirns und anderer Teile des Zentralnervensystems;D33;TRUE;
+D330;D33.0;Gutartige Neubildung: Gehirn, supratentoriell;D33;TRUE;TRUE
+D331;D33.1;Gutartige Neubildung: Gehirn, infratentoriell;D33;TRUE;TRUE
+D332;D33.2;Gutartige Neubildung: Gehirn, nicht näher bezeichnet;D33;TRUE;TRUE
+D333;D33.3;Gutartige Neubildung: Hirnnerven;D33;TRUE;TRUE
+D334;D33.4;Gutartige Neubildung: Rückenmark;D33;TRUE;TRUE
+D337;D33.7;Gutartige Neubildung: Sonstige näher bezeichnete Teile des Zentralnervensystems;D33;TRUE;TRUE
+D339;D33.9;Gutartige Neubildung: Zentralnervensystem, nicht näher bezeichnet;D33;TRUE;TRUE
+D34;D34;Gutartige Neubildung der Schilddrüse;D34;FALSE;
+D35;D35;Gutartige Neubildung sonstiger und nicht näher bezeichneter endokriner Drüsen;D35;FALSE;
+D350;D35.0;Gutartige Neubildung: Nebenniere;D35;FALSE;
+D351;D35.1;Gutartige Neubildung: Nebenschilddrüse;D35;FALSE;
+D352;D35.2;Gutartige Neubildung: Hypophyse;D35;FALSE;TRUE
+D353;D35.3;Gutartige Neubildung: Ductus craniopharyngealis;D35;FALSE;TRUE
+D354;D35.4;Gutartige Neubildung: Epiphyse [Glandula pinealis] [Zirbeldrüse];D35;FALSE;TRUE
+D355;D35.5;Gutartige Neubildung: Glomus caroticum;D35;FALSE;
+D356;D35.6;Gutartige Neubildung: Glomus aorticum und sonstige Paraganglien;D35;FALSE;
+D357;D35.7;Gutartige Neubildung: Sonstige näher bezeichnete endokrine Drüsen;D35;FALSE;
+D358;D35.8;Gutartige Neubildung: Beteiligung mehrerer endokriner Drüsen;D35;FALSE;
+D359;D35.9;Gutartige Neubildung: Endokrine Drüse, nicht näher bezeichnet;D35;FALSE;
+D36;D36;Gutartige Neubildung an sonstigen und nicht näher bezeichneten Lokalisationen;D36;FALSE;
+D360;D36.0;Gutartige Neubildung: Lymphknoten;D36;FALSE;
+D361;D36.1;Gutartige Neubildung: Periphere Nerven und autonomes Nervensystem;D36;FALSE;
+D367;D36.7;Gutartige Neubildung: Sonstige näher bezeichnete Lokalisationen;D36;FALSE;
+D369;D36.9;Gutartige Neubildung an nicht näher bezeichneter Lokalisation;D36;FALSE;
+D37;D37;Neubildung unsicheren oder unbekannten Verhaltens der Mundhöhle und der Verdauungsorgane;D37;TRUE;
+D370;D37.0;Neubildung unsicheren oder unbekannten Verhaltens: Lippe, Mundhöhle und Pharynx;D37;TRUE;FALSE
+D371;D37.1;Neubildung unsicheren oder unbekannten Verhaltens: Magen;D37;TRUE;FALSE
+D372;D37.2;Neubildung unsicheren oder unbekannten Verhaltens: Dünndarm;D37;TRUE;FALSE
+D373;D37.3;Neubildung unsicheren oder unbekannten Verhaltens: Appendix vermiformis;D37;TRUE;FALSE
+D374;D37.4;Neubildung unsicheren oder unbekannten Verhaltens: Kolon;D37;TRUE;FALSE
+D375;D37.5;Neubildung unsicheren oder unbekannten Verhaltens: Rektum;D37;TRUE;FALSE
+D376;D37.6;Neubildung unsicheren oder unbekannten Verhaltens: Leber, Gallenblase und Gallengänge;D37;TRUE;FALSE
+D377;D37.7;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige Verdauungsorgane;D37;TRUE;FALSE
+D379;D37.9;Neubildung unsicheren oder unbekannten Verhaltens: Verdauungsorgan, nicht näher bezeichnet;D37;TRUE;FALSE
+D38;D38;Neubildung unsicheren oder unbekannten Verhaltens des Mittelohres, der Atmungsorgane und der intrathorakalen Organe;D38;TRUE;
+D380;D38.0;Neubildung unsicheren oder unbekannten Verhaltens: Larynx;D38;TRUE;FALSE
+D381;D38.1;Neubildung unsicheren oder unbekannten Verhaltens: Trachea, Bronchus und Lunge;D38;TRUE;FALSE
+D382;D38.2;Neubildung unsicheren oder unbekannten Verhaltens: Pleura;D38;TRUE;FALSE
+D383;D38.3;Neubildung unsicheren oder unbekannten Verhaltens: Mediastinum;D38;TRUE;FALSE
+D384;D38.4;Neubildung unsicheren oder unbekannten Verhaltens: Thymus;D38;TRUE;FALSE
+D385;D38.5;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige Atmungsorgane;D38;TRUE;FALSE
+D386;D38.6;Neubildung unsicheren oder unbekannten Verhaltens: Atmungsorgan, nicht näher bezeichnet;D38;TRUE;FALSE
+D39;D39;Neubildung unsicheren oder unbekannten Verhaltens der weiblichen Genitalorgane;D39;TRUE;
+D390;D39.0;Neubildung unsicheren oder unbekannten Verhaltens: Uterus;D39;TRUE;FALSE
+D391;D39.1;Neubildung unsicheren oder unbekannten Verhaltens: Ovar;D39;TRUE;TRUE
+D392;D39.2;Neubildung unsicheren oder unbekannten Verhaltens: Plazenta;D39;TRUE;FALSE
+D397;D39.7;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige weibliche Genitalorgane;D39;TRUE;FALSE
+D399;D39.9;Neubildung unsicheren oder unbekannten Verhaltens: Weibliches Genitalorgan, nicht näher bezeichnet;D39;TRUE;FALSE
+D40;D40;Neubildung unsicheren oder unbekannten Verhaltens der männlichen Genitalorgane;D40;TRUE;
+D400;D40.0;Neubildung unsicheren oder unbekannten Verhaltens: Prostata;D40;TRUE;FALSE
+D401;D40.1;Neubildung unsicheren oder unbekannten Verhaltens: Hoden;D40;TRUE;FALSE
+D407;D40.7;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige männliche Genitalorgane;D40;TRUE;FALSE
+D409;D40.9;Neubildung unsicheren oder unbekannten Verhaltens: Männliches Genitalorgan, nicht näher bezeichnet;D40;TRUE;FALSE
+D41;D41;Neubildung unsicheren oder unbekannten Verhaltens der Harnorgane;D41;TRUE;
+D410;D41.0;Neubildung unsicheren oder unbekannten Verhaltens: Niere;D41;TRUE;FALSE
+D411;D41.1;Neubildung unsicheren oder unbekannten Verhaltens: Nierenbecken;D41;TRUE;FALSE
+D412;D41.2;Neubildung unsicheren oder unbekannten Verhaltens: Ureter;D41;TRUE;FALSE
+D413;D41.3;Neubildung unsicheren oder unbekannten Verhaltens: Urethra;D41;TRUE;FALSE
+D414;D41.4;Neubildung unsicheren oder unbekannten Verhaltens: Harnblase;D41;TRUE;TRUE
+D417;D41.7;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige Harnorgane;D41;TRUE;FALSE
+D419;D41.9;Neubildung unsicheren oder unbekannten Verhaltens: Harnorgan, nicht näher bezeichnet;D41;TRUE;FALSE
+D42;D42;Neubildung unsicheren oder unbekannten Verhaltens der Meningen;D42;TRUE;
+D420;D42.0;Neubildung unsicheren oder unbekannten Verhaltens: Hirnhäute;D42;TRUE;TRUE
+D421;D42.1;Neubildung unsicheren oder unbekannten Verhaltens: Rückenmarkhäute;D42;TRUE;TRUE
+D429;D42.9;Neubildung unsicheren oder unbekannten Verhaltens: Meningen, nicht näher bezeichnet;D42;TRUE;TRUE
+D43;D43;Neubildung unsicheren oder unbekannten Verhaltens des Gehirns und des Zentralnervensystems;D43;TRUE;
+D430;D43.0;Neubildung unsicheren oder unbekannten Verhaltens: Gehirn, supratentoriell;D43;TRUE;TRUE
+D431;D43.1;Neubildung unsicheren oder unbekannten Verhaltens: Gehirn, infratentoriell;D43;TRUE;TRUE
+D432;D43.2;Neubildung unsicheren oder unbekannten Verhaltens: Gehirn, nicht näher bezeichnet;D43;TRUE;TRUE
+D433;D43.3;Neubildung unsicheren oder unbekannten Verhaltens: Hirnnerven;D43;TRUE;TRUE
+D434;D43.4;Neubildung unsicheren oder unbekannten Verhaltens: Rückenmark;D43;TRUE;TRUE
+D437;D43.7;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige Teile des Zentralnervensystems;D43;TRUE;TRUE
+D439;D43.9;Neubildung unsicheren oder unbekannten Verhaltens: Zentralnervensystem, nicht näher bezeichnet;D43;TRUE;TRUE
+D44;D44;Neubildung unsicheren oder unbekannten Verhaltens der endokrinen Drüsen;D44;TRUE;
+D440;D44.0;Neubildung unsicheren oder unbekannten Verhaltens: Schilddrüse;D44;TRUE;FALSE
+D441;D44.1;Neubildung unsicheren oder unbekannten Verhaltens: Nebenniere;D44;TRUE;FALSE
+D442;D44.2;Neubildung unsicheren oder unbekannten Verhaltens: Nebenschilddrüse;D44;TRUE;FALSE
+D443;D44.3;Neubildung unsicheren oder unbekannten Verhaltens: Hypophyse;D44;TRUE;TRUE
+D444;D44.4;Neubildung unsicheren oder unbekannten Verhaltens: Ductus craniopharyngealis;D44;TRUE;TRUE
+D445;D44.5;Neubildung unsicheren oder unbekannten Verhaltens: Epiphyse [Glandula pinealis] [Zirbeldrüse];D44;TRUE;TRUE
+D446;D44.6;Neubildung unsicheren oder unbekannten Verhaltens: Glomus caroticum;D44;TRUE;FALSE
+D447;D44.7;Neubildung unsicheren oder unbekannten Verhaltens: Glomus aorticum und sonstige Paraganglien;D44;TRUE;FALSE
+D448;D44.8;Neubildung unsicheren oder unbekannten Verhaltens: Beteiligung mehrerer endokriner Drüsen;D44;TRUE;FALSE
+D449;D44.9;Neubildung unsicheren oder unbekannten Verhaltens: Endokrine Drüse, nicht näher bezeichnet;D44;TRUE;FALSE
+D45;D45;Polycythaemia vera;D45;TRUE;TRUE
+D46;D46;Myelodysplastische Syndrome;D46;TRUE;
+D460;D46.0;Refraktäre Anämie ohne Ringsideroblasten, so bezeichnet;D46;TRUE;TRUE
+D461;D46.1;Refraktäre Anämie mit Ringsideroblasten;D46;TRUE;TRUE
+D462;D46.2;Refraktäre Anämie mit Blastenüberschuss;D46;TRUE;TRUE
+D462;D46.2;Refraktäre Anämie mit Blastenüberschuss;D46;TRUE;TRUE
+D462;D46.2;Refraktäre Anämie mit Blastenüberschuss;D46;TRUE;TRUE
+D463;D46.3;Refraktäre Anämie mit Blastenüberschuss in Transformation;D46;TRUE;TRUE
+D463;D46.3;Refraktäre Anämie mit Blastenüberschuss in Transformation;D46;TRUE;TRUE
+D464;D46.4;Refraktäre Anämie, nicht näher bezeichnet;D46;TRUE;TRUE
+D465;D46.5;Refraktäre Anämie mit Mehrlinien-Dysplasie;D46;TRUE;TRUE
+D466;D46.6;Myelodysplastisches Syndrom mit isolierter del(5q)-Chromosomenanomalie;D46;TRUE;TRUE
+D467;D46.7;Sonstige myelodysplastische Syndrome;D46;TRUE;TRUE
+D469;D46.9;Myelodysplastisches Syndrom, nicht näher bezeichnet;D46;TRUE;TRUE
+D47;D47;Sonstige Neubildungen unsicheren oder unbekannten Verhaltens des lymphatischen, blutbildenden und verwandten Gewebes;D47;TRUE;
+D470;D47.0;Histiozyten- und Mastzelltumor unsicheren oder unbekannten Verhaltens;D47;TRUE;FALSE
+D471;D47.1;Chronische myeloproliferative Krankheit;D47;TRUE;TRUE
+D472;D47.2;Monoklonale Gammopathie unbestimmter Signifikanz [MGUS];D47;TRUE;FALSE
+D472;D47.2;Monoklonale Gammopathie unbestimmter Signifikanz [MGUS];D47;TRUE;FALSE
+D473;D47.3;Essentielle (hämorrhagische) Thrombozythämie;D47;TRUE;TRUE
+D474;D47.4;Osteomyelofibrose;D47;TRUE;TRUE
+D475;D47.5;Chronische Eosinophilen-Leukämie [Hypereosinophiles Syndrom];D47;TRUE;TRUE
+D477;D47.7;Sonstige näher bezeichnete Neubildungen unsicheren oder unbekannten Verhaltens des lymphatischen, blutbildenden und verwandten Gewebes;D47;TRUE;FALSE
+D479;D47.9;Neubildung unsicheren oder unbekannten Verhaltens des lymphatischen, blutbildenden und verwandten Gewebes, nicht näher bezeichnet;D47;TRUE;FALSE
+D48;D48;Neubildung unsicheren oder unbekannten Verhaltens an sonstigen und nicht näher bezeichneten Lokalisationen;D48;TRUE;
+D480;D48.0;Neubildung unsicheren oder unbekannten Verhaltens: Knochen und Gelenkknorpel;D48;TRUE;FALSE
+D481;D48.1;Neubildung unsicheren oder unbekannten Verhaltens: Bindegewebe und andere Weichteilgewebe;D48;TRUE;FALSE
+D482;D48.2;Neubildung unsicheren oder unbekannten Verhaltens: Periphere Nerven und autonomes Nervensystem;D48;TRUE;FALSE
+D483;D48.3;Neubildung unsicheren oder unbekannten Verhaltens: Retroperitoneum;D48;TRUE;FALSE
+D484;D48.4;Neubildung unsicheren oder unbekannten Verhaltens: Peritoneum;D48;TRUE;FALSE
+D485;D48.5;Neubildung unsicheren oder unbekannten Verhaltens: Haut;D48;TRUE;FALSE
+D486;D48.6;Neubildung unsicheren oder unbekannten Verhaltens: Brustdrüse [Mamma];D48;TRUE;FALSE
+D487;D48.7;Neubildung unsicheren oder unbekannten Verhaltens: Sonstige näher bezeichnete Lokalisationen;D48;TRUE;FALSE
+D489;D48.9;Neubildung unsicheren oder unbekannten Verhaltens, nicht näher bezeichnet;D48;TRUE;FALSE

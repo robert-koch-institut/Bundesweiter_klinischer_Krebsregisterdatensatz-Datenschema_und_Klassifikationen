@@ -1,0 +1,30 @@
+﻿code;name
+0;keine Lymphknotenmetastasen
+1;N1
+1a;N1a
+1a1;N1a1
+1a2;N1a2
+1b;N1b
+1b1;N1b1
+1b2;N1b2
+1b3;N1b3
+1c;N1c
+1d;N1d
+2;N2
+2a;N2a
+2b;N2b
+2c;N2c
+2d;N2d
+3;N3
+3a;N3a
+3b;N3b
+3c;N3c
+X;Lymphknoten nicht beurteilbar
+X(sn);SLN nicht beurteilbar
+0(sn);SLN ohne Metastasen
+1(sn);SLN mit Metastasen
+1mi;Mikrometastasierung
+0(i-);kein morphologischer Nachweis von ITC
+0(i+);morphologischer Nachweis von ITC
+0(mol-);kein nichtmorphologischer Nachweis von ITC
+0(mol+);nichtmorphologischer Nachweis von ITC
