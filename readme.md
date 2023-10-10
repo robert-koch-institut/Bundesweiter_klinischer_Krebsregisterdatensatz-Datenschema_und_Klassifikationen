@@ -159,7 +159,7 @@ Größtenteils handelt es sich bei den Referenzen um Vereinbarungen, die bei der
 | [morphologie_version.csv](/Klassifikationen/morphologie_version.csv) | Quelle Morphologie | _Primärdiagnose_ `Morphologie_Version` |
 | [morphologie.csv](/Klassifikationen/morphologie.csv) | Morphologie | _Primärdiagnose_ `Morphologie_Code` |
 | [op_intention.csv](/Klassifikationen/op_intention.csv) | Intention der OP | _Operation_ `Intention` |
-| [ops.csv](/Klassifikationen/ops.csv) | Art der OP | _Operation_ `Code` |
+| [ops.csv](/Klassifikationen/ops.csv) | Operationen- und Prozedurenschlüssels (OPS) | _Operation_ `Code` |
 | [protokoll.csv](/Klassifikationen/protokoll.csv) | Therapieprotokoll | _Systemische Therapie_ `Protokoll_TypProtokollschluessel_Code` |
 | [radiochemo.csv](/Klassifikationen/radiochemo.csv) | Ausführung der perkutanen Radiochemotherapie | _Strahlentherapie_ `Radiochemo` |
 | [rasmutation.csv](/Klassifikationen/rasmutation.csv) | Modul Darm: Mutation K-ras-Onkogen | _Primärdiagnose_ `RASMutation` |
@@ -169,7 +169,7 @@ Größtenteils handelt es sich bei den Referenzen um Vereinbarungen, die bei der
 | [st_intention.csv](/Klassifikationen/st_intention.csv) | Intention der Strahlentherapie | _Strahlentherapie_ `Intention` |
 | [st_op_stellung.csv](/Klassifikationen/st_op_stellung.csv) | Bezug Strahlentherapie - OP | _Strahlentherapie_ `Stellung_OP` |
 | [stereotaktisch.csv](/Klassifikationen/stereotaktisch.csv) | Angabe zur perkutanen Strahlentherapie | _Strahlentherapie_ `Stereotaktisch` |
-| [substanz.csv](/Klassifikationen/substanz.csv) | Verwendete Substanz(en) | _Systemische Therapie_ `TypeOfSYST_TypSubstanz` |
+| [substanz.csv](/Klassifikationen/substanz.csv) | Verwendete Substanzen | _Systemische Therapie_ `TypeOfSYST_TypSubstanz` |
 | [syst_intention.csv](/Klassifikationen/syst_intention.csv) | Intention der systemischen Therapie | _Systemische Therapie_ `Intention` |
 | [syst_op_stellung.csv](/Klassifikationen/syst_op_stellung.csv) | Bezug systemische Therapie - OP | _Systemische Therapie_ `Stellung_OP` |
 | [therapieart.csv](/Klassifikationen/therapieart.csv) | Art der systemischen Therapie | _Systemische Therapie_ `Therapieart` |
@@ -184,7 +184,7 @@ Größtenteils handelt es sich bei den Referenzen um Vereinbarungen, die bei der
 | [tnm_uicc.csv](/Klassifikationen/tnm_uicc.csv) | TNM: UICC-Stadium | _Primärdiagnose cTNM_ `UICC_Stadium_c`, _Primärdiagnose pTNM_ `UICC_Stadium_p`, _Folgeereignis_ `UICC_Stadium` |
 | [tnm_v.csv](/Klassifikationen/tnm_v.csv) | TNM: Veneninvasion | _Primärdiagnose cTNM_ `V_c`, _Primärdiagnose pTNM_ `V_p`, _Folgeereignis_ `V` |
 | [topographie_version.csv](/Klassifikationen/topographie_version.csv) | Ausgabe der ICD-O | _Primärdiagnose_ `Topographie_Version` |
-| [topographie.csv](/Klassifikationen/topographie.csv) | Topographie | _Primärdiagnose_ `Topographie_Code` |
+| [topographie.csv](/Klassifikationen/topographie.csv) | ICD-O Topographie | _Primärdiagnose_ `Topographie_Code` |
 | [verlauf_fern.csv](/Klassifikationen/verlauf_fern.csv) | Verlauf: Fernmetastasierung | _Folgeereignis_ `Verlauf_Tumorstatus_Fernmetastasen` |
 | [verlauf_lokal.csv](/Klassifikationen/verlauf_lokal.csv) | Verlauf: Lokaler Tumorstatus | _Folgeereignis_ `Verlauf_Lokaler_Tumorstatus` |
 | [verlauf_lymphe.csv](/Klassifikationen/verlauf_lymphe.csv) | Verlauf: Regionärer Lymphknotenstatus | _Folgeereignis_ `Verlauf_Tumorstatus_Lymphknoten` |
@@ -193,138 +193,154 @@ Größtenteils handelt es sich bei den Referenzen um Vereinbarungen, die bei der
 
 #### Datumsangaben
 
-Die Angabe _Tag_ wird von den Registern grundsätzlich _nicht_ ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format _Jahr-Monat-Tag_ vorliegt.
+Die Angabe *Tag* wird von den Registern grundsätzlich *nicht* ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format `Jahr-Monat-Tag` vorliegt. Für jede Datumsangabe im Datensatz liegen jeweils zwei Variablen vor:
 
-Für jede Datumsangabe im Datensatz liegen jeweils zwei Variablen vor:
+- das *Datum* im internationalen Datumsformat (ISO 8061) `yyyy-mm-dd` und
+- die *Genauigkeit* des Datums in einer von drei möglichen Ausprägungen (`M`, `T`, `V`):
+  `M` = nur das Jahr ist bekannt (jahrgenau)
+  `T` = Jahr und Monat sind bekannt (monatsgenau)
+  `V` = Jahr und Monat wurden geschätzt
 
-- das `Datum` im internationalen Datumsformat _YYYY-MM-DD_ und
-- die `Genauigkeit` des Datums in einer von drei möglichen Ausprägungen (_M_, _T_, _V_):
-  _M_ = nur das Jahr ist bekannt (jahrgenau)
-  _T_ = Jahr und Monat sind bekannt (monatsgenau)
-  _V_ = Jahr und Monat wurden geschätzt
+#### Ergänzungen zu den Referenztabellen
 
-#### Details
+In diesem Abschnitt werdenergänzende Informationen zu den Inhalten der [Referenztabellen](#referenztabellen) bereitgestellt.
 
-In diesem Abschnitt stellen wir sukzessive ergänzende Informationen zu den Inhalten der [Referenztabellen](#referenztabellen) zusammen (Hinweise zu Spaltenbezeichnungen, genutzten Quellen usw.).
+##### Diagnose nach ICD-10
 
-##### [ICD-10-GM Diagnose](/Klassifikationen/icd10.csv)
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-10-GM (Version 2008) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html), unter Verwendung der [Empfehlungen des GKV-Spitzenverbands für die klinische Krebsregistrierung (Stand: 14.05.2020)](https://www.gkv-spitzenverband.de/krankenversicherung/qualitaetssicherung_2/klinisches_krebsregister.jsp) und unter Verwendung des [Umsetzungsleitfadens der Plattform § 65c (Stand: 06.06.2023)](https://confluence.basisdatensatz.de/display/UMK/Meldepflichtige+Diagnosen+nach+ICD).  
+Die Nutzungsbedingungnen der ICD-10 des BfArM sind in den [Kontextmaterialien](#Kontextmaterialien) hinterlegt.
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der ICD-10-GM (Version 2008) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM) (1), unter Verwendung der Empfehlungen des GKV-Spitzenverbands für die klinische Krebsregistrierung (Stand: 14.05.2020) (2) und unter Verwendung des Umsetzungsleitfadens der Plattform § 65c (Stand: 06.06.2023) (3).
+> [/Klassifikationen/icd10.csv](/Klassifikationen/icd10.csv)
 
-Spalten der Referenztabelle:
+Variablen und Ausprägungen der Referenztabelle:
 
-- `id`: Diagnoseschlüssel, 4-Steller werden ohne Trennzeichen dargestellt (z. B. C021)
-- `code`: Diagnoseschlüssel, 4-Steller werden mit Trennzeichen dargestellt (z. B. C02.1)
-- `name`: Beschreibung der Diagnose (deutschsprachig)
-- `id3`: 3-stelliger Diagnoseschlüssel
-- `epi_valide`: TRUE = Diagnose ist im [epidemiologischen Datensatz](https://www.krebsdaten.de/Krebs/DE/Content/Forschungsdatensatz/Informationen_datensatz/epidemiologischer_datensatz/epidemiologischer_datensatz_node.html) des ZfKD enthalten
-- `p65_valide`: TRUE = es besteht eine Meldepflicht für den klinischen Datensatz (lt. Plattform § 65c-Umsetzungsleitfaden)
+| Variable  | Typ | Ausprägungen | Beschreibung |
+| --------- | --- | ------------ | ------------ |
+| id        | String | z. B. `C021`  | ICD-10 Diagnoseschlüssel, 4-Steller werden ohne Trennzeichen dargestellt |
+| code      | String | z. B. `C02.1`  | ICD-10 Diagnoseschlüssel, 4-Steller werden mit Trennzeichen dargestellt |
+| name      | String | z.b. `Bösartige Neubildung...`  | Beschreibung der Diagnose  |
+| id3       | String | z. B. `C02`  |  3-stelliger Diagnoseschlüssel |
+| epi_valide| Boolen | `TRUE`, `FALSE`  | Information ob die Diagnose im [epidemiologischen Datensatz](https://www.krebsdaten.de/Krebs/DE/Content/Forschungsdatensatz/Informationen_datensatz/epidemiologischer_datensatz/epidemiologischer_datensatz_node.html) des ZfKD enthalten ist |
+| p65_valide| Boolen| `TRUE`, `FALSE`  | Es besteht eine Meldepflicht für den klinischen Datensatz (lt. Plattform § 65c-Umsetzungsleitfaden | 
 
-> Referenzen:
-> (1) ICD-10-GM, BfArM: https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html -- **[Nutzungsbedingungen](nutzungsbedingungen/bfarm_tou_icd10_ops.pdf)**
-> (2) GKV-Spitzenverband: https://www.gkv-spitzenverband.de/krankenversicherung/qualitaetssicherung_2/klinisches_krebsregister.jsp
-> (3) Plattform § 65c: https://confluence.basisdatensatz.de/display/UMK/Meldepflichtige+Diagnosen+nach+ICD
+##### Todesursache, Grundleiden nach ICD-10
 
-##### [ICD-10 Todesursache](/Klassifikationen/icd10_todesursache.csv)
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-10-GM (Version 2022) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html). Die Nutzungsbedingungnen der ICD-10 des BfArM sind in den [Kontextmaterialien](#Kontextmaterialien) hinterlegt.
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der ICD-10-GM (Version 2022) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM) (1).
+Um die internationale Vergleichbarkeit zu gewährleisten, ist für die [Verschlüsselung von Todesursachen die ICD-10-WHO](https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/ICD/ICD-10-WHO/Todesursachenstatistik/_node.html) vorgesehen. Aktuell wird bei der Übermittlung von Todesursachen ans ZfKD vorwiegend (noch) die Verwendung der ICD-10-GM angegeben.
 
-Um die internationale Vergleichbarkeit zu gewährleisten, ist für die Verschlüsselung von Todesursachen die ICD-10-WHO vorgesehen. (2) Aktuell wird bei der Übermittlung von Todesursachen ans ZfKD vorwiegend (noch) die Verwendung der ICD-10-GM angegeben.
+> [/Klassifikationen/icd10_todesursache.csv](/Klassifikationen/icd10_todesursache.csv)
 
-Spalten der Referenztabelle:
+Variablen und Ausprägungen der Referenztabelle:
 
-- `id`: Diagnoseschlüssel, 4-Steller werden ohne Trennzeichen dargestellt (z. B. C021)
-- `code`: Diagnoseschlüssel, 4-Steller werden mit Trennzeichen dargestellt (z. B. C02.1)
-- `id3`: 3-stelliger Diagnoseschlüssel
-- `chapter`: Kapitel der ICD-10 (als arabische Zahl)
-- `name`: Beschreibung der Diagnose (deutschsprachig)
+| Variable  | Typ | Ausprägungen | Beschreibung |
+| --------- | --- | ------------ | ------------ |
+| id        | String | z. B. `C021`  | ICD-10 Diagnoseschlüssel, 4-Steller werden ohne Trennzeichen dargestellt |
+| code      | String | z. B. `C02.1`  | ICD-10 Diagnoseschlüssel, 4-Steller werden mit Trennzeichen dargestellt |
+| name      | String | z.b. `Bösartige Neubildung...`  | Beschreibung der Diagnose  |
+| id3       | String | z. B. `C02`  |  3-stelliger Diagnoseschlüssel |
+| chapter   | Integer | z. B. `1`  |  Kapitel der ICD-10 |
 
-> Referenzen:
-> (1) ICD-10-GM, BfArM: https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html -- **[Nutzungsbedingungen](nutzungsbedingungen/bfarm_tou_icd10_ops.pdf)**
-> (2) BfArM, Todesursachenstatistik: https://www.bfarm.de/DE/Kodiersysteme/Klassifikationen/ICD/ICD-10-WHO/Todesursachenstatistik/_node.html
 
-##### [ICD-O Topographie](/Klassifikationen/topographie.csv)
+##### ICD-O Topographie
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der ICD-O-3 (2. Revision, Version 2019) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM) (1) und unter Zuhilfenahme des Umsetzungsleitfadens der Plattform § 65c (Stand: 10.05.2023) (2).
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-O-3 (2. Revision, Version 2019) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html) und unter Zuhilfenahme des [Umsetzungsleitfadens der Plattform § 65c (Stand: 10.05.2023)](https://confluence.basisdatensatz.de/display/UMK/Paarige+Organe). 
+Die Nutzungsbedingungnen der ICD-O-3 des BfArM sind in den [Kontextmaterialien](#Kontextmaterialien) hinterlegt.
 
-Für paarige Organe (Ausprägung `istPaarig`= 1) wird bei der Variable `Seitenlokalisation` die Angabe der betroffenen Körperseite(n) erwartet.
+Für paarige Organe (Ausprägung *istPaarig* = `1`, lt. Plattform § 65c-Umsetzungsleitfaden) wird bei der Variable *Seitenlokalisation* die Angabe der betroffenen Körperseite(n) erwartet.
 
-Spalten der Referenztabelle:
+> [Klassifikationen/topographie.csv](Klassifikationen/topographie.csv)
 
-- `id`: Diagnoseschlüssel, 4-Steller werden ohne Trennzeichen dargestellt (z. B. C021)
-- `code`: Diagnoseschlüssel, 4-Steller werden mit Trennzeichen dargestellt (z. B. C02.1)
-- `name`: Beschreibung der Topographie
-- `id3`: 3-stelliger Diagnoseschlüssel
-- `istPaarig`: 1 = es handelt sich um ein paariges Organ (lt. Plattform § 65c-Umsetzungsleitfaden)
+Variablen und Ausprägungen der Referenztabelle:
 
-> Referenzen:
-> (1) ICD-O, BfArM: https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html -- **[Nutzungsbedingungen](nutzungsbedingungen/bfarm_tou_icdo3.pdf)**
-> (2) Plattform § 65c: https://confluence.basisdatensatz.de/display/UMK/Paarige+Organe
+| Variable  | Typ | Ausprägungen | Beschreibung |
+| --------- | --- | ------------ | ------------ |
+| id        | String | z. B. `C021`  | ICD-10 Diagnoseschlüssel, 4-Steller werden ohne Trennzeichen dargestellt |
+| code      | String | z. B. `C02.1`  | ICD-10 Diagnoseschlüssel, 4-Steller werden mit Trennzeichen dargestellt |
+| name      | String | z.b. `Bösartige Neubildung...`  | Beschreibung der Diagnose  |
+| id3       | String | z. B. `C02`  |  3-stelliger Diagnoseschlüssel |
+| istPaarig   | Integer | z. B. `1`  |  1 = es handelt sich um ein paariges Organ und es wird bei der Variable *Seitenlokalisation* die Angabe der betroffenen Körperseite(n) erwartet. |
 
-##### [Operationen- und Prozedurenschlüssels (OPS)](/Klassifikationen/ops.csv)
+- **Boolean statt 1 und 0?**
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung des Operationen- und Prozedurenschlüssels (OPS) (Version 2022) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM) (1).
 
-Spalten der Referenztabelle:
+##### Operationen- und Prozedurenschlüssels (OPS)
 
-- `ops_id`: ID, maximal 6-stellig
-- `ops_chapter`: OPS-Kapitel
-- `ops_group`: OPS-Gruppe, -Bereich
-- `ops_three_digits`: OPS-Kategorie/-Kode, 3-stellig
-- `ops_four_digits`: OPS-Subkategorie, 4-stellig
-- `ops_five_digits`: OPS-Subkategorie, 5-stellig
-- `ops_six_digits`: OPS-Subkategorie, 6-stellig
-- `ops_description`: Klassentitel der Maßnahme
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung des [Operationen- und Prozedurenschlüssels (OPS) (Version 2022) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html). Die Nutzungsbedingungnen der Operationen- und Prozedurenschlüssels (OPS) des BfArM sind in den [Kontextmaterialien](#Kontextmaterialien) hinterlegt.
 
-> Referenzen:
-> (1) OPS, BfArM: https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html -- **[Nutzungsbedingungen](nutzungsbedingungen/bfarm_tou_icd10_ops.pdf)**
+> [Klassifikationen/ops.csv](/Klassifikationen/ops.csv)
 
-##### [Protokoll](/Klassifikationen/protokoll.csv)
+Variablen und Ausprägungen der Referenztabelle:
 
-Bei der verwendeten Referenztabelle handelt es sich um eine _Vorschlagsliste_ der Plattform § 65c ([externer Link](https://confluence.basisdatensatz.de/display/UMK/Protokolle)). Diese Vorschlagsliste stellt keine verbindliche Festlegung dar. Ein anerkannter Standard für die Kodierung von Systemtherapie-Protokollen ist uns nicht bekannt. Vorschläge für eine standardisierte Nomenklatur (1), Referenzsysteme (2,3) und kommerzielle Produkte für die medizinische Dokumentation (4) wurden von anderen entwickelt. Wir verweisen hier auf eine Auswahl dieser Arbeiten und Systeme.
+| Variable  | Typ | Ausprägungen | Beschreibung |
+| --------- | --- | ------------ | ------------ |
+| ops_id | String | z. B. `1-202`  | ID, maximal 6-stellig |
+| ops_chapter | Integer | z. B. `1`  | OPS-Kapitel |
+| ops_group | String | z. B. `1-20 - 1-33`  | OPS-Gruppe, -Bereich |
+| ops_three_digits | String | z. B. `1-20`  | OPS-Kategorie/-Kode, 3-stellig |
+| ops_four_digits | String | z. B. `1-202`  | OPS-Kategorie/-Kode, 4-stellig |
+| ops_five_digits | String | z. B. `1-202.-`  | OPS-Kategorie/-Kode, 5-stellig |
+| ops_six_digits | String | z. B. `1-202.--`  | OPS-Kategorie/-Kode, 6-stellig |
+| ops_description | String | z. B. `Diagnostik zur Feststellung ...`  | Klassentitel der Maßnahme |
 
-> Referenzen:
-> (1) Rubinstein, S. M., Yang, P. C., Cowan, A. J., & Warner, J. L. (2020). Standardizing Chemotherapy Regimen Nomenclature: A Proposal and Evaluation of the HemOnc and National Cancer Institute Thesaurus Regimen Content. JCO clinical cancer informatics, 4, 60–70. [https://doi.org/10.1200/CCI.19.00122](https://doi.org/10.1200/CCI.19.00122)
-> (2) [HemOnc.org - A Free Hematology/Oncology Reference](https://hemonc.org/)
-> (3) [National Cancer Institute Thesaurus (NCIT)](https://bioportal.bioontology.org/ontologies/NCIT/?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C62634)
-> (4) [Onkopti® – die Datenbank digitalisierter onkologischer Therapieprotokolle](https://onkopti.de/protokollsuche/)
+##### Therapieprotokoll
 
-##### [Substanz](/Klassifikationen/substanz.csv)
+Bei der verwendeten Referenztabelle handelt es sich um eine *Vorschlagsliste* der [Plattform § 65c](https://confluence.basisdatensatz.de/display/UMK/Protokolle). Diese Vorschlagsliste stellt keine verbindliche Festlegung dar. Ein anerkannter Standard für die Kodierung von Systemtherapie-Protokollen ist uns nicht bekannt. Vorschläge für eine standardisierte Nomenklatur ([Rubinstein et al, 2020](https://doi.org/10.1200/CCI.19.00122)), Referenzsysteme ([HemOnc.org](https://hemonc.org/), [National Cancer Institute Thesaurus (NCIT)](https://bioportal.bioontology.org/ontologies/NCIT/?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C62634)) und kommerzielle Produkte für die medizinische Dokumentation ([Onkopti®](https://onkopti.de/protokollsuche/)) wurden von anderen entwickelt. Wir verweisen hier auf eine Auswahl dieser Arbeiten und Systeme.
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der Anatomisch-therapeutisch-chemischen Klassifikation (ATC-Klassifikation) für den deutschen Arzneimittelmarkt (Version 2022), herausgegeben vom Wissenschaftlichen Institut der AOK (WIdO) (1).
+> Rubinstein, S. M., Yang, P. C., Cowan, A. J., & Warner, J. L. (2020). Standardizing Chemotherapy Regimen Nomenclature: A Proposal and Evaluation of the HemOnc and National Cancer Institute Thesaurus Regimen Content. JCO clinical cancer informatics, 4, 60–70. [https://doi.org/10.1200/CCI.19.00122](https://doi.org/10.1200/CCI.19.00122)  
 
-Spalten der Referenztabelle:
+> [Onkopti® – die Datenbank digitalisierter onkologischer Therapieprotokolle](https://onkopti.de/protokollsuche/)
 
-- `code`: ATC-Kode, Ebene 5
-- `name`: Bezeichnung des Arzneimittels
+##### Verwendete Substanzen
 
-> Referenzen:
-> (1) ATC, WIdO: https://www.wido.de/publikationen-produkte/arzneimittel-klassifikation/ -- **[Nutzungsbedingungen](nutzungsbedingungen/wido_atc.pdf)**
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der [Anatomisch-therapeutisch-chemischen Klassifikation (ATC-Klassifikation) für den deutschen Arzneimittelmarkt (Version 2022)](https://www.wido.de/publikationen-produkte/arzneimittel-klassifikation/), herausgegeben vom Wissenschaftlichen Institut der AOK (WIdO). Die Nutzungsbedingungnen der ATC-Klassifikation des WIdO sind in den [Kontextmaterialien](#Kontextmaterialien) hinterlegt.
 
-##### [pTNM N-Kategorie](/Klassifikationen/tnm_n.csv)
+> [/Klassifikationen/substanz.csv](/Klassifikationen/substanz.csv)
 
-**Zusatz (1mi), Mammakarzinom**
+Variablen und Ausprägungen der Referenztabelle:
+
+| Variable  | Typ | Ausprägungen | Beschreibung |
+| --------- | --- | ------------ | ------------ |
+| code | String | z. B. `J05AF06`  | ATC-Kode, Ebene 5 |
+| name| Sting | z. B. `Abacavir`  | Bezeichnung des Arzneimittels |
+
+
+##### TNM: Regionäre Lymphknotenmetastasierung
+
+- **einleitender Satz**
+- **was ist TMN8?**
+ 
+> [/Klassifikationen/tnm_n.csv](/Klassifikationen/tnm_n.csv)
+ 
+###### **Zusatz (1mi), Mammakarzinom**
+
 Anwendung bei: Mikrometastase(n), > 0,2 mm und/oder mehr als 200 Tumorzellen, aber nicht größer als 0,2 cm
 Stadium IB nach TNM8: T0, T1 N1mi M0
 
-> _Quelle: S3-Leitlinie Mammakarzinom, TNM8_
+> *Quelle: S3-Leitlinie Mammakarzinom, TNM8*
 
-**Zusatz (sn)**
-`(p)NX(sn)` Schildwächterlymphknoten kann histologisch nicht beurteilt werden
-`(p)N0(sn)`Histologisch keine Lymphknotenmetastasen in Schildwächterlymphknoten
-`(p)N1(sn)` Befall des (der) Schildwächterlymphknoten
+###### **Zusatz (sn)**
 
-> _Quelle: TNM8_
+| Ausprägung | Beschreibung | 
+| ---------- | ------------ | 
+| `(p)NX(sn)` | Schildwächterlymphknoten kann histologisch nicht beurteilt werden | 
+| `(p)N0(sn)` | Histologisch keine Lymphknotenmetastasen in Schildwächterlymphknoten |
+| `(p)N1(sn)` | Befall des (der) Schildwächterlymphknoten |
 
-**Zusatz (i+), (mol+)**
-`(p)N0` Histologisch keine Lymphknotenmetastasen, keine Untersuchung zum Nachweis isolierter Tumorzellen
-`(p)N0(i–)` Histologisch keine Lymphknotenmetastasen, kein morphologischer Nachweis von isolierten Tumorzellen
-`(p)N0(i+)` Histologisch keine Lymphknotenmetastasen, morphologischer Nachweis von isolierten Tumorzellen
-`(p)N0(mol–)` Histologisch keine Lymphknotenmetastasen, kein nichtmorphologischer Nachweis von isolierten Tumorzellen
-`(p)N0(mol+)` Histologisch keine Lymphknotenmetastasen, nicht-morphologischer Nachweis von isolierten Tumorzellen
 
-> _Quelle: TNM8_
+> *Quelle: TNM8*
 
+###### **Zusatz (i+), (mol+)**
+
+| Ausprägung | Beschreibung | 
+| ---------- | ------------ | 
+| `(p)N0` | Histologisch keine Lymphknotenmetastasen, keine Untersuchung zum Nachweis isolierter Tumorzellen | 
+| `(p)N0(i–)` | Histologisch keine Lymphknotenmetastasen, kein morphologischer Nachweis von isolierten Tumorzellen |
+| `(p)N0(i+)` | Histologisch keine Lymphknotenmetastasen, morphologischer Nachweis von isolierten Tumorzellen |
+| `(p)N0(mol–)` | Histologisch keine Lymphknotenmetastasen, kein nichtmorphologischer Nachweis von isolierten Tumorzellen |
+| `(p)N0(mol+)`| Histologisch keine Lymphknotenmetastasen, nicht-morphologischer Nachweis von isolierten Tumorzellen |
+
+> *Quelle: TNM8*
 
 ### Beispieldaten
 
@@ -350,7 +366,7 @@ _(Die in den Beispieldateien hinterlegten Daten sind künstlich erzeugt, folgen 
 - beschreibung des ERM
 
 
-## Kontextmaterialien
+### Kontextmaterialien
 
 - kurze Hinweise zu den Nutzungbedingungne BfArm WIDO
 - (eventuell kann die beschreibung auch zu den Klassifikationen)
