@@ -137,59 +137,62 @@ Größtenteils handelt es sich bei den Referenzen um Vereinbarungen, die bei der
 
 #### Referenztabellen
 
-| Tabelle | Eigenschaft | *Element* `technische Variablenbezeichnung` |
-| --- | --- | --- |
-| [atemgetriggert.csv](/Klassifikationen/atemgetriggert.csv) | Angabe zur perkutanen Strahlentherapie | _Strahlentherapie_ `Atemgetriggert` |
-| [beurteilung_gesamt.csv](/Klassifikationen/beurteilung_gesamt.csv) | Folgeereignis - Gesamtbeurteilung Tumorstatus | _Folgeereignis_ `Gesamtbeurteilung_Tumorstatus` |
-| [beurteilung_lokal.csv](/Klassifikationen/beurteilung_lokal.csv) | Folgeereignis - Beurteilung Primärtumor | _Folgeereignis_ `Verlauf_Lokaler_Tumorstatus` |
-| [diagnosesicherung.csv](/Klassifikationen/diagnosesicherung.csv) | Wertigkeit der Diagnosesicherung | _Primärdiagnose_ `Diagnosesicherung` |
-| [fm_lokalisation.csv](/Klassifikationen/fm_lokalisation.csv) | Lokalisation der Fernmetastasen | _Primärdiagnose_ `Lokalisation`, _Folgeereignis_ `Lokalisation` |
-| [geschlecht.csv](/Klassifikationen/geschlecht.csv) | Geschlecht | _Person_ `Geschlecht` |
-| [gleason_anlass.csv](/Klassifikationen/gleason_anlass.csv) | Modul Prostata: Anlass der Probenahme | _Primärdiagnose_ `AnlassGleasonScore` |
-| [gleason_score.csv](/Klassifikationen/gleason_score.csv) | Modul Prostata: Gleason-Score | _Primärdiagnose_ `ScoreErgebnis` |
-| [grading.csv](/Klassifikationen/grading.csv) | Differenzierungsgrad | _Primärdiagnose_ `Grading` |
-| [hormonrezeptor.csv](/Klassifikationen/hormonrezeptor.csv) | Modul Mamma: Hormonrezeptorstatus | _Primärdiagnose_ `HormonrezeptorStatus_Oestrogen`, _Primärdiagnose_ `HormonrezeptorStatus_Progesteron` |
-| [icd10_todesursache.csv](/Klassifikationen/icd10_todesursache.csv) | Todesursache, Grundleiden nach ICD-10 | _Todesursachen_ `Code` |
-| [icd10_version.csv](/Klassifikationen/icd10_version.csv) | Ausgabe der ICD-10 | _Todesursachen_ `Version`, _Primärdiagnose_ `Diagnose_ICD10_Version` |
-| [icd10.csv](/Klassifikationen/icd10.csv) | Diagnose nach ICD-10 | _Primärdiagnose_ `Diagnose_ICD10_Code` |
-| [interstitiell.csv](/Klassifikationen/interstitiell.csv) | Angabe zur Kontaktbestrahlung | _Strahlentherapie_ `Interstitiell_endokavitaer` |
-| [landkreis.csv](/Klassifikationen/landkreis.csv) | Wohnort bei Diagnose | _Primärdiagnose_ `Inzidenzort`, _Primärdiagnose_ `Inzidenzort_BL` |
-| [menopause.csv](/Klassifikationen/menopause.csv) | Modul Mamma: Menopausenstatus | _Primärdiagnose_ `Praetherapeutischer_Menopausenstatus` |
-| [metabolisch.csv](/Klassifikationen/metabolisch.csv) | Typ der metabolischen Strahlentherapie | _Strahlentherapie_ `Metabolisch_Typ` |
-| [morphologie_version.csv](/Klassifikationen/morphologie_version.csv) | Quelle Morphologie | _Primärdiagnose_ `Morphologie_Version` |
-| [morphologie.csv](/Klassifikationen/morphologie.csv) | Morphologie | _Primärdiagnose_ `Morphologie_Code` |
-| [op_intention.csv](/Klassifikationen/op_intention.csv) | Intention der OP | _Operation_ `Intention` |
-| [ops.csv](/Klassifikationen/ops.csv) | Operationen- und Prozedurenschlüssels (OPS) | _Operation_ `Code` |
-| [protokoll.csv](/Klassifikationen/protokoll.csv) | Therapieprotokoll | _Systemische Therapie_ `Protokoll_TypProtokollschluessel_Code` |
-| [radiochemo.csv](/Klassifikationen/radiochemo.csv) | Ausführung der perkutanen Radiochemotherapie | _Strahlentherapie_ `Radiochemo` |
-| [rasmutation.csv](/Klassifikationen/rasmutation.csv) | Modul Darm: Mutation K-ras-Onkogen | _Primärdiagnose_ `RASMutation` |
-| [rate.csv](/Klassifikationen/rate.csv) | Dosisleistung Kontaktbestrahlung | _Strahlentherapie_ `Rate_Type` |
-| [seite_zielgebiet.csv](/Klassifikationen/seite_zielgebiet.csv) | Körperseite der bestrahlten Region | _Strahlentherapie_ `Seite_Zielgebiet` |
-| [seitenlokalisation.csv](/Klassifikationen/seitenlokalisation.csv) | Seitenlokalisation bei paarigen Organen | _Primärdiagnose_ `Seitenlokalisation` |
-| [st_intention.csv](/Klassifikationen/st_intention.csv) | Intention der Strahlentherapie | _Strahlentherapie_ `Intention` |
-| [st_op_stellung.csv](/Klassifikationen/st_op_stellung.csv) | Bezug Strahlentherapie - OP | _Strahlentherapie_ `Stellung_OP` |
-| [stereotaktisch.csv](/Klassifikationen/stereotaktisch.csv) | Angabe zur perkutanen Strahlentherapie | _Strahlentherapie_ `Stereotaktisch` |
-| [substanz.csv](/Klassifikationen/substanz.csv) | Verwendete Substanzen | _Systemische Therapie_ `TypeOfSYST_TypSubstanz` |
-| [syst_intention.csv](/Klassifikationen/syst_intention.csv) | Intention der systemischen Therapie | _Systemische Therapie_ `Intention` |
-| [syst_op_stellung.csv](/Klassifikationen/syst_op_stellung.csv) | Bezug systemische Therapie - OP | _Systemische Therapie_ `Stellung_OP` |
-| [therapieart.csv](/Klassifikationen/therapieart.csv) | Art der systemischen Therapie | _Systemische Therapie_ `Therapieart` |
-| [tnm_auflage.csv](/Klassifikationen/tnm_auflage.csv) | TNM-Ausgabe | _Primärdiagnose_ `TNM_Auflage_c`, _Primärdiagnose_ `TNM_Auflage_p`, _Folgeereignis_ `Version` |
-| [tnm_cpu.csv](/Klassifikationen/tnm_cpu.csv) | TNM-Präfix (c, p, u) | _Primärdiagnose_ `c_p_u_Praefix_T_c`, _Primärdiagnose_ `c_p_u_Praefix_N_c`, _Primärdiagnose_ `c_p_u_Praefix_M_c`, _Primärdiagnose_ `c_p_u_Praefix_T_p`, _Primärdiagnose_ `c_p_u_Praefix_N_p`, _Primärdiagnose_ `c_p_u_Praefix_M_p`, _Folgeereignis_ `c_p_u_Praefix_T`, _Folgeereignis_ `c_p_u_Praefix_N`, _Folgeereignis_ `c_p_u_Praefix_M` |
-| [tnm_l.csv](/Klassifikationen/tnm_l.csv) | TNM: Lymphgefäßinvasion | _Primärdiagnose cTNM_ `L_p`, _Primärdiagnose pTNM_ `L_p`, _Folgeereignis_ `L` |
-| [tnm_m.csv](/Klassifikationen/tnm_m.csv) | TNM: Fernmetastasierung | _Primärdiagnose cTNM_ `M_c`, _Primärdiagnose pTNM_ `M_p`, _Folgeereignis_ `M` |
-| [tnm_n.csv](/Klassifikationen/tnm_n.csv) | TNM: Regionäre Lymphknotenmetastasierung | _Primärdiagnose cTNM_ `N_c`, _Primärdiagnose pTNM_ `N_p`, _Folgeereignis_ `N` |
-| [tnm_pn.csv](/Klassifikationen/tnm_pn.csv) | TNM: Perineuralinvasion | _Primärdiagnose cTNM_ `Pn_c`, _Primärdiagnose pTNM_ `Pn_p`, _Folgeereignis_ `Pn` |
-| [tnm_s.csv](/Klassifikationen/tnm_s.csv) | TNM: Serumtumormarker | _Primärdiagnose cTNM_ `S_c`, _Primärdiagnose pTNM_ `S_p`, _Folgeereignis_ `S` |
-| [tnm_t.csv](/Klassifikationen/tnm_t.csv) | TNM: Ausdehnung des Primärtumors | _Primärdiagnose cTNM_ `T_c`, _Primärdiagnose pTNM_ `T_p`, _Folgeereignis_ `T` |
-| [tnm_uicc.csv](/Klassifikationen/tnm_uicc.csv) | TNM: UICC-Stadium | _Primärdiagnose cTNM_ `UICC_Stadium_c`, _Primärdiagnose pTNM_ `UICC_Stadium_p`, _Folgeereignis_ `UICC_Stadium` |
-| [tnm_v.csv](/Klassifikationen/tnm_v.csv) | TNM: Veneninvasion | _Primärdiagnose cTNM_ `V_c`, _Primärdiagnose pTNM_ `V_p`, _Folgeereignis_ `V` |
-| [topographie_version.csv](/Klassifikationen/topographie_version.csv) | Ausgabe der ICD-O | _Primärdiagnose_ `Topographie_Version` |
-| [topographie.csv](/Klassifikationen/topographie.csv) | ICD-O Topographie | _Primärdiagnose_ `Topographie_Code` |
-| [verlauf_fern.csv](/Klassifikationen/verlauf_fern.csv) | Verlauf: Fernmetastasierung | _Folgeereignis_ `Verlauf_Tumorstatus_Fernmetastasen` |
-| [verlauf_lokal.csv](/Klassifikationen/verlauf_lokal.csv) | Verlauf: Lokaler Tumorstatus | _Folgeereignis_ `Verlauf_Lokaler_Tumorstatus` |
-| [verlauf_lymphe.csv](/Klassifikationen/verlauf_lymphe.csv) | Verlauf: Regionärer Lymphknotenstatus | _Folgeereignis_ `Verlauf_Tumorstatus_Lymphknoten` |
-| [zielgebiet2014.csv](/Klassifikationen/zielgebiet2014.csv) | Zielgebiet Strahlentherapie oBDS2014 | _Strahlentherapie Perkutan_ `CodeVersion2014`, _Strahlentherapie Kontakt_ `CodeVersion2014`, _Strahlentherapie Metabolisch_ `CodeVersion2014`, _Strahlentherapie Sonstige_ `CodeVersion2014`, _Strahlentherapie Unbekannt_ `CodeVersion2014` |
-| [zielgebiet2021.csv](/Klassifikationen/zielgebiet2021.csv) | Zielgebiet Strahlentherapie oBDS2021 | _Strahlentherapie Perkutan_ `CodeVersion2021`, _Strahlentherapie Kontakt_ `CodeVersion2021`, _Strahlentherapie Metabolisch_ `CodeVersion2021`, _Strahlentherapie Sonstige_ `CodeVersion2021`, _Strahlentherapie Unbekannt_ `CodeVersion2021` |
+- ***Element* `technische Variablenbezeichnung`** erklären
+- **vielleicht `technische` streichen**
+
+| Klassifikation | *Element* `technische Variablenbezeichnung` | Datei |
+| -------------- | ------------------------------------------- | ----- |
+| Angabe zur perkutanen Strahlentherapie |*Strahlentherapie* `Atemgetriggert` | [atemgetriggert.csv](/Klassifikationen/atemgetriggert.csv) |
+| Folgeereignis - Gesamtbeurteilung Tumorstatus |*Folgeereignis* `Gesamtbeurteilung_Tumorstatus` | [beurteilung_gesamt.csv](/Klassifikationen/beurteilung_gesamt.csv) |
+| Folgeereignis - Beurteilung Primärtumor |*Folgeereignis* `Verlauf_Lokaler_Tumorstatus` | [beurteilung_lokal.csv](/Klassifikationen/beurteilung_lokal.csv) |
+| Wertigkeit der Diagnosesicherung |*Primärdiagnose* `Diagnosesicherung` | [diagnosesicherung.csv](/Klassifikationen/diagnosesicherung.csv) |
+| Lokalisation der Fernmetastasen |*Primärdiagnose* `Lokalisation`, *Folgeereignis* `Lokalisation` | [fm_lokalisation.csv](/Klassifikationen/fm_lokalisation.csv) |
+| Geschlecht |*Person* `Geschlecht` | [geschlecht.csv](/Klassifikationen/geschlecht.csv) |
+| Modul Prostata: Anlass der Probenahme |*Primärdiagnose* `AnlassGleasonScore` | [gleason_anlass.csv](/Klassifikationen/gleason_anlass.csv) |
+| Modul Prostata: Gleason-Score |*Primärdiagnose* `ScoreErgebnis` | [gleason_score.csv](/Klassifikationen/gleason_score.csv) |
+| Differenzierungsgrad |*Primärdiagnose* `Grading` | [grading.csv](/Klassifikationen/grading.csv) |
+| Modul Mamma: Hormonrezeptorstatus |*Primärdiagnose* `HormonrezeptorStatus_Oestrogen`, *Primärdiagnose* `HormonrezeptorStatus_Progesteron` | [hormonrezeptor.csv](/Klassifikationen/hormonrezeptor.csv) |
+| [Todesursache, Grundleiden nach ICD-10](#Todesursache-Grundleiden-nach-ICD-10) |*Todesursachen* `Code` | [icd10_todesursache.csv](/Klassifikationen/icd10_todesursache.csv) |
+| Ausgabe der ICD-10 |*Todesursachen* `Version`, *Primärdiagnose* `Diagnose_ICD10_Version` | [icd10_version.csv](/Klassifikationen/icd10_version.csv) |
+| [Diagnose nach ICD-10](#Diagnose-nach-ICD-10) |*Primärdiagnose* `Diagnose_ICD10_Code` | [icd10.csv](/Klassifikationen/icd10.csv) |
+| Angabe zur Kontaktbestrahlung |*Strahlentherapie* `Interstitiell_endokavitaer` | [interstitiell.csv](/Klassifikationen/interstitiell.csv) |
+| Wohnort bei Diagnose |*Primärdiagnose* `Inzidenzort`, *Primärdiagnose* `Inzidenzort_BL` | [landkreis.csv](/Klassifikationen/landkreis.csv) |
+| Modul Mamma: Menopausenstatus |*Primärdiagnose* `Praetherapeutischer_Menopausenstatus` | [menopause.csv](/Klassifikationen/menopause.csv) |
+| Typ der metabolischen Strahlentherapie |*Strahlentherapie* `Metabolisch_Typ` | [metabolisch.csv](/Klassifikationen/metabolisch.csv) |
+| Quelle Morphologie |*Primärdiagnose* `Morphologie_Version` | [morphologie_version.csv](/Klassifikationen/morphologie_version.csv) |
+| Morphologie |*Primärdiagnose* `Morphologie_Code` | [morphologie.csv](/Klassifikationen/morphologie.csv) |
+| Intention der OP |*Operation* `Intention` | [op_intention.csv](/Klassifikationen/op_intention.csv) |
+| [Operationen- und Prozedurenschlüssels (OPS)](Operationen--und-Prozedurenschlüssels-OPS) |*Operation* `Code` | [ops.csv](/Klassifikationen/ops.csv) |
+| [Therapieprotokoll](Therapieprotokoll) |*Systemische Therapie* `Protokoll_TypProtokollschluessel_Code` | [protokoll.csv](/Klassifikationen/protokoll.csv) |
+| Ausführung der perkutanen Radiochemotherapie |*Strahlentherapie* `Radiochemo` | [radiochemo.csv](/Klassifikationen/radiochemo.csv) |
+| Modul Darm: Mutation K-ras-Onkogen |*Primärdiagnose* `RASMutation` | [rasmutation.csv](/Klassifikationen/rasmutation.csv) |
+| Dosisleistung Kontaktbestrahlung |*Strahlentherapie* `Rate_Type` | [rate.csv](/Klassifikationen/rate.csv) |
+| Körperseite der bestrahlten Region |*Strahlentherapie* `Seite_Zielgebiet` | [seite_zielgebiet.csv](/Klassifikationen/seite_zielgebiet.csv) |
+| Seitenlokalisation bei paarigen Organen |*Primärdiagnose* `Seitenlokalisation` | [seitenlokalisation.csv](/Klassifikationen/seitenlokalisation.csv) |
+| Intention der Strahlentherapie |*Strahlentherapie* `Intention` | [st_intention.csv](/Klassifikationen/st_intention.csv) |
+| Bezug Strahlentherapie - OP |*Strahlentherapie* `Stellung_OP` | [st_op_stellung.csv](/Klassifikationen/st_op_stellung.csv) |
+| Angabe zur perkutanen Strahlentherapie |*Strahlentherapie* `Stereotaktisch` | [stereotaktisch.csv](/Klassifikationen/stereotaktisch.csv) |
+| [Verwendete Substanzen](#Verwendete-Substanzen) |*Systemische Therapie* `TypeOfSYST_TypSubstanz` | [substanz.csv](/Klassifikationen/substanz.csv) |
+| Intention der systemischen Therapie |*Systemische Therapie* `Intention` | [syst_intention.csv](/Klassifikationen/syst_intention.csv) |
+| Bezug systemische Therapie - OP |*Systemische Therapie* `Stellung_OP` | [syst_op_stellung.csv](/Klassifikationen/syst_op_stellung.csv) |
+| Art der systemischen Therapie |*Systemische Therapie* `Therapieart` | [therapieart.csv](/Klassifikationen/therapieart.csv) |
+| TNM-Ausgabe |*Primärdiagnose* `TNM_Auflage_c`, *Primärdiagnose* `TNM_Auflage_p`, *Folgeereignis* `Version` | [tnm_auflage.csv](/Klassifikationen/tnm_auflage.csv) |
+| TNM-Präfix (c, p, u) |*Primärdiagnose* `c_p_u_Praefix_T_c`, *Primärdiagnose* `c_p_u_Praefix_N_c`, *Primärdiagnose* `c_p_u_Praefix_M_c`, *Primärdiagnose* `c_p_u_Praefix_T_p`, *Primärdiagnose* `c_p_u_Praefix_N_p`, *Primärdiagnose* `c_p_u_Praefix_M_p`, *Folgeereignis* `c_p_u_Praefix_T`, *Folgeereignis* `c_p_u_Praefix_N`, *Folgeereignis* `c_p_u_Praefix_M` | [tnm_cpu.csv](/Klassifikationen/tnm_cpu.csv) |
+| TNM: Lymphgefäßinvasion |*Primärdiagnose cTNM* `L_p`, *Primärdiagnose pTNM* `L_p`, *Folgeereignis* `L` | [tnm_l.csv](/Klassifikationen/tnm_l.csv) |
+| TNM: Fernmetastasierung |*Primärdiagnose cTNM* `M_c`, *Primärdiagnose pTNM* `M_p`, *Folgeereignis* `M` | [tnm_m.csv](/Klassifikationen/tnm_m.csv) |
+| [TNM: Regionäre Lymphknotenmetastasierung](#TNM-Regionäre-Lymphknotenmetastasierung) |*Primärdiagnose cTNM* `N_c`, *Primärdiagnose pTNM* `N_p`, *Folgeereignis* `N` | [tnm_n.csv](/Klassifikationen/tnm_n.csv) |
+| TNM: Perineuralinvasion |*Primärdiagnose cTNM* `Pn_c`, *Primärdiagnose pTNM* `Pn_p`, *Folgeereignis* `Pn` | [tnm_pn.csv](/Klassifikationen/tnm_pn.csv) |
+| TNM: Serumtumormarker |*Primärdiagnose cTNM* `S_c`, *Primärdiagnose pTNM* `S_p`, *Folgeereignis* `S` | [tnm_s.csv](/Klassifikationen/tnm_s.csv) |
+| TNM: Ausdehnung des Primärtumors |*Primärdiagnose cTNM* `T_c`, *Primärdiagnose pTNM* `T_p`, *Folgeereignis* `T` | [tnm_t.csv](/Klassifikationen/tnm_t.csv) |
+| TNM: UICC-Stadium |*Primärdiagnose cTNM* `UICC_Stadium_c`, *Primärdiagnose pTNM* `UICC_Stadium_p`, *Folgeereignis* `UICC_Stadium` | [tnm_uicc.csv](/Klassifikationen/tnm_uicc.csv) |
+| TNM: Veneninvasion |*Primärdiagnose cTNM* `V_c`, *Primärdiagnose pTNM* `V_p`, *Folgeereignis* `V` | [tnm_v.csv](/Klassifikationen/tnm_v.csv) |
+| Ausgabe der ICD-O |*Primärdiagnose* `Topographie_Version` | [topographie_version.csv](/Klassifikationen/topographie_version.csv) |
+| [ICD-O Topographie](#ICD-O-Topographie) |*Primärdiagnose* `Topographie_Code` | [topographie.csv](/Klassifikationen/topographie.csv) |
+| Verlauf: Fernmetastasierung |*Folgeereignis* `Verlauf_Tumorstatus_Fernmetastasen` | [verlauf_fern.csv](/Klassifikationen/verlauf_fern.csv) |
+| Verlauf: Lokaler Tumorstatus |*Folgeereignis* `Verlauf_Lokaler_Tumorstatus` | [verlauf_lokal.csv](/Klassifikationen/verlauf_lokal.csv) |
+| Verlauf: Regionärer Lymphknotenstatus |*Folgeereignis* `Verlauf_Tumorstatus_Lymphknoten` | [verlauf_lymphe.csv](/Klassifikationen/verlauf_lymphe.csv) |
+| Zielgebiet Strahlentherapie oBDS2014 |*Strahlentherapie Perkutan* `CodeVersion2014`, *Strahlentherapie Kontakt* `CodeVersion2014`, *Strahlentherapie Metabolisch* `CodeVersion2014`, *Strahlentherapie Sonstige* `CodeVersion2014`, *Strahlentherapie Unbekannt* `CodeVersion2014` | [zielgebiet2014.csv](/Klassifikationen/zielgebiet2014.csv) |
+| Zielgebiet Strahlentherapie oBDS2021 |*Strahlentherapie Perkutan* `CodeVersion2021`, *Strahlentherapie Kontakt* `CodeVersion2021`, *Strahlentherapie Metabolisch* `CodeVersion2021`, *Strahlentherapie Sonstige* `CodeVersion2021`, *Strahlentherapie Unbekannt* `CodeVersion2021` | [zielgebiet2021.csv](/Klassifikationen/zielgebiet2021.csv) |
 
 #### Datumsangaben
 
@@ -308,7 +311,7 @@ Variablen und Ausprägungen der Referenztabelle:
 ##### TNM: Regionäre Lymphknotenmetastasierung
 
 - **einleitender Satz**
-- **was ist TMN8?**
+- **was ist S3-Leitlinie Mammakarzinom und TMN8?**
  
 > [/Klassifikationen/tnm_n.csv](/Klassifikationen/tnm_n.csv)
  
@@ -362,14 +365,14 @@ _(Die in den Beispieldateien hinterlegten Daten sind künstlich erzeugt, folgen 
 | ----- | ------------ | -------- |
 | Testdatensatz | Ein einfacher Testdatensatz als `.xml`-Datei mit Werten in zufälliger Verteilung. Medizinische Zusammenhänge sind nicht berücksichtigt. Näheres unter [Beispieldaten](#beispieldaten) | [💾](/Beispieldaten/oBDS_v3.0.0.8a_RKI_Sample.xml) |
 
-- Ergänzung der Tabelle um die weiteren Entetys (.csv)
-- beschreibung des ERM
+- **Ergänzung der Tabelle um die weiteren Entetys (.csv)**
+- **beschreibung des ERM**
 
 
 ### Kontextmaterialien
 
-- kurze Hinweise zu den Nutzungbedingungne BfArm WIDO
-- (eventuell kann die beschreibung auch zu den Klassifikationen)
+- **kurze Hinweise zu den Nutzungbedingungne BfArm WIDO**
+- **(eventuell kann die beschreibung auch zu den Klassifikationen)**
 
 ### Metadaten
 
