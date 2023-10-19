@@ -1,0 +1,89 @@
+{
+  "title": "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen",
+  "description": "Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a. niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken, Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.<br>\n<br>\nDie Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des <a href=\"https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html\">Bundeskrebsregisterdatengesetzes (BKRG)</a> einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie <a href=\"https://www.krebsdaten.de/info_antrag\">auf Antrag für wissenschaftliche Forschungsprojekte</a> zur Verfügung.<br>\n<br>\nIn diesem Repository werden begleitende Informationen zu <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes\">Struktur</a> und <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen\">Klassifikationen</a> des bundesweiten ZfKD-Datensatzes bereitgestellt.<br>\n<br>\nDie hier verwendeten <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen\">Klassifikationen</a> spiegeln den derzeitigen Arbeitsstand des ZfKD wider. Ein wesentliches Ziel des Repositories ist es, diesen Stand möglichst transparent abzubilden und beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards einzuladen.",
+  "creators": [
+    {
+      "name": "Meisegeier, Stefan",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "0000-0003-2347-1836"
+    },
+    {
+      "name": "Imhoff, Maren",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "0009-0001-0030-566X"
+    },
+    {
+      "name": "Berg, Karsten",
+      "affiliation": "Robert Koch-Institut"
+    },
+    {
+      "name": "Kraywinkel, Klaus",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "0000-0002-9250-6003"
+    }
+  ],
+  "contributors": [],
+  "keywords": [
+    "Krebs",
+    "Tumor",
+    "Neoplasm",
+    "Medical Oncology",
+    "Medizinische Onkologie",
+    "Metadaten",
+    "Metadata",
+    "Classification",
+    "Klassifikation",
+    "ICD",
+    "Germany",
+    "Deutschland",
+    "Datenschema",
+    "Dataschema",
+    "RKI",
+    "ZfKD",
+    "Cancer Registry",
+    "Krebsregister"
+  ],
+  "publication_date": "2023-10-19",
+  "version": "oBDS_v3.0.0.8a_RKI",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "language": "deu",
+  "communities": [
+    {
+      "identifier": "robertkochinstitut"
+    }
+  ],
+  "subjects": [
+    {
+      "term": "Gesundheitsberichterstattung",
+      "identifier": "info:ddc/22/de//614.42"
+    },
+    {
+      "term": "Public health surveillance",
+      "identifier": "info:ddc/22/eng//614.42"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen",
+      "resource_type": "dataset"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Readme.md",
+      "resource_type": "publication-report"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/[Dokumentation]_Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen.pdf",
+      "resource_type": "publication-report"
+    },
+    {
+      "relation": "isDescribedBy",
+      "identifier": "https://www.github.io/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz_-_Datenschema_und_Klassifikationen",
+      "resource_type": "other"
+    }
+  ]
+}

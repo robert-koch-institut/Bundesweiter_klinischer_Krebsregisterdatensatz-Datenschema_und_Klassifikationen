@@ -1,0 +1,79 @@
+cff-version: 1.2.0
+type: dataset
+title: >-
+  Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und
+  Klassifikationen
+abstract: >-
+  Die Krebsregistrierung in Deutschland erfolgt auf der Basis von
+  Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a.
+  niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken,
+  Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im
+  Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.
+
+
+  Die Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des
+  Bundeskrebsregisterdatengesetzes (BKRG)
+  (https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) einmal jährlich
+  Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für
+  Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität
+  der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie
+  auf Antrag für wissenschaftliche Forschungsprojekte
+  (https://www.krebsdaten.de/info_antrag) zur Verfügung.
+
+
+  In diesem Repository werden begleitende Informationen zu Struktur
+  (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes)
+  und Klassifikationen
+  (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen)
+  des bundesweiten ZfKD-Datensatzes bereitgestellt.
+
+
+  Die hier verwendeten Klassifikationen
+  (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen)
+  spiegeln den derzeitigen Arbeitsstand des ZfKD wider. Ein wesentliches Ziel
+  des Repositories ist es, diesen Stand möglichst transparent abzubilden und
+  beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards
+  einzuladen.
+date-released: '2023-10-19'
+keywords:
+  - Krebs
+  - Tumor
+  - Neoplasm
+  - Medical Oncology
+  - Medizinische Onkologie
+  - Metadaten
+  - Metadata
+  - Classification
+  - Klassifikation
+  - ICD
+  - Germany
+  - Deutschland
+  - Datenschema
+  - Dataschema
+  - RKI
+  - ZfKD
+  - Cancer Registry
+  - Krebsregister
+  - Gesundheitsberichterstattung
+  - Public health surveillance
+message: Cite me!
+url: >-
+  https://www.github.io/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz_-_Datenschema_und_Klassifikationen
+license: CC-BY-4.0
+doi: 10.5281/zenodo.10022040
+authors:
+  - family-names: Meisegeier
+    given-names: Stefan
+    affiliation: Robert Koch-Institut
+    orcid: 0000-0003-2347-1836
+  - family-names: Imhoff
+    given-names: Maren
+    affiliation: Robert Koch-Institut
+    orcid: 0009-0001-0030-566X
+  - family-names: Berg
+    given-names: Karsten
+    affiliation: Robert Koch-Institut
+  - family-names: Kraywinkel
+    given-names: Klaus
+    affiliation: Robert Koch-Institut
+    orcid: 0000-0002-9250-6003
