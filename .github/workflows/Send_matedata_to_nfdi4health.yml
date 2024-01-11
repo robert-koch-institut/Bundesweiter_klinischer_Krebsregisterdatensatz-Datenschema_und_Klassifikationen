@@ -1,0 +1,22 @@
+name: Manually send metadata to NFDI4Health
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [ "Create release on tag push" ]
+    types:
+      - completed
+
+jobs:
+  sync_opencode:
+    name: Send metadata to NFDI4Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Metadata
+        uses: robert-koch-institut/OpenData-Workflows/Send_metadata_to_NFDI4Health@main
+        with:
+          nfdi4health_client_id: CSH_RKI_CLIENT
+          nfdi4health_client_secret: ${{secrets.NFDI4HEALTH_SECRET}}
+          nfdi4health_metadata_path: Metadaten/nfdi4health.json
+          nfdi4health_authorization_endpoint: "https://sso.studyhub.nfdi4health.de/realms/nfdi4health/protocol/openid-connect/token"
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          nfdi4health_base_url: "https://csh.nfdi4health.de/api/"
