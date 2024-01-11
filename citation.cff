@@ -34,7 +34,7 @@ abstract: >-
   des Repositories ist es, diesen Stand möglichst transparent abzubilden und
   beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards
   einzuladen.
-date-released: '2023-10-19'
+date-released: '2024-01-11'
 keywords:
   - Krebs
   - Tumor
@@ -56,11 +56,13 @@ keywords:
   - Krebsregister
   - Gesundheitsberichterstattung
   - Public health surveillance
+  - p65
 message: Cite me!
 url: >-
   https://www.github.io/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz_-_Datenschema_und_Klassifikationen
 license: CC-BY-4.0
 doi: 10.5281/zenodo.10022040
+version: '2024-01-11T17:24:37+01:00'
 authors:
   - family-names: Meisegeier
     given-names: Stefan

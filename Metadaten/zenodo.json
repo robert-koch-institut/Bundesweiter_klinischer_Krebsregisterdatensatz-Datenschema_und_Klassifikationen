@@ -1,6 +1,6 @@
 {
   "title": "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen",
-  "description": "Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a. niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken, Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.<br>\n<br>\nDie Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des <a href=\"https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html\">Bundeskrebsregisterdatengesetzes (BKRG)</a> einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie <a href=\"https://www.krebsdaten.de/info_antrag\">auf Antrag für wissenschaftliche Forschungsprojekte</a> zur Verfügung.<br>\n<br>\nIn diesem Repository werden begleitende Informationen zu <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes\">Struktur</a> und <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen\">Klassifikationen</a> des bundesweiten ZfKD-Datensatzes bereitgestellt.<br>\n<br>\nDie hier verwendeten <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen\">Klassifikationen</a> spiegeln den derzeitigen Arbeitsstand des ZfKD wider. Ein wesentliches Ziel des Repositories ist es, diesen Stand möglichst transparent abzubilden und beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards einzuladen.",
+  "description": "<p>Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a. niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken, Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.</p>\n<p>Die Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des <a href=\"https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html\">Bundeskrebsregisterdatengesetzes (BKRG)</a> einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie <a href=\"https://www.krebsdaten.de/info_antrag\">auf Antrag für wissenschaftliche Forschungsprojekte</a> zur Verfügung.</p>\n<p>In diesem Repository werden begleitende Informationen zu <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes\">Struktur</a> und <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen\">Klassifikationen</a> des bundesweiten ZfKD-Datensatzes bereitgestellt.</p>\n<p>Die hier verwendeten <a href=\"https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen\">Klassifikationen</a> spiegeln den derzeitigen Arbeitsstand des ZfKD wider. Ein wesentliches Ziel des Repositories ist es, diesen Stand möglichst transparent abzubilden und beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards einzuladen.</p>\n",
   "creators": [
     {
       "name": "Meisegeier, Stefan",
@@ -41,10 +41,11 @@
     "RKI",
     "ZfKD",
     "Cancer Registry",
-    "Krebsregister"
+    "Krebsregister",
+    "p65"
   ],
-  "publication_date": "2023-10-19",
-  "version": "oBDS_v3.0.0.8a_RKI",
+  "publication_date": "2024-01-11",
+  "version": "2024-01-11",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "CC-BY-4.0",
@@ -62,6 +63,14 @@
     {
       "term": "Public health surveillance",
       "identifier": "info:ddc/22/eng//614.42"
+    }
+  ],
+  "dates": [
+    {
+      "start": "2024-01-11T17:24:37+01:00",
+      "end": "2024-01-11T17:24:37+01:00",
+      "type": "Collected",
+      "description": "Date when the Dataset was created"
     }
   ],
   "related_identifiers": [

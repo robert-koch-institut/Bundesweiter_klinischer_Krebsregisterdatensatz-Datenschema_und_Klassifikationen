@@ -1,224 +1,196 @@
 {
-  "data": {
-    "type": "studyhub_resources",
-    "attributes": {
-      "commit_button": "Submit",
-      "content_blobs": [
-        {
-          "content_type": "text/html",
-          "url": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen",
-          "original_filename": "Github Link"
-        }
-      ],
-      "resource": {
-        "resource_type": "Dataset",
-        "resource_type_general": "Dataset",
-        "resource_titles": [
-          {
-            "title": "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen",
-            "title_language": "DE (German)"
-          }
-        ],
-        "resource_acronyms": [],
-        "resource_descriptions": [
-          {
-            "description": "Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a. niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken, Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.\n\nDie Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des Bundeskrebsregisterdatengesetzes (BKRG) (https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie auf Antrag für wissenschaftliche Forschungsprojekte (https://www.krebsdaten.de/info_antrag) zur Verfügung.\n\nIn diesem Repository werden begleitende Informationen zu Struktur (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes) und Klassifikationen (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen) des bundesweiten ZfKD-Datensatzes bereitgestellt.\n\nDie hier verwendeten Klassifikationen (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen) spiegeln den derzeitigen Arbeitsstand des ZfKD wider. Ein wesentliches Ziel des Repositories ist es, diesen Stand möglichst transparent abzubilden und beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards einzuladen.",
-            "description_language": "DE (German)"
-          }
-        ],
-        "resource_format": "",
-        "resource_keywords": [
-          {
-            "resource_keywords_label": "Krebs",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Tumor",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Neoplasm",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Medical Oncology",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Medizinische Onkologie",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Metadaten",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Metadata",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Classification",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Klassifikation",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "ICD",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Germany",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Deutschland",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Datenschema",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Dataschema",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "RKI",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "ZfKD",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Cancer Registry",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Krebsregister",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Gesundheitsberichterstattung",
-            "resource_keywords_label_code": ""
-          },
-          {
-            "resource_keywords_label": "Public health surveillance",
-            "resource_keywords_label_code": ""
-          }
-        ],
-        "resource_language": [
-          "DE (German)"
-        ],
-        "resource_version": "oBDS_v3.0.0.8a_RKI",
-        "resource_web_page": "https://www.github.io/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz_-_Datenschema_und_Klassifikationen",
-        "resource_use_rights_label": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
-        "resource_use_rights_description": "",
-        "resource_use_rights_authors_confirmation_1": true,
-        "resource_use_rights_authors_confirmation_2": true,
-        "resource_use_rights_authors_confirmation_3": true,
-        "resource_use_rights_support_by_licencing": true,
-        "provenance": {
-          "data_source": ""
-        },
-        "roles": [
-          {
-            "role_type": "Creator/Author",
-            "role_email": "",
-            "role_phone": "",
-            "role_affiliation_address": "",
-            "role_affiliation_web_page": "",
-            "role_affiliation_identifiers": [],
-            "role_name_type": "Personal",
-            "role_name_personal_title": "Other",
-            "role_name_personal_given_name": "Stefan",
-            "role_name_personal_family_name": "Meisegeier",
-            "role_name_identifiers": [
-              {
-                "role_name_identifier": "0000-0003-2347-1836",
-                "role_name_identifier_scheme": "ORCID"
-              }
-            ]
-          },
-          {
-            "role_type": "Creator/Author",
-            "role_email": "",
-            "role_phone": "",
-            "role_affiliation_address": "",
-            "role_affiliation_web_page": "",
-            "role_affiliation_identifiers": [],
-            "role_name_type": "Personal",
-            "role_name_personal_title": "Other",
-            "role_name_personal_given_name": "Maren",
-            "role_name_personal_family_name": "Imhoff",
-            "role_name_identifiers": [
-              {
-                "role_name_identifier": "0009-0001-0030-566X",
-                "role_name_identifier_scheme": "ORCID"
-              }
-            ]
-          },
-          {
-            "role_type": "Creator/Author",
-            "role_email": "",
-            "role_phone": "",
-            "role_affiliation_address": "",
-            "role_affiliation_web_page": "",
-            "role_affiliation_identifiers": [],
-            "role_name_type": "Personal",
-            "role_name_personal_title": "Other",
-            "role_name_personal_given_name": "Karsten",
-            "role_name_personal_family_name": "Berg",
-            "role_name_identifiers": []
-          },
-          {
-            "role_type": "Creator/Author",
-            "role_email": "",
-            "role_phone": "",
-            "role_affiliation_address": "",
-            "role_affiliation_web_page": "",
-            "role_affiliation_identifiers": [],
-            "role_name_type": "Personal",
-            "role_name_personal_title": "Other",
-            "role_name_personal_given_name": "Klaus",
-            "role_name_personal_family_name": "Kraywinkel",
-            "role_name_identifiers": [
-              {
-                "role_name_identifier": "0000-0002-9250-6003",
-                "role_name_identifier_scheme": "ORCID"
-              }
-            ]
-          }
-        ],
-        "ids": [
-          {
-            "id_identifier": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen",
-            "id_date": "",
-            "id_type": "URL",
-            "id_relation_type": "describes",
-            "id_resource_type_general": "Dataset"
-          },
-          {
-            "id_identifier": "10.5281/zenodo.10022040",
-            "id_date": "",
-            "id_type": "DOI",
-            "id_relation_type": "has part",
-            "id_resource_type_general": "Dataset"
-          }
-        ]
-      }
+  "resource": {
+    "classification": {
+      "type": "Dataset"
     },
-    "relationships": {
-      "projects": {
-        "data": [
-          {
-            "id": "1",
-            "type": "projects"
-          }
-        ]
+    "collection": [
+      "Robert Koch Institute"
+    ],
+    "descriptions": [
+      {
+        "language": "DE (German)",
+        "text": "Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a. niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken, Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.\n\nDie Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des Bundeskrebsregisterdatengesetzes (BKRG) (https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie auf Antrag für wissenschaftliche Forschungsprojekte (https://www.krebsdaten.de/info_antrag) zur Verfügung.\n\nIn diesem Repository werden begleitende Informationen zu Struktur (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes) und Klassifikationen (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen) des bundesweiten ZfKD-Datensatzes bereitgestellt.\n\nDie hier verwendeten Klassifikationen (https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#klassifikationen) spiegeln den derzeitigen Arbeitsstand des ZfKD wider. Ein wesentliches Ziel des Repositories ist es, diesen Stand möglichst transparent abzubilden und beteiligte Akteure zur weiteren gemeinsamen Harmonisierung von Standards einzuladen."
       }
-    }
+    ],
+    "titles": [
+      {
+        "language": "DE (German)",
+        "text": "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen"
+      }
+    ],
+    "ids": [
+      {
+        "identifier": "10.5281/zenodo.10022040",
+        "typeGeneral": "Dataset",
+        "relationType": "A references B",
+        "scheme": "DOI"
+      },
+      {
+        "identifier": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen",
+        "relationType": "A references B",
+        "typeGeneral": "Dataset",
+        "scheme": "URL"
+      }
+    ],
+    "provenance": {
+      "dataSource": "Automatically uploaded: Other"
+    },
+    "keywords": [
+      {
+        "label": "Krebs"
+      },
+      {
+        "label": "Tumor"
+      },
+      {
+        "label": "Neoplasm"
+      },
+      {
+        "label": "Medical Oncology",
+        "code": "D008495"
+      },
+      {
+        "label": "Medizinische Onkologie",
+        "code": "D008495"
+      },
+      {
+        "label": "Metadaten"
+      },
+      {
+        "label": "Metadata"
+      },
+      {
+        "label": "Classification"
+      },
+      {
+        "label": "Klassifikation"
+      },
+      {
+        "label": "ICD"
+      },
+      {
+        "label": "Germany"
+      },
+      {
+        "label": "Deutschland"
+      },
+      {
+        "label": "Datenschema"
+      },
+      {
+        "label": "Dataschema"
+      },
+      {
+        "label": "RKI"
+      },
+      {
+        "label": "ZfKD"
+      },
+      {
+        "label": "Cancer Registry"
+      },
+      {
+        "label": "Krebsregister"
+      },
+      {
+        "label": "Gesundheitsberichterstattung",
+        "code": "info:ddc/22/de//614.42"
+      },
+      {
+        "label": "Public health surveillance",
+        "code": "info:ddc/22/eng//614.42"
+      },
+      {
+        "label": "p65"
+      }
+    ],
+    "languages": [
+      "DE (German)"
+    ],
+    "nonStudyDetails": {
+      "useRights": {
+        "confirmations": {
+          "authority": true,
+          "irrevocability": true,
+          "terms": true,
+          "supportByLicensing": true
+        },
+        "label": "CC BY 4.0 (Creative Commons Attribution 4.0 International)"
+      },
+      "version": "2024-01-11"
+    },
+    "webpage": "https://www.github.io/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz_-_Datenschema_und_Klassifikationen",
+    "contributors": [
+      {
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut"
+          }
+        ],
+        "nameType": "Personal",
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Stefan",
+          "familyName": "Meisegeier",
+          "identifiers": [
+            {
+              "identifier": "0000-0003-2347-1836",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut"
+          }
+        ],
+        "nameType": "Personal",
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Maren",
+          "familyName": "Imhoff",
+          "identifiers": [
+            {
+              "identifier": "0009-0001-0030-566X",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut"
+          }
+        ],
+        "nameType": "Personal",
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Karsten",
+          "familyName": "Berg"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "name": "Robert Koch-Institut"
+          }
+        ],
+        "nameType": "Personal",
+        "personal": {
+          "type": "Creator/Author",
+          "givenName": "Klaus",
+          "familyName": "Kraywinkel",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-9250-6003",
+              "scheme": "ORCID"
+            }
+          ]
+        }
+      }
+    ]
   }
 }
