@@ -102,7 +102,7 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten:
 | Datei | Beschreibung | Download |
 | ----- | ------------ | -------- |
 | XML-Schema | Die XML-Schema-Definition `.xsd` als eindeutige, vollständige und maschinenlesbare Repräsentation des gesamten Schemas mit allen Details.   | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema.xsd) |
-| CSV-Schema | Variablen und mögliche Ausprägungen in tabellarischer Darstellung als `.csv`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema.csv) |
+| XLSX-Schema | Variablen und mögliche Ausprägungen in tabellarischer Darstellung als `.xlsx`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema.xlsx) |
 | TXT-Schema | Variablen und mögliche Ausprägungen in stark vereinfachter textueller Darstellung zur erleichterten Erkennung von Änderungen. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema.txt) |
 | PDF-Schema (Abbildung) | Die grafische Darstellung des XML-Schemas als `.pdf`. Aufgrund der Komplexität des Gesamtschemas sind nicht alle Elemente abgebildet. Hinweise zur Notation des XML-Schemas sind [hier](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema_Abbildung.pdf) |
 | PDF-Schema (Liste) | Optisch gestaltete und "druckerfreundliche" Kurzübersicht zu Variablen und möglichen Ausprägungen als `.pdf`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema_Liste.pdf) |
@@ -145,17 +145,19 @@ Bedeutung der Spalten:
 | Folgeereignis - Gesamtbeurteilung Tumorstatus |*Folgeereignis* `Gesamtbeurteilung_Tumorstatus` | [beurteilung_gesamt.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/beurteilung_gesamt.csv) |
 | Folgeereignis - Beurteilung Primärtumor |*Folgeereignis* `Verlauf_Lokaler_Tumorstatus` | [beurteilung_lokal.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/beurteilung_lokal.csv) |
 | Wertigkeit der Diagnosesicherung |*Primärdiagnose* `Diagnosesicherung` | [diagnosesicherung.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/diagnosesicherung.csv) |
+| DCN (death certificate notified) |*Primärdiagnose* `DCN` | [dcn.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/dcn.csv) |
 | Lokalisation der Fernmetastasen |*Primärdiagnose* `Lokalisation`, *Folgeereignis* `Lokalisation` | [fm_lokalisation.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/fm_lokalisation.csv) |
 | Geschlecht |*Person* `Geschlecht` | [geschlecht.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/geschlecht.csv) |
 | Modul Prostata: Anlass der Probenahme |*Primärdiagnose* `AnlassGleasonScore` | [gleason_anlass.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/gleason_anlass.csv) |
 | Modul Prostata: Gleason-Score |*Primärdiagnose* `ScoreErgebnis` | [gleason_score.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/gleason_score.csv) |
 | Differenzierungsgrad |*Primärdiagnose* `Grading` | [grading.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/grading.csv) |
+| Modul Mamma: Her2neu Status |*Primärdiagnose* `Her2NeuStatus` | [her2neu.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/her2neu.csv) |
 | Modul Mamma: Hormonrezeptorstatus |*Primärdiagnose* `HormonrezeptorStatus_Oestrogen`, *Primärdiagnose* `HormonrezeptorStatus_Progesteron` | [hormonrezeptor.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/hormonrezeptor.csv) |
 | [Todesursache, Grundleiden nach ICD-10](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#todesursache-grundleiden-nach-icd-10) |*Todesursachen* `Code` | [icd10_todesursache.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/icd10_todesursache.csv) |
 | Ausgabe der ICD-10 |*Todesursachen* `Version`, *Primärdiagnose* `Diagnose_ICD10_Version` | [icd10_version.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/icd10_version.csv) |
 | [Diagnose nach ICD-10](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#diagnose-nach-icd-10) |*Primärdiagnose* `Diagnose_ICD10_Code` | [icd10.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/icd10.csv) |
 | Angabe zur Kontaktbestrahlung |*Strahlentherapie* `Interstitiell_endokavitaer` | [interstitiell.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/interstitiell.csv) |
-| Wohnort bei Diagnose |*Primärdiagnose* `Inzidenzort`, *Primärdiagnose* `Inzidenzort_BL` | [landkreis.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/landkreis.csv) |
+| [Wohnort bei Diagnose](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#wohnort-bei-diagnose) |*Primärdiagnose* `Inzidenzort` | [landkreis.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/landkreis.csv) |
 | Modul Mamma: Menopausenstatus |*Primärdiagnose* `Praetherapeutischer_Menopausenstatus` | [menopausenstatus.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/menopausenstatus.csv) |
 | Typ der metabolischen Strahlentherapie |*Strahlentherapie* `Metabolisch_Typ` | [metabolisch.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/metabolisch.csv) |
 | Quelle Morphologie |*Primärdiagnose* `Morphologie_Version` | [morphologie_version.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/morphologie_version.csv) |
@@ -209,7 +211,7 @@ In diesem Abschnitt werden ergänzende Informationen zu den Inhalten der [Refere
 
 ##### Diagnose nach ICD-10
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-10-GM (Version 2008) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html), unter Verwendung der [Empfehlungen des GKV-Spitzenverbands für die klinische Krebsregistrierung (Stand: 14.05.2020)](https://www.gkv-spitzenverband.de/krankenversicherung/qualitaetssicherung_2/klinisches_krebsregister.jsp) und unter Verwendung des [Umsetzungsleitfadens der Plattform § 65c (Stand: 06.06.2023)](https://confluence.basisdatensatz.de/display/UMK/Meldepflichtige+Diagnosen+nach+ICD).  
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-10-GM (Version 2008) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html), unter Verwendung der [Empfehlungen des GKV-Spitzenverbands für die klinische Krebsregistrierung (Stand: 14.05.2020)](https://www.gkv-spitzenverband.de/krankenversicherung/qualitaetssicherung_2/klinisches_krebsregister.jsp) und unter Verwendung des [Umsetzungsleitfadens der Plattform § 65c (Stand: 15.11.2023)](https://plattform65c.atlassian.net/wiki/spaces/UMK/pages/15532944/Meldepflichtige+Diagnosen+nach+ICD).  
 Die Nutzungsbedingungen der ICD-10 des BfArM sind [hier](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Kontextmaterialien/Nutzungsbedingungen_bfarm_tou_icd10_ops.pdf) hinterlegt.
 
 > [Klassifikationen/icd10.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/icd10.csv)
@@ -246,7 +248,7 @@ Variablen und Ausprägungen der Referenztabelle:
 
 ##### ICD-O Topographie
 
-Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-O-3 (2. Revision, Version 2019) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html) und unter Zuhilfenahme des [Umsetzungsleitfadens der Plattform § 65c (Stand: 10.05.2023)](https://confluence.basisdatensatz.de/display/UMK/Paarige+Organe).
+Die Erstellung der Referenztabelle erfolgte unter Verwendung der maschinenlesbaren Fassung der [ICD-O-3 (2. Revision, Version 2019) des Bundesinstituts für Arzneimittel und Medizinprodukte (BfArM)](https://www.bfarm.de/DE/Kodiersysteme/Services/Downloads/_node.html) und unter Zuhilfenahme des [Umsetzungsleitfadens der Plattform § 65c (Stand: 15.11.2023)](https://plattform65c.atlassian.net/wiki/spaces/UMK/pages/15533189/Paarige+Organe).
 Die Nutzungsbedingungen der ICD-O-3 des BfArM sind [hier](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Kontextmaterialien/Nutzungsbedingungen_bfarm_tou_icdo3.pdf) hinterlegt.
 
 Für paarige Organe (Ausprägung *istPaarig* = `1`, lt. Plattform § 65c-Umsetzungsleitfaden) wird bei der Variable *Seitenlokalisation* die Angabe der betroffenen Körperseite(n) erwartet.
@@ -283,22 +285,18 @@ Variablen und Ausprägungen der Referenztabelle:
 | code6 | String | z. B. `1-202.--`  | OPS-Kategorie/-Kode, 6-stellig |
 | name | String | z. B. `Diagnostik zur Feststellung ...`  | Klassentitel der Maßnahme |
 
-##### Therapieprotokoll
+##### Substanzen
 
-Bei der verwendeten Referenztabelle handelt es sich um eine *Vorschlagsliste* der [Plattform § 65c](https://confluence.basisdatensatz.de/display/UMK/Protokolle). Diese Vorschlagsliste stellt keine verbindliche Festlegung dar. Ein anerkannter Standard für die Kodierung von Systemtherapie-Protokollen ist uns nicht bekannt. Vorschläge für eine standardisierte Nomenklatur ([Rubinstein et al, 2020](https://doi.org/10.1200/CCI.19.00122)), Referenzsysteme ([HemOnc.org](https://hemonc.org/), [National Cancer Institute Thesaurus (NCIT)](https://bioportal.bioontology.org/ontologies/NCIT/?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C62634)) und kommerzielle Produkte für die medizinische Dokumentation ([Onkopti®](https://onkopti.de/protokollsuche/)) wurden von anderen entwickelt. Wir verweisen hier auf eine Auswahl dieser Arbeiten und Systeme.
+Die Erstellung der Referenztabelle erfolgte unter Verwendung des [Umsetzungsleitfadens der Plattform § 65c](https://plattform65c.atlassian.net/wiki/spaces/UMK/pages/15532506/Substanzen) in der Version 2021. Die dort hinterlegte Tabelle wurde für unsere Zwecke in folgenden Schritten geringfügig überarbeitet:
 
-> Rubinstein, S. M., Yang, P. C., Cowan, A. J., & Warner, J. L. (2020). Standardizing Chemotherapy Regimen Nomenclature: A Proposal and Evaluation of the HemOnc and National Cancer Institute Thesaurus Regimen Content. JCO clinical cancer informatics, 4, 60–70. [https://doi.org/10.1200/CCI.19.00122](https://doi.org/10.1200/CCI.19.00122)  
-> [Onkopti® – die Datenbank digitalisierter onkologischer Therapieprotokolle](https://onkopti.de/protokollsuche/)
-
-##### Verwendete Substanzen
-
-Die Erstellung der Referenztabelle erfolgte unter Verwendung des [Umsetzungsleitfadens Substanzen](https://confluence.basisdatensatz.de/display/UMK/Substanzen) in der Version 2021. Dieser Leitfaden wurde geringfügig, überarbeitet, in folgenden Schritten:
-
-- der Eintrag `Larotrectinib` liegt als Duplikat vor, dies wurde korrigiert
+- der Eintrag `Larotrectinib` lag als Duplikat vor, dies wurde korrigiert
 - die Spalte `Code` wurde ergänzt, hier sind gültige ATC-Codes verknüpft, sofern anwendbar
-- für die Zuordnung wurde auf das Kapitel `L` beschränkt (_Antineoplastic and immunomodulating agents_)
+- für die Zuordnung der ATC-Codes wurde auf das Kapitel `L` beschränkt (_Antineoplastic and immunomodulating agents_)
 
 > [Klassifikationen/substanz.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/substanz.csv)
+
+Für die Verknüpfung von Substanzbezeichnung und ATC-Code wurde auf die ATC-Klassifikation für den deutschen Arzneimittelmarkt zurückgegriffen:
+>[GKV-Arzneimittelindex im Wissenschaftlichen Institut der AOK (WIdO), AOK Bundesverband GbR Stand 04/2023](https://www.wido.de/publikationen-produkte/analytik/arzneimittel-klassifikation/)
 
 Variablen und Ausprägungen der Referenztabelle:
 
@@ -307,6 +305,13 @@ Variablen und Ausprägungen der Referenztabelle:
 | Therapieart | String | z. B. `HO`  | Art der Therapie |
 | Substanz| Sting | z. B. `Abacavir`  | Bezeichnung des Arzneimittels |
 | Code | String | z. B. `J05AF06`  | ATC-Kode, Ebene 5 |
+
+##### Therapieprotokoll
+
+Bei der verwendeten Referenztabelle handelt es sich um eine *Vorschlagsliste* der [Plattform § 65c](https://confluence.basisdatensatz.de/display/UMK/Protokolle). Diese Vorschlagsliste stellt keine verbindliche Festlegung dar. Ein anerkannter Standard für die Kodierung von Systemtherapie-Protokollen ist uns nicht bekannt. Vorschläge für eine standardisierte Nomenklatur ([Rubinstein et al, 2020](https://doi.org/10.1200/CCI.19.00122)), Referenzsysteme ([HemOnc.org](https://hemonc.org/), [National Cancer Institute Thesaurus (NCIT)](https://bioportal.bioontology.org/ontologies/NCIT/?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C62634)) und kommerzielle Produkte für die medizinische Dokumentation ([Onkopti®](https://onkopti.de/protokollsuche/)) wurden von anderen entwickelt. Wir verweisen hier auf eine Auswahl dieser Arbeiten und Systeme.
+
+> Rubinstein, S. M., Yang, P. C., Cowan, A. J., & Warner, J. L. (2020). Standardizing Chemotherapy Regimen Nomenclature: A Proposal and Evaluation of the HemOnc and National Cancer Institute Thesaurus Regimen Content. JCO clinical cancer informatics, 4, 60–70. [https://doi.org/10.1200/CCI.19.00122](https://doi.org/10.1200/CCI.19.00122)  
+> [Onkopti® – die Datenbank digitalisierter onkologischer Therapieprotokolle](https://onkopti.de/protokollsuche/)
 
 ##### TNM: Regionäre Lymphknotenmetastasierung
 
@@ -335,8 +340,8 @@ Stadium IB nach TNM8: T0, T1 N1mi M0
 
 ###### Zusatz (i+), (mol+)
 
-| Ausprägung | Beschreibung | 
-| ---------- | ------------ | 
+| Ausprägung | Beschreibung |
+| ---------- | ------------ |
 | `(p)N0` | Histologisch keine Lymphknotenmetastasen, keine Untersuchung zum Nachweis isolierter Tumorzellen | 
 | `(p)N0(i–)` | Histologisch keine Lymphknotenmetastasen, kein morphologischer Nachweis von isolierten Tumorzellen |
 | `(p)N0(i+)` | Histologisch keine Lymphknotenmetastasen, morphologischer Nachweis von isolierten Tumorzellen |
@@ -344,6 +349,22 @@ Stadium IB nach TNM8: T0, T1 N1mi M0
 | `(p)N0(mol+)`| Histologisch keine Lymphknotenmetastasen, nicht-morphologischer Nachweis von isolierten Tumorzellen |
 
 > Quelle: [TNM Classification of Malignant Tumours, 8th edition](https://www.wiley.com/en-gb/TNM+Classification+of+Malignant+Tumours%2C+8th+Edition-p-9781119263579)
+
+##### Wohnort bei Diagnose
+
+Angegeben ist hier der Wohnort zum Zeitpunkt der Diagnosestellung auf Basis des Amtlichen Gemeindeschlüssels [(AGS)](https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html). Verwendet werden die ersten 5 Ziffern des AGS, was der Landkreisebene entspricht.
+
+> [Klassifikationen/landkreis.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/landkreis.csv)
+
+> Quellen: angepasste Auflistung aus der Zuordnung der epi Daten
+
+| Ausprägung | Beschreibung |
+| ---------- | ------------ |
+| `code` | erste 5 Ziffern des AGS |
+| `name` | Name des Landkreises |
+| `rb_id` | Zugeordnete id des Regierungsbezirkes |
+| `ro_id` | Zugeordnete id der [Raumordnungsregion](https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/regionen/Raumordnungsregionen/raumordnungsregionen.html) |
+| `isValid` | `1` für aktuell gültige Landkreise, `0` für veraltete Kodierungen oder items für `Unbekannt` |
 
 ### Beispieldaten
 
