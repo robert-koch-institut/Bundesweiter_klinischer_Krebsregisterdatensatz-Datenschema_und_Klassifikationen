@@ -357,7 +357,7 @@ In Abwandlung der amtlichen Daten sind in der Liste alle Regionen konsistent als
 
 > [Klassifikationen/landkreis.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/landkreis.csv)
 
-> Quelle: angepasste Auflistung auf Basis von Daten des Bundesamtes für Kartographie und Geodäsie [BKG](https://gdz.bkg.bund.de/). Abruf der amtlichen Daten: [link](https://sg.geodatenzentrum.de/web_public/gdz/dokumentation/deu/vg5000.pdf)
+> Quelle: angepasste Auflistung auf Basis von Daten des Bundesamtes für Kartographie und Geodäsie [BKG](https://gdz.bkg.bund.de/). Abruf der amtlichen Daten: [link](https://sg.geodatenzentrum.de/web_public/gdz/dokumentation/deu/vg5000.pdf). Datenstand: 31.12.2019
 
 | Ausprägung | Beschreibung |
 | ---------- | ------------ |
