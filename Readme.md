@@ -361,11 +361,8 @@ In Abwandlung der amtlichen Daten sind in der Liste alle Regionen konsistent als
 
 | Ausprägung | Beschreibung |
 | ---------- | ------------ |
-| `RS` | tlw. umkodierte erste 5 Ziffern des AGS |
+| `RS` | erste 5 Ziffern des AGS, tlw. umkodiert |
 | `GEN` | Geografischer Name |
-| `SN_L` | Bundesland |
-| `SN_R` | Regierungsbezirk |
-| `SN_K` | Landkreis |
 | `NUTS` | Europäischer Statistikschlüssel |
 | `WSK` | Datum der Wirksamkeit |
 
