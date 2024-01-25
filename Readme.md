@@ -353,18 +353,21 @@ Stadium IB nach TNM8: T0, T1 N1mi M0
 ##### Wohnort bei Diagnose
 
 Angegeben ist hier der Wohnort zum Zeitpunkt der Diagnosestellung auf Basis des Amtlichen Gemeindeschlüssels [(AGS)](https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html). Verwendet werden die ersten 5 Ziffern des AGS, was der Landkreisebene entspricht.
+In Abwandlung der amtlichen Daten sind in der Liste alle Regionen konsistent als 5-Steller kodiert. Konkret werden die 3-stelligen AGS der Regierungsbezirke um `99` ergänzt, die 2-stelligen AGS der Bundesländer um `099`.
 
 > [Klassifikationen/landkreis.csv](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/Klassifikationen/landkreis.csv)
 
-> Quellen: angepasste Auflistung aus der Zuordnung der epi Daten
+> Quelle: angepasste Auflistung auf Basis von Daten des Bundesamtes für Kartographie und Geodäsie [BKG](https://gdz.bkg.bund.de/). Abruf der amtlichen Daten: [link](https://sg.geodatenzentrum.de/web_public/gdz/dokumentation/deu/vg5000.pdf)
 
 | Ausprägung | Beschreibung |
 | ---------- | ------------ |
-| `code` | erste 5 Ziffern des AGS |
-| `name` | Name des Landkreises |
-| `rb_id` | Zugeordnete id des Regierungsbezirkes |
-| `ro_id` | Zugeordnete id der [Raumordnungsregion](https://www.bbsr.bund.de/BBSR/DE/forschung/raumbeobachtung/Raumabgrenzungen/deutschland/regionen/Raumordnungsregionen/raumordnungsregionen.html) |
-| `isValid` | `1` für aktuell gültige Landkreise, `0` für veraltete Kodierungen oder items für `Unbekannt` |
+| `RS` | tlw. umkodierte erste 5 Ziffern des AGS |
+| `GEN` | Geografischer Name |
+| `SN_L` | Bundesland |
+| `SN_R` | Regierungsbezirk |
+| `SN_K` | Landkreis |
+| `NUTS` | Europäischer Statistikschlüssel |
+| `WSK` | Datum der Wirksamkeit |
 
 ### Beispieldaten
 
