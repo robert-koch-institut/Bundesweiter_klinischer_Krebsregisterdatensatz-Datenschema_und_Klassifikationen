@@ -1,21 +1,53 @@
+<!-- HEADER_START: {"lang": "de"} -->
+
+
+Dokumentation  
 # Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen
 
-**[Robert Koch-Institut | RKI](https://rki.de)**  
-Nordufer 20  
-13353 Berlin  
+<br> 
+<br> 
+<br> 
 
-**Zentrum für Krebsregisterdaten | ZfKD**  
-[Stefan Meisegeier](https://orcid.org/0000-0003-2347-1836 "ORCiD") (Projektleitung)  
-[Maren Imhoff](https://orcid.org/0009-0001-0030-566X "ORCiD") (Data Manager)  
-Karsten Berg (Data Analyst)  
-[Klaus Kraywinkel](https://orcid.org/0000-0002-9250-6003 "ORCiD") (Leitung ZfKD)  
+[**Stefan Meisegeier**](https://orcid.org/0000-0003-2347-1836)&sup1;, [**Maren Imhoff**](https://orcid.org/0009-0001-0030-566X)&sup1;, **Karsten Berg**&sup1;, & [**Klaus Kraywinkel**](https://orcid.org/0000-0002-9250-6003)&sup1;
+
+<br> 
+
+
+
+&emsp;&emsp;&sup1; [Robert Koch-Institut](https://www.rki.de/) | [ZfKD - Zentrum für Krebsregisterdaten](https://www.krebsdaten.de/)
+
+<br> 
+
+**Zitieren**  
+Meisegeier, S., Imhoff, M., Berg, K., & Kraywinkel, K. (2024). Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.10022040](https://doi.org/10.5281/zenodo.10022040)
+
+<br>
+
+
+<br>
+
+---
 
 E-Mail-Adresse für Rückmeldungen: [krebsdaten@rki.de](mailto:krebsdaten@rki.de)  
 
 ---
 
-**Zitieren**  
-Meisegeier, S., Imhoff, M., Berg, K. und Kraywinkel, K. (2023): Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen (oBDS_v3.0.0.8a_RKI). Zenodo. DOI:[10.5281/zenodo.10022040](https://doi.org/10.5281/zenodo.10022040)  
+**Zusammenfassung**    
+In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Klassifikationen des bundesweiten Datensatzes des Zentrums für Krebsregisterdaten (ZfKD) am Robert Koch-Institut sowie Beispieldaten bereitgestellt. Dieser klinische Krebsregisterdatensatz ist nicht öffentlich zugänglich, kann jedoch auf Antrag für wissenschaftliche Forschung bereitgestellt werden. Er enthält Daten zu neu auftretenden Krebsfällen, die von medizinischen Einrichtungen an die Krebsregister der Bundesländer gemeldet und von dort an das ZfKD übermittelt werden. Die Datenerfassung basiert auf dem Bundeskrebsregisterdatengesetz sowie den entsprechenden Landesgesetze.
+
+<br>
+
+**Inhaltsverzeichnis** 
+<!-- TOC_START: {"heading_depth": 2} -->
+  - [Einleitung](#einleitung)
+  - [Informationen zum Entstehungskontext des ZfKD-Datensatzes](#informationen-zum-entstehungskontext-des-zfkd-datensatzes)
+  - [Struktur des bundesweiten klinischen Krebsregisterdatensatzes](#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes)
+  - [Hinweise zur Nachnutzung der Daten](#hinweise-zur-nachnutzung-der-daten)
+<!-- TOC_END -->
+
+<br>
+
+<!-- HEADER_END -->
 
 ## Einleitung
 
@@ -426,19 +458,6 @@ In der zenodo.json ist neben dem Publikationsdatum (`"publication_date"`) auch d
   ],
 ```    
 
-
-Zusätzlich beschreiben wir tabellarische Daten mithilfe des [Data Package Standards](https://datapackage.org/).
-Ein Data Package ist eine strukturierte Sammlung von Daten und zugehörigen Metadaten, die den Austausch und die Wiederverwendung von Daten erleichtert. Es besteht aus einer datapackage.json-Datei, die zentrale Informationen wie die enthaltenen Ressourcen, ihre Formate und Schema-Definitionen beschreibt.
-
-Der Data Package Standard wird von der [Open Knowledge Foundation](https://okfn.org/) bereitgestellt und ist ein offenes Format, das eine einfache, maschinenlesbare Beschreibung von Datensätzen ermöglicht.
-
-Die Liste der in diesem Repository enthaltenen Daten ist in folgender Datei hinterlegt:
-
-> [datapackage.json](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/tree/main/datapackage.json)
-
-Für tabellarische Daten definieren wir zusätzlich ein [Table Schema](https://datapackage.org/standard/table-schema/), das die Struktur der Tabellen beschreibt, einschließlich Spaltennamen, Datentypen und Validierungsregeln. Diese Schema-Dateien finden sich unter:
-
-> [Metadaten/schemas/](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/tree/main/Metadaten/schemas) 
 
 
 
