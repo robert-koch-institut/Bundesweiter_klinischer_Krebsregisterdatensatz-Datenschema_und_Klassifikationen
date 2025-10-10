@@ -26,11 +26,6 @@ Meisegeier, S., Imhoff, M., Berg, K., & Kraywinkel, K. (2024). Bundesweiter klin
 
 <br>
 
----
-
-E-Mail-Adresse für Rückmeldungen: [krebsdaten@rki.de](mailto:krebsdaten@rki.de)  
-
----
 
 **Zusammenfassung**    
 In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Klassifikationen des bundesweiten Datensatzes des Zentrums für Krebsregisterdaten (ZfKD) am Robert Koch-Institut sowie Beispieldaten bereitgestellt. Dieser klinische Krebsregisterdatensatz ist nicht öffentlich zugänglich, kann jedoch auf Antrag für wissenschaftliche Forschung bereitgestellt werden. Er enthält Daten zu neu auftretenden Krebsfällen, die von medizinischen Einrichtungen an die Krebsregister der Bundesländer gemeldet und von dort an das ZfKD übermittelt werden. Die Datenerfassung basiert auf dem Bundeskrebsregisterdatengesetz sowie den entsprechenden Landesgesetze.
@@ -55,13 +50,10 @@ Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. 
 
 Die Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des [Bundeskrebsregisterdatengesetzes (BKRG)](https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie [auf Antrag für wissenschaftliche Forschungsprojekte](https://www.krebsdaten.de/info_antrag) zur Verfügung.
 
-In diesem Repository werden begleitende Informationen zur **Struktur** des bundesweiten ZfKD-Datensatzes [bereitgestellt](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes).
+In diesem Repository werden begleitende Informationen zur **Struktur** des bundesweiten ZfKD-Datensatzes [bereitgestellt](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes). Ein weiteres wesentliches Element der Krebsregisterdaten stellen **Klassifikationen** dar - Referenztabellen für Variablen des Datensatzes und ihre definierten Ausprägungen. Diese Tabellen werden durch beteiligte Akteure kontinuierlich harmonisiert. 
 
-Ein weiteres wesentliches Element der Krebsregisterdaten stellen **Klassifikationen** dar - Referenztabellen für Variablen des Datensatzes und ihre definierten Ausprägungen. Diese Tabellen werden durch beteiligte Akteure kontinuierlich harmonisiert. Damit die jeweiligen Arbeitsstände in automatisierten Prozessen abrufbar sind, wurden die Klassifikationen in ein eigenes, englischsprachiges [Repository](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references) verschoben. Die bislang auf dieser Seite abrufbaren Inhalte zu den Referenztabellen sind nun auf [dieser Seite](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-tables-v1.md) zu finden.
-
-**Beispieldaten** sind ebenfalls ab dieser Version des Repositorys ausgelagert. Diese wurden grundlegend überarbeitet und können nun in Form einer [transportablen Datenbank](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator) abgerufen werden. Die Struktur dieser Beispieldaten ist exakt deckungsgleich mit den klinischen Krebsregisterdaten. Eine detaillierte Darstellung der dazu verwendeten [Tabellen und Relationen](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-dataset.md) erklärt, wie die Daten verknüpft werden können.
-
-> 💡 Der ZfKD-Datensatz ist nicht öffentlich zugänglich, kann aber auf Antrag für wissenschaftliche Forschungszwecke genutzt werden. Bitte verwenden Sie für Fragen zur Antragstellung die oben genannte E-Mail-Adresse oder das auf der Internetseite des ZfKD bereitgestellte [Kontaktformular](https://www.krebsdaten.de/SharedDocs/Kontaktformulare/A/Antrag-krebsdaten/Integrator_SCU.html). Informationen zum gesetzlichen Auftrag, zu Methoden und Veröffentlichungen des ZfKD erhalten Sie ebenfalls auf den [Internetseiten des ZfKD](https://www.krebsdaten.de/). Bitte beachten Sie, dass das ZfKD an den Daten, die von den Krebsregistern übermittelt wurden, keine Änderungen vornimmt.
+> [!NOTE]
+> Der ZfKD-Datensatz ist nicht öffentlich zugänglich, kann aber auf Antrag für wissenschaftliche Forschungszwecke genutzt werden. Bitte verwenden Sie für Fragen zur Antragstellung die  E-Mail-Adresse des ZfKD: [krebsdaten@rki.de](mailto:krebsdaten@rki.de)  oder das auf der Internetseite des ZfKD bereitgestellte [Kontaktformular](https://www.krebsdaten.de/SharedDocs/Kontaktformulare/A/Antrag-krebsdaten/Integrator_SCU.html). Informationen zum gesetzlichen Auftrag, zu Methoden und Veröffentlichungen des ZfKD erhalten Sie ebenfalls auf den [Internetseiten des ZfKD](https://www.krebsdaten.de/). Bitte beachten Sie, dass das ZfKD an den Daten, die von den Krebsregistern übermittelt wurden, keine Änderungen vornimmt.
 
 ## Informationen zum Entstehungskontext des ZfKD-Datensatzes
 
@@ -147,9 +139,20 @@ Protokollierte Änderungen am Datenschema sind in den beigefügten [Release Note
 Die obenstehende Abbildung veranschaulicht die Struktur des klinischen Datensatzes. ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2023-06-28_XML-Schema_grob.png)
 > Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes. Quelle: eigene Darstellung.
 
+
+### Klassifikationen
+
+Die im Datenschema verwandeten Klassifikationen erfahren reglmäßige änderungen. Damit die jeweiligen Arbeitsstände in automatisierten Prozessen abrufbar sind, sind die Klassifikationen in ein eigenes, englischsprachiges [Repository](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references) zur verfüguing gestellt. Die dem Datenschema entsprechenden Referenztabellen sind im Repository under [`docs/readme-tables-v1.md`](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-tables-v1.md) bereitgestellt.
+
+> https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references
+
+### Beispieldaten
+
+Um die beim ZfKD beantragbaren Daten vor eine Beantragung, praktisch einschätzen zu können werden der Datensatzstruktur konforme Beispieldaten zur Verfügung gestellt und können in Form einer [transportablen Datenbank](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator) abgerufen werden. Die Struktur dieser Beispieldaten ist exakt deckungsgleich mit den klinischen Krebsregisterdaten. Eine detaillierte Darstellung der dazu verwendeten [Tabellen und Relationen](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-dataset.md) erklärt, wie die Daten verknüpft werden können.
+
+> https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator
+
 <!-- FOOTER_START: {"lang": "de"} -->
-
-
 
 ### Metadaten  
 
@@ -173,8 +176,6 @@ In der zenodo.json ist neben dem Publikationsdatum (`"publication_date"`) auch d
     }
   ],
 ```    
-
-
 
 
 ## Hinweise zur Nachnutzung der Daten  
