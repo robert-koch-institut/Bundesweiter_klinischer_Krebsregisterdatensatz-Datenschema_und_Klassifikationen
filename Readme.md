@@ -119,6 +119,197 @@ Die Elemente _Primärdiagnose_, _Folgeereignis_, _OP_, _ST_ und _SYST_ können m
 
 ![Abbildung: Vereinfachtes Datenschema (mit ausgewählten Variablen). Quelle: [krebsdaten.de](https://www.krebsdaten.de/Krebs/DE/Content/Forschungsdaten/Informationen_datensatz/klinischer_datensatz/klinischer_datensatz_node.html).](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2023-06-30_Datenschema_einfach.png?raw=true)  
 
+Im Folgenden sind die Variablen des Datensatzes aufgeführt, gruppiert nach Elementen.
+
+#### Person
+
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Geschlecht <br>`text`	| Geschlecht der erkrankten Person. |M = männlich <br> W = weiblich <br> D = divers <br> X = keine Angabe/unbestimmt <br> U = unbekannt |
+| Geburtsdatum_Genauigkeit <br> `text` | 	Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt. | M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Geburtsdatum <br> `date`	| Geburtsdatum der erkrankten Person im internationalen Datumsformat YYYY-MM-DD. |	Datum YYYY-MM-DD |
+| Verstorben <br> `text` | Vitalstatus: Gibt an, ob die erkrankte Person verstorben ist (Ja/Nein).	| J = Ja <br> N = Nein |
+| Datum_Vitalstatus_Genauigkeit <br> `text`| Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt. | M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Datum_Vitalstatus <br> `date` | Wenn Verstorben = Nein, gibt diese Variable das Datum der letzten Erhebung des Vitalstatus an. Wenn Verstorben = Ja, gibt diese Variable das imputierte Sterbedatum an. Bei DCO-Fällen werden Sterbe- und Diagnosedatum gleichgesetzt. | Datum YYYY-MM-DD |
+
+#### Todesursachen
+
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| IsGrundleiden <br> `text`	| Angabe, ob die kodierte Todesursache als amtliches Grundleiden laut Todesbescheinigung bzw. wie vom statistischen Landesamt übermittelt wurde. | J = Ja <br> N = Nein |
+| Code <br> `text`|	Zusätzliche, im Register vorliegende Todesursache(n), kodiert nach ICD-10. |	ICD-10-Code |
+| Version <br> `text`| Für die Kodierung zusätzlicher Todesursachen verwendete Ausgabe der ICD-10.	| ICD-10-Ausgabe |
+
+#### Primärdiagnose
+
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Diagnosedatum_Genauigkeit <br> `text` | Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt. | M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Diagnosedatum <br> `date`|  Datum der Erstdiagnose im internationalen Datumsformat YYYY-MM-DD. Erstdiagnosejahr und -monat werden von den Registern an das ZfKD übermittelt. Der Tag der Erstdiagnose wird von den Registern nicht übermittelt, er wird nachträglich auf einen willkürlichen Wert festgelegt. Bei DCO-Fällen werden Sterbe- und Diagnosedatum gleichgesetzt. | 	Datum YYYY-MM-DD | 
+| Diagnosejahr <br> `date`| Jahr der Erstdiagnose. Bei DCO-Fällen werden Sterbe- und Diagnosejahr gleichgesetzt.	| Datum YYYY |
+| Diagnosealter <br> `int` | Ganzzahliger Abstand in Jahren zwischen Geburt und Erstdiagnose.	|Alter (Jahre) |
+| Inzidenzort <br> `text`	| Ziffern 1-5 des amtlichen Gemeindeschlüssels des Wohnortes der erkrankten Person zum Zeitpunkt der Erstdiagnose.	| Kreiskennziffer, 5-stellig |
+| Diagnose_ICD10_Code <br> `text`|	Tumordiagnose nach ICD-10.	| ICD-10-Kode, 4-stellig |
+| Diagnose_ICD10_Version <br> `text`| Diagnose, ICD-Version |	Für die Kodierung der Tumordiagnose verwendete Ausgabe der ICD-10.	| ICD-10-Version |
+| Topographie_Code <br> `text` | Kodierung der Tumorlokalisation nach ICD-O-3. |	ICD-O-3-Kode (Kapitel T), 4-stellig |
+| Topographie_Version <br> `int` |	Für die Kodierung der Topographie verwendete Ausgabe der ICD-O-3. |	31 = ICD-O-3, 2003 <br> 32 = ICD-O-3, 1. Revision 2014 <br> 33 = ICD-O-3, 2. Revision 2019|
+| Morphologie_Code <br> `text`| Kodierung des Histologiebefunds nach ICD-O-3. Die fünfte Stelle des Kodes bezeichnet das biologische Verhalten des Tumors (/0 Gutartig<br> /1 Unsicher<br> /2 Carcinoma in situ<br> /3 Bösartig, Primärtumor). | ICD-O-3-Kode (Kapitel M), 5-stellig|
+| Morphologie_Version <br> `text`| Für die Kodierung der Morphologie verwendete Referenz (ICD-O-3, WHO Blue Books). | 31 = ICD-O-3, 2003 <br> 32 = ICD-O-3, 1. Revision 2014 <br> 33 = ICD-O-3, 2. Revision 2019 <br> bb = WHO Blue Books |
+| Grading <br> `text`	|	Differenzierungsgrad des Tumors gemäß "WHO Classification of Tumours".	| 0 = Malignes Melanom der Konjunktiva <br> 1 = Gut differenziert <br> 2 = Mäßig differenziert <br> 3 = Schlecht differenziert <br> 4 = Undifferenziert <br> X = Nicht bestimmbar <br> L = Low grade (G1 oder G2) <br> M = Intermediate (G2 oder G3) <br> H = High grade (G3 oder G4) <br> B = Borderline <br> U = Unbekannt <br> T = Trifft nicht zu |
+| LK_untersucht <br> `int` |	Anzahl der untersuchten Lymphknoten.|(n) = Anzahl Lymphknoten |
+| LK_befallen <br> `int` | Anzahl der befallenen Lymphknoten.| (n) = Anzahl Lymphknoten | 
+| Sentinel_LK_untersucht <br> `int`|	Anzahl der untersuchten Lymphknoten, davon Sentinel	| (n) = Anzahl Lymphknoten |
+| Sentinel_LK_befallen	<br> `int`| Anzahl der befallenen Lymphknoten, davon Sentinel |	(n) = Anzahl Lymphknoten|
+| TNM_Auflage_c <br> `text`| Ausgabe der TNM, die für die Beurteilung des klinischen Tumorstadiums verwendet wurde. | 6 = 6. Auflage TNM <br> 7 = 7. Auflage TNM <br> 8 = 8. Auflage TNM <br> 9 = 9. Auflage TNM |
+| y_Symbol_c <br> `text` | Gibt an, ob das klinische Tumorstadium vor oder nach/während der initialen multimodalen Therapie beurteilt wurde. | y = klinische Klassifikation erfolgte nach einer initialen multimodalen Therapie <br> (leer) = klinische Klassifikation erfolgte vor einer initialen multimodalen Therapie oder es hat keine initiale multimodale Therapie stattgefunden | 
+| r_Symbol_c <br> `text` | Gibt an, ob das klinische Tumorstadium eines Rezidivs beurteilt wurde.	| r = klinische Klassifikation erfolgte zur Beurteilung eines Rezidivs <br> (leer) = klinische Klassifikation erfolgte vor Eintreten eines Rezidivs |
+| a_Symbol_c <br> `text`| Gibt an, ob das Tumorstadium mittels Autopsie bestimmt wurde. | a = Klassifikation erfolgte durch Autopsie <br> (leer) = Klassifikation erfolgte klinisch oder pathologisch |
+| T_c <br> `text`| Beschreibt die Ausdehnung des Primärtumors. | Klassifikation nach TNM entsprechend Tumorentität.	| T-Stadium, entitätsspezifisch |
+| N_c	<br> `text`| Beschreibt das Ausmaß regionärer Lymphknotenmetastasen. | Klassifikation nach TNM entsprechend Tumorentität.	| N-Stadium, entitätsspezifisch |
+| M_c	<br> `text`| Beschreibt das Vorliegen von Fernmetastasen. | Klassifikation nach TNM |M-Stadium, teilweise entitätsspezifisch <br> M0 = keine Fernmetastasen <br> M1 = Fernmetastasen |
+| c_p_u_Praefix_T_c <br> `text`	| Gibt an, ob das T-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.| c = T-Stadium wurde durch klinische Angaben festgestellt oder erfüllt nicht die Kriterien für "p" <br> p = T-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = T-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| c_p_u_Praefix_N_c <br> `text`	| Gibt an, ob das N-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.	| c = N-Stadium wurde durch klinische Angaben festgestellt oder erfüllt nicht die Kriterien für "p" <br> p = N-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = N-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| c_p_u_Praefix_M_c <br> `text`	| Gibt an, ob das M-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.	| c = M-Stadium wurde durch klinische Angaben festgestellt oder erfüllt nicht die Kriterien für "p" <br> p = M-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = M-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| m_Symbol_c <br> `text` | Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk. | m = multiple Tumoren ohne Angabe der Zahl <br> (n) = Anzahl der multiplen Tumoren <br> (leer) = keine multiplen Tumoren |
+| L_c <br> `text`	| Beschreibt das Ausmaß der Lymphgefäßinvasion. Wird im Allgemeinen im Rahmen eines pTNM festgestellt. | LX = Lymphgefäßinvasion kann nicht beurteilt werden <br> L0 = keine Lymphgefäßinvasion <br> L1 = Lymphgefäßinvasion |
+| V_c <br> `text` |	Beschreibt das Ausmaß der Veneninvasion. Wird im Allgemeinen im Rahmen eines pTNM festgestellt.	| VX = Veneninvasion kann nicht beurteilt werden <br> V0 = keine Veneninvasion <br> V1 = mikroskopische Veneninvasion <br> V2 = makroskopische Veneninvasion |
+| Pn_c <br> `text`| Beschreibt das Ausmaß der Perineuralinvasion. Wird im Allgemeinen im Rahmen eines pTNM festgestellt. | PnX = perineurale Invasion kann nicht beurteilt werden <br> Pn0 = keine perineurale Invasion <br> Pn1 = perineurale Invasion |
+| S_c <br> `text`| Bei Vorliegen eines Hodentumors: Beschreibt die Erhöhung von Serumtumormarkern (AFP, HCG, LDH). S1-S3: Schwellenwerte siehe TNM |SX = Werte der Serumtumormarker nicht verfügbar oder entsprechende Untersuchungen nicht vorgenommen <br> S0 = Serumtumormarker innerhalb der normalen Grenzen <br> S1-S3 = Serumtumormarker erhöht |
+| UICC_Stadium_c <br> `text` | UICC-Stadium nach TNM-Klassifikation. Beschreibt die anatomische Ausdehnung der Tumorerkrankung. |	UICC-Stadium, entitätsspezifisch |
+| TNM_Auflage_p	<br> `text`|	Ausgabe der TNM, die für die Beurteilung des pathologischen Tumorstadiums verwendet wurde.	| 6 = 6. Auflage TNM <br> 7 = 7. Auflage TNM <br> 8 = 8. Auflage TNM |
+| y_Symbol_p <br> `text` | Gibt an, ob das pathologische Tumorstadium vor oder nach/während der initialen multimodalen Therapie beurteilt wurde. |	y = Klassifikation erfolgte nach einer initialen multimodalen Therapie <br> (leer) = Klassifikation erfolgte vor einer initialen multimodalen Therapie oder es hat keine initiale multimodale Therapie stattgefunden |
+| r_Symbol_p <br> `text`|	Gibt an, ob das pathologische Tumorstadium eines Rezidivs beurteilt wurde.	| r = Klassifikation erfolgte zur Beurteilung eines Rezidivs <br> (leer) = „native“ Klassifikation vor Eintreten eines Rezidivs |
+| a_Symbol_p <br> `text`| Gibt an, ob das pathologische Tumorstadium durch Autopsie festgestellt wurde. | a = Klassifikation erfolgte durch Autopsie <br> (leer) = Klassifikation erfolgte klinisch und/oder pathologisch |
+| T_p <br> `text`|	Beschreibt die Ausdehnung des Primärtumors. Klassifikation nach TNM entsprechend Tumorentität. |	T-Stadium, entitätsspezifisch |
+| N_p <br> `text`| Beschreibt das Ausmaß regionärer Lymphknotenmetastasen. Klassifikation nach TNM entsprechend Tumorentität. |	N-Stadium, entitätsspezifisch |
+| M_p <br> `text` |	Beschreibt das Vorliegen von Fernmetastasen. Klassifikation nach TNM.	| M-Stadium, teilweise entitätsspezifisch <br> M0 = keine Fernmetastasen <br> M1 = Fernmetastasen |
+| c_p_u_Praefix_T_p <br> `text` | Gibt an, ob das T-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.	|  c = T-Stadium wurde durch klinische Angaben festgestellt oder erfüllt nicht die Kriterien für "p" <br> p = T-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = T-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| c_p_u_Praefix_N_p <br> `text` | Gibt an, ob das N-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde. | c = N-Stadium wurde durch klinische Angaben festgestellt oder erfüllt nicht die Kriterien für "p" <br> p = N-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = N-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| c_p_u_Praefix_M_p <br> `text` |	Gibt an, ob das M-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.	| c = M-Stadium wurde durch klinische Angaben festgestellt oder erfüllt nicht die Kriterien für "p" <br> p = M-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = M-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| m_Symbol_p <br> `text` | Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk. |	m = multiple Tumoren ohne Angabe der Zahl <br> (n) = Anzahl der multiplen Tumoren <br> (leer) = keine multiplen Tumoren |
+| L_p <br> `text` | Beschreibt das Ausmaß der Lymphgefäßinvasion. | LX = Lymphgefäßinvasion kann nicht beurteilt werden <br> L0 = keine Lymphgefäßinvasion <br> L1 = Lymphgefäßinvasion |
+| V_p <br> `text`	| Beschreibt das Ausmaß der Veneninvasion. | VX = Veneninvasion kann nicht beurteilt werden <br> V0 = keine Veneninvasion <br> V1 = mikroskopische Veneninvasion <br> V2 = makroskopische Veneninvasion |
+| Pn_p <br> `text` | Beschreibt das Ausmaß der Perineuralinvasion. |	PnX = perineurale Invasion kann nicht beurteilt werden <br> Pn0 = keine perineurale Invasion <br> Pn1 = perineurale Invasion |
+| S_p <br> `text` | Bei Vorliegen eines Hodentumors: Beschreibt die Erhöhung von Serumtumormarkern (AFP, HCG, LDH). S1-S3: Schwellenwerte siehe TNM. | SX = Werte der Serumtumormarker nicht verfügbar oder entsprechende Untersuchungen nicht vorgenommen <br> S0 = Serumtumormarker innerhalb der normalen Grenzen <br> S1-S3 = Serumtumormarker erhöht |
+| UICC_Stadium_p <br> `text`| UICC-Stadium nach TNM-Klassifikation. Beschreibt die anatomische Ausdehnung der Tumorerkrankung.	| UICC-Stadium, entitätsspezifisch |
+| Lokalisation <br> `text` | Beschreibt die Lokalisation der Fernmetastase (n). |	PUL = Lunge <br> OSS = Knochen <br> HEP = Leber <br> BRA = Hirn <br> LYM = Lymphknoten <br> MAR = Knochenmark <br> PLE = Pleura <br> PER = Peritoneum <br> ADR = Nebennieren <br> SKI = Haut <br> OTH = Andere Organe <br> GEN = Generalisierte Metastasierung |
+| Name <br> `text` |	Name/Typ sonstiger verwendeter Klassifikationssysteme.	| (Name, Typ) = Bezeichnung des Klassifikationssystems, z. B. Ann-Arbor-Klassifikation, WHO Classification of CNS Tumors, AJCC |
+| Stadium	<br> `text`| weitere Klassifikation: Stadium (Ausprägung)	| Einstufung/Stadium nach sonstigem verwendeten Klassifikationssystem. |	(Stadium) = Stadium gemäß verwendetem Klassifikationssystem |
+| Diagnosesicherung <br>`text`|	Wertigkeit der Diagnosesicherung.	| 0 = DCO <br> 1 = klinisch, ausschließlich körperliche Untersuchung (ohne tumorspezifische Diagnostik) <br> 2 = klinisch, inkl. Bildgebung, Endoskopie, Laparatomie, Autopsie (ohne histopathologische Untersuchung) <br> 4 = spezifische Tumormarker <br> 5 = zytologisch <br> 7.1 = Histologie des Primärtumors <br> 7.2 = Histologie einer Metastase <br> 7.3 = Histologie der Autopsie <br> 8 = zytogenetisch und/oder molekularer Test <br> 9 = unbekannt|
+| Seitenlokalisation <br> `text`| Bei paarigen Organen: Gibt an, welche Körperseite betroffen ist. |	L = links <br> R = rechts <br> B = beidseitig <br> M = mittig <br> U = unbekannt <br> T = trifft nicht zu (z. B. bei Systemerkrankung) |
+| DCN <br> `text`	| Gibt an, ob die Quelle der ersten Information über einen Erkrankungsfall im Register eine Todesbescheinigung bzw. eine amtlich übermittelte Todesursache war. |	J = Ja <br> N = Nein |
+
+#### Primärdiagnose: Modul Mamma
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Anzahl_Tage_Diagnose_Tod <br> `int`	| Zeitlicher Abstand zwischen Diagnose und Tod (in Tagen).	| (n) = Anzahl Tage |
+| TumorgroesseInvasiv <br> `int`	| Maximaler Durchmesser des invasiven Karzinoms (in mm).	| (n) = Tumorgröße in mm |
+| TumorgroesseDCIS <br> `int` | Maximaler Durchmesser des duktalen in situ-Karzinoms (in mm).	| (n) = DCIS-Größe in mm |
+| Praetherapeutischer_Menopausenstatus <br> `text` |	Prätherapeutischer Menopausenstatus der Patientin. Postmenopausal bedeutet: entweder a) keine Menstruationsblutung für länger als ein Jahr oder b) E2 und FSH im eindeutigen postmenopausalen Bereich. |	1 = prämenopausal (umfasst perimenopausal) <br> 3 = postmenopausal <br> U = unbekannt |
+| HormonrezeptorStatus_Oestrogen <br> `text` | Östrogenrezeptorstatus gemäß Immunreaktivem Score (IRS).|	P = Positiv (IRS >= 1) <br> N = Negativ <br> U = Unbekannt |
+| HormonrezeptorStatus_Progesteron <br> `text` |	Progesteronrezeptorstatus gemäß Immunreaktivem Score (IRS). | P = Positiv (IRS >= 1) <br> N = Negativ <br> U = Unbekannt |
+| Her2neuStatus <br> `text`	| HER2 (ERBB2)-Status | P = Positiv (ICH+++ oder: ICH++ und ISH positiv) <br> N = Negativ <br> U = Unbekannt |
+
+### Primärdiagnose: Modul Prostata
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| PSA <br> `float`	| Aktuell relevanter PSA-Wert (in ng/mL). |	(n) = Wert in ng/mL |
+| DatumPSA_Genauigkeit <br> `text` |	Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt.	| M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| DatumPSA <br> `date` |	Monat und Jahr der PSA-Wert-Bestimmung. |	Datum YYYY-MM-DD |
+| GradPrimaer <br> `int` |	 Primärer Gleason-Grad.	| 1, 2, 3, 4 oder 5 |
+| GradSekundaer <br> `int` |	Sekundärer Gleason-Grad. |	1, 2, 3, 4 oder 5 |
+| ScoreErgebnis <br> `text`	| Gleason-Score.	| 2, 3, 4, 5, 6, 7, 7a, 7b, 8, 9 oder 10 |
+| AnlassGleasonScore <br> `text` |	Anlass der Bestimmung. |	O = OP <br> S = Stanzbiopsie <br> U = Unbekannt |
+
+#### Primärdiagnose: Modul Melanom
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Tumordicke <br> `float` |	Tumordicke (in mm).	| (n) = Dicke in mm |
+| Ulzeration <br> `text`|	Gibt an, ob Ulzeration (Geschwürbildung) vorliegt. |	J = Ja <br> N = Nein |
+| LDH <br> `int` |	LDH-Wert (in Units pro Liter). | (n) = Wert in U/L |
+
+#### Primärdiagnose: Modul Darm
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| RektumAbstandAnokutanlinie <br> `int` |Bei Rektumkarzinom: Beschreibt den Abstand des Tumorunterrandes von der Anokutanlinie (in cm). | (n) = Abstand zur Anokutanlinie in cm <br> U = unbekannt |
+| RASMutation <br> `text` |	Gibt an, ob eine Mutation im K-ras-Onkogen vorliegt. | W = Wildtyp  <br> M = Mutation <br> U = Unbekannt <br> N = Nicht untersucht |
+
+#### Operation
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Datum_OP_Genauigkeit <br> `text` |	Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt. | M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Datum_OP <br> `date`| Operationsdatum.	| Datum YYYY-MM-DD |
+| Code <br> `text`	| Art der Operation nach Operationen- und Prozedurenschlüssel (OPS). |	OPS-Kode |
+| Version <br> `text`| Verwendete Ausgabe des OPS. |	OPS-Version |
+| Intention <br> `text` |	Gibt an, mit welchem Ziel die Operation geplant wurde. Die Angabe S = Sonstiges wird bspw. bei Tracheostomie vor Radiochemotherapie bei Kopf/Hals verwendet.| K = kurativ <br> P = palliativ <br> D = diagnostisch <br> R = Revision/Komplikation <br> S = Sonstiges <br> x = fehlende Angabe |
+| Lokale_Beurteilung_Residualstatus <br> `text` |	Bezeichnet den Residualstatus nach einer operativen Tumorentfernung, d. h. Anzeichen für im Körper des Patienten verbliebenes Resttumorgewebe. Klassifikation nach TNM. |	R0 = kein Residualtumor <br> R1 = mikroskopischer Residualtumor <br> R1(is) = in-situ-Rest <br> R1(cy+) = zytologischer Rest <br> R2 = makroskopischer Residualtumor <br> RX = Vorhandensein von Residualtumor kann nicht beurteilt werden <br> U = Residualtumorstatus ist nicht bekannt |
+| Anzahl_Tage_Diagnose_OP <br> `int`| Anzahl der Tage zwischen dem Tag der Diagnose und dem Tag der Operation.|	(n) = Anzahl Tage |
+
+#### Strahlentherapie
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Datum_Beginn_Bestrahlung_Genauigkeit <br> `text`|	Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt. |	M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Datum_Beginn_Bestrahlung <br> `date`|	Monat und Jahr des Beginns der Strahlentherapie.	|Datum YYYY-MM-DD |
+| Intention <br> `text` |	Gibt an, mit welcher Intention die Strahlentherapie geplant wurde. Prophylaktisch bzw. Salvage kann als "Kurativ" oder "Palliativ" kodiert werden. "Lokal kurativ" steht zwischen "Kurativ" und "Palliativ".	| K = kurativ <br> P = palliativ <br> O = lokal kurativ bei Oligometastasierung <br> S = sonstiges <br> x = keine Angabe |
+| Stellung_OP <br> `text` | Gibt an, in welchem Bezug zu einer operativen Therapie die Strahlentherapie steht. "Adjuvant" gilt für Therapien nach R0-Resektion. "Additiv" gilt für Therapien nach R1/R2- und RX-Resektion. |	O = ohne Bezug zu einer operativen Therapie <br> A = adjuvant <br> N = neoadjuvant <br> I = interoperativ <br> Z = additiv <br> s = sonstiges |
+| TypeOfST_TypBestrahlungApplikationsart <br> `text` |	Gibt an, mit welcher Technik die Strahlentherapie durchgeführt wurde. Die möglichen Applikationsarten enthalten untergeordnete Elemente (Details siehe XML-Schema).	| Perkutan <br> Kontakt <br> Metabolisch <br> Sonstige <br> Unbekannt |
+| Radiochemo <br> `text` |	Beschreibt die Ausführung der perkutanen Radiochemotherapie (mit/ohne Sensibilisierung). |	RCJ = mit Chemotherapie/Sensitizer <br> RCN = ohne Chemotherapie/Sensitizer |
+| Stereotaktisch <br> `text` |	Gibt an, ob die perkutane Strahlentherapie stereotaktisch durchgeführt wurde. |	ST = stereotaktisch |
+| Atemgetriggert <br> `text` |	Gibt an, ob die perkutane Strahlentherapie atemgesteuert durchgeführt wurde.	| 4D = atemgetriggert|
+| CodeVersion2014 <br> `text`|	Bezeichnet die behandelte anatomische Region. Kodierung gemäß oBDS-Version 2014. |	https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/94539aeabc532ccad47618c11488d17483ff2bf1/data/v2/Klassifikationen/zielgebiet_2014.csv | 
+| CodeVersion2021 <br> `text` |	Bezeichnet die behandelte anatomische Region. Kodierung gemäß oBDS-Version 2021. |	https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/zielgebiet_2021.csv?ref_type=heads | 
+| Seite_Zielgebiet <br> `text` |	Bezeichnet die Körperseite der behandelten anatomischen Region. | L = links <br> R = rechts <br> B = beidseits <br> M = mittig <br> U = unbekannt <br> T = trifft nicht zu |
+| Interstitiell_endokavitaer <br> `text` |	Gibt an, wie die Kontaktbestrahlung (Brachytherapie) durchgeführt wurde. |	I = interstitiell <br> K = endokavitär |
+| Rate_Type	<br> `text` | Beschreibt die bei der Kontaktbestrahlung (Brachytherapie) eingesetzte Dosisleistung.	| HDR = high dose rate <br> LDR = low dose rate <br> PDR = pulsed dose rate |
+| Metabolisch_Typ <br> `text` |	Bezeichnet den Typ der metabolischen Strahlentherapie.	| SIRT = selektive interne Radiotherapie <br> PRRT = Peptid-Radiorezeptor-Therapie <br> PSMA = PSMA-Therapie <br> RJT = Radiojod-Therapie <br> RIT = Radioimmun-Therapie |
+| Anzahl_Tage_Bestrahlung_Dauer	<br> `int`|	Dauer der Strahlentherapie (in Tagen).	| (n) = Anzahl Tage |
+| Anzahl_Tage_Diagnose_Bestrahlung <br> `int` |	Zeitlicher Abstand zwischen Diagnosedatum und Beginn der Strahlentherapie (in Tagen).	| (n) = Anzahl Tage |
+
+#### Systemische Therapie
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Intention <br> `text` |	Gibt an, mit welcher Intention die systemische Therapie geplant wurde.	| K = kurativ <br> P = palliativ <br> S = sonstiges <br> x = keine Angabe |
+| Stellung_OP	<br> `text`| 	Gibt an, in welchem Bezug zu einer operativen Therapie die systemische Therapie steht. | O = ohne Bezug zu einer operativen Therapie <br> A = adjuvant <br> N = neoadjuvant <br> I = intraoperativ <br> S = Sonstiges |
+| Therapieart <br> `text`	| Gibt an, welche Art der Therapie durchgeführt wurde bzw. ob eine abwartende Strategie verfolgt wurde.  | CH = Chemotherapie <br> HO = Hormontherapie <br> IM = Immun-/Antikörpertherapie <br> ZS = zielgerichtete Substanzen <br> CI = Chemo- + Immun-/Antikörperthrapie <br> CZ = Chemotherapie + zielgerichtete Substanzen <br> CIZ = Chemo- + Immun-/Antikörpertherapie + zielgerichtete Substanzen <br> IZ = Immun-/Antikörpertherapie + zielgerichtete Substanzen <br> SZ = Stammzellentransplantation (inkl. Knochenmarktransplantation) <br> AS = Active Surveillance <br> WS = Wait and see <br> WW = Watchful Waiting <br> SO = Sonstiges|
+| TypeOfSYST_TypSubstanz <br> `text` | Gibt an, mit welcher Substanz die Systemtherapie durchgeführt wurde. Mehrere Substanzen sind separat einzugeben.	| Bezeichnung oder: ATC-Kode + ATC-Version |
+| TypeOfProtokoll_Typ <br> `text`	| Bezeichnung oder Kode/Kürzel des Therapieprotokolls | Bezeichnung oder: Protokollschlüssel |
+| Protokoll_TypProtokollschluessel_Code <br> `text` |	Therapieprotokoll, Kode/Kürzel.	|Vorschlagsliste: https://plattform65c.atlassian.net/wiki/spaces/UMK/pages/15532519/Protokolle |
+| Bezeichnung	<br> `text` | Bezeichnung des Therapieprotokolls (Freitext).	| (Protokoll) = Bezeichnung des Therapieprotokolls |
+| Protokoll_TypProtokollschluessel_Version <br> `text`	| Version des Therapieprotokollkodes/-kürzels.	| (Version) = Version des verwendeten Therapieprotokolls |
+| Datum_Beginn_SYST_Genauigkeit <br> `text`| 	Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt. | M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Datum_Beginn_SYST <br> `date`	|	Monat und Jahr des Beginns der systemischen Therapie.	| Datum YYYY-MM-DD |
+| Anzahl_Tage_SYST_Dauer <br> `int`| Dauer der systemischen Therapie (in Tagen). |	(n) = Anzahl Tage |
+| Anzahl_Tage_Diagnose_SYST <br> `int` | Zeitlicher Abstand zwischen Diagnosedatum und Beginn der systemischen Therapie (in Tagen). |	(n) = Anzahl Tage |
+
+#### Folgeereignis
+| **Technische Variable** <br> `Datentyp` | **Beschreibung** | **Ausprägungen** |
+| :--- | :--- |:--- |
+| Datum_Folgeereignis_Genauigkeit	<br> `text`| Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt. Das ZfKD legt den Tag auf einen beliebigen Wert fest (i. d. R. 15), so dass immer ein Datum im Format Jahr-Monat-Tag vorliegt.	| M = nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau) <br> T = Jahr und Monat sind bekannt (monatsgenau) <br> V = Jahr und Monat wurden geschätzt |
+| Datum_Folgeereignis <br> `date`	|	Datum der letzten Untersuchung zur Einschätzung des Tumorstatus.	| Datum YYYY-MM-DD |
+| Version <br> `text`	|	Ausgabe der TNM, die für die Beurteilung des Tumorstadiums verwendet wurde. |6 = 6. Auflage TNM <br> 7 = 7. Auflage TNM <br> 8 = 8. Auflage TNM <br> 9 = 9. Auflage TNM |
+| y_Symbol <br> `text` | Gibt an, ob das Tumorstadium vor oder nach/während der initialen multimodalen Therapie beurteilt wurde. |	y = Klassifikation erfolgte nach einer initialen multimodalen Therapie <br> (leer) = Klassifikation erfolgte vor einer initialen multimodalen Therapie oder es hat keine initiale multimodale Therapie stattgefunden |
+| r_Symbol <br> `text` |	Gibt an, ob das Tumorstadium eines Rezidivs beurteilt wurde. |	r = Klassifikation erfolgte zur Beurteilung eines Rezidivs <br> (leer) = „native“ Klassifikation vor Eintreten eines Rezidivs |
+| a_Symbol <br> `text`| Gibt an, ob das Tumorstadium durch Autopsie festgestellt wurde. |	a = Klassifikation erfolgte durch Autopsie <br> (leer) = Klassifikation erfolgte klinisch und/oder pathologisch |
+| T <br>	`text`|	Beschreibt die Ausdehnung des Primärtumors. Klassifikation nach TNM entsprechend Tumorentität. |	T-Stadium, entitätsspezifisch |
+| N	 <br> `text` | Beschreibt das Ausmaß regionärer Lymphknotenmetastasen. Klassifikation nach TNM entsprechend Tumorentität. |	N-Stadium, entitätsspezifisch |
+| M	<br> `text`| Beschreibt das Vorliegen von Fernmetastasen. Klassifikation nach TNM. | M-Stadium, teilweise entitätsspezifisch <br> M0 = keine Fernmetastasen <br> M1 = Fernmetastasen |
+| c_p_u_Praefix_T <br> `text`|  Gibt an, ob das T-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.	| c = T-Stadium wurde durch klinische Angaben festgestellt oder erfüllt die Kriterien für "p" nicht <br> p = T-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = T-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert" |
+| c_p_u_Praefix_N <br> `text` | Gibt an, ob das N-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.	| c = N-Stadium wurde durch klinische Angaben festgestellt oder erfüllt die Kriterien für "p" nicht <br> p = N-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = N-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| c_p_u_Praefix_M <br> `text` |	Gibt an, ob das M-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde. |	c = M-Stadium wurde durch klinische Angaben festgestellt oder erfüllt die Kriterien für "p" nicht <br> p = M-Stadium wurde durch histopathologische Untersuchung festgestellt <br> u = M-Stadium wurde mittels Ultraschall festgestellt (Unterkategorie von "c") <br> (empty) =  wird als "c" interpretiert |
+| m_Symbol <br> `text`| Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk. | m = multiple Tumoren ohne Angabe der Zahl <br> (n) = Anzahl der multiplen Tumoren <br> (leer) = keine multiplen Tumoren |
+| L <br> `text` | Beschreibt das Ausmaß der Lymphgefäßinvasion. | LX = Lymphgefäßinvasion kann nicht beurteilt werden <br> L0 = keine Lymphgefäßinvasion <br> L1 = Lymphgefäßinvasion |
+| V	<br> `text`| Beschreibt das Ausmaß der Veneninvasion.	| VX = Veneninvasion kann nicht beurteilt werden <br> V0 = keine Veneninvasion <br> V1 = mikroskopische Veneninvasion <br> V2 = makroskopische Veneninvasion |
+| Pn	<br> `text` |	Beschreibt das Ausmaß der Perineuralinvasion. | PnX = perineurale Invasion kann nicht beurteilt werden <br> Pn0 = keine perineurale Invasion <br> Pn1 = perineurale Invasion |
+| S <br> `text`|	Bei Vorliegen eines Hodentumors: Beschreibt die Erhöhung von Serumtumormarkern (AFP, HCG, LDH). S1-S3: Schwellenwerte siehe TNM. | SX = Werte der Serumtumormarker nicht verfügbar oder entsprechende Untersuchungen nicht vorgenommen <br> S0 = Serumtumormarker innerhalb der normalen Grenzen <br> S1-S3 = Serumtumormarker erhöht |
+| UICC_Stadium <br> `text` | UICC-Stadium nach TNM-Klassifikation. Beschreibt die anatomische Ausdehnung der Tumorerkrankung.	| UICC-Stadium, entitätsspezifisch |
+| Name	<br> `text`| Name/Typ sonstiger verwendeter Klassifikation(en).	| z. B. Ann-Arbor-Klassifikation, WHO Classification of CNS Tumors, AJCC | 
+| Stadium <br> `text`|	Stadium der verwendeten (sonstigen) Klassifikation. |	Stadium |
+| Gesamtbeurteilung_Tumorstatus <br> `text`| Gesamtbeurteilung der Erkrankung unter Berücksichtigung aller Manifestationen. | V = Vollremission <br> T = Teilremission <br> K = keine Änderung <br> P = Progression <br> D = divergents Geschehen <br> B = klinische Besserung des Zustandes, Kriterien für Teilremission jedoch nicht erfüllt (minimal response, MR) <br> R = Vollremission mit residualen Auffälligkeiten <br> Y = Rezidiv <br> U = Beurteilung nicht möglich <br> X = fehlende Angaben |
+| Verlauf_Lokaler_Tumorstatus <br> `text`| Beurteilung der Erkrankung im Bereich des Primärtumors. | K = kein Tumor nachweisbar <br> T = Tumorreste (Residualtumor) <br> P = Tumorreste (Residualtumor) Progress <br> N = Tumorreste (Residualtumor) No Change <br> R = Lokalrezidiv <br> F = fraglicher Befund <br> U = unbekannt <br> X = fehlende Angabe |
+| Verlauf_Tumorstatus_Lymphknoten	<br> `text`|  Beurteilung der Situation im Bereich der regionären Lymphknoten.	| K = kein Lymphknotenbefall nachweisbar <br> T = bekannter Lymphknotenbefall, Residuen <br> P = bekannter Lymphknotenbefall, Progress <br> N = bekannter Lymphknotenbefall, No Change <br> R = neu aufgetretenes Lymphknotenrezidiv <br> F = fraglicher Befund <br> U = unbekannt <br> X = fehlende Angabe | 
+| Verlauf_Tumorstatus_Fernmetastasen <br>	`text`| Beurteilung der Situation im Bereich der Fernmetastasen. "R" beschreibt eine Situation, in der zuvor Metastasenfreiheit bestanden hat oder durch Therapie erreicht wurde. "P" beschreibt neu hinzukommende (zu bereits bestehenden) Fernmetastasen. | K = keine Fernmetastasen nachweisbar <br> T = Fernmetastasen, Residuen <br> P = Fernmetastasen, Progress <br> N = Fernmetastasen, No Change <br> R = neu aufgetretene Fernmetastase(n) bzw. Metastasenrezidiv <br> F = fraglicher Befund <br>  U = unbekannt <br> X = fehlende Angabe |
+| Lokalisation <br> `text` |	Beschreibt die Lokalisation der Fernmetastase(n).	|PUL = Lunge <br> OSS = Knochen <br> HEP = Leber <br> BRA = Hirn <br> LYM = Lymphknoten <br> MAR = Knochenmark <br> PLE = Pleura <br> PER = Peritoneum <br> ADR = Nebennieren <br> SKI = Haut <br> OTH = Andere Organe <br> GEN = Generalisierte Metastasierung |
+
 #### Downloads
 
 Das Datenschema wird in verschiedenen Formaten zum Download angeboten:
@@ -126,9 +317,8 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten:
 | Datei | Beschreibung | Download |
 | :----- | :------------ | :--------: |
 | XML-Schema | Die XML-Schema-Definition `.xsd` als eindeutige, vollständige und maschinenlesbare Repräsentation des gesamten Schemas mit allen Details.   | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.xsd) |
-| XLSX-Schema | Variablen und mögliche Ausprägungen in tabellarischer Darstellung als `.xlsx`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.xlsx) |
 | TXT-Schema | Variablen und mögliche Ausprägungen in stark vereinfachter textueller Darstellung zur erleichterten Erkennung von Änderungen. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.txt) |
-| Schema (Abbildung) | Die grafische Darstellung des XML-Schemas als `.png`. Aufgrund der Komplexität des Gesamtschemas sind nicht alle Elemente abgebildet. Hinweise zur Notation des XML-Schemas sind [hier](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Abbildung.png) |
+| Schema (Abbildung) | Die grafische Darstellung des XML-Schemas als `.png`. Hinweise zur Notation des XML-Schemas sind [hier](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Abbildung.png) |
 | Schema (Liste) | Optisch gestaltete und "druckfreundliche" Kurzübersicht zu Variablen und möglichen Ausprägungen als `.pdf`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Liste.pdf) |
 
 #### XML-Schema des Datensatzes
