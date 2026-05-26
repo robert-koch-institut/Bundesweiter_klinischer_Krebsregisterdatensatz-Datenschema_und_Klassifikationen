@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.basisdatensatz.de/oBDS/XML" xmlns:tns="http://www.basisdatensatz.de/oBDS/XML" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://www.basisdatensatz.de/oBDS/XML" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.0.8a_RKI">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.basisdatensatz.de/oBDS/XML" xmlns:tns="http://www.basisdatensatz.de/oBDS/XML" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://www.basisdatensatz.de/oBDS/XML" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.4_RKI">
 	<xs:element name="oBDS_RKI">
 		<xs:complexType>
 			<xs:sequence>
@@ -65,9 +65,9 @@
 			<xs:attribute name="Schema_Version" use="required">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="3.0.0.8a_RKI">
+						<xs:enumeration value="3.0.4_RKI">
 							<xs:annotation>
-								<xs:documentation>Version vom 15.12.2022 nach kleinen Änderungen</xs:documentation>
+								<xs:documentation>Version vom 09.07.2025 nach Anpassungen aus oBDS 3.0.4</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
 					</xs:restriction>
@@ -211,12 +211,32 @@ V - vollständig geschätzt</xs:documentation>
 						</xs:enumeration>
 						<xs:enumeration value="6">
 							<xs:annotation>
-								<xs:documentation>Histologie einer Metastase.</xs:documentation>
+								<xs:documentation>Histologie Metastase (Ausprägung ist veraltet, besser 7.2 nutzen)</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
 						<xs:enumeration value="7">
 							<xs:annotation>
-								<xs:documentation>Histologisch: Histologie des Primärtumors: Histologische Untersuchung von Gewebe des Primärtumors einschließlich aller Schnitttechniken und Knochenmarksbiopsien. Dies schließt Proben des Primärtumors aus Autopsien ein. Histologische Untersuchung des Gewebes aus einer Metastase, einschließlich bei Autopsie.</xs:documentation>
+								<xs:documentation>Histologie Primärtumor (Ausprägung ist veraltet, besser 7.1 nutzen)</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="7.1">
+							<xs:annotation>
+								<xs:documentation>Histologie des Primärtumors: Histologische Untersuchung von Gewebe des Primärtumors</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="7.2">
+							<xs:annotation>
+								<xs:documentation>Histologie Metastase: Histologische Untersuchung des Gewebes aus einer Metastase</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="7.3">
+							<xs:annotation>
+								<xs:documentation>Histologie der Autopsie: Histologische Untersuchung des Gewebes bei einer Autopsie</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="8">
+							<xs:annotation>
+								<xs:documentation>Zytogenetisch und/oder molekularer Test</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
 						<xs:enumeration value="9">
@@ -653,6 +673,8 @@ V - vollständig geschätzt</xs:documentation>
 			</xs:element>
 			<xs:element name="LK_untersucht" type="xs:nonNegativeInteger" minOccurs="0"/>
 			<xs:element name="LK_befallen" type="xs:nonNegativeInteger" minOccurs="0"/>
+			<xs:element name="Sentinel_LK_untersucht" type="xs:nonNegativeInteger" minOccurs="0"/>
+			<xs:element name="Sentinel_LK_befallen" type="xs:nonNegativeInteger" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="Hormonrezeptor_Typ">
@@ -680,147 +702,18 @@ V - vollständig geschätzt</xs:documentation>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ICD_Version_Typ">
+		<xs:annotation>
+			<xs:documentation>
+				ICD 10 Version 2006 WHO (gültig bis 2010),
+				ICD 10 Version 2011 WHO (gültig bis 2012),
+				ICD 10 Version 2013 WHO (gültig bis 2015),
+				ICD 10 Version 2016 WHO (gültig bis 2018),
+				ICD 10 Version 2019 WHO (letzte Version, wird nur noch in Ausnahmefällen aktualisiert)
+				Sonstige, falls andere bzw. ältere Versionen verwendet werden
+			</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="10 2004 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2004 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2004 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2004 WHO</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2005 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2005 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2005 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2005 WHO</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2006 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2006 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2006 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2006 WHO (gültig bis 2010)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2007 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2007 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2008 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2008 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2009 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2009 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2010 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2010 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2011 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2011 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2011 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2011 WHO (gültig bis 2012)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2012 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2012 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2013 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2013 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2013 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2013 WHO (gültig bis 2015)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2014 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2014 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2015 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2015 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2016 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2016 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2016 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2016 WHO (gültig bis 2018)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2017 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2017 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2018 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2018 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2019 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2019 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2019 WHO">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2019 WHO (letzte Version, wird nur noch in Ausnahmefällen aktualisiert)</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2020 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2020 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2021 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2021 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2022 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2022 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="10 2023 GM">
-				<xs:annotation>
-					<xs:documentation>ICD 10 Version 2023 GM</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Sonstige">
-				<xs:annotation>
-					<xs:documentation>Falls andere bzw. ältere Versionen verwendet werden</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
+			<xs:pattern value="(10 20\d{2} ((GM)|(WHO))|Sonstige)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="JN_Typ">
@@ -1250,7 +1143,7 @@ V - vollständig geschätzt</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Menge_OPS">
+			<xs:element name="Menge_OPS" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="OPS" maxOccurs="unbounded">
@@ -1648,7 +1541,7 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
-															<xs:element name="Zielgebiet" type="Zielgebiet_Typ"/>
+															<xs:element name="Zielgebiet" type="Zielgebiet_Typ" minOccurs="0"/>
 															<xs:element name="Seite_Zielgebiet" type="Seite_Zielgebiet_Typ"/>
 														</xs:sequence>
 													</xs:complexType>
@@ -1693,7 +1586,7 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
-															<xs:element name="Zielgebiet" type="Zielgebiet_Typ"/>
+															<xs:element name="Zielgebiet" type="Zielgebiet_Typ" minOccurs="0"/>
 															<xs:element name="Seite_Zielgebiet" type="Seite_Zielgebiet_Typ"/>
 														</xs:sequence>
 													</xs:complexType>
@@ -1729,6 +1622,7 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 																				<xs:documentation>Radioimmun-Therapie</xs:documentation>
 																			</xs:annotation>
 																		</xs:enumeration>
+																		<xs:enumeration value="M"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
@@ -1756,8 +1650,8 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 											</xs:choice>
 										</xs:complexType>
 									</xs:element>
-									<xs:element name="Anzahl_Tage_Diagnose_ST" type="Abstand_Ereignisse_Typ" minOccurs="0"/>
-									<xs:element name="Anzahl_Tage_ST_Dauer" type="Abstand_Ereignisse_Typ" minOccurs="0"/>
+									<xs:element name="Anzahl_Tage_Diagnose_Bestrahlung" type="Abstand_Ereignisse_Typ" minOccurs="0"/>
+									<xs:element name="Anzahl_Tage_Bestrahlung_Dauer" type="Abstand_Ereignisse_Typ" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1798,7 +1692,7 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Stellung_OP">
+			<xs:element name="Stellung_OP" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Gibt an, in welchem Bezug zu einer operativen Therapie die systemische Therapie steht</xs:documentation>
 				</xs:annotation>
@@ -1971,6 +1865,7 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 								<xs:documentation>8. Auflage</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
+						<xs:enumeration value="9"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -2451,8 +2346,8 @@ Es ist zu beachten, dass X=unbestimmtes Geschlecht (amtlich: keine Angabe) einer
 			<xs:documentation>Tumordicke in mm.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal">
-			<xs:fractionDigits value="1"/>
-			<xs:minInclusive value="0.1"/>
+			<xs:fractionDigits value="2"/>
+			<xs:minInclusive value="0.01"/>
 			<xs:maxInclusive value="99.0"/>
 		</xs:restriction>
 	</xs:simpleType>

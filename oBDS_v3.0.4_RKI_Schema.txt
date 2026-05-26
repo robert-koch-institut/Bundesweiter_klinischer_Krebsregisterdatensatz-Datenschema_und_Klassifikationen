@@ -1,8 +1,8 @@
 oBDS_RKI 
-|  @Schema_Version=required(xs:string 3.0.0.8_RKI)
+|  @Schema_Version=required(xs:string 3.0.4_RKI)
 | Lieferregister  (Lieferregister_Typ)
 | |  @Register_ID=required(xs:string 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17)
-| Lieferdatum 
+| Lieferdatum  (Datum_Tag_genau_Typ)
 | |  @Datumsgenauigkeit=required(xs:string E)
 | Menge_Patient 
 | | Patient 1..unbounded
@@ -17,10 +17,10 @@ oBDS_RKI
 | | | | | | Menge_Weitere_Todesursachen 0
 | | | | | | | Todesursache_ICD 1..unbounded (Allgemein_ICD_Typ)
 | | | | | | | | Code (xs:string [A-Z]\d\d(\.\d(\d)?)?)
-| | | | | | | | Version 0(xs:string 10 2004 GM 10 2004 WHO 10 2005 GM 10 2005 WHO 10 2006 GM 10 2006 WHO 10 2007 GM 10 2008 GM 10 2009 GM 10 2010 GM 10 2011 GM 10 2011 WHO 10 2012 GM 10 2013 GM 10 2013 WHO 10 2014 GM 10 2015 GM 10 2016 GM 10 2016 WHO 10 2017 GM 10 2018 GM 10 2019 GM 10 2019 WHO 10 2020 GM 10 2021 GM 10 2022 GM 10 2023 GM Sonstige)
+| | | | | | | | Version 0(xs:string (10 20\d{2} ((GM)|(WHO))|Sonstige))
 | | | | | | Grundleiden 0 (Allgemein_ICD_Typ)
 | | | | | | | Code (xs:string [A-Z]\d\d(\.\d(\d)?)?)
-| | | | | | | Version 0(xs:string 10 2004 GM 10 2004 WHO 10 2005 GM 10 2005 WHO 10 2006 GM 10 2006 WHO 10 2007 GM 10 2008 GM 10 2009 GM 10 2010 GM 10 2011 GM 10 2011 WHO 10 2012 GM 10 2013 GM 10 2013 WHO 10 2014 GM 10 2015 GM 10 2016 GM 10 2016 WHO 10 2017 GM 10 2018 GM 10 2019 GM 10 2019 WHO 10 2020 GM 10 2021 GM 10 2022 GM 10 2023 GM Sonstige)
+| | | | | | | Version 0(xs:string (10 20\d{2} ((GM)|(WHO))|Sonstige))
 | | | | | Datum_Vitalstatus  (Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ)
 | | | | | |  @Datumsgenauigkeit=required(xs:string T M V)
 | | | Menge_Tumor 
@@ -32,13 +32,13 @@ oBDS_RKI
 | | | | | | Inzidenzort (xs:string \d{5})
 | | | | | | Primaertumor_ICD  (Tumor_ICD_Typ)
 | | | | | | | Code (ICD_Code_Typ [CD]\d\d(\.\d(\d)?)?|M72.4)
-| | | | | | | Version 0(xs:string 10 2004 GM 10 2004 WHO 10 2005 GM 10 2005 WHO 10 2006 GM 10 2006 WHO 10 2007 GM 10 2008 GM 10 2009 GM 10 2010 GM 10 2011 GM 10 2011 WHO 10 2012 GM 10 2013 GM 10 2013 WHO 10 2014 GM 10 2015 GM 10 2016 GM 10 2016 WHO 10 2017 GM 10 2018 GM 10 2019 GM 10 2019 WHO 10 2020 GM 10 2021 GM 10 2022 GM 10 2023 GM Sonstige)
+| | | | | | | Version 0(xs:string (10 20\d{2} ((GM)|(WHO))|Sonstige))
 | | | | | | Primaertumor_Topographie_ICD_O 0 (Topographie_ICD_O_Typ)
 | | | | | | | Code (xs:string C\d\d\.\d(\d)?)
 | | | | | | | Version 0(xs:string 31 32 33)
-| | | | | | Diagnosesicherung (xs:string 0 1 2 4 5 6 7 9)
+| | | | | | Diagnosesicherung (xs:string 0 1 2 4 5 6 7 7.1 7.2 7.3 8 9)
 | | | | | | cTNM 0 (TNM_Typ)
-| | | | | | | Version 0(xs:string 6 7 8)
+| | | | | | | Version 0(xs:string 6 7 8 9)
 | | | | | | | y_Symbol 0(xs:string y)
 | | | | | | | r_Symbol 0(xs:string r)
 | | | | | | | a_Symbol 0(xs:string a)
@@ -55,7 +55,7 @@ oBDS_RKI
 | | | | | | | S 0(xs:string SX S0 S1 S2 S3)
 | | | | | | | UICC_Stadium 0(xs:string okk 0 0a 0is I IA IA1 IA2 IA3 IB IB1 IB2 IC II IIA IIA1 IIA2 IIB IIC III IIIA IIIA1 IIIA2 IIIB IIIC IIIC1 IIIC2 IIID IS IV IVA IVA1 IVA2 IVB IVC)
 | | | | | | pTNM 0 (TNM_Typ)
-| | | | | | | Version 0(xs:string 6 7 8)
+| | | | | | | Version 0(xs:string 6 7 8 9)
 | | | | | | | y_Symbol 0(xs:string y)
 | | | | | | | r_Symbol 0(xs:string r)
 | | | | | | | a_Symbol 0(xs:string a)
@@ -78,6 +78,8 @@ oBDS_RKI
 | | | | | | | Grading (xs:string 0 1 2 3 4 X L M H B U T)
 | | | | | | | LK_untersucht 0 (xs:nonNegativeInteger)
 | | | | | | | LK_befallen 0 (xs:nonNegativeInteger)
+| | | | | | | Sentinel_LK_untersucht 0 (xs:nonNegativeInteger)
+| | | | | | | Sentinel_LK_befallen 0 (xs:nonNegativeInteger)
 | | | | | | Menge_FM 0 (Menge_FM_Typ)
 | | | | | | | Fernmetastase 1..unbounded
 | | | | | | | | Lokalisation (xs:string PUL OSS HEP BRA LYM MAR PLE PER ADR SKI OTH GEN)
@@ -116,7 +118,7 @@ oBDS_RKI
 | | | | | | | Datum_OP  (Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ)
 | | | | | | | |  @Datumsgenauigkeit=required(xs:string T M V)
 | | | | | | | Intention (xs:string K P D R S X)
-| | | | | | | Menge_OPS 
+| | | | | | | Menge_OPS 0
 | | | | | | | | OPS 1..unbounded
 | | | | | | | | | Code (xs:string <=9 [135689]-\d\d[0-9a-hj-km-z](\.([0-9a-hj-kmnp-z]){1,2}){0,1}([RLB]){0,1})
 | | | | | | | | | Version (xs:string 200[4-9]|20[12]\d)
@@ -137,7 +139,7 @@ oBDS_RKI
 | | | | | | | | | | | Radiochemo 0(xs:string RCJ RCN)
 | | | | | | | | | | | Stereotaktisch 0(xs:string ST)
 | | | | | | | | | | | Atemgetriggert 0(xs:string 4D)
-| | | | | | | | | | | Zielgebiet  (Zielgebiet_Typ)
+| | | | | | | | | | | Zielgebiet 0 (Zielgebiet_Typ)
 | | | | | | | | | | | | xs:choice (2 Optionen)
 | | | | | | | | | | | | Option 1
 | | | | | | | | | | | | CodeVersion2021 (xs:string 1.1 1.2 1.3 1.4 1.5 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 2.10 2.11 2.12 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 4.10 4.11 4.12 4.13 5.1 5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9 5.10 5.11 5.12 6.1 6.2 6.3 6.4 6.5 6.6 6.7 6.8 6.9 6.10 6.11 6.12 6.13 6.14 6.15 6.16 6.17 6.18 6.19 7.1 7.2 7.3 7.4 7.5 7.6 7.7 7.8 7.9 8.1 8.2 9.1 9.2 9.3 9.4 9.5 9.6 9.7 9.8 9.9 9.10 9.11 9.12 9.13 9.14 9.15 10.1 10.2 10.3)
@@ -148,7 +150,7 @@ oBDS_RKI
 | | | | | | | | | | Kontakt 
 | | | | | | | | | | | Interstitiell_endokavitaer (xs:string I K)
 | | | | | | | | | | | Rate_Type 0(xs:string HDR LDR PDR)
-| | | | | | | | | | | Zielgebiet  (Zielgebiet_Typ)
+| | | | | | | | | | | Zielgebiet 0 (Zielgebiet_Typ)
 | | | | | | | | | | | | xs:choice (2 Optionen)
 | | | | | | | | | | | | Option 1
 | | | | | | | | | | | | CodeVersion2021 (xs:string 1.1 1.2 1.3 1.4 1.5 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 2.10 2.11 2.12 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 4.1 4.2 4.3 4.4 4.5 4.6 4.7 4.8 4.9 4.10 4.11 4.12 4.13 5.1 5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9 5.10 5.11 5.12 6.1 6.2 6.3 6.4 6.5 6.6 6.7 6.8 6.9 6.10 6.11 6.12 6.13 6.14 6.15 6.16 6.17 6.18 6.19 7.1 7.2 7.3 7.4 7.5 7.6 7.7 7.8 7.9 8.1 8.2 9.1 9.2 9.3 9.4 9.5 9.6 9.7 9.8 9.9 9.10 9.11 9.12 9.13 9.14 9.15 10.1 10.2 10.3)
@@ -157,7 +159,7 @@ oBDS_RKI
 | | | | | | | | | | | Seite_Zielgebiet (xs:string L R B M U T)
 | | | | | | | | | | Option 3
 | | | | | | | | | | Metabolisch 
-| | | | | | | | | | | Metabolisch_Typ (xs:string SIRT PRRT PSMA RJT RIT)
+| | | | | | | | | | | Metabolisch_Typ (xs:string SIRT PRRT PSMA RJT RIT M)
 | | | | | | | | | | | Zielgebiet 0 (Zielgebiet_Typ)
 | | | | | | | | | | | | xs:choice (2 Optionen)
 | | | | | | | | | | | | Option 1
@@ -183,14 +185,14 @@ oBDS_RKI
 | | | | | | | | | | | | Option 2
 | | | | | | | | | | | | CodeVersion2014 (xs:string 1. 1.1. 1.2. 1.3. 2. 2.+ 2.- 2.1. 2.1.+ 2.1.- 2.2. 2.2.+ 2.2.- 2.3. 2.3.+ 2.3.- 2.4. 2.4.+ 2.4.- 2.5. 2.5.+ 2.5.- 2.6. 2.6.+ 2.6.- 2.7. 2.7.+ 2.7.- 2.8. 2.8.+ 2.8.- 2.9. 3. 3.+ 3.- 3.1. 3.1.+ 3.1.- 3.2. 3.2.+ 3.2.- 3.3. 3.3.+ 3.3.- 3.4. 3.4.+ 3.4.- 3.5. 3.5.+ 3.5.- 3.6. 3.6.+ 3.6.- 3.7. 4. 4.+ 4.- 4.1. 4.1.+ 4.1.- 4.2. 4.2.+ 4.2.- 4.3. 4.3.+ 4.3.- 4.4. 4.4.+ 4.4.- 4.5. 4.5.+ 4.5.- 4.6. 4.6.+ 4.6.- 4.7. 4.8. 4.8.+ 4.8.- 4.9. 4.9.+ 4.9.- 5. 5.+ 5.- 5.1. 5.1.+ 5.1.- 5.2. 5.2.- 5.2.+ 5.3. 5.3.- 5.3.+ 5.4. 5.4.+ 5.4.- 5.5. 5.5.+ 5.5.- 5.6. 5.6.+ 5.6.- 5.7. 5.7.+ 5.7.2.- 5.7.2.+ 5.7.2. 5.7.1.- 5.7.1.+ 5.7.1. 5.7.- 5.8. 5.8.- 5.8.+ 5.9. 5.9.- 5.9.+ 5.10. 5.10.+ 5.10.- 5.11. 5.11.+ 5.11.- 5.12. 6. 6.1. 6.2. 6.3. 6.4. 6.5. 6.6. 6.7. 6.8. 6.9. 6.10. 6.11. 6.12. 6.13. 6.14. 6.15. 6.16. 7. 7.+ 7.- 7.1. 7.2. 8. 8.1. 8.2.)
 | | | | | | | | | | | Seite_Zielgebiet 0(xs:string L R B M U T)
-| | | | | | | | | Anzahl_Tage_Diagnose_ST 0(xs:nonNegativeInteger)
-| | | | | | | | | Anzahl_Tage_ST_Dauer 0(xs:nonNegativeInteger)
+| | | | | | | | | Anzahl_Tage_Diagnose_Bestrahlung 0(xs:nonNegativeInteger)
+| | | | | | | | | Anzahl_Tage_Bestrahlung_Dauer 0(xs:nonNegativeInteger)
 | | | | | Menge_SYST 0
 | | | | | | SYST 1..unbounded (SYST_Typ)
 | | | | | | | Datum_Beginn_SYST  (Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ)
 | | | | | | | |  @Datumsgenauigkeit=required(xs:string T M V)
 | | | | | | | Intention (xs:string K P S X)
-| | | | | | | Stellung_OP (xs:string O A N I S)
+| | | | | | | Stellung_OP 0(xs:string O A N I S)
 | | | | | | | Therapieart (xs:string CH HO IM ZS CI CZ CIZ IZ SZ AS WS WW SO)
 | | | | | | | Protokoll 0 (Protokoll_Typ)
 | | | | | | | | xs:choice (2 Optionen)
@@ -198,8 +200,8 @@ oBDS_RKI
 | | | | | | | | Bezeichnung (xs:string <=255)
 | | | | | | | | Option 2
 | | | | | | | | Protokollschluessel 
-| | | | | | | | | Code 
-| | | | | | | | | Version 0
+| | | | | | | | | Code (xs:string <=30)
+| | | | | | | | | Version 0(xs:string <=30)
 | | | | | | | Menge_Substanz 0
 | | | | | | | | Substanz 1..unbounded
 | | | | | | | | | xs:choice (2 Optionen)
@@ -214,7 +216,7 @@ oBDS_RKI
 | | | | | Menge_Folgeereignis 0
 | | | | | | Folgeereignis 1..unbounded (Folgeereignis_Typ)
 | | | | | | | TNM 0 (TNM_Typ)
-| | | | | | | | Version 0(xs:string 6 7 8)
+| | | | | | | | Version 0(xs:string 6 7 8 9)
 | | | | | | | | y_Symbol 0(xs:string y)
 | | | | | | | | r_Symbol 0(xs:string r)
 | | | | | | | | a_Symbol 0(xs:string a)
