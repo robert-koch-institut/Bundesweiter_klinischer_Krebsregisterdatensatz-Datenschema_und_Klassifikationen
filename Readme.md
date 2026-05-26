@@ -144,7 +144,8 @@ Detaillierte technische Informationen zum abgestimmten XML-Schema sind auf der [
 Protokollierte Änderungen am Datenschema sind in den beigefügten [Release Notes](release-notes.md) der Versionen zu finden.
 
 ![Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes
-Die obenstehende Abbildung veranschaulicht die Struktur des klinischen Datensatzes. ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2023-06-28_XML-Schema_grob.png?raw=true)
+Die obenstehende Abbildung veranschaulicht die Struktur des klinischen Datensatzes. ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2023-06-28_XML-Schema_grob.png?raw=true)  
+> Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes. Quelle: eigene Darstellung.
 
 
 ### Klassifikationen
@@ -195,11 +196,6 @@ Offene Forschungsdaten des RKI werden auf [Zenodo.org](http://Zenodo.org/), [Git
 - [https://github.com/robert-koch-institut](https://github.com/robert-koch-institut)  
 - [https://gitlab.opencode.de/robert-koch-institut](https://gitlab.opencode.de/robert-koch-institut)  
 - [https://edoc.rki.de/](https://edoc.rki.de/) 
-
-
-> [!NOTE]
-> Darüber hinaus können die Studiendaten beim Forschungsdatenzentrum des RKI für wissenschaftliche Nachnutzungen beantragt werden.  
-> [https://www.rki.de/fdz/](https://www.rki.de/fdz/) 
 
 
 
