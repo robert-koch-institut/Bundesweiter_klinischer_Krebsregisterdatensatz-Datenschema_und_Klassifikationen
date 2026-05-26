@@ -1,0 +1,184 @@
+{
+  "title": "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen",
+  "description": "<p>In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Klassifikationen des bundesweiten Datensatzes des Zentrums für Krebsregisterdaten (ZfKD) am Robert Koch-Institut sowie Beispieldaten bereitgestellt. Dieser klinische Krebsregisterdatensatz ist nicht öffentlich zugänglich, kann jedoch auf Antrag für wissenschaftliche Forschung bereitgestellt werden. Er enthält Daten zu neu auftretenden Krebsfällen, die von medizinischen Einrichtungen an die Krebsregister der Bundesländer gemeldet und von dort an das ZfKD übermittelt werden. Die Datenerfassung basiert auf dem Bundeskrebsregisterdatengesetz sowie den entsprechenden Landesgesetze.</p>",
+  "resource_type": {
+    "id": "dataset"
+  },
+  "publication_date": "2026-05-26",
+  "creators": [
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Meisegeier",
+        "given_name": "Stefan",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0003-2347-1836"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Imhoff",
+        "given_name": "Maren",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0009-0001-0030-566X"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Berg",
+        "given_name": "Karsten"
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    },
+    {
+      "person_or_org": {
+        "type": "personal",
+        "family_name": "Kraywinkel",
+        "given_name": "Klaus",
+        "identifiers": [
+          {
+            "scheme": "orcid",
+            "identifier": "0000-0002-9250-6003"
+          }
+        ]
+      },
+      "affiliations": [
+        {
+          "name": "Robert Koch-Institut",
+          "id": "01k5qnb77"
+        }
+      ]
+    }
+  ],
+  "contributors": [],
+  "publisher": "Zenodo",
+  "version": "2026-05-26",
+  "dates": [
+    {
+      "date": "2026-05-26T16:55:12+02:00",
+      "type": {
+        "id": "created"
+      },
+      "description": "Date when the dataset was created"
+    }
+  ],
+  "languages": [
+    {
+      "id": "deu"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "relation_type": {
+        "id": "issupplementto"
+      },
+      "identifier": "https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen",
+      "resource_type": {
+        "id": "dataset"
+      }
+    }
+  ],
+  "rights": [
+    {
+      "id": "cc-by-4.0"
+    }
+  ],
+  "subjects": [
+    {
+      "subject": "Krebs"
+    },
+    {
+      "subject": "Tumor"
+    },
+    {
+      "subject": "Neoplasm"
+    },
+    {
+      "subject": "Medical Oncology"
+    },
+    {
+      "subject": "Medizinische Onkologie"
+    },
+    {
+      "subject": "Metadaten"
+    },
+    {
+      "subject": "Metadata"
+    },
+    {
+      "subject": "Classification"
+    },
+    {
+      "subject": "Klassifikation"
+    },
+    {
+      "subject": "ICD"
+    },
+    {
+      "subject": "Germany"
+    },
+    {
+      "subject": "Deutschland"
+    },
+    {
+      "subject": "Datenschema"
+    },
+    {
+      "subject": "Dataschema"
+    },
+    {
+      "subject": "RKI"
+    },
+    {
+      "subject": "ZfKD"
+    },
+    {
+      "subject": "Cancer Registry"
+    },
+    {
+      "subject": "Krebsregister"
+    },
+    {
+      "subject": "Gesundheitsberichterstattung"
+    },
+    {
+      "subject": "Public health surveillance"
+    },
+    {
+      "subject": "65c"
+    }
+  ],
+  "custom_fields": {
+    "legacy:communities": [
+      "robertkochinstitut"
+    ]
+  }
+}

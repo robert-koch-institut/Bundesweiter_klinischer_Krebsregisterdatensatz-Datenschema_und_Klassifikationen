@@ -20,8 +20,8 @@ Dokumentation
 <br> 
 
 **Zitieren**  
-<!-- CITATION_START: {"citation_style": "apa"} -->  
-Meisegeier, S., Imhoff, M., Berg, K., & Kraywinkel, K. (2024). Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.10022040](https://doi.org/10.5281/zenodo.10022040)
+<!-- CITATION_START: {"citation_style": "apa", "markdown_style": "plain"} -->
+Meisegeier, S., Imhoff, M., Berg, K., & Kraywinkel, K. (2026). Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.20397623](https://doi.org/10.5281/zenodo.20397623)
 <!-- CITATION_END -->
 
 <br>
