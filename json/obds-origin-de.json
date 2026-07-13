@@ -1,0 +1,2726 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "fields": [
+    {
+      "name": "Geschlecht",
+      "entity": "Patient",
+      "type": "string",
+      "description": "Geschlecht der erkrankten Person.",
+      "constraints": {
+        "enum": [
+          "M",
+          "W",
+          "D",
+          "X",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "männlich"
+        },
+        {
+          "value": "W",
+          "label": "weiblich"
+        },
+        {
+          "value": "D",
+          "label": "divers"
+        },
+        {
+          "value": "X",
+          "label": "keine Angabe/unbestimmt"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "Geburtsdatum_Genauigkeit",
+      "entity": "Patient",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt.",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Geburtsdatum",
+      "entity": "Patient",
+      "type": "date",
+      "description": "Geburtsdatum der erkrankten Person im internationalen Datumsformat YYYY-MM-DD.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Verstorben",
+      "entity": "Patient",
+      "type": "string",
+      "description": "Vitalstatus: Gibt an, ob die erkrankte Person verstorben ist (Ja/Nein).",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Ja"
+        },
+        {
+          "value": "N",
+          "label": "Nein"
+        }
+      ]
+    },
+    {
+      "name": "Datum_Vitalstatus_Genauigkeit",
+      "entity": "Patient",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt.",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Datum_Vitalstatus",
+      "entity": "Patient",
+      "type": "date",
+      "description": "Wenn Verstorben = Nein, gibt diese Variable das Datum der letzten Erhebung des Vitalstatus an. Wenn Verstorben = Ja, gibt diese Variable das imputierte Sterbedatum an. Bei DCO-Fällen werden Sterbe- und Diagnosedatum gleichgesetzt.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "IsGrundleiden",
+      "entity": "Todesursache",
+      "type": "string",
+      "description": "Angabe, ob die kodierte Todesursache als amtliches Grundleiden laut Todesbescheinigung bzw. wie vom statistischen Landesamt übermittelt wurde.",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Ja"
+        },
+        {
+          "value": "N",
+          "label": "Nein"
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "entity": "Todesursache",
+      "type": "string",
+      "description": "Zusätzliche, im Register vorliegende Todesursache(n), kodiert nach ICD-10.",
+      "constraints": {
+        "pattern": "^[A-TV-Z][0-9][0-9AB](\\.[0-9A-KXZ]{1,4})?$"
+      },
+      "example": "C34.1"
+    },
+    {
+      "name": "Version",
+      "entity": "Todesursache",
+      "type": "string",
+      "description": "Für die Kodierung zusätzlicher Todesursachen verwendete Ausgabe der ICD-10.",
+      "example": "ICD-10-GM 2025"
+    },
+    {
+      "name": "Diagnosedatum_Genauigkeit",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Diagnosedatum",
+      "entity": "Tumor",
+      "type": "date",
+      "description": "Datum der Erstdiagnose im internationalen Datumsformat YYYY-MM-DD.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Inzidenzort",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Ziffern 1-5 des amtlichen Gemeindeschlüssels des Wohnortes der erkrankten Person zum Zeitpunkt der Erstdiagnose.",
+      "constraints": {
+        "pattern": "^[0-9]{5}$"
+      }
+    },
+    {
+      "name": "Diagnose_ICD10_Code",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Tumordiagnose nach ICD-10.",
+      "constraints": {
+        "pattern": "^[A-TV-Z][0-9][0-9AB](\\.[0-9A-KXZ]{1,4})?$"
+      }
+    },
+    {
+      "name": "Diagnose_ICD10_Version",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Für die Kodierung der Tumordiagnose verwendete Ausgabe der ICD-10."
+    },
+    {
+      "name": "Topographie_Code",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Kodierung der Tumorlokalisation nach ICD-O-3.",
+      "constraints": {
+        "pattern": "^C[0-9]{2}\\.[0-9]$"
+      }
+    },
+    {
+      "name": "Topographie_Version",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Für die Kodierung der Topographie verwendete Ausgabe der ICD-O-3.",
+      "constraints": {
+        "enum": [
+          31,
+          32,
+          33
+        ]
+      },
+      "categories": [
+        {
+          "value": 31,
+          "label": "ICD-O-3, 2003"
+        },
+        {
+          "value": 32,
+          "label": "ICD-O-3, 1. Revision 2014"
+        },
+        {
+          "value": 33,
+          "label": "ICD-O-3, 2. Revision 2019"
+        }
+      ]
+    },
+    {
+      "name": "Morphologie_Code",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Kodierung des Histologiebefunds nach ICD-O-3.",
+      "constraints": {
+        "pattern": "^[0-9]{4}\\/[0-3]$"
+      }
+    },
+    {
+      "name": "Morphologie_Version",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Für die Kodierung der Morphologie verwendete Referenz (ICD-O-3, WHO Blue Books).",
+      "constraints": {
+        "enum": [
+          "31",
+          "32",
+          "33",
+          "bb"
+        ]
+      },
+      "categories": [
+        {
+          "value": "31",
+          "label": "ICD-O-3, 2003"
+        },
+        {
+          "value": "32",
+          "label": "ICD-O-3, 1. Revision 2014"
+        },
+        {
+          "value": "33",
+          "label": "ICD-O-3, 2. Revision 2019"
+        },
+        {
+          "value": "bb",
+          "label": "WHO Blue Books"
+        }
+      ]
+    },
+    {
+      "name": "Grading",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Differenzierungsgrad des Tumors gemäß WHO Classification of Tumours.",
+      "constraints": {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "X",
+          "L",
+          "M",
+          "H",
+          "B",
+          "U",
+          "T"
+        ]
+      },
+      "categories": [
+        {
+          "value": "0",
+          "label": "Malignes Melanom der Konjunktiva"
+        },
+        {
+          "value": "1",
+          "label": "Gut differenziert"
+        },
+        {
+          "value": "2",
+          "label": "Mäßig differenziert"
+        },
+        {
+          "value": "3",
+          "label": "Schlecht differenziert"
+        },
+        {
+          "value": "4",
+          "label": "Undifferenziert"
+        },
+        {
+          "value": "X",
+          "label": "Nicht bestimmbar"
+        },
+        {
+          "value": "L",
+          "label": "Low grade (G1 oder G2)"
+        },
+        {
+          "value": "M",
+          "label": "Intermediate (G2 oder G3)"
+        },
+        {
+          "value": "H",
+          "label": "High grade (G3 oder G4)"
+        },
+        {
+          "value": "B",
+          "label": "Borderline"
+        },
+        {
+          "value": "U",
+          "label": "Unbekannt"
+        },
+        {
+          "value": "T",
+          "label": "Trifft nicht zu"
+        }
+      ]
+    },
+    {
+      "name": "LK_untersucht",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Anzahl der untersuchten Lymphknoten.",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "LK_befallen",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Anzahl der befallenen Lymphknoten.",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Sentinel_LK_untersucht",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Anzahl der untersuchten Lymphknoten, davon Sentinel.",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Sentinel_LK_befallen",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Anzahl der befallenen Lymphknoten, davon Sentinel.",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "TNM_Auflage_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Ausgabe der TNM, die für die Beurteilung des klinischen Tumorstadiums verwendet wurde.",
+      "constraints": {
+        "enum": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      }
+    },
+    {
+      "name": "y_Symbol_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob das klinische Tumorstadium nach einer initialen multimodalen Therapie beurteilt wurde.",
+      "constraints": {
+        "enum": [
+          "y"
+        ]
+      }
+    },
+    {
+      "name": "r_Symbol_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob das klinische Tumorstadium eines Rezidivs beurteilt wurde.",
+      "constraints": {
+        "enum": [
+          "r"
+        ]
+      }
+    },
+    {
+      "name": "a_Symbol_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob das Tumorstadium mittels Autopsie bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "a"
+        ]
+      }
+    },
+    {
+      "name": "T_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt die Ausdehnung des Primärtumors."
+    },
+    {
+      "name": "N_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß regionärer Lymphknotenmetastasen."
+    },
+    {
+      "name": "M_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Vorliegen von Fernmetastasen.",
+      "constraints": {
+        "enum": [
+          "M0",
+          "M1"
+        ]
+      }
+    },
+    {
+      "name": "c_p_u_Praefix_T_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob das T-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      }
+    },
+    {
+      "name": "c_p_u_Praefix_N_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob das N-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      }
+    },
+    {
+      "name": "c_p_u_Praefix_M_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob das M-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      }
+    },
+    {
+      "name": "m_Symbol_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk."
+    },
+    {
+      "name": "L_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Lymphgefäßinvasion.",
+      "constraints": {
+        "enum": [
+          "LX",
+          "L0",
+          "L1"
+        ]
+      }
+    },
+    {
+      "name": "V_c",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Veneninvasion.",
+      "constraints": {
+        "enum": [
+          "VX",
+          "V0",
+          "V1",
+          "V2"
+        ]
+      }
+    },
+    {
+      "name": "m_Symbol_p",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk.",
+      "constraints": {
+        "enum": [
+          "m",
+          "n"
+        ]
+      },
+      "categories": [
+        {
+          "value": "m",
+          "label": "multiple Tumoren ohne Angabe der Zahl"
+        },
+        {
+          "value": "n",
+          "label": "Anzahl der multiplen Tumoren"
+        }
+      ]
+    },
+    {
+      "name": "L_p",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Lymphgefäßinvasion.",
+      "constraints": {
+        "enum": [
+          "LX",
+          "L0",
+          "L1"
+        ]
+      },
+      "categories": [
+        {
+          "value": "LX",
+          "label": "Lymphgefäßinvasion kann nicht beurteilt werden"
+        },
+        {
+          "value": "L0",
+          "label": "keine Lymphgefäßinvasion"
+        },
+        {
+          "value": "L1",
+          "label": "Lymphgefäßinvasion"
+        }
+      ]
+    },
+    {
+      "name": "V_p",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Veneninvasion.",
+      "constraints": {
+        "enum": [
+          "VX",
+          "V0",
+          "V1",
+          "V2"
+        ]
+      },
+      "categories": [
+        {
+          "value": "VX",
+          "label": "Veneninvasion kann nicht beurteilt werden"
+        },
+        {
+          "value": "V0",
+          "label": "keine Veneninvasion"
+        },
+        {
+          "value": "V1",
+          "label": "mikroskopische Veneninvasion"
+        },
+        {
+          "value": "V2",
+          "label": "makroskopische Veneninvasion"
+        }
+      ]
+    },
+    {
+      "name": "Pn_p",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Perineuralinvasion.",
+      "constraints": {
+        "enum": [
+          "PnX",
+          "Pn0",
+          "Pn1"
+        ]
+      },
+      "categories": [
+        {
+          "value": "PnX",
+          "label": "perineurale Invasion kann nicht beurteilt werden"
+        },
+        {
+          "value": "Pn0",
+          "label": "keine perineurale Invasion"
+        },
+        {
+          "value": "Pn1",
+          "label": "perineurale Invasion"
+        }
+      ]
+    },
+    {
+      "name": "S_p",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bei Vorliegen eines Hodentumors: Beschreibt die Erhöhung von Serumtumormarkern (AFP, HCG, LDH). S1-S3: Schwellenwerte siehe TNM.",
+      "constraints": {
+        "enum": [
+          "SX",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "categories": [
+        {
+          "value": "SX",
+          "label": "Werte der Serumtumormarker nicht verfügbar oder entsprechende Untersuchungen nicht vorgenommen"
+        },
+        {
+          "value": "S0",
+          "label": "Serumtumormarker innerhalb der normalen Grenzen"
+        },
+        {
+          "value": "S1",
+          "label": "Serumtumormarker erhöht"
+        },
+        {
+          "value": "S2",
+          "label": "Serumtumormarker erhöht"
+        },
+        {
+          "value": "S3",
+          "label": "Serumtumormarker erhöht"
+        }
+      ]
+    },
+    {
+      "name": "UICC_Stadium_p",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "UICC-Stadium nach TNM-Klassifikation. Beschreibt die anatomische Ausdehnung der Tumorerkrankung.",
+      "constraints": {
+        "enum": [
+          "okk",
+          "0",
+          "0a",
+          "0is",
+          "I",
+          "IA",
+          "IA1",
+          "IA2",
+          "IA3",
+          "IB",
+          "IB1",
+          "IB2",
+          "IC",
+          "II",
+          "IIA",
+          "IIA1",
+          "IIA2",
+          "IIB",
+          "IIC",
+          "III",
+          "IIIA",
+          "IIIA1",
+          "IIIA2",
+          "IIIB",
+          "IIIC",
+          "IIIC1",
+          "IIIC2",
+          "IIID",
+          "IS",
+          "IV",
+          "IVA",
+          "IVA1",
+          "IVA2",
+          "IVB",
+          "IVC"
+        ]
+      }
+    },
+    {
+      "name": "Lokalisation",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt die Lokalisation der Fernmetastase(n).",
+      "constraints": {
+        "enum": [
+          "PUL",
+          "OSS",
+          "HEP",
+          "BRA",
+          "LYM",
+          "MAR",
+          "PLE",
+          "PER",
+          "ADR",
+          "SKI",
+          "OTH",
+          "GEN"
+        ]
+      },
+      "categories": [
+        {
+          "value": "PUL",
+          "label": "Lunge"
+        },
+        {
+          "value": "OSS",
+          "label": "Knochen"
+        },
+        {
+          "value": "HEP",
+          "label": "Leber"
+        },
+        {
+          "value": "BRA",
+          "label": "Hirn"
+        },
+        {
+          "value": "LYM",
+          "label": "Lymphknoten"
+        },
+        {
+          "value": "MAR",
+          "label": "Knochenmark"
+        },
+        {
+          "value": "PLE",
+          "label": "Pleura"
+        },
+        {
+          "value": "PER",
+          "label": "Peritoneum"
+        },
+        {
+          "value": "ADR",
+          "label": "Nebennieren"
+        },
+        {
+          "value": "SKI",
+          "label": "Haut"
+        },
+        {
+          "value": "OTH",
+          "label": "Andere Organe"
+        },
+        {
+          "value": "GEN",
+          "label": "Generalisierte Metastasierung"
+        }
+      ]
+    },
+    {
+      "name": "Name",
+      "entity": "Weitere_Klassifikation",
+      "type": "string",
+      "description": "Name/Typ sonstiger verwendeter Klassifikationssysteme (z. B. Ann-Arbor-Klassifikation, WHO Classification of CNS Tumors, AJCC)."
+    },
+    {
+      "name": "Stadium",
+      "entity": "Weitere_Klassifikation",
+      "type": "string",
+      "description": "Stadium nach sonstigem verwendeten Klassifikationssystem."
+    },
+    {
+      "name": "Diagnosesicherung",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Wertigkeit der Diagnosesicherung.",
+      "constraints": {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "4",
+          "5",
+          "7.1",
+          "7.2",
+          "7.3",
+          "8",
+          "9"
+        ]
+      },
+      "categories": [
+        {
+          "value": "0",
+          "label": "DCO"
+        },
+        {
+          "value": "1",
+          "label": "klinisch, ausschließlich körperliche Untersuchung (ohne tumorspezifische Diagnostik)"
+        },
+        {
+          "value": "2",
+          "label": "klinisch inkl. Bildgebung/Endoskopie/Laparotomie/Autopsie ohne Histologie"
+        },
+        {
+          "value": "4",
+          "label": "spezifische Tumormarker"
+        },
+        {
+          "value": "5",
+          "label": "zytologisch"
+        },
+        {
+          "value": "7.1",
+          "label": "Histologie des Primärtumors"
+        },
+        {
+          "value": "7.2",
+          "label": "Histologie einer Metastase"
+        },
+        {
+          "value": "7.3",
+          "label": "Histologie der Autopsie"
+        },
+        {
+          "value": "8",
+          "label": "zytogenetisch und/oder molekularer Test"
+        },
+        {
+          "value": "9",
+          "label": "unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "Seitenlokalisation",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bei paarigen Organen: Gibt an, welche Körperseite betroffen ist.",
+      "constraints": {
+        "enum": [
+          "L",
+          "R",
+          "B",
+          "M",
+          "U",
+          "T"
+        ]
+      },
+      "categories": [
+        {
+          "value": "L",
+          "label": "links"
+        },
+        {
+          "value": "R",
+          "label": "rechts"
+        },
+        {
+          "value": "B",
+          "label": "beidseitig"
+        },
+        {
+          "value": "M",
+          "label": "mittig"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        },
+        {
+          "value": "T",
+          "label": "trifft nicht zu"
+        }
+      ]
+    },
+    {
+      "name": "DCN",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob die erste Information über einen Erkrankungsfall aus einer Todesbescheinigung stammt.",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Ja"
+        },
+        {
+          "value": "N",
+          "label": "Nein"
+        }
+      ]
+    },
+    {
+      "name": "Anzahl_Tage_Diagnose_Tod",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Zeitlicher Abstand zwischen Diagnose und Tod (in Tagen).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "TumorgroesseInvasiv",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Maximaler Durchmesser des invasiven Karzinoms (in mm).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "TumorgroesseDCIS",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Maximaler Durchmesser des duktalen in situ-Karzinoms (in mm).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Praetherapeutischer_Menopausenstatus",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Prätherapeutischer Menopausenstatus der Patientin. Postmenopausal bedeutet: entweder keine Menstruationsblutung für länger als ein Jahr oder E2 und FSH im postmenopausalen Bereich.",
+      "constraints": {
+        "enum": [
+          "1",
+          "3",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "1",
+          "label": "prämenopausal (umfasst perimenopausal)"
+        },
+        {
+          "value": "3",
+          "label": "postmenopausal"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "HormonrezeptorStatus_Oestrogen",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Östrogenrezeptorstatus gemäß Immunreaktivem Score (IRS).",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "P",
+          "label": "positiv (IRS >= 1)"
+        },
+        {
+          "value": "N",
+          "label": "negativ"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "HormonrezeptorStatus_Progesteron",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Progesteronrezeptorstatus gemäß Immunreaktivem Score (IRS).",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "P",
+          "label": "positiv (IRS >= 1)"
+        },
+        {
+          "value": "N",
+          "label": "negativ"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "Her2neuStatus",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "HER2 (ERBB2)-Status.",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "P",
+          "label": "positiv (IHC+++ oder IHC++ und ISH positiv)"
+        },
+        {
+          "value": "N",
+          "label": "negativ"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "PSA",
+      "entity": "Tumor",
+      "type": "number",
+      "description": "Aktuell relevanter PSA-Wert (in ng/mL).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "DatumPSA_Genauigkeit",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "DatumPSA",
+      "entity": "Tumor",
+      "type": "date",
+      "description": "Monat und Jahr der PSA-Wert-Bestimmung.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "GradPrimaer",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Primärer Gleason-Grad.",
+      "constraints": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "name": "GradSekundaer",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Sekundärer Gleason-Grad.",
+      "constraints": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "name": "ScoreErgebnis",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gleason-Score.",
+      "constraints": {
+        "enum": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "7a",
+          "7b",
+          "8",
+          "9",
+          "10"
+        ]
+      }
+    },
+    {
+      "name": "AnlassGleasonScore",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Anlass der Bestimmung des Gleason-Scores.",
+      "constraints": {
+        "enum": [
+          "O",
+          "S",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "O",
+          "label": "OP"
+        },
+        {
+          "value": "S",
+          "label": "Stanzbiopsie"
+        },
+        {
+          "value": "U",
+          "label": "Unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "Tumordicke",
+      "entity": "Tumor",
+      "type": "number",
+      "description": "Tumordicke (in mm).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Ulzeration",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob Ulzeration (Geschwürbildung) vorliegt.",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Ja"
+        },
+        {
+          "value": "N",
+          "label": "Nein"
+        }
+      ]
+    },
+    {
+      "name": "LDH",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "LDH-Wert (in Units pro Liter).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "RektumAbstandAnokutanlinie",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Bei Rektumkarzinom: Beschreibt den Abstand des Tumorunterrandes von der Anokutanlinie (in cm).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "RASMutation",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob eine Mutation im K-ras-Onkogen vorliegt.",
+      "constraints": {
+        "enum": [
+          "W",
+          "M",
+          "U",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "W",
+          "label": "Wildtyp"
+        },
+        {
+          "value": "M",
+          "label": "Mutation"
+        },
+        {
+          "value": "U",
+          "label": "Unbekannt"
+        },
+        {
+          "value": "N",
+          "label": "Nicht untersucht"
+        }
+      ]
+    },
+    {
+      "name": "Datum_OP_Genauigkeit",
+      "entity": "OP",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Datum_OP",
+      "entity": "OP",
+      "type": "date",
+      "description": "Operationsdatum.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Code",
+      "entity": "OP",
+      "type": "string",
+      "description": "Art der Operation nach Operationen- und Prozedurenschlüssel (OPS).",
+      "constraints": {
+        "pattern": "^[0-9A-Z]{1,}$"
+      }
+    },
+    {
+      "name": "Version",
+      "entity": "OP",
+      "type": "string",
+      "description": "Verwendete Ausgabe des OPS."
+    },
+    {
+      "name": "Intention",
+      "entity": "OP",
+      "type": "string",
+      "description": "Gibt an, mit welchem Ziel die Operation geplant wurde.",
+      "constraints": {
+        "enum": [
+          "K",
+          "P",
+          "D",
+          "R",
+          "S",
+          "x"
+        ]
+      },
+      "categories": [
+        {
+          "value": "K",
+          "label": "kurativ"
+        },
+        {
+          "value": "P",
+          "label": "palliativ"
+        },
+        {
+          "value": "D",
+          "label": "diagnostisch"
+        },
+        {
+          "value": "R",
+          "label": "Revision/Komplikation"
+        },
+        {
+          "value": "S",
+          "label": "Sonstiges"
+        },
+        {
+          "value": "x",
+          "label": "fehlende Angabe"
+        }
+      ]
+    },
+    {
+      "name": "Lokale_Beurteilung_Residualstatus",
+      "entity": "OP",
+      "type": "string",
+      "description": "Bezeichnet den Residualstatus nach operativer Tumorentfernung (TNM-Klassifikation).",
+      "constraints": {
+        "enum": [
+          "R0",
+          "R1",
+          "R1(is)",
+          "R1(cy+)",
+          "R2",
+          "RX",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "R0",
+          "label": "kein Residualtumor"
+        },
+        {
+          "value": "R1",
+          "label": "mikroskopischer Residualtumor"
+        },
+        {
+          "value": "R1(is)",
+          "label": "in-situ-Rest"
+        },
+        {
+          "value": "R1(cy+)",
+          "label": "zytologischer Rest"
+        },
+        {
+          "value": "R2",
+          "label": "makroskopischer Residualtumor"
+        },
+        {
+          "value": "RX",
+          "label": "Residualtumor nicht beurteilbar"
+        },
+        {
+          "value": "U",
+          "label": "Residualtumorstatus unbekannt"
+        }
+      ]
+    },
+    {
+      "name": "Anzahl_Tage_Diagnose_OP",
+      "entity": "OP",
+      "type": "integer",
+      "description": "Anzahl der Tage zwischen Diagnose und Operation.",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Datum_Beginn_Bestrahlung_Genauigkeit",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Datum_Beginn_Bestrahlung",
+      "entity": "Tumor",
+      "type": "date",
+      "description": "Monat und Jahr des Beginns der Strahlentherapie.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Intention",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, mit welcher Intention die Strahlentherapie geplant wurde.",
+      "constraints": {
+        "enum": [
+          "K",
+          "P",
+          "O",
+          "S",
+          "x"
+        ]
+      },
+      "categories": [
+        {
+          "value": "K",
+          "label": "kurativ"
+        },
+        {
+          "value": "P",
+          "label": "palliativ"
+        },
+        {
+          "value": "O",
+          "label": "lokal kurativ bei Oligometastasierung"
+        },
+        {
+          "value": "S",
+          "label": "sonstiges"
+        },
+        {
+          "value": "x",
+          "label": "keine Angabe"
+        }
+      ]
+    },
+    {
+      "name": "Stellung_OP",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt den Bezug der Strahlentherapie zur operativen Therapie an.",
+      "constraints": {
+        "enum": [
+          "O",
+          "A",
+          "N",
+          "I",
+          "Z",
+          "s"
+        ]
+      },
+      "categories": [
+        {
+          "value": "O",
+          "label": "ohne Bezug zu operativer Therapie"
+        },
+        {
+          "value": "A",
+          "label": "adjuvant"
+        },
+        {
+          "value": "N",
+          "label": "neoadjuvant"
+        },
+        {
+          "value": "I",
+          "label": "interoperativ"
+        },
+        {
+          "value": "Z",
+          "label": "additiv"
+        },
+        {
+          "value": "s",
+          "label": "sonstiges"
+        }
+      ]
+    },
+    {
+      "name": "TypeOfST_TypBestrahlungApplikationsart",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt die Technik der Strahlentherapie an.",
+      "constraints": {
+        "enum": [
+          "Perkutan",
+          "Kontakt",
+          "Metabolisch",
+          "Sonstige",
+          "Unbekannt"
+        ]
+      }
+    },
+    {
+      "name": "Radiochemo",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt die Durchführung der perkutanen Radiochemotherapie.",
+      "constraints": {
+        "enum": [
+          "RCJ",
+          "RCN"
+        ]
+      },
+      "categories": [
+        {
+          "value": "RCJ",
+          "label": "mit Chemotherapie/Sensitizer"
+        },
+        {
+          "value": "RCN",
+          "label": "ohne Chemotherapie/Sensitizer"
+        }
+      ]
+    },
+    {
+      "name": "Stereotaktisch",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob die perkutane Strahlentherapie stereotaktisch durchgeführt wurde.",
+      "constraints": {
+        "enum": [
+          "ST"
+        ]
+      }
+    },
+    {
+      "name": "Atemgetriggert",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob die perkutane Strahlentherapie atemgesteuert durchgeführt wurde.",
+      "constraints": {
+        "enum": [
+          "4D"
+        ]
+      }
+    },
+    {
+      "name": "CodeVersion2014",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bezeichnet die behandelte anatomische Region gemäß oBDS-Version 2014."
+    },
+    {
+      "name": "CodeVersion2021",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bezeichnet die behandelte anatomische Region gemäß oBDS-Version 2021."
+    },
+    {
+      "name": "Seite_Zielgebiet",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bezeichnet die Körperseite der behandelten anatomischen Region.",
+      "constraints": {
+        "enum": [
+          "L",
+          "R",
+          "B",
+          "M",
+          "U",
+          "T"
+        ]
+      },
+      "categories": [
+        {
+          "value": "L",
+          "label": "links"
+        },
+        {
+          "value": "R",
+          "label": "rechts"
+        },
+        {
+          "value": "B",
+          "label": "beidseits"
+        },
+        {
+          "value": "M",
+          "label": "mittig"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        },
+        {
+          "value": "T",
+          "label": "trifft nicht zu"
+        }
+      ]
+    },
+    {
+      "name": "Interstitiell_endokavitaer",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt die Art der Durchführung der Kontaktbestrahlung (Brachytherapie) an.",
+      "constraints": {
+        "enum": [
+          "I",
+          "K"
+        ]
+      },
+      "categories": [
+        {
+          "value": "I",
+          "label": "interstitiell"
+        },
+        {
+          "value": "K",
+          "label": "endokavitär"
+        }
+      ]
+    },
+    {
+      "name": "Rate_Type",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Beschreibt die Dosisleistung der Brachytherapie.",
+      "constraints": {
+        "enum": [
+          "HDR",
+          "LDR",
+          "PDR"
+        ]
+      },
+      "categories": [
+        {
+          "value": "HDR",
+          "label": "high dose rate"
+        },
+        {
+          "value": "LDR",
+          "label": "low dose rate"
+        },
+        {
+          "value": "PDR",
+          "label": "pulsed dose rate"
+        }
+      ]
+    },
+    {
+      "name": "Metabolisch_Typ",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bezeichnet den Typ der metabolischen Strahlentherapie.",
+      "constraints": {
+        "enum": [
+          "SIRT",
+          "PRRT",
+          "PSMA",
+          "RJT",
+          "RIT"
+        ]
+      },
+      "categories": [
+        {
+          "value": "SIRT",
+          "label": "selektive interne Radiotherapie"
+        },
+        {
+          "value": "PRRT",
+          "label": "Peptid-Radiorezeptor-Therapie"
+        },
+        {
+          "value": "PSMA",
+          "label": "PSMA-Therapie"
+        },
+        {
+          "value": "RJT",
+          "label": "Radiojod-Therapie"
+        },
+        {
+          "value": "RIT",
+          "label": "Radioimmun-Therapie"
+        }
+      ]
+    },
+    {
+      "name": "Anzahl_Tage_Bestrahlung_Dauer",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Dauer der Strahlentherapie (in Tagen).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Anzahl_Tage_Diagnose_Bestrahlung",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Zeitlicher Abstand zwischen Diagnose und Beginn der Strahlentherapie (in Tagen).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Intention",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, mit welcher Intention die systemische Therapie geplant wurde.",
+      "constraints": {
+        "enum": [
+          "K",
+          "P",
+          "S",
+          "x"
+        ]
+      },
+      "categories": [
+        {
+          "value": "K",
+          "label": "kurativ"
+        },
+        {
+          "value": "P",
+          "label": "palliativ"
+        },
+        {
+          "value": "S",
+          "label": "sonstiges"
+        },
+        {
+          "value": "x",
+          "label": "keine Angabe"
+        }
+      ]
+    },
+    {
+      "name": "Stellung_OP",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, in welchem Bezug zu einer operativen Therapie die systemische Therapie steht.",
+      "constraints": {
+        "enum": [
+          "O",
+          "A",
+          "N",
+          "I",
+          "S"
+        ]
+      },
+      "categories": [
+        {
+          "value": "O",
+          "label": "ohne Bezug zu einer operativen Therapie"
+        },
+        {
+          "value": "A",
+          "label": "adjuvant"
+        },
+        {
+          "value": "N",
+          "label": "neoadjuvant"
+        },
+        {
+          "value": "I",
+          "label": "intraoperativ"
+        },
+        {
+          "value": "S",
+          "label": "sonstiges"
+        }
+      ]
+    },
+    {
+      "name": "Therapieart",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, welche Art der systemischen Therapie durchgeführt wurde bzw. ob eine abwartende Strategie verfolgt wurde.",
+      "constraints": {
+        "enum": [
+          "CH",
+          "HO",
+          "IM",
+          "ZS",
+          "CI",
+          "CZ",
+          "CIZ",
+          "IZ",
+          "SZ",
+          "AS",
+          "WS",
+          "WW",
+          "SO"
+        ]
+      },
+      "categories": [
+        {
+          "value": "CH",
+          "label": "Chemotherapie"
+        },
+        {
+          "value": "HO",
+          "label": "Hormontherapie"
+        },
+        {
+          "value": "IM",
+          "label": "Immun-/Antikörpertherapie"
+        },
+        {
+          "value": "ZS",
+          "label": "zielgerichtete Substanzen"
+        },
+        {
+          "value": "CI",
+          "label": "Chemo- + Immun-/Antikörpertherapie"
+        },
+        {
+          "value": "CZ",
+          "label": "Chemotherapie + zielgerichtete Substanzen"
+        },
+        {
+          "value": "CIZ",
+          "label": "Chemo- + Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+        },
+        {
+          "value": "IZ",
+          "label": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
+        },
+        {
+          "value": "SZ",
+          "label": "Stammzellentransplantation (inkl. Knochenmarktransplantation)"
+        },
+        {
+          "value": "AS",
+          "label": "Active Surveillance"
+        },
+        {
+          "value": "WS",
+          "label": "Wait and see"
+        },
+        {
+          "value": "WW",
+          "label": "Watchful Waiting"
+        },
+        {
+          "value": "SO",
+          "label": "Sonstiges"
+        }
+      ]
+    },
+    {
+      "name": "TypeOfSYST_TypSubstanz",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, mit welcher Substanz die Systemtherapie durchgeführt wurde. Mehrere Substanzen sind separat einzugeben (ATC-Kode + Version möglich)."
+    },
+    {
+      "name": "TypeOfProtokoll_Typ",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bezeichnung oder Kode/Kürzel des Therapieprotokolls."
+    },
+    {
+      "name": "Protokoll_TypProtokollschluessel_Code",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Therapieprotokoll, Kode/Kürzel.",
+      "constraints": {
+        "pattern": ".*"
+      }
+    },
+    {
+      "name": "Bezeichnung",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Bezeichnung des Therapieprotokolls (Freitext)."
+    },
+    {
+      "name": "Protokoll_TypProtokollschluessel_Version",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Version des Therapieprotokollkodes/-kürzels."
+    },
+    {
+      "name": "Datum_Beginn_SYST_Genauigkeit",
+      "entity": "Tumor",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Datum_Beginn_SYST",
+      "entity": "Tumor",
+      "type": "date",
+      "description": "Monat und Jahr des Beginns der systemischen Therapie.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Anzahl_Tage_SYST_Dauer",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Dauer der systemischen Therapie (in Tagen).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Anzahl_Tage_Diagnose_SYST",
+      "entity": "Tumor",
+      "type": "integer",
+      "description": "Zeitlicher Abstand zwischen Diagnose und Beginn der systemischen Therapie (in Tagen).",
+      "constraints": {
+        "minimum": 0
+      }
+    },
+    {
+      "name": "Datum_Folgeereignis_Genauigkeit",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "nur das Jahr ist bekannt, der Monat wurde geschätzt (jahrgenau)"
+        },
+        {
+          "value": "T",
+          "label": "Jahr und Monat sind bekannt (monatsgenau)"
+        },
+        {
+          "value": "V",
+          "label": "Jahr und Monat wurden geschätzt"
+        }
+      ]
+    },
+    {
+      "name": "Datum_Folgeereignis",
+      "entity": "Folgeereignis",
+      "type": "date",
+      "description": "Datum der letzten Untersuchung zur Einschätzung des Tumorstatus.",
+      "format": "YYYY-MM-DD"
+    },
+    {
+      "name": "Version",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Ausgabe der TNM, die für die Beurteilung des Tumorstadiums verwendet wurde.",
+      "constraints": {
+        "enum": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "categories": [
+        {
+          "value": "6",
+          "label": "6. Auflage TNM"
+        },
+        {
+          "value": "7",
+          "label": "7. Auflage TNM"
+        },
+        {
+          "value": "8",
+          "label": "8. Auflage TNM"
+        },
+        {
+          "value": "9",
+          "label": "9. Auflage TNM"
+        }
+      ]
+    },
+    {
+      "name": "y_Symbol",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob das Tumorstadium vor oder nach/während der initialen multimodalen Therapie beurteilt wurde.",
+      "constraints": {
+        "enum": [
+          "y"
+        ]
+      },
+      "categories": [
+        {
+          "value": "y",
+          "label": "Klassifikation erfolgte nach einer initialen multimodalen Therapie"
+        }
+      ]
+    },
+    {
+      "name": "r_Symbol",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob das Tumorstadium eines Rezidivs beurteilt wurde.",
+      "constraints": {
+        "enum": [
+          "r"
+        ]
+      },
+      "categories": [
+        {
+          "value": "r",
+          "label": "Klassifikation erfolgte zur Beurteilung eines Rezidivs"
+        }
+      ]
+    },
+    {
+      "name": "a_Symbol",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob das Tumorstadium durch Autopsie festgestellt wurde.",
+      "constraints": {
+        "enum": [
+          "a"
+        ]
+      },
+      "categories": [
+        {
+          "value": "a",
+          "label": "Klassifikation erfolgte durch Autopsie"
+        }
+      ]
+    },
+    {
+      "name": "T",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beschreibt die Ausdehnung des Primärtumors. Klassifikation nach TNM entsprechend Tumorentität."
+    },
+    {
+      "name": "N",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß regionärer Lymphknotenmetastasen. Klassifikation nach TNM entsprechend Tumorentität."
+    },
+    {
+      "name": "M",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beschreibt das Vorliegen von Fernmetastasen.",
+      "constraints": {
+        "enum": [
+          "M0",
+          "M1"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M0",
+          "label": "keine Fernmetastasen"
+        },
+        {
+          "value": "M1",
+          "label": "Fernmetastasen"
+        }
+      ]
+    },
+    {
+      "name": "c_p_u_Praefix_T",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob das T-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "categories": [
+        {
+          "value": "c",
+          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
+        },
+        {
+          "value": "p",
+          "label": "histopathologische Untersuchung"
+        },
+        {
+          "value": "u",
+          "label": "Ultraschall"
+        }
+      ]
+    },
+    {
+      "name": "c_p_u_Praefix_N",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob das N-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "categories": [
+        {
+          "value": "c",
+          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
+        },
+        {
+          "value": "p",
+          "label": "histopathologische Untersuchung"
+        },
+        {
+          "value": "u",
+          "label": "Ultraschall"
+        }
+      ]
+    },
+    {
+      "name": "c_p_u_Praefix_M",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gibt an, ob das M-Stadium klinisch, histopathologisch oder mittels Ultraschall bestimmt wurde.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "categories": [
+        {
+          "value": "c",
+          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
+        },
+        {
+          "value": "p",
+          "label": "histopathologische Untersuchung"
+        },
+        {
+          "value": "u",
+          "label": "Ultraschall"
+        }
+      ]
+    },
+    {
+      "name": "m_Symbol",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk.",
+      "constraints": {
+        "enum": [
+          "m",
+          "n"
+        ]
+      },
+      "categories": [
+        {
+          "value": "m",
+          "label": "multiple Tumoren ohne Angabe der Zahl"
+        },
+        {
+          "value": "n",
+          "label": "Anzahl der multiplen Tumoren"
+        }
+      ]
+    },
+    {
+      "name": "L",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Lymphgefäßinvasion.",
+      "constraints": {
+        "enum": [
+          "LX",
+          "L0",
+          "L1"
+        ]
+      },
+      "categories": [
+        {
+          "value": "LX",
+          "label": "Lymphgefäßinvasion kann nicht beurteilt werden"
+        },
+        {
+          "value": "L0",
+          "label": "keine Lymphgefäßinvasion"
+        },
+        {
+          "value": "L1",
+          "label": "Lymphgefäßinvasion"
+        }
+      ]
+    },
+    {
+      "name": "V",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Veneninvasion.",
+      "constraints": {
+        "enum": [
+          "VX",
+          "V0",
+          "V1",
+          "V2"
+        ]
+      },
+      "categories": [
+        {
+          "value": "VX",
+          "label": "Veneninvasion kann nicht beurteilt werden"
+        },
+        {
+          "value": "V0",
+          "label": "keine Veneninvasion"
+        },
+        {
+          "value": "V1",
+          "label": "mikroskopische Veneninvasion"
+        },
+        {
+          "value": "V2",
+          "label": "makroskopische Veneninvasion"
+        }
+      ]
+    },
+    {
+      "name": "Pn",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beschreibt das Ausmaß der Perineuralinvasion.",
+      "constraints": {
+        "enum": [
+          "PnX",
+          "Pn0",
+          "Pn1"
+        ]
+      },
+      "categories": [
+        {
+          "value": "PnX",
+          "label": "perineurale Invasion kann nicht beurteilt werden"
+        },
+        {
+          "value": "Pn0",
+          "label": "keine perineurale Invasion"
+        },
+        {
+          "value": "Pn1",
+          "label": "perineurale Invasion"
+        }
+      ]
+    },
+    {
+      "name": "S",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Bei Vorliegen eines Hodentumors: Beschreibt die Erhöhung von Serumtumormarkern (AFP, HCG, LDH).",
+      "constraints": {
+        "enum": [
+          "SX",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "categories": [
+        {
+          "value": "SX",
+          "label": "Werte der Serumtumormarker nicht verfügbar oder nicht untersucht"
+        },
+        {
+          "value": "S0",
+          "label": "Serumtumormarker innerhalb der normalen Grenzen"
+        },
+        {
+          "value": "S1",
+          "label": "Serumtumormarker erhöht (S1-S3 nach TNM)"
+        },
+        {
+          "value": "S2",
+          "label": "Serumtumormarker erhöht (S1-S3 nach TNM)"
+        },
+        {
+          "value": "S3",
+          "label": "Serumtumormarker erhöht (S1-S3 nach TNM)"
+        }
+      ]
+    },
+    {
+      "name": "UICC_Stadium",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "UICC-Stadium nach TNM-Klassifikation. Beschreibt die anatomische Ausdehnung der Tumorerkrankung.",
+      "constraints": {
+        "enum": [
+          "okk",
+          "0",
+          "0a",
+          "0is",
+          "I",
+          "IA",
+          "IA1",
+          "IA2",
+          "IA3",
+          "IB",
+          "IB1",
+          "IB2",
+          "IC",
+          "II",
+          "IIA",
+          "IIA1",
+          "IIA2",
+          "IIB",
+          "IIC",
+          "III",
+          "IIIA",
+          "IIIA1",
+          "IIIA2",
+          "IIIB",
+          "IIIC",
+          "IIIC1",
+          "IIIC2",
+          "IIID",
+          "IS",
+          "IV",
+          "IVA",
+          "IVA1",
+          "IVA2",
+          "IVB",
+          "IVC"
+        ]
+      }
+    },
+    {
+      "name": "Name",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Name/Typ sonstiger verwendeter Klassifikationen (z. B. Ann-Arbor-Klassifikation, WHO Classification of CNS Tumors, AJCC)."
+    },
+    {
+      "name": "Stadium",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Stadium der verwendeten sonstigen Klassifikation."
+    },
+    {
+      "name": "Gesamtbeurteilung_Tumorstatus",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Gesamtbeurteilung der Erkrankung unter Berücksichtigung aller Manifestationen.",
+      "constraints": {
+        "enum": [
+          "V",
+          "T",
+          "K",
+          "P",
+          "D",
+          "B",
+          "R",
+          "Y",
+          "U",
+          "X"
+        ]
+      },
+      "categories": [
+        {
+          "value": "V",
+          "label": "Vollremission"
+        },
+        {
+          "value": "T",
+          "label": "Teilremission"
+        },
+        {
+          "value": "K",
+          "label": "keine Änderung"
+        },
+        {
+          "value": "P",
+          "label": "Progression"
+        },
+        {
+          "value": "D",
+          "label": "divergentes Geschehen"
+        },
+        {
+          "value": "B",
+          "label": "klinische Besserung (minimal response)"
+        },
+        {
+          "value": "R",
+          "label": "Vollremission mit residualen Auffälligkeiten"
+        },
+        {
+          "value": "Y",
+          "label": "Rezidiv"
+        },
+        {
+          "value": "U",
+          "label": "Beurteilung nicht möglich"
+        },
+        {
+          "value": "X",
+          "label": "fehlende Angaben"
+        }
+      ]
+    },
+    {
+      "name": "Verlauf_Lokaler_Tumorstatus",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beurteilung der Erkrankung im Bereich des Primärtumors.",
+      "constraints": {
+        "enum": [
+          "K",
+          "T",
+          "P",
+          "N",
+          "R",
+          "F",
+          "U",
+          "X"
+        ]
+      },
+      "categories": [
+        {
+          "value": "K",
+          "label": "kein Tumor nachweisbar"
+        },
+        {
+          "value": "T",
+          "label": "Tumorreste (Residualtumor)"
+        },
+        {
+          "value": "P",
+          "label": "Tumorreste Progress"
+        },
+        {
+          "value": "N",
+          "label": "Tumorreste No Change"
+        },
+        {
+          "value": "R",
+          "label": "Lokalrezidiv"
+        },
+        {
+          "value": "F",
+          "label": "fraglicher Befund"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        },
+        {
+          "value": "X",
+          "label": "fehlende Angabe"
+        }
+      ]
+    },
+    {
+      "name": "Verlauf_Tumorstatus_Lymphknoten",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beurteilung der regionären Lymphknoten.",
+      "constraints": {
+        "enum": [
+          "K",
+          "T",
+          "P",
+          "N",
+          "R",
+          "F",
+          "U",
+          "X"
+        ]
+      },
+      "categories": [
+        {
+          "value": "K",
+          "label": "kein Lymphknotenbefall nachweisbar"
+        },
+        {
+          "value": "T",
+          "label": "Residualbefall"
+        },
+        {
+          "value": "P",
+          "label": "Progress"
+        },
+        {
+          "value": "N",
+          "label": "No Change"
+        },
+        {
+          "value": "R",
+          "label": "Rezidiv"
+        },
+        {
+          "value": "F",
+          "label": "fraglicher Befund"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        },
+        {
+          "value": "X",
+          "label": "fehlende Angabe"
+        }
+      ]
+    },
+    {
+      "name": "Verlauf_Tumorstatus_Fernmetastasen",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Beurteilung der Fernmetastasen.",
+      "constraints": {
+        "enum": [
+          "K",
+          "T",
+          "P",
+          "N",
+          "R",
+          "F",
+          "U",
+          "X"
+        ]
+      },
+      "categories": [
+        {
+          "value": "K",
+          "label": "keine Fernmetastasen nachweisbar"
+        },
+        {
+          "value": "T",
+          "label": "Fernmetastasen Residuen"
+        },
+        {
+          "value": "P",
+          "label": "Progress"
+        },
+        {
+          "value": "N",
+          "label": "No Change"
+        },
+        {
+          "value": "R",
+          "label": "neu aufgetretene Metastasen"
+        },
+        {
+          "value": "F",
+          "label": "fraglicher Befund"
+        },
+        {
+          "value": "U",
+          "label": "unbekannt"
+        },
+        {
+          "value": "X",
+          "label": "fehlende Angabe"
+        }
+      ]
+    },
+    {
+      "name": "Lokalisation",
+      "entity": "Folgeereignis",
+      "type": "string",
+      "description": "Lokalisation der Fernmetastasen.",
+      "constraints": {
+        "enum": [
+          "PUL",
+          "OSS",
+          "HEP",
+          "BRA",
+          "LYM",
+          "MAR",
+          "PLE",
+          "PER",
+          "ADR",
+          "SKI",
+          "OTH",
+          "GEN"
+        ]
+      },
+      "categories": [
+        {
+          "value": "PUL",
+          "label": "Lunge"
+        },
+        {
+          "value": "OSS",
+          "label": "Knochen"
+        },
+        {
+          "value": "HEP",
+          "label": "Leber"
+        },
+        {
+          "value": "BRA",
+          "label": "Hirn"
+        },
+        {
+          "value": "LYM",
+          "label": "Lymphknoten"
+        },
+        {
+          "value": "MAR",
+          "label": "Knochenmark"
+        },
+        {
+          "value": "PLE",
+          "label": "Pleura"
+        },
+        {
+          "value": "PER",
+          "label": "Peritoneum"
+        },
+        {
+          "value": "ADR",
+          "label": "Nebennieren"
+        },
+        {
+          "value": "SKI",
+          "label": "Haut"
+        },
+        {
+          "value": "OTH",
+          "label": "Andere Organe"
+        },
+        {
+          "value": "GEN",
+          "label": "Generalisierte Metastasierung"
+        }
+      ]
+    }
+  ]
+}
