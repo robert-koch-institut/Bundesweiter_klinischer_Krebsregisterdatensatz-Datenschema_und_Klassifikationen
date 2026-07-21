@@ -1,5 +1,7 @@
 {
   "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Epidemiologischer Datensatz (EPI) des ZfKD - Datenschema",
+  "description": "Table-Schema-Repräsentation des epidemiologischen Datensatzes (EPI), den das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut aus dem klinischen oBDS-Datensatz ableitet. Enthält je Tumor eine Zeile mit vom ZfKD imputierten, formal bereinigten bzw. aggregierten Variablen (u.a. imputierte Daten, ICD-10-GM/ICD-O-3-Kodierungen, TNM/UICC-Angaben) für epidemiologische Auswertungen.",
   "fields": [
     {
       "name": "GLOBALPATID",
@@ -119,7 +121,10 @@
       "type": "date",
       "title": "Geburtsdatum imputiert",
       "description": "Geburtsdatum: wird aus den imputierten Angaben zu GJ und GM gebildet. Der Tag wird immer auf '15' gesetzt",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-15$"
+      }
     },
     {
       "name": "GKZlk",
@@ -424,7 +429,10 @@
       "type": "date",
       "title": "Diagnosedatum (imputiert)",
       "description": "Diagnosedatum: wird aus den imputierten Angaben zu DJ und DM gebildet. Der Tag wird immer auf '15' gesetzt (Variable vom ZfKD erstellt)",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-15$"
+      }
     },
     {
       "name": "DJ",
@@ -640,7 +648,10 @@
       "type": "date",
       "title": "Imputiertes Sterbedatum",
       "description": "Sterbedatum: wird aus den imputierten Angaben zu SJ und SM gebildet. Der Tag wird immer auf '15' gesetzt. Bei DCO-Fällen wird das Sterbedatum auf das Diagnosedatum gesetzt (Variable vom ZfKD erstellt)",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-15$"
+      }
     },
     {
       "name": "ICDT10",

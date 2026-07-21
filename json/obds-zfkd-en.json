@@ -1,0 +1,2760 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Nationwide Clinical Cancer Registry Dataset (oBDS) - Data Schema",
+  "description": "Table Schema representation of the nationwide oncological basic dataset (oBDS) of the Centre for Cancer Registry Data (ZfKD) at the Robert Koch Institute. In contrast to the XML-based schema of the dataset, this description focuses on the technical implementation. Contains the variables of the clinical cancer registry dataset per entity (Patient, Tumor, OP, Bestrahlung, systemic therapy, etc.) with types, value ranges, and references to the associated classifications. The dataset is extended with variables calculated by the ZfKD (prefix z_).",
+  "fields": [
+    {
+      "name": "Sex",
+      "type": "string",
+      "description": "Sex of the patient.",
+      "constraints": {
+        "enum": [
+          "M",
+          "W",
+          "D",
+          "X",
+          "U"
+        ]
+      },
+      "tablename": "Patient",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/geschlecht.csv"
+    },
+    {
+      "name": "Date of birth - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V). Note: Day is generally not transmitted to ZfKD by the registries.",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "Patient"
+    },
+    {
+      "name": "Date of birth",
+      "type": "date",
+      "description": "Patient's date of birth in international date format YYYY-MM-DD.",
+      "format": "YYYY-MM-DD",
+      "tablename": "Patient",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Deceased",
+      "type": "string",
+      "description": "Vital status: indicates whether the patient has died (Yes/No).",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Yes"
+        },
+        {
+          "value": "N",
+          "label": "No"
+        }
+      ],
+      "tablename": "Patient"
+    },
+    {
+      "name": "Date of death or last known alive date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V). Note: Day is generally not transmitted to ZfKD by the registries.",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "Patient"
+    },
+    {
+      "name": "Date of death or last known alive date",
+      "type": "date",
+      "description": "If Deceased = No, this variable indicates the date of the most recent vital status ascertainment. If Deceased = Yes, this variable indicates the imputed date of death. For DCO cases, date of death and diagnosis date are set equal.",
+      "format": "YYYY-MM-DD",
+      "tablename": "Patient",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Underlying cause of death (official)",
+      "type": "string",
+      "description": "Indicates whether the coded cause of death was reported as the official underlying cause per the death certificate, or as transmitted by the state statistical office.",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Yes"
+        },
+        {
+          "value": "N",
+          "label": "No"
+        }
+      ],
+      "tablename": "Todesursache"
+    },
+    {
+      "name": "Other cause of death, ICD-10 code",
+      "type": "string",
+      "description": "Additional cause(s) of death on file at the registry, coded per ICD-10.",
+      "constraints": {
+        "pattern": "^[A-TV-Z][0-9][0-9AB](\\.[0-9A-KXZ]{1,4})?$"
+      },
+      "example": "C34.1",
+      "tablename": "Todesursache",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/icd10_todesursache.csv"
+    },
+    {
+      "name": "Other cause of death, ICD-10 version",
+      "type": "string",
+      "description": "ICD-10 edition used to code additional causes of death.",
+      "example": "ICD-10-GM 2025",
+      "tablename": "Todesursache",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/icd10_version.csv"
+    },
+    {
+      "name": "Diagnosis date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Diagnosis date",
+      "type": "date",
+      "description": "Date of initial diagnosis in international date format YYYY-MM-DD.",
+      "format": "YYYY-MM-DD",
+      "tablename": "Tumor",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Place of residence at diagnosis",
+      "type": "string",
+      "description": "First 5 digits of the official municipality code (Gemeindeschlüssel) for the patient's place of residence at the time of initial diagnosis.",
+      "constraints": {
+        "pattern": "^[0-9]{5}$"
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/landkreis.csv"
+    },
+    {
+      "name": "Tumor diagnosis, ICD-10 code",
+      "type": "string",
+      "description": "Tumor diagnosis coded per ICD-10.",
+      "constraints": {
+        "pattern": "^[A-TV-Z][0-9][0-9AB](\\.[0-9A-KXZ]{1,4})?$"
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/icd10.csv"
+    },
+    {
+      "name": "Tumor diagnosis, ICD-10 version",
+      "type": "string",
+      "description": "ICD-10 edition used to code the tumor diagnosis.",
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/icd10_version.csv"
+    },
+    {
+      "name": "Topography of tumor, ICD-O-3 code",
+      "type": "string",
+      "description": "Coding of tumor site per ICD-O-3.",
+      "constraints": {
+        "pattern": "^C[0-9]{2}\\.[0-9]{1,2}$"
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/topographie.csv"
+    },
+    {
+      "name": "Topography of tumor, ICD-O-3 version",
+      "type": "string",
+      "description": "ICD-O-3 edition used to code tumor topography.",
+      "constraints": {
+        "enum": [
+          "31",
+          "32",
+          "33"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/topographie_version.csv"
+    },
+    {
+      "name": "Morphology of tumor, ICD-O-3 code",
+      "type": "string",
+      "description": "Coding of histology findings per ICD-O-3.",
+      "constraints": {
+        "pattern": "^[0-9]{4}\\/[0-3]$"
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/morphologie.csv"
+    },
+    {
+      "name": "Morphology of tumor, ICD-O-3 version (or: WHO Blue Books)",
+      "type": "string",
+      "description": "Reference used to code tumor morphology (ICD-O-3 or WHO Blue Books).",
+      "constraints": {
+        "enum": [
+          "31",
+          "32",
+          "33",
+          "bb"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/morphologie_version.csv"
+    },
+    {
+      "name": "Grade of differentiation",
+      "type": "string",
+      "description": "Grade of differentiation of the tumor per WHO Classification of Tumours.",
+      "constraints": {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "X",
+          "L",
+          "M",
+          "H",
+          "B",
+          "U",
+          "T"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/grading_clin.csv"
+    },
+    {
+      "name": "Number of lymph nodes examined",
+      "type": "integer",
+      "description": "Number of lymph nodes examined.",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Number of lymph nodes affected",
+      "type": "integer",
+      "description": "Number of lymph nodes containing cancer cells.",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Number of sentinel lymph nodes examined",
+      "type": "integer",
+      "description": "Number of lymph nodes examined, of which sentinel lymph nodes.",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Number of sentinel lymph nodes affected",
+      "type": "integer",
+      "description": "Number of lymph nodes affected, of which sentinel lymph nodes.",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "cTNM: version",
+      "type": "string",
+      "description": "TNM edition used to assess the clinical tumor stage.",
+      "constraints": {
+        "enum": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_auflage.csv"
+    },
+    {
+      "name": "cTNM: y prefix",
+      "type": "string",
+      "description": "Indicates whether the clinical tumor stage was assessed after initial multimodal therapy.",
+      "constraints": {
+        "enum": [
+          "y"
+        ]
+      },
+      "categories": [
+        {
+          "value": "y",
+          "label": "clinical classification was performed during or after initial multimodality therapy"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "cTNM: r prefix",
+      "type": "string",
+      "description": "Indicates whether the clinical tumor stage of a recurrence was assessed.",
+      "constraints": {
+        "enum": [
+          "r"
+        ]
+      },
+      "categories": [
+        {
+          "value": "r",
+          "label": "clinical classification was performed at retreatment (recurrence)"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "cTNM: a prefix",
+      "type": "string",
+      "description": "Indicates whether the tumor stage was determined by autopsy.",
+      "constraints": {
+        "enum": [
+          "a"
+        ]
+      },
+      "categories": [
+        {
+          "value": "a",
+          "label": "classification was performed at autopsy"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "cTNM: T",
+      "type": "string",
+      "description": "Describes the extent of the primary tumor.",
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "cTNM: N",
+      "type": "string",
+      "description": "Describes the extent of regional lymph node metastasis.",
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "cTNM: M",
+      "type": "string",
+      "description": "Describes the presence of distant metastases.",
+      "constraints": {
+        "enum": [
+          "M0",
+          "M1"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "cTNM: T prefix",
+      "type": "string",
+      "description": "Indicates whether the T stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "cTNM: N prefix",
+      "type": "string",
+      "description": "Indicates whether the N stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "cTNM: M prefix",
+      "type": "string",
+      "description": "Indicates whether the M stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "cTNM: m suffix",
+      "type": "string",
+      "description": "Indicates the presence of multiple primary tumors in one anatomical region.",
+      "tablename": "Tumor",
+      "constraints": {
+        "pattern": "^([m](,is)?|(is)|[2-9](,is)?|[1-9][0-9]{1,2}(,is)?)$"
+      }
+    },
+    {
+      "name": "cTNM: L qualifier",
+      "type": "string",
+      "description": "Describes the extent of lymphatic vessel invasion.",
+      "constraints": {
+        "enum": [
+          "LX",
+          "L0",
+          "L1"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_l.csv"
+    },
+    {
+      "name": "cTNM: V qualifier",
+      "type": "string",
+      "description": "Describes the extent of venous invasion.",
+      "constraints": {
+        "enum": [
+          "VX",
+          "V0",
+          "V1",
+          "V2"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_v.csv"
+    },
+    {
+      "name": "cTNM: Pn qualifier",
+      "type": "string",
+      "description": "Describes the extent of perineural invasion.",
+      "constraints": {
+        "enum": [
+          "PnX",
+          "Pn0",
+          "Pn1"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_pn.csv"
+    },
+    {
+      "name": "cTNM: S qualifier",
+      "type": "string",
+      "description": "In testicular tumors: describes elevation of serum tumor markers (AFP, HCG, LDH). S1-S3: see TNM for threshold values.",
+      "constraints": {
+        "enum": [
+          "SX",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_s.csv"
+    },
+    {
+      "name": "cTNM: UICC stage",
+      "type": "string",
+      "description": "UICC stage per TNM classification. Describes the anatomical extent of the tumor disease.",
+      "constraints": {
+        "enum": [
+          "okk",
+          "0",
+          "0a",
+          "0is",
+          "I",
+          "IA",
+          "IA1",
+          "IA2",
+          "IA3",
+          "IB",
+          "IB1",
+          "IB2",
+          "IC",
+          "II",
+          "IIA",
+          "IIA1",
+          "IIA2",
+          "IIB",
+          "IIC",
+          "III",
+          "IIIA",
+          "IIIA1",
+          "IIIA2",
+          "IIIB",
+          "IIIC",
+          "IIIC1",
+          "IIIC2",
+          "IIID",
+          "IS",
+          "IV",
+          "IVA",
+          "IVA1",
+          "IVA2",
+          "IVB",
+          "IVC"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_uicc.csv"
+    },
+    {
+      "name": "pTNM: version",
+      "type": "string",
+      "description": "TNM edition used to assess the pathological tumor stage.",
+      "constraints": {
+        "enum": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_auflage.csv"
+    },
+    {
+      "name": "pTNM: y prefix",
+      "type": "string",
+      "description": "Indicates whether the pathological tumor stage was assessed after initial multimodal therapy.",
+      "constraints": {
+        "enum": [
+          "y"
+        ]
+      },
+      "categories": [
+        {
+          "value": "y",
+          "label": "clinical classification was performed during or after initial multimodality therapy"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "pTNM: r prefix",
+      "type": "string",
+      "description": "Indicates whether the pathological tumor stage of a recurrence was assessed.",
+      "constraints": {
+        "enum": [
+          "r"
+        ]
+      },
+      "categories": [
+        {
+          "value": "r",
+          "label": "clinical classification was performed at retreatment (recurrence)"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "pTNM: a prefix",
+      "type": "string",
+      "description": "Indicates whether the tumor stage was determined by autopsy.",
+      "constraints": {
+        "enum": [
+          "a"
+        ]
+      },
+      "categories": [
+        {
+          "value": "a",
+          "label": "classification was performed at autopsy"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "pTNM: T prefix",
+      "type": "string",
+      "description": "Indicates whether the T stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "pTNM: T",
+      "type": "string",
+      "description": "Describes the extent of the primary tumor.",
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "pTNM: N prefix",
+      "type": "string",
+      "description": "Indicates whether the N stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "pTNM: N",
+      "type": "string",
+      "description": "Describes the extent of regional lymph node metastasis.",
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "pTNM: M prefix",
+      "type": "string",
+      "description": "Indicates whether the M stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "pTNM: M",
+      "type": "string",
+      "description": "Describes the presence of distant metastases.",
+      "constraints": {
+        "enum": [
+          "M0",
+          "M1"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "pTNM: m suffix",
+      "type": "string",
+      "description": "Indicates the presence of multiple primary tumors in one anatomical region.",
+      "constraints": {
+        "pattern": "^([m](,is)?|(is)|[2-9](,is)?|[1-9][0-9]{1,2}(,is)?)$"
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "pTNM: L qualifier",
+      "type": "string",
+      "description": "Describes the extent of lymphatic vessel invasion.",
+      "constraints": {
+        "enum": [
+          "LX",
+          "L0",
+          "L1"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_l.csv"
+    },
+    {
+      "name": "pTNM: V qualifier",
+      "type": "string",
+      "description": "Describes the extent of venous invasion.",
+      "constraints": {
+        "enum": [
+          "VX",
+          "V0",
+          "V1",
+          "V2"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_v.csv"
+    },
+    {
+      "name": "pTNM: Pn qualifier",
+      "type": "string",
+      "description": "Describes the extent of perineural invasion.",
+      "constraints": {
+        "enum": [
+          "PnX",
+          "Pn0",
+          "Pn1"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_pn.csv"
+    },
+    {
+      "name": "pTNM: S qualifier",
+      "type": "string",
+      "description": "In testicular tumors: describes elevation of serum tumor markers (AFP, HCG, LDH). S1-S3: see TNM for threshold values.",
+      "constraints": {
+        "enum": [
+          "SX",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_s.csv"
+    },
+    {
+      "name": "pTNM: UICC stage",
+      "type": "string",
+      "description": "UICC stage per TNM classification. Describes the anatomical extent of the tumor disease.",
+      "constraints": {
+        "enum": [
+          "okk",
+          "0",
+          "0a",
+          "0is",
+          "I",
+          "IA",
+          "IA1",
+          "IA2",
+          "IA3",
+          "IB",
+          "IB1",
+          "IB2",
+          "IC",
+          "II",
+          "IIA",
+          "IIA1",
+          "IIA2",
+          "IIB",
+          "IIC",
+          "III",
+          "IIIA",
+          "IIIA1",
+          "IIIA2",
+          "IIIB",
+          "IIIC",
+          "IIIC1",
+          "IIIC2",
+          "IIID",
+          "IS",
+          "IV",
+          "IVA",
+          "IVA1",
+          "IVA2",
+          "IVB",
+          "IVC"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_uicc.csv"
+    },
+    {
+      "name": "Site of metastasis",
+      "type": "string",
+      "description": "Describes the site(s) of distant metastasis.",
+      "constraints": {
+        "enum": [
+          "PUL",
+          "OSS",
+          "HEP",
+          "BRA",
+          "LYM",
+          "MAR",
+          "PLE",
+          "PER",
+          "ADR",
+          "SKI",
+          "OTH",
+          "GEN"
+        ]
+      },
+      "tablename": "Diagnose_Fernmetastase",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/fm_lokalisation.csv"
+    },
+    {
+      "name": "Other classification system: name",
+      "type": "string",
+      "description": "Name/type of other classification system(s) used.",
+      "example": "Ann Arbor classification, WHO Classification of CNS Tumors, AJCC",
+      "tablename": "Diagnose_WeitereKlassifikation"
+    },
+    {
+      "name": "Other classification system: stage",
+      "type": "string",
+      "description": "Stage per the other classification system used.",
+      "tablename": "Diagnose_WeitereKlassifikation"
+    },
+    {
+      "name": "Basis of diagnosis",
+      "type": "string",
+      "description": "Basis of diagnostic confirmation.",
+      "constraints": {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "4",
+          "5",
+          "7.1",
+          "7.2",
+          "7.3",
+          "8",
+          "9"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/diagnosesicherung_clin.csv"
+    },
+    {
+      "name": "Tumor laterality",
+      "type": "string",
+      "description": "For paired organs: indicates which side of the body is affected.",
+      "constraints": {
+        "enum": [
+          "L",
+          "R",
+          "B",
+          "M",
+          "U",
+          "T"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/seitenlokalisation.csv"
+    },
+    {
+      "name": "Death certificate notified (DCN)",
+      "type": "string",
+      "description": "Indicates whether the first information about a case originated from a death certificate.",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/dcn.csv"
+    },
+    {
+      "name": "Survival time",
+      "type": "integer",
+      "description": "Time interval between diagnosis and death (in days).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Tumor size",
+      "type": "integer",
+      "description": "Maximum diameter of the invasive carcinoma (in mm).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "DCIS size",
+      "type": "integer",
+      "description": "Maximum diameter of the ductal carcinoma in situ (in mm).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Menopausal status",
+      "type": "string",
+      "description": "Pre-therapeutic menopausal status of the patient. Postmenopausal means: either no menstrual bleeding for longer than one year, or E2 and FSH within the postmenopausal range.",
+      "constraints": {
+        "enum": [
+          "1",
+          "3",
+          "U"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/menopausenstatus.csv"
+    },
+    {
+      "name": "Estrogen receptor status",
+      "type": "string",
+      "description": "Estrogen receptor status per immunoreactive score (IRS).",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/hormonrezeptor.csv"
+    },
+    {
+      "name": "Progesterone receptor status",
+      "type": "string",
+      "description": "Progesterone receptor status per immunoreactive score (IRS).",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/hormonrezeptor.csv"
+    },
+    {
+      "name": "HER2 status",
+      "type": "string",
+      "description": "HER2 (ERBB2) status.",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/her2neu.csv"
+    },
+    {
+      "name": "PSA level",
+      "type": "number",
+      "description": "Currently relevant PSA value (in ng/mL).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "PSA level date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "PSA level date",
+      "type": "date",
+      "description": "Month and year of PSA level determination.",
+      "format": "YYYY-MM-DD",
+      "tablename": "Tumor",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Gleason: primary grade",
+      "type": "string",
+      "description": "Primary Gleason grade.",
+      "constraints": {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/gleason_score.csv"
+    },
+    {
+      "name": "Gleason: secondary grade",
+      "type": "string",
+      "description": "Secondary Gleason grade.",
+      "constraints": {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/gleason_score.csv"
+    },
+    {
+      "name": "Gleason score",
+      "type": "string",
+      "description": "Gleason score.",
+      "constraints": {
+        "enum": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "7a",
+          "7b",
+          "8",
+          "9",
+          "10"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/gleason_score_ergebnis.csv"
+    },
+    {
+      "name": "Gleason score: sampling method",
+      "type": "string",
+      "description": "Basis for determination of the Gleason score.",
+      "constraints": {
+        "enum": [
+          "O",
+          "S",
+          "U"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/gleason_anlass.csv"
+    },
+    {
+      "name": "Tumor thickness",
+      "type": "number",
+      "description": "Tumor thickness (in mm).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Ulceration",
+      "type": "string",
+      "description": "Indicates whether ulceration is present.",
+      "constraints": {
+        "enum": [
+          "J",
+          "N"
+        ]
+      },
+      "categories": [
+        {
+          "value": "J",
+          "label": "Yes"
+        },
+        {
+          "value": "N",
+          "label": "No"
+        }
+      ],
+      "tablename": "Tumor"
+    },
+    {
+      "name": "LDH level",
+      "type": "integer",
+      "description": "LDH value (in units per liter).",
+      "constraints": {
+        "minimum": 1,
+        "maximum": 10000
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "Position",
+      "type": "integer",
+      "description": "For rectal carcinoma: describes the distance of the lower tumor margin from the anocutaneous line (in cm).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Tumor"
+    },
+    {
+      "name": "KRAS mutation",
+      "type": "string",
+      "description": "Indicates whether a mutation in the K-RAS oncogene is present.",
+      "constraints": {
+        "enum": [
+          "W",
+          "M",
+          "U",
+          "N"
+        ]
+      },
+      "tablename": "Tumor",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/rasmutation.csv"
+    },
+    {
+      "name": "Surgery date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "OP"
+    },
+    {
+      "name": "Surgery date",
+      "type": "date",
+      "description": "Date of surgery.",
+      "format": "YYYY-MM-DD",
+      "tablename": "OP",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Surgery type",
+      "type": "string",
+      "description": "Type of surgery per the German procedure classification (OPS).",
+      "constraints": {
+        "pattern": "^[0-9A-Z]{1,}$"
+      },
+      "tablename": "OPS",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/ops.csv"
+    },
+    {
+      "name": "OPS version",
+      "type": "string",
+      "description": "OPS edition used.",
+      "tablename": "OPS"
+    },
+    {
+      "name": "Surgery intent",
+      "type": "string",
+      "description": "Indicates the goal with which the surgery was planned.",
+      "constraints": {
+        "enum": [
+          "K",
+          "P",
+          "D",
+          "R",
+          "S",
+          "x"
+        ]
+      },
+      "tablename": "OP",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/op_intention.csv"
+    },
+    {
+      "name": "Residual tumor status",
+      "type": "string",
+      "description": "Describes the residual tumor status after surgical tumor removal (TNM classification).",
+      "constraints": {
+        "enum": [
+          "R0",
+          "R1",
+          "R1(is)",
+          "R1(cy+)",
+          "R2",
+          "RX",
+          "U"
+        ]
+      },
+      "tablename": "OP",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/r_typ.csv"
+    },
+    {
+      "name": "Time to surgery",
+      "type": "integer",
+      "description": "Number of days between diagnosis and surgery.",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "OP"
+    },
+    {
+      "name": "Radiotherapy start date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "Bestrahlung"
+    },
+    {
+      "name": "Radiotherapy start date",
+      "type": "date",
+      "description": "Month and year of the start of radiotherapy.",
+      "format": "YYYY-MM-DD",
+      "tablename": "Bestrahlung",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Radiotherapy intent",
+      "type": "string",
+      "description": "Indicates the intent with which radiotherapy was planned.",
+      "constraints": {
+        "enum": [
+          "K",
+          "P",
+          "O",
+          "S",
+          "x"
+        ]
+      },
+      "tablename": "ST",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/st_intention.csv"
+    },
+    {
+      "name": "Radiotherapy relationship with surgery",
+      "type": "string",
+      "description": "Indicates the relationship between radiotherapy and surgical therapy.",
+      "constraints": {
+        "enum": [
+          "O",
+          "A",
+          "N",
+          "I",
+          "Z",
+          "s"
+        ]
+      },
+      "tablename": "ST",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/st_op_stellung.csv"
+    },
+    {
+      "name": "Radiotherapy technique",
+      "type": "string",
+      "description": "Indicates the technique of radiotherapy.",
+      "constraints": {
+        "enum": [
+          "Perkutan",
+          "Kontakt",
+          "Metabolisch",
+          "Sonstige",
+          "Unbekannt"
+        ]
+      },
+      "categories": [
+        {
+          "value": "Perkutan",
+          "label": "percutaneous (external beam)"
+        },
+        {
+          "value": "Kontakt",
+          "label": "contact (brachytherapy)"
+        },
+        {
+          "value": "Metabolisch",
+          "label": "metabolic (radionuclide therapy)"
+        },
+        {
+          "value": "Sonstige",
+          "label": "other"
+        },
+        {
+          "value": "Unbekannt",
+          "label": "unknown"
+        }
+      ],
+      "tablename": "Applikationsart"
+    },
+    {
+      "name": "Percutaneous radiotherapy - chemoradiotherapy",
+      "type": "string",
+      "description": "Describes whether percutaneous radiochemotherapy was performed.",
+      "constraints": {
+        "enum": [
+          "RCJ",
+          "RCN"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/radiochemo.csv"
+    },
+    {
+      "name": "Percutaneous radiotherapy - stereotactic",
+      "type": "string",
+      "description": "Indicates whether percutaneous radiotherapy was performed stereotactically.",
+      "constraints": {
+        "enum": [
+          "ST"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/stereotaktisch.csv"
+    },
+    {
+      "name": "Percutaneous radiotherapy - respiratory-gated",
+      "type": "string",
+      "description": "Indicates whether percutaneous radiotherapy was respiratory-gated.",
+      "constraints": {
+        "enum": [
+          "4D"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/atemgetriggert.csv"
+    },
+    {
+      "name": "Radiotherapy target site (oBDS v2014)",
+      "type": "string",
+      "description": "Designates the treated anatomical region per oBDS version 2014.",
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/zielgebiet_2014.csv"
+    },
+    {
+      "name": "Radiotherapy target site (oBDS v2021)",
+      "type": "string",
+      "description": "Designates the treated anatomical region per oBDS version 2021.",
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/zielgebiet_2021.csv"
+    },
+    {
+      "name": "Radiotherapy target site - laterality",
+      "type": "string",
+      "description": "Designates the body side of the treated anatomical region.",
+      "constraints": {
+        "enum": [
+          "L",
+          "R",
+          "B",
+          "M",
+          "U",
+          "T"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/seite_zielgebiet.csv"
+    },
+    {
+      "name": "Contact radiotherapy (brachytherapy) - technique",
+      "type": "string",
+      "description": "Indicates the type of contact radiotherapy (brachytherapy) performed.",
+      "constraints": {
+        "enum": [
+          "I",
+          "K"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/interstitiell.csv"
+    },
+    {
+      "name": "Brachytherapy - dose rate",
+      "type": "string",
+      "description": "Describes the dose rate of brachytherapy.",
+      "constraints": {
+        "enum": [
+          "HDR",
+          "LDR",
+          "PDR"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/rate_type.csv"
+    },
+    {
+      "name": "Metabolic radiotherapy - type",
+      "type": "string",
+      "description": "Designates the type of metabolic radiotherapy.",
+      "constraints": {
+        "enum": [
+          "SIRT",
+          "PRRT",
+          "PSMA",
+          "RJT",
+          "RIT"
+        ]
+      },
+      "tablename": "Applikationsart",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/metabolisch.csv"
+    },
+    {
+      "name": "Radiotherapy duration",
+      "type": "integer",
+      "description": "Duration of radiotherapy (in days).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Bestrahlung"
+    },
+    {
+      "name": "Time to radiotherapy",
+      "type": "integer",
+      "description": "Time interval between diagnosis and the start of radiotherapy (in days).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "Bestrahlung"
+    },
+    {
+      "name": "Systemic therapy intent",
+      "type": "string",
+      "description": "Indicates the intent with which systemic therapy was planned.",
+      "constraints": {
+        "enum": [
+          "K",
+          "P",
+          "S",
+          "x"
+        ]
+      },
+      "tablename": "SYST",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/syst_intention.csv"
+    },
+    {
+      "name": "Systemic therapy relationship with surgery",
+      "type": "string",
+      "description": "Indicates the relationship between systemic therapy and surgical therapy.",
+      "constraints": {
+        "enum": [
+          "O",
+          "A",
+          "N",
+          "I",
+          "S"
+        ]
+      },
+      "tablename": "SYST",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/syst_op_stellung.csv"
+    },
+    {
+      "name": "Systemic therapy type",
+      "type": "string",
+      "description": "Indicates which type of systemic therapy was performed, or whether a watchful-waiting strategy was pursued.",
+      "constraints": {
+        "enum": [
+          "CH",
+          "HO",
+          "IM",
+          "ZS",
+          "CI",
+          "CZ",
+          "CIZ",
+          "IZ",
+          "SZ",
+          "AS",
+          "WS",
+          "WW",
+          "SO"
+        ]
+      },
+      "tablename": "SYST",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/therapieart.csv"
+    },
+    {
+      "name": "Systemic therapy substance",
+      "type": "string",
+      "description": "Indicates which substance(s) were used for the systemic therapy. Multiple substances are entered separately (ATC code + version possible).",
+      "tablename": "Substanz"
+    },
+    {
+      "name": "Systemic therapy substance: ATC code",
+      "type": "string",
+      "description": "ATC code of the substance (alternative to the free-text name).",
+      "constraints": {
+        "pattern": "^[A-Z][0-9]{2}[A-Z]{2}[0-9]{2}$"
+      },
+      "tablename": "Substanz"
+    },
+    {
+      "name": "Systemic therapy substance: ATC version",
+      "type": "string",
+      "description": "Version year of the ATC catalog the ATC code was taken from.",
+      "constraints": {
+        "pattern": "^(200[4-9]|20[12][0-9])$"
+      },
+      "tablename": "Substanz"
+    },
+    {
+      "name": "Systemic therapy substance: name",
+      "type": "string",
+      "description": "Name of the substance as free text (alternative to specifying the ATC code).",
+      "tablename": "Substanz"
+    },
+    {
+      "name": "Systemic therapy protocol type",
+      "type": "string",
+      "description": "Designation or code/abbreviation of the therapy protocol.",
+      "tablename": "Protokoll"
+    },
+    {
+      "name": "Systemic therapy protocol code",
+      "type": "string",
+      "description": "Therapy protocol, code/abbreviation.",
+      "constraints": {
+        "pattern": ".*"
+      },
+      "tablename": "Protokoll",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/protokoll.csv"
+    },
+    {
+      "name": "Systemic therapy protocol name",
+      "type": "string",
+      "description": "Name of the therapy protocol (free text).",
+      "tablename": "Protokoll"
+    },
+    {
+      "name": "Systemic therapy protocol version",
+      "type": "string",
+      "description": "Version of the therapy protocol code/abbreviation.",
+      "tablename": "Protokoll"
+    },
+    {
+      "name": "Systemic therapy start date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "SYST"
+    },
+    {
+      "name": "Systemic therapy start date",
+      "type": "date",
+      "description": "Month and year of the start of systemic therapy.",
+      "format": "YYYY-MM-DD",
+      "tablename": "SYST",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Systemic therapy duration",
+      "type": "integer",
+      "description": "Duration of systemic therapy (in days).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "SYST"
+    },
+    {
+      "name": "Time to systemic therapy",
+      "type": "integer",
+      "description": "Time interval between diagnosis and the start of systemic therapy (in days).",
+      "constraints": {
+        "minimum": 0
+      },
+      "tablename": "SYST"
+    },
+    {
+      "name": "Follow-up date - accuracy",
+      "type": "string",
+      "description": "Indicates whether only the year is reliably known (M), whether year and month are reliably known (T), or whether neither year nor month is reliably known (V).",
+      "constraints": {
+        "enum": [
+          "M",
+          "T",
+          "V"
+        ]
+      },
+      "categories": [
+        {
+          "value": "M",
+          "label": "year is accurate, month is estimated"
+        },
+        {
+          "value": "T",
+          "label": "year and month are accurate"
+        },
+        {
+          "value": "V",
+          "label": "year and month are estimated"
+        }
+      ],
+      "tablename": "Folgeereignis"
+    },
+    {
+      "name": "Follow-up date",
+      "type": "date",
+      "description": "Date of the most recent examination to assess tumor status.",
+      "format": "YYYY-MM-DD",
+      "tablename": "Folgeereignis",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
+    },
+    {
+      "name": "TNM: version",
+      "type": "string",
+      "description": "TNM edition used to assess the tumor stage at follow-up.",
+      "constraints": {
+        "enum": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_auflage.csv"
+    },
+    {
+      "name": "TNM: y prefix",
+      "type": "string",
+      "description": "Indicates whether the tumor stage was assessed before or after/during initial multimodal therapy.",
+      "constraints": {
+        "enum": [
+          "y"
+        ]
+      },
+      "categories": [
+        {
+          "value": "y",
+          "label": "classification was performed after an initial multimodality therapy"
+        }
+      ],
+      "tablename": "Folgeereignis_TNM"
+    },
+    {
+      "name": "TNM: r prefix",
+      "type": "string",
+      "description": "Indicates whether the tumor stage of a recurrence was assessed.",
+      "constraints": {
+        "enum": [
+          "r"
+        ]
+      },
+      "categories": [
+        {
+          "value": "r",
+          "label": "classification was performed to assess a recurrence"
+        }
+      ],
+      "tablename": "Folgeereignis_TNM"
+    },
+    {
+      "name": "TNM: a prefix",
+      "type": "string",
+      "description": "Indicates whether the tumor stage was determined by autopsy.",
+      "constraints": {
+        "enum": [
+          "a"
+        ]
+      },
+      "categories": [
+        {
+          "value": "a",
+          "label": "classification was performed by autopsy"
+        }
+      ],
+      "tablename": "Folgeereignis_TNM"
+    },
+    {
+      "name": "TNM: T",
+      "type": "string",
+      "description": "Describes the extent of the primary tumor. Classification per tumor-specific TNM.",
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "TNM: N",
+      "type": "string",
+      "description": "Describes the extent of regional lymph node metastasis. Classification per tumor-specific TNM.",
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "TNM: M",
+      "type": "string",
+      "description": "Describes the presence of distant metastases.",
+      "constraints": {
+        "enum": [
+          "M0",
+          "M1"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "TNM: T prefix",
+      "type": "string",
+      "description": "Indicates whether the T stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "TNM: N prefix",
+      "type": "string",
+      "description": "Indicates whether the N stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "TNM: M prefix",
+      "type": "string",
+      "description": "Indicates whether the M stage was determined clinically, by histopathology, or by ultrasound.",
+      "constraints": {
+        "enum": [
+          "c",
+          "p",
+          "u"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
+    },
+    {
+      "name": "TNM: m suffix",
+      "type": "string",
+      "description": "Indicates the presence of multiple primary tumors in one anatomical region.",
+      "constraints": {
+        "pattern": "^([m](,is)?|(is)|[2-9](,is)?|[1-9][0-9]{1,2}(,is)?)$"
+      },
+      "tablename": "Folgeereignis_TNM"
+    },
+    {
+      "name": "TNM: L qualifier",
+      "type": "string",
+      "description": "Describes the extent of lymphatic vessel invasion.",
+      "constraints": {
+        "enum": [
+          "LX",
+          "L0",
+          "L1"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_l.csv"
+    },
+    {
+      "name": "TNM: V qualifier",
+      "type": "string",
+      "description": "Describes the extent of venous invasion.",
+      "constraints": {
+        "enum": [
+          "VX",
+          "V0",
+          "V1",
+          "V2"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_v.csv"
+    },
+    {
+      "name": "TNM: Pn qualifier",
+      "type": "string",
+      "description": "Describes the extent of perineural invasion.",
+      "constraints": {
+        "enum": [
+          "PnX",
+          "Pn0",
+          "Pn1"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_pn.csv"
+    },
+    {
+      "name": "TNM: S qualifier",
+      "type": "string",
+      "description": "In testicular tumors: describes elevation of serum tumor markers (AFP, HCG, LDH).",
+      "constraints": {
+        "enum": [
+          "SX",
+          "S0",
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_s.csv"
+    },
+    {
+      "name": "TNM: UICC stage",
+      "type": "string",
+      "description": "UICC stage per TNM classification. Describes the anatomical extent of the tumor disease.",
+      "constraints": {
+        "enum": [
+          "okk",
+          "0",
+          "0a",
+          "0is",
+          "I",
+          "IA",
+          "IA1",
+          "IA2",
+          "IA3",
+          "IB",
+          "IB1",
+          "IB2",
+          "IC",
+          "II",
+          "IIA",
+          "IIA1",
+          "IIA2",
+          "IIB",
+          "IIC",
+          "III",
+          "IIIA",
+          "IIIA1",
+          "IIIA2",
+          "IIIB",
+          "IIIC",
+          "IIIC1",
+          "IIIC2",
+          "IIID",
+          "IS",
+          "IV",
+          "IVA",
+          "IVA1",
+          "IVA2",
+          "IVB",
+          "IVC"
+        ]
+      },
+      "tablename": "Folgeereignis_TNM",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_uicc.csv"
+    },
+    {
+      "name": "Other classification system: name",
+      "type": "string",
+      "description": "Name/type of other classification system(s) used.",
+      "example": "Ann Arbor classification, WHO Classification of CNS Tumors, AJCC",
+      "tablename": "Folgeereignis_WeitereKlassifikation"
+    },
+    {
+      "name": "Other classification system: stage",
+      "type": "string",
+      "description": "Stage per the other classification system used.",
+      "tablename": "Folgeereignis_WeitereKlassifikation"
+    },
+    {
+      "name": "Overall disease response",
+      "type": "string",
+      "description": "Overall assessment of the disease considering all manifestations.",
+      "constraints": {
+        "enum": [
+          "V",
+          "T",
+          "K",
+          "P",
+          "D",
+          "B",
+          "R",
+          "Y",
+          "U",
+          "X"
+        ]
+      },
+      "tablename": "Folgeereignis",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/beurteilung_gesamt.csv"
+    },
+    {
+      "name": "Local tumor status",
+      "type": "string",
+      "description": "Assessment of the disease in the region of the primary tumor.",
+      "constraints": {
+        "enum": [
+          "K",
+          "T",
+          "P",
+          "N",
+          "R",
+          "F",
+          "U",
+          "X"
+        ]
+      },
+      "tablename": "Folgeereignis",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/verlauf_lokal.csv"
+    },
+    {
+      "name": "Regional lymph node status",
+      "type": "string",
+      "description": "Assessment of the regional lymph nodes.",
+      "constraints": {
+        "enum": [
+          "K",
+          "T",
+          "P",
+          "N",
+          "R",
+          "F",
+          "U",
+          "X"
+        ]
+      },
+      "tablename": "Folgeereignis",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/verlauf_lymphe.csv"
+    },
+    {
+      "name": "Distant metastasis status",
+      "type": "string",
+      "description": "Assessment of distant metastases.",
+      "constraints": {
+        "enum": [
+          "K",
+          "T",
+          "P",
+          "N",
+          "R",
+          "F",
+          "U",
+          "X"
+        ]
+      },
+      "tablename": "Folgeereignis",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/verlauf_fern.csv"
+    },
+    {
+      "name": "Site of metastasis",
+      "type": "string",
+      "description": "Site of distant metastases at follow-up.",
+      "constraints": {
+        "enum": [
+          "PUL",
+          "OSS",
+          "HEP",
+          "BRA",
+          "LYM",
+          "MAR",
+          "PLE",
+          "PER",
+          "ADR",
+          "SKI",
+          "OTH",
+          "GEN"
+        ]
+      },
+      "tablename": "Folgeereignis_Fernmetastase",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/fm_lokalisation.csv"
+    },
+    {
+      "name": "Tumor ID (internal)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Tumor ID (oBDS_RKIPatientTumorId), renamed for convenience; serves as a foreign key to link to the Tumor table in all tumor-related tables."
+    },
+    {
+      "name": "Patient ID (internal)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Patient ID (oBDS_RKIPatientId), renamed for convenience."
+    },
+    {
+      "name": "Reporting registry (state) code",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Code of the reporting cancer registry (federal state), available in all tumor-related tables for quick access.",
+      "constraints": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "categories": [
+        {
+          "value": 1,
+          "label": "Schleswig-Holstein"
+        },
+        {
+          "value": 2,
+          "label": "Hamburg"
+        },
+        {
+          "value": 3,
+          "label": "Lower Saxony"
+        },
+        {
+          "value": 4,
+          "label": "Bremen"
+        },
+        {
+          "value": 5,
+          "label": "North Rhine-Westphalia"
+        },
+        {
+          "value": 6,
+          "label": "Hesse"
+        },
+        {
+          "value": 7,
+          "label": "Rhineland-Palatinate"
+        },
+        {
+          "value": 8,
+          "label": "Baden-Württemberg"
+        },
+        {
+          "value": 9,
+          "label": "Bavaria"
+        },
+        {
+          "value": 10,
+          "label": "Saarland"
+        },
+        {
+          "value": 11,
+          "label": "Berlin"
+        },
+        {
+          "value": 12,
+          "label": "Brandenburg"
+        },
+        {
+          "value": 13,
+          "label": "Mecklenburg-Western Pomerania"
+        },
+        {
+          "value": 14,
+          "label": "Saxony"
+        },
+        {
+          "value": 15,
+          "label": "Saxony-Anhalt"
+        },
+        {
+          "value": 16,
+          "label": "Thuringia"
+        }
+      ]
+    },
+    {
+      "name": "Reporting registry (state), labeled",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Reporting registry including its label.",
+      "constraints": {
+        "enum": [
+          "01-SH",
+          "02-HH",
+          "03-NI",
+          "04-HB",
+          "05-NW",
+          "06-HE",
+          "07-RP",
+          "08-BW",
+          "09-BY",
+          "10-SL",
+          "11-BE",
+          "12-BB",
+          "13-MV",
+          "14-SN",
+          "15-ST",
+          "16-TH"
+        ]
+      },
+      "categories": [
+        {
+          "value": "01-SH",
+          "label": "Schleswig-Holstein"
+        },
+        {
+          "value": "02-HH",
+          "label": "Hamburg"
+        },
+        {
+          "value": "03-NI",
+          "label": "Lower Saxony"
+        },
+        {
+          "value": "04-HB",
+          "label": "Bremen"
+        },
+        {
+          "value": "05-NW",
+          "label": "North Rhine-Westphalia"
+        },
+        {
+          "value": "06-HE",
+          "label": "Hesse"
+        },
+        {
+          "value": "07-RP",
+          "label": "Rhineland-Palatinate"
+        },
+        {
+          "value": "08-BW",
+          "label": "Baden-Württemberg"
+        },
+        {
+          "value": "09-BY",
+          "label": "Bavaria"
+        },
+        {
+          "value": "10-SL",
+          "label": "Saarland"
+        },
+        {
+          "value": "11-BE",
+          "label": "Berlin"
+        },
+        {
+          "value": "12-BB",
+          "label": "Brandenburg"
+        },
+        {
+          "value": "13-MV",
+          "label": "Mecklenburg-Western Pomerania"
+        },
+        {
+          "value": "14-SN",
+          "label": "Saxony"
+        },
+        {
+          "value": "15-ST",
+          "label": "Saxony-Anhalt"
+        },
+        {
+          "value": "16-TH",
+          "label": "Thuringia"
+        }
+      ]
+    },
+    {
+      "name": "Diagnosis year (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Year of diagnosis, for convenient access. Dates are not bounded, i.e. the year 1900 or negative time spans can occur.",
+      "constraints": {
+        "pattern": "^(19|20)[0-9]{2}$"
+      }
+    },
+    {
+      "name": "Age at diagnosis (derived)",
+      "tablename": "Tumor",
+      "type": "number",
+      "description": "Age at diagnosis in years: number of months between date of birth and diagnosis date, divided by 12; rounded to 2 decimal places.",
+      "constraints": {
+        "pattern": "^[0-9]{1,3}(\\.[0-9]{1,2})?$"
+      }
+    },
+    {
+      "name": "Age group (5-year, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Age group derived from the age-at-diagnosis variable in 5-year increments (example: age 71.24 -> a70b74).",
+      "constraints": {
+        "enum": [
+          "a00b04",
+          "a05b09",
+          "a10b14",
+          "a15b19",
+          "a20b24",
+          "a25b29",
+          "a30b34",
+          "a35b39",
+          "a40b44",
+          "a45b49",
+          "a50b54",
+          "a55b59",
+          "a60b64",
+          "a65b69",
+          "a70b74",
+          "a75b79",
+          "a80b84",
+          "a85plus"
+        ]
+      },
+      "categories": [
+        {
+          "value": "a00b04",
+          "label": "0-4"
+        },
+        {
+          "value": "a05b09",
+          "label": "5-9"
+        },
+        {
+          "value": "a10b14",
+          "label": "10-14"
+        },
+        {
+          "value": "a15b19",
+          "label": "15-19"
+        },
+        {
+          "value": "a20b24",
+          "label": "20-24"
+        },
+        {
+          "value": "a25b29",
+          "label": "25-29"
+        },
+        {
+          "value": "a30b34",
+          "label": "30-34"
+        },
+        {
+          "value": "a35b39",
+          "label": "35-39"
+        },
+        {
+          "value": "a40b44",
+          "label": "40-44"
+        },
+        {
+          "value": "a45b49",
+          "label": "45-49"
+        },
+        {
+          "value": "a50b54",
+          "label": "50-54"
+        },
+        {
+          "value": "a55b59",
+          "label": "55-59"
+        },
+        {
+          "value": "a60b64",
+          "label": "60-64"
+        },
+        {
+          "value": "a65b69",
+          "label": "65-69"
+        },
+        {
+          "value": "a70b74",
+          "label": "70-74"
+        },
+        {
+          "value": "a75b79",
+          "label": "75-79"
+        },
+        {
+          "value": "a80b84",
+          "label": "80-84"
+        },
+        {
+          "value": "a85plus",
+          "label": "85+"
+        }
+      ]
+    },
+    {
+      "name": "ICD-10 code (validated)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Maps the original tumor ICD-10 code to a valid ICD-10-WHO-2019 element accepted by ZfKD (e.g. C74 is not accepted).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/icd10.csv"
+    },
+    {
+      "name": "ICD-10 code, 3-digit (derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Validated ICD-10 code (see above) as a 3-digit code."
+    },
+    {
+      "name": "Tumor sequence number (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Chronological order of the tumor per patient, calculated from the diagnosis date.",
+      "constraints": {
+        "minimum": 1
+      }
+    },
+    {
+      "name": "cTNM: T (matched, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Original cTNM T value matched against the TNM reference table: if the raw string starts with a reference value, that value is assigned.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "cTNM: T (aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "As the matched cTNM T value, but the aggregated reference value is assigned (better suited for analysis).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "pTNM: T (matched, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Original pTNM T value matched against the TNM reference table: if the raw string starts with a reference value, that value is assigned.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "pTNM: T (aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "As the matched pTNM T value, but the aggregated reference value is assigned (better suited for analysis).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_t.csv"
+    },
+    {
+      "name": "cTNM: N (matched, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Original cTNM N value matched against the TNM reference table: if the raw string starts with a reference value, that value is assigned.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "cTNM: N (aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "As the matched cTNM N value, but the aggregated reference value is assigned (better suited for analysis).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "pTNM: N (matched, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Original pTNM N value matched against the TNM reference table: if the raw string starts with a reference value, that value is assigned.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "pTNM: N (aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "As the matched pTNM N value, but the aggregated reference value is assigned (better suited for analysis).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_n.csv"
+    },
+    {
+      "name": "cTNM: M (matched, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Original cTNM M value matched against the TNM reference table: if the raw string starts with a reference value, that value is assigned.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "cTNM: M (aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "As the matched cTNM M value, but the aggregated reference value is assigned (better suited for analysis).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "pTNM: M (matched, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Original pTNM M value matched against the TNM reference table: if the raw string starts with a reference value, that value is assigned.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "pTNM: M (aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "As the matched pTNM M value, but the aggregated reference value is assigned (better suited for analysis).",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "TNM: M (pathological preferred, aggregated, derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Uses the pathological M value (pTNM M) first; if not available, the clinical value (cTNM M) is used, aggregated per the reference table.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
+    },
+    {
+      "name": "Death Certificate Only flag (derived)",
+      "tablename": "Tumor",
+      "type": "boolean",
+      "description": "Death Certificate Only: true if Basis of diagnosis = 0."
+    },
+    {
+      "name": "Last overall disease response (derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Most recent value of Overall disease response per tumor, determined using the follow-up date.",
+      "constraints": {
+        "enum": [
+          "V",
+          "T",
+          "K",
+          "P",
+          "D",
+          "B",
+          "R",
+          "Y",
+          "U",
+          "X"
+        ]
+      },
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/beurteilung_gesamt.csv"
+    },
+    {
+      "name": "Number of surgeries (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Number of surgeries associated with the tumor."
+    },
+    {
+      "name": "Number of radiotherapies (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Number of radiotherapies associated with the tumor."
+    },
+    {
+      "name": "Number of systemic therapies (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Number of systemic therapies associated with the tumor."
+    },
+    {
+      "name": "Number of follow-up events (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Number of follow-up events associated with the tumor."
+    },
+    {
+      "name": "First treatment type (derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "First treatment per tumor, calculated from the surgery date etc.",
+      "constraints": {
+        "enum": [
+          "op",
+          "st",
+          "sy"
+        ]
+      }
+    },
+    {
+      "name": "Days to first treatment (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Number of days from diagnosis to the first treatment."
+    },
+    {
+      "name": "Event sequence (derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Chronological order of events per tumor (treatments and follow-up events), calculated among other things from the surgery date. Events before 1970 are ignored; repeated events are collapsed.",
+      "example": "op-st-fo"
+    },
+    {
+      "name": "Distinct events (derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Lists all events associated with a tumor regardless of date, each counted only once.",
+      "example": "op|sy"
+    },
+    {
+      "name": "HPV status (derived)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Summarizes HPV status information into a single value per tumor.",
+      "constraints": {
+        "enum": [
+          "P",
+          "N",
+          "U"
+        ]
+      },
+      "categories": [
+        {
+          "value": "P",
+          "label": "Positive"
+        },
+        {
+          "value": "N",
+          "label": "Negative"
+        },
+        {
+          "value": "U",
+          "label": "Unknown"
+        }
+      ]
+    },
+    {
+      "name": "Sex (derived, tumor-level)",
+      "tablename": "Tumor",
+      "type": "string",
+      "description": "Sex of the patient.",
+      "constraints": {
+        "enum": [
+          "M",
+          "W",
+          "D",
+          "U",
+          "X"
+        ]
+      },
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/geschlecht.csv"
+    },
+    {
+      "name": "Days from diagnosis to death (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Time span between diagnosis and death in days (null if Deceased is not 'J').",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 36500
+      }
+    },
+    {
+      "name": "Days from diagnosis to PSA measurement (derived)",
+      "tablename": "Tumor",
+      "type": "integer",
+      "description": "Time span between diagnosis date and PSA level date in days (can be negative, derived from the date difference in months).",
+      "constraints": {
+        "minimum": -3650,
+        "maximum": 3650
+      }
+    },
+    {
+      "name": "Surgery sequence number (derived)",
+      "tablename": "OP",
+      "type": "integer",
+      "description": "Chronological order of the surgery per tumor, calculated from the surgery date.",
+      "constraints": {
+        "minimum": 1
+      }
+    },
+    {
+      "name": "Days from diagnosis to surgery (derived)",
+      "tablename": "OP",
+      "type": "integer",
+      "description": "Time span between diagnosis and surgery in days.",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 3650
+      }
+    },
+    {
+      "name": "Radiotherapy sequence number (derived)",
+      "tablename": "Bestrahlung",
+      "type": "integer",
+      "description": "Chronological order of the radiotherapy per tumor, calculated from the radiotherapy start date.",
+      "constraints": {
+        "minimum": 1
+      }
+    },
+    {
+      "name": "Days from diagnosis to radiotherapy (derived)",
+      "tablename": "Bestrahlung",
+      "type": "integer",
+      "description": "Time span between diagnosis and radiotherapy in days.",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 3650
+      }
+    },
+    {
+      "name": "Systemic therapy sequence number (derived)",
+      "tablename": "SYST",
+      "type": "integer",
+      "description": "Chronological order of the systemic therapy per tumor, calculated from the systemic therapy start date.",
+      "constraints": {
+        "minimum": 1
+      }
+    },
+    {
+      "name": "Days from diagnosis to systemic therapy (derived)",
+      "tablename": "SYST",
+      "type": "integer",
+      "description": "Time span between diagnosis and systemic therapy in days.",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 3650
+      }
+    },
+    {
+      "name": "Follow-up event sequence number (derived)",
+      "tablename": "Folgeereignis",
+      "type": "integer",
+      "description": "Chronological order of the follow-up event per tumor, calculated from the follow-up date.",
+      "constraints": {
+        "minimum": 1
+      }
+    },
+    {
+      "name": "Days from diagnosis to follow-up event (derived)",
+      "tablename": "Folgeereignis",
+      "type": "integer",
+      "description": "Time span between diagnosis date and follow-up date in days (derived from the date difference in months).",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 3650
+      }
+    },
+    {
+      "name": "Predicted substance name (derived)",
+      "tablename": "Substanz",
+      "type": "string",
+      "description": "Substance name predicted from free-text coding.",
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/substanz.csv"
+    },
+    {
+      "name": "Substance prediction confidence score (derived)",
+      "tablename": "Substanz",
+      "type": "number",
+      "description": "Similarity score of the free-text coding.",
+      "constraints": {
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    {
+      "name": "Number of tumors (derived)",
+      "tablename": "Patient",
+      "type": "integer",
+      "description": "Number of tumors per patient.",
+      "constraints": {
+        "minimum": 1
+      }
+    }
+  ],
+  "title": "German Nationwide Clinical Cancer Registry Dataset (oBDS) - Data Schema",
+  "description": "Table Schema representation of the German nationwide oncology basic dataset (oBDS) of the Centre for Cancer Registry Data (ZfKD) at the Robert Koch Institute. Contains the variables of the clinical cancer registry dataset grouped by entity (Patient, Tumor, Surgery, Radiotherapy, Systemic therapy, etc.) with types, value ranges, and references to the relevant classifications. The dataset is extended with variables computed by ZfKD (prefix z_)."
+}
