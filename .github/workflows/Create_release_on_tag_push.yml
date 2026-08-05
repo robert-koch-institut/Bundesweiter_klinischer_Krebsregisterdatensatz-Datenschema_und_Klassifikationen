@@ -5,7 +5,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
  push:
   tags:
-    - 'oBDS_v[0-9].[0-9].[0-9].[0-9]*RKI'
+    - 'oBDS_v*.*.*_RKI'
+    - 'oBDS_v*.*.*.*_RKI'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
