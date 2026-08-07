@@ -150,7 +150,7 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
 | Datei | Beschreibung | Download |
 | :----- | :------------ | :--------: |
 | XML-Schema | Die XML-Schema-Definition `.xsd` als eindeutige, vollständige und maschinenlesbare Repräsentation des gesamten Schemas mit allen Details.   | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.xsd) |
-| JSON-Schema (Table Schema) | Variablen und mögliche Ausprägungen als maschinenlesbares [Table Schema](https://datapackage.org/standard/table-schema/) im `.json`-Format. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/json/obds-zfkd-de.json) |
+| JSON-Schema (Table Schema) | Variablen und mögliche Ausprägungen als maschinenlesbares [Table Schema](https://datapackage.org/standard/table-schema/) im `.json`-Format. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/obds-zfkd-de.json) |
 | TXT-Schema | Variablen und mögliche Ausprägungen in stark vereinfachter textueller Darstellung zur erleichterten Erkennung von Änderungen. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.txt) |
 | Schema (Abbildung) | Die grafische Darstellung des XML-Schemas als `.png`. Hinweise zur Notation des XML-Schemas sind auf der [Internetseite der Plattform § 65c](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Abbildung.png) |
 | Schema (Liste) | Optisch gestaltete und "druckfreundliche" Kurzübersicht zu Variablen und möglichen Ausprägungen als `.pdf`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Liste.pdf) |
@@ -159,11 +159,10 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
 
 - Das Auflösen des ursprünglichen `oBDS`-Schemas in ein relationales Modell führt zu einer großen Anzahl verschachtelter Tabellen
 - Dieses Modell vereinfacht die Beziehungen, indem Tabellen mit ähnlichem Kontext zusammengeführt werden
-- Aktualisierungen im Modell (durch das Hinzufügen von [ZfKD-Variablen](./readme-variables.md#zfkd-variables)) werden auf dieser Seite widergespiegelt
+- Vom ZfKD zusätzlich berechnete Variablen (Präfix `z_`) sind ebenfalls hier dokumentiert
 - Diese ZfKD-Variablen kommen in den meisten Tabellen vor:
-  - `z_tum_id` Ermöglicht es, von überall im Modell eine Verknüpfung zur essenziellen Tumortabelle herzustellen (⚠️ Kardinalität, z. B.: 1 `Tumor` : n `OP` : n `OPS`)
+  - `z_tum_id` Ermöglicht es, von überall im Modell eine Verknüpfung zur zentralen Tumortabelle herzustellen (⚠️ Kardinalität, z. B.: 1 `Tumor` : n `OP` : n `OPS`)
   - `z_kkr` Fügt jeder Tabelle Informationen über die Datenherkunft hinzu, um die Qualitätskontrolle zu vereinfachen
-  - Ausnahme: `Todesursache` ist von `Patient` abhängig und über `oBDS_RKIPatientId` verknüpft
 - Die referenzielle Integrität wird in der Datenbank aus technischen Gründen **nicht** erzwungen
 
 _Entity Relationship Model Stand 17.07.2026 (oBDS 3.0.4)_

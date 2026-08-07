@@ -2,6 +2,7 @@
   "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
   "title": "Bundesweiter klinischer Krebsregisterdatensatz (oBDS) - Datenschema",
   "description": "Table-Schema-Repräsentation des bundesweiten onkologischen Basisdatensatzes (oBDS) des Zentrums für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. In Abgrenzung zum xml-basierten Schema des Datensatzes fokussiert diese Beschreibung auf die technische Implementierung. Enthält die Variablen des klinischen Krebsregisterdatensatzes je Entität (Patient, Tumor, OP, Bestrahlung, Systemtherapie u.a.) mit Typen, Wertebereichen und Verweisen auf die zugehörigen Klassifikationen. Der Datensatz ist erweitert um vom ZfKD berechnete Variablen (Präfix z_).",
+  "version": "2026-08-07",
   "fields": [
     {
       "name": "Geschlecht",
