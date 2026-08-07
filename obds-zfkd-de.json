@@ -1,5 +1,7 @@
 {
   "$schema": "https://datapackage.org/profiles/2.0/tableschema.json",
+  "title": "Bundesweiter klinischer Krebsregisterdatensatz (oBDS) - Datenschema",
+  "description": "Table-Schema-Repräsentation des bundesweiten onkologischen Basisdatensatzes (oBDS) des Zentrums für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. In Abgrenzung zum xml-basierten Schema des Datensatzes fokussiert diese Beschreibung auf die technische Implementierung. Enthält die Variablen des klinischen Krebsregisterdatensatzes je Entität (Patient, Tumor, OP, Bestrahlung, Systemtherapie u.a.) mit Typen, Wertebereichen und Verweisen auf die zugehörigen Klassifikationen. Der Datensatz ist erweitert um vom ZfKD berechnete Variablen (Präfix z_).",
   "fields": [
     {
       "name": "Geschlecht",
@@ -15,35 +17,13 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "M",
-          "label": "männlich"
-        },
-        {
-          "value": "W",
-          "label": "weiblich"
-        },
-        {
-          "value": "D",
-          "label": "divers"
-        },
-        {
-          "value": "X",
-          "label": "keine Angabe/unbestimmt"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/geschlecht.csv"
     },
     {
       "name": "Geburtsdatum_Genauigkeit",
       "tablename": "Patient",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt.",
+      "description": "Gibt die Genauigkeit des Geburtsdatums an. Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt.",
       "constraints": {
         "enum": [
           "M",
@@ -71,7 +51,10 @@
       "tablename": "Patient",
       "type": "date",
       "description": "Geburtsdatum der erkrankten Person im internationalen Datumsformat YYYY-MM-DD.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "Verstorben",
@@ -99,7 +82,7 @@
       "name": "Datum_Vitalstatus_Genauigkeit",
       "tablename": "Patient",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V). Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt.",
+      "description": "Gibt die Genauigkeit des Datums zum Vitalstatus an. Wichtig: Die Angabe Tag wird von den Registern grundsätzlich nicht ans ZfKD übermittelt.",
       "constraints": {
         "enum": [
           "M",
@@ -127,7 +110,10 @@
       "tablename": "Patient",
       "type": "date",
       "description": "Wenn Verstorben = Nein, gibt diese Variable das Datum der letzten Erhebung des Vitalstatus an. Wenn Verstorben = Ja, gibt diese Variable das imputierte Sterbedatum an. Bei DCO-Fällen werden Sterbe- und Diagnosedatum gleichgesetzt.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "IsGrundleiden",
@@ -174,7 +160,7 @@
       "name": "Diagnosedatum_Genauigkeit",
       "tablename": "Tumor",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "description": "Gibt die Genauigkeit des Diagnosedatums an.",
       "constraints": {
         "enum": [
           "M",
@@ -202,7 +188,10 @@
       "tablename": "Tumor",
       "type": "date",
       "description": "Datum der Erstdiagnose im internationalen Datumsformat YYYY-MM-DD.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "Inzidenzort",
@@ -253,20 +242,6 @@
           "33"
         ]
       },
-      "categories": [
-        {
-          "value": "31",
-          "label": "ICD-O-3, 2003"
-        },
-        {
-          "value": "32",
-          "label": "ICD-O-3, 1. Revision 2014"
-        },
-        {
-          "value": "33",
-          "label": "ICD-O-3, 2. Revision 2019"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/topographie_version.csv"
     },
     {
@@ -292,24 +267,6 @@
           "bb"
         ]
       },
-      "categories": [
-        {
-          "value": "31",
-          "label": "ICD-O-3, 2003"
-        },
-        {
-          "value": "32",
-          "label": "ICD-O-3, 1. Revision 2014"
-        },
-        {
-          "value": "33",
-          "label": "ICD-O-3, 2. Revision 2019"
-        },
-        {
-          "value": "bb",
-          "label": "WHO Blue Books"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/morphologie_version.csv"
     },
     {
@@ -333,56 +290,6 @@
           "T"
         ]
       },
-      "categories": [
-        {
-          "value": "0",
-          "label": "Malignes Melanom der Konjunktiva"
-        },
-        {
-          "value": "1",
-          "label": "Gut differenziert"
-        },
-        {
-          "value": "2",
-          "label": "Mäßig differenziert"
-        },
-        {
-          "value": "3",
-          "label": "Schlecht differenziert"
-        },
-        {
-          "value": "4",
-          "label": "Undifferenziert"
-        },
-        {
-          "value": "X",
-          "label": "Nicht bestimmbar"
-        },
-        {
-          "value": "L",
-          "label": "Low grade (G1 oder G2)"
-        },
-        {
-          "value": "M",
-          "label": "Intermediate (G2 oder G3)"
-        },
-        {
-          "value": "H",
-          "label": "High grade (G3 oder G4)"
-        },
-        {
-          "value": "B",
-          "label": "Borderline"
-        },
-        {
-          "value": "U",
-          "label": "Unbekannt"
-        },
-        {
-          "value": "T",
-          "label": "Trifft nicht zu"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/grading_clin.csv"
     },
     {
@@ -434,24 +341,6 @@
           "9"
         ]
       },
-      "categories": [
-        {
-          "value": "6",
-          "label": "6. Auflage TNM"
-        },
-        {
-          "value": "7",
-          "label": "7. Auflage TNM"
-        },
-        {
-          "value": "8",
-          "label": "8. Auflage TNM"
-        },
-        {
-          "value": "9",
-          "label": "9. Auflage TNM"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_auflage.csv"
     },
     {
@@ -530,16 +419,6 @@
           "M1"
         ]
       },
-      "categories": [
-        {
-          "value": "M0",
-          "label": "keine Fernmetastasen"
-        },
-        {
-          "value": "M1",
-          "label": "Fernmetastasen"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
     },
     {
@@ -554,20 +433,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -582,20 +447,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -610,27 +461,16 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
       "name": "m_Symbol_c",
       "tablename": "Tumor",
       "type": "string",
-      "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk."
+      "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk.",
+      "constraints": {
+        "pattern": "^([m](,is)?|(is)|[2-9](,is)?|[1-9][0-9]{1,2}(,is)?)$"
+      }
     },
     {
       "name": "L_c",
@@ -644,20 +484,6 @@
           "L1"
         ]
       },
-      "categories": [
-        {
-          "value": "LX",
-          "label": "Lymphgefäßinvasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "L0",
-          "label": "keine Lymphgefäßinvasion"
-        },
-        {
-          "value": "L1",
-          "label": "Lymphgefäßinvasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_l.csv"
     },
     {
@@ -673,24 +499,6 @@
           "V2"
         ]
       },
-      "categories": [
-        {
-          "value": "VX",
-          "label": "Veneninvasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "V0",
-          "label": "keine Veneninvasion"
-        },
-        {
-          "value": "V1",
-          "label": "mikroskopische Veneninvasion"
-        },
-        {
-          "value": "V2",
-          "label": "makroskopische Veneninvasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_v.csv"
     },
     {
@@ -705,20 +513,6 @@
           "Pn1"
         ]
       },
-      "categories": [
-        {
-          "value": "PnX",
-          "label": "perineurale Invasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "Pn0",
-          "label": "keine perineurale Invasion"
-        },
-        {
-          "value": "Pn1",
-          "label": "perineurale Invasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_pn.csv"
     },
     {
@@ -735,28 +529,6 @@
           "S3"
         ]
       },
-      "categories": [
-        {
-          "value": "SX",
-          "label": "Werte der Serumtumormarker nicht verfügbar oder entsprechende Untersuchungen nicht vorgenommen"
-        },
-        {
-          "value": "S0",
-          "label": "Serumtumormarker innerhalb der normalen Grenzen"
-        },
-        {
-          "value": "S1",
-          "label": "Serumtumormarker erhöht"
-        },
-        {
-          "value": "S2",
-          "label": "Serumtumormarker erhöht"
-        },
-        {
-          "value": "S3",
-          "label": "Serumtumormarker erhöht"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_s.csv"
     },
     {
@@ -818,24 +590,6 @@
           "9"
         ]
       },
-      "categories": [
-        {
-          "value": "6",
-          "label": "6. Auflage TNM"
-        },
-        {
-          "value": "7",
-          "label": "7. Auflage TNM"
-        },
-        {
-          "value": "8",
-          "label": "8. Auflage TNM"
-        },
-        {
-          "value": "9",
-          "label": "9. Auflage TNM"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_auflage.csv"
     },
     {
@@ -901,20 +655,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -936,20 +676,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -971,20 +697,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -998,16 +710,6 @@
           "M1"
         ]
       },
-      "categories": [
-        {
-          "value": "M0",
-          "label": "keine Fernmetastasen"
-        },
-        {
-          "value": "M1",
-          "label": "Fernmetastasen"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
     },
     {
@@ -1016,21 +718,8 @@
       "type": "string",
       "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk.",
       "constraints": {
-        "enum": [
-          "m",
-          "n"
-        ]
-      },
-      "categories": [
-        {
-          "value": "m",
-          "label": "multiple Tumoren ohne Angabe der Zahl"
-        },
-        {
-          "value": "n",
-          "label": "Anzahl der multiplen Tumoren"
-        }
-      ]
+        "pattern": "^([m](,is)?|(is)|[2-9](,is)?|[1-9][0-9]{1,2}(,is)?)$"
+      }
     },
     {
       "name": "L_p",
@@ -1044,20 +733,6 @@
           "L1"
         ]
       },
-      "categories": [
-        {
-          "value": "LX",
-          "label": "Lymphgefäßinvasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "L0",
-          "label": "keine Lymphgefäßinvasion"
-        },
-        {
-          "value": "L1",
-          "label": "Lymphgefäßinvasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_l.csv"
     },
     {
@@ -1073,24 +748,6 @@
           "V2"
         ]
       },
-      "categories": [
-        {
-          "value": "VX",
-          "label": "Veneninvasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "V0",
-          "label": "keine Veneninvasion"
-        },
-        {
-          "value": "V1",
-          "label": "mikroskopische Veneninvasion"
-        },
-        {
-          "value": "V2",
-          "label": "makroskopische Veneninvasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_v.csv"
     },
     {
@@ -1105,20 +762,6 @@
           "Pn1"
         ]
       },
-      "categories": [
-        {
-          "value": "PnX",
-          "label": "perineurale Invasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "Pn0",
-          "label": "keine perineurale Invasion"
-        },
-        {
-          "value": "Pn1",
-          "label": "perineurale Invasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_pn.csv"
     },
     {
@@ -1135,28 +778,6 @@
           "S3"
         ]
       },
-      "categories": [
-        {
-          "value": "SX",
-          "label": "Werte der Serumtumormarker nicht verfügbar oder entsprechende Untersuchungen nicht vorgenommen"
-        },
-        {
-          "value": "S0",
-          "label": "Serumtumormarker innerhalb der normalen Grenzen"
-        },
-        {
-          "value": "S1",
-          "label": "Serumtumormarker erhöht"
-        },
-        {
-          "value": "S2",
-          "label": "Serumtumormarker erhöht"
-        },
-        {
-          "value": "S3",
-          "label": "Serumtumormarker erhöht"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_s.csv"
     },
     {
@@ -1226,56 +847,6 @@
           "GEN"
         ]
       },
-      "categories": [
-        {
-          "value": "PUL",
-          "label": "Lunge"
-        },
-        {
-          "value": "OSS",
-          "label": "Knochen"
-        },
-        {
-          "value": "HEP",
-          "label": "Leber"
-        },
-        {
-          "value": "BRA",
-          "label": "Hirn"
-        },
-        {
-          "value": "LYM",
-          "label": "Lymphknoten"
-        },
-        {
-          "value": "MAR",
-          "label": "Knochenmark"
-        },
-        {
-          "value": "PLE",
-          "label": "Pleura"
-        },
-        {
-          "value": "PER",
-          "label": "Peritoneum"
-        },
-        {
-          "value": "ADR",
-          "label": "Nebennieren"
-        },
-        {
-          "value": "SKI",
-          "label": "Haut"
-        },
-        {
-          "value": "OTH",
-          "label": "Andere Organe"
-        },
-        {
-          "value": "GEN",
-          "label": "Generalisierte Metastasierung"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/fm_lokalisation.csv"
     },
     {
@@ -1310,48 +881,6 @@
           "9"
         ]
       },
-      "categories": [
-        {
-          "value": "0",
-          "label": "DCO"
-        },
-        {
-          "value": "1",
-          "label": "klinisch, ausschließlich körperliche Untersuchung (ohne tumorspezifische Diagnostik)"
-        },
-        {
-          "value": "2",
-          "label": "klinisch inkl. Bildgebung/Endoskopie/Laparotomie/Autopsie ohne Histologie"
-        },
-        {
-          "value": "4",
-          "label": "spezifische Tumormarker"
-        },
-        {
-          "value": "5",
-          "label": "zytologisch"
-        },
-        {
-          "value": "7.1",
-          "label": "Histologie des Primärtumors"
-        },
-        {
-          "value": "7.2",
-          "label": "Histologie einer Metastase"
-        },
-        {
-          "value": "7.3",
-          "label": "Histologie der Autopsie"
-        },
-        {
-          "value": "8",
-          "label": "zytogenetisch und/oder molekularer Test"
-        },
-        {
-          "value": "9",
-          "label": "unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/diagnosesicherung_clin.csv"
     },
     {
@@ -1369,32 +898,6 @@
           "T"
         ]
       },
-      "categories": [
-        {
-          "value": "L",
-          "label": "links"
-        },
-        {
-          "value": "R",
-          "label": "rechts"
-        },
-        {
-          "value": "B",
-          "label": "beidseitig"
-        },
-        {
-          "value": "M",
-          "label": "mittig"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        },
-        {
-          "value": "T",
-          "label": "trifft nicht zu"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/seitenlokalisation.csv"
     },
     {
@@ -1408,16 +911,6 @@
           "N"
         ]
       },
-      "categories": [
-        {
-          "value": "J",
-          "label": "Ja"
-        },
-        {
-          "value": "N",
-          "label": "Nein"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/dcn.csv"
     },
     {
@@ -1459,20 +952,6 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "1",
-          "label": "prämenopausal (umfasst perimenopausal)"
-        },
-        {
-          "value": "3",
-          "label": "postmenopausal"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/menopausenstatus.csv"
     },
     {
@@ -1487,20 +966,6 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "P",
-          "label": "positiv (IRS >= 1)"
-        },
-        {
-          "value": "N",
-          "label": "negativ"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/hormonrezeptor.csv"
     },
     {
@@ -1515,20 +980,6 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "P",
-          "label": "positiv (IRS >= 1)"
-        },
-        {
-          "value": "N",
-          "label": "negativ"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/hormonrezeptor.csv"
     },
     {
@@ -1543,20 +994,6 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "P",
-          "label": "positiv (IHC+++ oder IHC++ und ISH positiv)"
-        },
-        {
-          "value": "N",
-          "label": "negativ"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/her2neu.csv"
     },
     {
@@ -1572,7 +1009,7 @@
       "name": "DatumPSA_Genauigkeit",
       "tablename": "Tumor",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "description": "Gibt die Genauigkeit des Datums der PSA-Wert-Bestimmung an.",
       "constraints": {
         "enum": [
           "M",
@@ -1600,7 +1037,10 @@
       "tablename": "Tumor",
       "type": "date",
       "description": "Monat und Jahr der PSA-Wert-Bestimmung.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "GradPrimaer",
@@ -1668,20 +1108,6 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "O",
-          "label": "OP"
-        },
-        {
-          "value": "S",
-          "label": "Stanzbiopsie"
-        },
-        {
-          "value": "U",
-          "label": "Unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/gleason_anlass.csv"
     },
     {
@@ -1747,31 +1173,13 @@
           "N"
         ]
       },
-      "categories": [
-        {
-          "value": "W",
-          "label": "Wildtyp"
-        },
-        {
-          "value": "M",
-          "label": "Mutation"
-        },
-        {
-          "value": "U",
-          "label": "Unbekannt"
-        },
-        {
-          "value": "N",
-          "label": "Nicht untersucht"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/rasmutation.csv"
     },
     {
       "name": "Datum_OP_Genauigkeit",
       "tablename": "OP",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "description": "Gibt die Genauigkeit des Operationsdatums an.",
       "constraints": {
         "enum": [
           "M",
@@ -1799,7 +1207,10 @@
       "tablename": "OP",
       "type": "date",
       "description": "Operationsdatum.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "Code",
@@ -1832,32 +1243,6 @@
           "x"
         ]
       },
-      "categories": [
-        {
-          "value": "K",
-          "label": "kurativ"
-        },
-        {
-          "value": "P",
-          "label": "palliativ"
-        },
-        {
-          "value": "D",
-          "label": "diagnostisch"
-        },
-        {
-          "value": "R",
-          "label": "Revision/Komplikation"
-        },
-        {
-          "value": "S",
-          "label": "Sonstiges"
-        },
-        {
-          "value": "x",
-          "label": "fehlende Angabe"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/op_intention.csv"
     },
     {
@@ -1876,36 +1261,6 @@
           "U"
         ]
       },
-      "categories": [
-        {
-          "value": "R0",
-          "label": "kein Residualtumor"
-        },
-        {
-          "value": "R1",
-          "label": "mikroskopischer Residualtumor"
-        },
-        {
-          "value": "R1(is)",
-          "label": "in-situ-Rest"
-        },
-        {
-          "value": "R1(cy+)",
-          "label": "zytologischer Rest"
-        },
-        {
-          "value": "R2",
-          "label": "makroskopischer Residualtumor"
-        },
-        {
-          "value": "RX",
-          "label": "Residualtumor nicht beurteilbar"
-        },
-        {
-          "value": "U",
-          "label": "Residualtumorstatus unbekannt"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/r_typ.csv"
     },
     {
@@ -1921,7 +1276,7 @@
       "name": "Datum_Beginn_Bestrahlung_Genauigkeit",
       "tablename": "Bestrahlung",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "description": "Gibt die Genauigkeit des Datums vom Beginn der Strahlentherapie an.",
       "constraints": {
         "enum": [
           "M",
@@ -1949,7 +1304,10 @@
       "tablename": "Bestrahlung",
       "type": "date",
       "description": "Monat und Jahr des Beginns der Strahlentherapie.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "Intention",
@@ -1965,28 +1323,6 @@
           "x"
         ]
       },
-      "categories": [
-        {
-          "value": "K",
-          "label": "kurativ"
-        },
-        {
-          "value": "P",
-          "label": "palliativ"
-        },
-        {
-          "value": "O",
-          "label": "lokal kurativ bei Oligometastasierung"
-        },
-        {
-          "value": "S",
-          "label": "sonstiges"
-        },
-        {
-          "value": "x",
-          "label": "keine Angabe"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/st_intention.csv"
     },
     {
@@ -2004,32 +1340,6 @@
           "s"
         ]
       },
-      "categories": [
-        {
-          "value": "O",
-          "label": "ohne Bezug zu operativer Therapie"
-        },
-        {
-          "value": "A",
-          "label": "adjuvant"
-        },
-        {
-          "value": "N",
-          "label": "neoadjuvant"
-        },
-        {
-          "value": "I",
-          "label": "interoperativ"
-        },
-        {
-          "value": "Z",
-          "label": "additiv"
-        },
-        {
-          "value": "s",
-          "label": "sonstiges"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/st_op_stellung.csv"
     },
     {
@@ -2058,16 +1368,6 @@
           "RCN"
         ]
       },
-      "categories": [
-        {
-          "value": "RCJ",
-          "label": "mit Chemotherapie/Sensitizer"
-        },
-        {
-          "value": "RCN",
-          "label": "ohne Chemotherapie/Sensitizer"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/radiochemo.csv"
     },
     {
@@ -2080,12 +1380,6 @@
           "ST"
         ]
       },
-      "categories": [
-        {
-          "value": "ST",
-          "label": "stereotaktisch"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/stereotaktisch.csv"
     },
     {
@@ -2098,12 +1392,6 @@
           "4D"
         ]
       },
-      "categories": [
-        {
-          "value": "4D",
-          "label": "atemgetriggert"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/atemgetriggert.csv"
     },
     {
@@ -2135,32 +1423,6 @@
           "T"
         ]
       },
-      "categories": [
-        {
-          "value": "L",
-          "label": "links"
-        },
-        {
-          "value": "R",
-          "label": "rechts"
-        },
-        {
-          "value": "B",
-          "label": "beidseits"
-        },
-        {
-          "value": "M",
-          "label": "mittig"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        },
-        {
-          "value": "T",
-          "label": "trifft nicht zu"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/seite_zielgebiet.csv"
     },
     {
@@ -2174,16 +1436,6 @@
           "K"
         ]
       },
-      "categories": [
-        {
-          "value": "I",
-          "label": "interstitiell"
-        },
-        {
-          "value": "K",
-          "label": "endokavitär"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/interstitiell.csv"
     },
     {
@@ -2198,20 +1450,6 @@
           "PDR"
         ]
       },
-      "categories": [
-        {
-          "value": "HDR",
-          "label": "high dose rate"
-        },
-        {
-          "value": "LDR",
-          "label": "low dose rate"
-        },
-        {
-          "value": "PDR",
-          "label": "pulsed dose rate"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/rate_type.csv"
     },
     {
@@ -2228,28 +1466,6 @@
           "RIT"
         ]
       },
-      "categories": [
-        {
-          "value": "SIRT",
-          "label": "selektive interne Radiotherapie"
-        },
-        {
-          "value": "PRRT",
-          "label": "Peptid-Radiorezeptor-Therapie"
-        },
-        {
-          "value": "PSMA",
-          "label": "PSMA-Therapie"
-        },
-        {
-          "value": "RJT",
-          "label": "Radiojod-Therapie"
-        },
-        {
-          "value": "RIT",
-          "label": "Radioimmun-Therapie"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/metabolisch.csv"
     },
     {
@@ -2283,24 +1499,6 @@
           "x"
         ]
       },
-      "categories": [
-        {
-          "value": "K",
-          "label": "kurativ"
-        },
-        {
-          "value": "P",
-          "label": "palliativ"
-        },
-        {
-          "value": "S",
-          "label": "sonstiges"
-        },
-        {
-          "value": "x",
-          "label": "keine Angabe"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/syst_intention.csv"
     },
     {
@@ -2317,28 +1515,6 @@
           "S"
         ]
       },
-      "categories": [
-        {
-          "value": "O",
-          "label": "ohne Bezug zu einer operativen Therapie"
-        },
-        {
-          "value": "A",
-          "label": "adjuvant"
-        },
-        {
-          "value": "N",
-          "label": "neoadjuvant"
-        },
-        {
-          "value": "I",
-          "label": "intraoperativ"
-        },
-        {
-          "value": "S",
-          "label": "sonstiges"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/syst_op_stellung.csv"
     },
     {
@@ -2363,60 +1539,6 @@
           "SO"
         ]
       },
-      "categories": [
-        {
-          "value": "CH",
-          "label": "Chemotherapie"
-        },
-        {
-          "value": "HO",
-          "label": "Hormontherapie"
-        },
-        {
-          "value": "IM",
-          "label": "Immun-/Antikörpertherapie"
-        },
-        {
-          "value": "ZS",
-          "label": "zielgerichtete Substanzen"
-        },
-        {
-          "value": "CI",
-          "label": "Chemo- + Immun-/Antikörpertherapie"
-        },
-        {
-          "value": "CZ",
-          "label": "Chemotherapie + zielgerichtete Substanzen"
-        },
-        {
-          "value": "CIZ",
-          "label": "Chemo- + Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-        },
-        {
-          "value": "IZ",
-          "label": "Immun-/Antikörpertherapie + zielgerichtete Substanzen"
-        },
-        {
-          "value": "SZ",
-          "label": "Stammzellentransplantation (inkl. Knochenmarktransplantation)"
-        },
-        {
-          "value": "AS",
-          "label": "Active Surveillance"
-        },
-        {
-          "value": "WS",
-          "label": "Wait and see"
-        },
-        {
-          "value": "WW",
-          "label": "Watchful Waiting"
-        },
-        {
-          "value": "SO",
-          "label": "Sonstiges"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/therapieart.csv"
     },
     {
@@ -2481,7 +1603,7 @@
       "name": "Datum_Beginn_SYST_Genauigkeit",
       "tablename": "SYST",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "description": "Gibt die Genauigkeit des Datums vom Beginn der systemischen Therapie an.",
       "constraints": {
         "enum": [
           "M",
@@ -2509,7 +1631,10 @@
       "tablename": "SYST",
       "type": "date",
       "description": "Monat und Jahr des Beginns der systemischen Therapie.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "Anzahl_Tage_SYST_Dauer",
@@ -2533,7 +1658,7 @@
       "name": "Datum_Folgeereignis_Genauigkeit",
       "tablename": "Folgeereignis",
       "type": "string",
-      "description": "Gibt an, ob nur das Jahr des Datums sicher bekannt ist (M), ob Jahr und Monat sicher bekannt sind (T) bzw. ob weder Jahr noch Monat sicher bekannt sind (V).",
+      "description": "Gibt die Genauigkeit des Datums des Folgeereignisses an.",
       "constraints": {
         "enum": [
           "M",
@@ -2561,7 +1686,10 @@
       "tablename": "Folgeereignis",
       "type": "date",
       "description": "Datum der letzten Untersuchung zur Einschätzung des Tumorstatus.",
-      "format": "YYYY-MM-DD"
+      "format": "YYYY-MM-DD",
+      "constraints": {
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      }
     },
     {
       "name": "Version",
@@ -2576,24 +1704,6 @@
           "9"
         ]
       },
-      "categories": [
-        {
-          "value": "6",
-          "label": "6. Auflage TNM"
-        },
-        {
-          "value": "7",
-          "label": "7. Auflage TNM"
-        },
-        {
-          "value": "8",
-          "label": "8. Auflage TNM"
-        },
-        {
-          "value": "9",
-          "label": "9. Auflage TNM"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_auflage.csv"
     },
     {
@@ -2609,7 +1719,7 @@
       "categories": [
         {
           "value": "y",
-          "label": "Klassifikation erfolgte nach einer initialen multimodalen Therapie"
+          "label": "Klassifikation erfolgte während oder nach initialer multimodaler Therapie"
         }
       ]
     },
@@ -2643,7 +1753,7 @@
       "categories": [
         {
           "value": "a",
-          "label": "Klassifikation erfolgte durch Autopsie"
+          "label": "Klassifikation wurde durch eine Autopsie festgelegt."
         }
       ]
     },
@@ -2672,16 +1782,6 @@
           "M1"
         ]
       },
-      "categories": [
-        {
-          "value": "M0",
-          "label": "keine Fernmetastasen"
-        },
-        {
-          "value": "M1",
-          "label": "Fernmetastasen"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_m.csv"
     },
     {
@@ -2696,20 +1796,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -2724,20 +1810,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -2752,20 +1824,6 @@
           "u"
         ]
       },
-      "categories": [
-        {
-          "value": "c",
-          "label": "klinische Angaben (nicht p-kriterien erfüllt)"
-        },
-        {
-          "value": "p",
-          "label": "histopathologische Untersuchung"
-        },
-        {
-          "value": "u",
-          "label": "Ultraschall"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_cpu.csv"
     },
     {
@@ -2774,21 +1832,8 @@
       "type": "string",
       "description": "Kennzeichnet Vorhandensein multipler Primärtumoren in einem anatomischen Bezirk.",
       "constraints": {
-        "enum": [
-          "m",
-          "n"
-        ]
-      },
-      "categories": [
-        {
-          "value": "m",
-          "label": "multiple Tumoren ohne Angabe der Zahl"
-        },
-        {
-          "value": "n",
-          "label": "Anzahl der multiplen Tumoren"
-        }
-      ]
+        "pattern": "^([m](,is)?|(is)|[2-9](,is)?|[1-9][0-9]{1,2}(,is)?)$"
+      }
     },
     {
       "name": "L",
@@ -2802,20 +1847,6 @@
           "L1"
         ]
       },
-      "categories": [
-        {
-          "value": "LX",
-          "label": "Lymphgefäßinvasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "L0",
-          "label": "keine Lymphgefäßinvasion"
-        },
-        {
-          "value": "L1",
-          "label": "Lymphgefäßinvasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_l.csv"
     },
     {
@@ -2831,24 +1862,6 @@
           "V2"
         ]
       },
-      "categories": [
-        {
-          "value": "VX",
-          "label": "Veneninvasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "V0",
-          "label": "keine Veneninvasion"
-        },
-        {
-          "value": "V1",
-          "label": "mikroskopische Veneninvasion"
-        },
-        {
-          "value": "V2",
-          "label": "makroskopische Veneninvasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_v.csv"
     },
     {
@@ -2863,20 +1876,6 @@
           "Pn1"
         ]
       },
-      "categories": [
-        {
-          "value": "PnX",
-          "label": "perineurale Invasion kann nicht beurteilt werden"
-        },
-        {
-          "value": "Pn0",
-          "label": "keine perineurale Invasion"
-        },
-        {
-          "value": "Pn1",
-          "label": "perineurale Invasion"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_pn.csv"
     },
     {
@@ -2893,28 +1892,6 @@
           "S3"
         ]
       },
-      "categories": [
-        {
-          "value": "SX",
-          "label": "Werte der Serumtumormarker nicht verfügbar oder nicht untersucht"
-        },
-        {
-          "value": "S0",
-          "label": "Serumtumormarker innerhalb der normalen Grenzen"
-        },
-        {
-          "value": "S1",
-          "label": "Serumtumormarker erhöht (S1-S3 nach TNM)"
-        },
-        {
-          "value": "S2",
-          "label": "Serumtumormarker erhöht (S1-S3 nach TNM)"
-        },
-        {
-          "value": "S3",
-          "label": "Serumtumormarker erhöht (S1-S3 nach TNM)"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/tnm_s.csv"
     },
     {
@@ -2995,48 +1972,6 @@
           "X"
         ]
       },
-      "categories": [
-        {
-          "value": "V",
-          "label": "Vollremission"
-        },
-        {
-          "value": "T",
-          "label": "Teilremission"
-        },
-        {
-          "value": "K",
-          "label": "keine Änderung"
-        },
-        {
-          "value": "P",
-          "label": "Progression"
-        },
-        {
-          "value": "D",
-          "label": "divergentes Geschehen"
-        },
-        {
-          "value": "B",
-          "label": "klinische Besserung (minimal response)"
-        },
-        {
-          "value": "R",
-          "label": "Vollremission mit residualen Auffälligkeiten"
-        },
-        {
-          "value": "Y",
-          "label": "Rezidiv"
-        },
-        {
-          "value": "U",
-          "label": "Beurteilung nicht möglich"
-        },
-        {
-          "value": "X",
-          "label": "fehlende Angaben"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/beurteilung_gesamt.csv"
     },
     {
@@ -3056,40 +1991,6 @@
           "X"
         ]
       },
-      "categories": [
-        {
-          "value": "K",
-          "label": "kein Tumor nachweisbar"
-        },
-        {
-          "value": "T",
-          "label": "Tumorreste (Residualtumor)"
-        },
-        {
-          "value": "P",
-          "label": "Tumorreste Progress"
-        },
-        {
-          "value": "N",
-          "label": "Tumorreste No Change"
-        },
-        {
-          "value": "R",
-          "label": "Lokalrezidiv"
-        },
-        {
-          "value": "F",
-          "label": "fraglicher Befund"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        },
-        {
-          "value": "X",
-          "label": "fehlende Angabe"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/verlauf_lokal.csv"
     },
     {
@@ -3109,40 +2010,6 @@
           "X"
         ]
       },
-      "categories": [
-        {
-          "value": "K",
-          "label": "kein Lymphknotenbefall nachweisbar"
-        },
-        {
-          "value": "T",
-          "label": "Residualbefall"
-        },
-        {
-          "value": "P",
-          "label": "Progress"
-        },
-        {
-          "value": "N",
-          "label": "No Change"
-        },
-        {
-          "value": "R",
-          "label": "Rezidiv"
-        },
-        {
-          "value": "F",
-          "label": "fraglicher Befund"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        },
-        {
-          "value": "X",
-          "label": "fehlende Angabe"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/verlauf_lymphe.csv"
     },
     {
@@ -3162,40 +2029,6 @@
           "X"
         ]
       },
-      "categories": [
-        {
-          "value": "K",
-          "label": "keine Fernmetastasen nachweisbar"
-        },
-        {
-          "value": "T",
-          "label": "Fernmetastasen Residuen"
-        },
-        {
-          "value": "P",
-          "label": "Progress"
-        },
-        {
-          "value": "N",
-          "label": "No Change"
-        },
-        {
-          "value": "R",
-          "label": "neu aufgetretene Metastasen"
-        },
-        {
-          "value": "F",
-          "label": "fraglicher Befund"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        },
-        {
-          "value": "X",
-          "label": "fehlende Angabe"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/verlauf_fern.csv"
     },
     {
@@ -3219,56 +2052,6 @@
           "GEN"
         ]
       },
-      "categories": [
-        {
-          "value": "PUL",
-          "label": "Lunge"
-        },
-        {
-          "value": "OSS",
-          "label": "Knochen"
-        },
-        {
-          "value": "HEP",
-          "label": "Leber"
-        },
-        {
-          "value": "BRA",
-          "label": "Hirn"
-        },
-        {
-          "value": "LYM",
-          "label": "Lymphknoten"
-        },
-        {
-          "value": "MAR",
-          "label": "Knochenmark"
-        },
-        {
-          "value": "PLE",
-          "label": "Pleura"
-        },
-        {
-          "value": "PER",
-          "label": "Peritoneum"
-        },
-        {
-          "value": "ADR",
-          "label": "Nebennieren"
-        },
-        {
-          "value": "SKI",
-          "label": "Haut"
-        },
-        {
-          "value": "OTH",
-          "label": "Andere Organe"
-        },
-        {
-          "value": "GEN",
-          "label": "Generalisierte Metastasierung"
-        }
-      ],
       "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/fm_lokalisation.csv"
     },
     {
@@ -3471,13 +2254,19 @@
       "name": "z_dy",
       "tablename": "Tumor",
       "type": "integer",
-      "description": "Diagnosejahr, für einfachen Zugriff. Datumsangaben sind nicht begrenzt, d.h. auch das Jahr 1900 oder negative Zeitspannen können vorkommen."
+      "description": "Diagnosejahr, für einfachen Zugriff. Datumsangaben sind nicht begrenzt, d.h. auch das Jahr 1900 oder negative Zeitspannen können vorkommen.",
+      "constraints": {
+        "pattern": "^(19|20)[0-9]{2}$"
+      }
     },
     {
       "name": "z_age",
       "tablename": "Tumor",
       "type": "number",
-      "description": "Alter bei Diagnose in Jahren: Anzahl Tage zwischen Geburtsdatum und Diagnosedatum in Monaten, geteilt durch 12; auf 2 Nachkommastellen gerundet."
+      "description": "Alter bei Diagnose in Jahren: Anzahl Tage zwischen Geburtsdatum und Diagnosedatum in Monaten, geteilt durch 12; auf 2 Nachkommastellen gerundet.",
+      "constraints": {
+        "pattern": "^[0-9]{1,3}(\\.[0-9]{1,2})?$"
+      }
     },
     {
       "name": "z_ag05",
@@ -3704,7 +2493,22 @@
       "name": "z_last_tum_status",
       "tablename": "Tumor",
       "type": "string",
-      "description": "Letzter Wert von Gesamtbeurteilung_Tumorstatus je Tumor, ermittelt anhand von Datum_Folgeereignis."
+      "description": "Letzter Wert von Gesamtbeurteilung_Tumorstatus je Tumor, ermittelt anhand von Datum_Folgeereignis.",
+      "constraints": {
+        "enum": [
+          "V",
+          "T",
+          "K",
+          "P",
+          "D",
+          "B",
+          "R",
+          "Y",
+          "U",
+          "X"
+        ]
+      },
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/beurteilung_gesamt.csv"
     },
     {
       "name": "z_tum_op_count",
@@ -3767,7 +2571,7 @@
       "name": "z_class_hpv",
       "tablename": "Tumor",
       "type": "string",
-      "description": "Fasst Informationen zum HPV-Status zu einem Wert je Tumor zusammen.",
+      "description": "Fasst Informationen zum HPV-Status zu einem Wert je Tumor zusammen. Aus Modul_Weitere_Klassifikation (Diagnose und Verlauf) werden alle Einträge mit Name passend zu Regex `hpv|p16` extrahiert und deren Stadium auf P/N/U gemappt; bei mehreren Angaben gilt Priorität P > N > U. Ergänzend werden aus Morphologie_Code die Codes 8085 (P) und 8086 (N) herangezogen. Widersprechen sich beide Quellen, wird U vergeben.",
       "constraints": {
         "enum": [
           "P",
@@ -3804,28 +2608,7 @@
           "X"
         ]
       },
-      "categories": [
-        {
-          "value": "M",
-          "label": "männlich"
-        },
-        {
-          "value": "W",
-          "label": "weiblich"
-        },
-        {
-          "value": "D",
-          "label": "divers"
-        },
-        {
-          "value": "X",
-          "label": "keine Angabe/unbestimmt"
-        },
-        {
-          "value": "U",
-          "label": "unbekannt"
-        }
-      ]
+      "referenceUrl": "https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/data/v2/Klassifikationen/geschlecht.csv"
     },
     {
       "name": "z_period_diag_death_day",
