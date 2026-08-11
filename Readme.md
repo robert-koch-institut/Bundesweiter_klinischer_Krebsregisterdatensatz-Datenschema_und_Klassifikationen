@@ -40,6 +40,8 @@ E-Mail-Adresse für Rückmeldungen: [krebsdaten@rki.de](mailto:krebsdaten@rki.de
 In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Klassifikationen des bundesweiten Datensatzes des Zentrums für Krebsregisterdaten (ZfKD) am Robert Koch-Institut sowie Beispieldaten bereitgestellt. Dieser klinische Krebsregisterdatensatz ist nicht öffentlich zugänglich, kann jedoch auf Antrag für wissenschaftliche Forschung bereitgestellt werden. Er enthält Daten zu neu auftretenden Krebsfällen, die von medizinischen Einrichtungen an die Krebsregister der Bundesländer gemeldet und von dort an das ZfKD übermittelt werden. Die Datenerfassung basiert auf dem Bundeskrebsregisterdatengesetz sowie den entsprechenden Landesgesetze.
 
 <br>
+
+**Inhaltsverzeichnis**  
 <!-- TOC depthfrom:2 depthto:3 -->
 
 - [Einleitung](#einleitung)
@@ -58,14 +60,6 @@ In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Kla
     - [Lizenz](#lizenz)
 
 <!-- /TOC -->
-**Inhaltsverzeichnis**  
-
-<!-- TOC_START: {"heading_depth": 2} -->
-  - [Einleitung](#einleitung)  
-  - [Informationen zum Entstehungskontext des ZfKD-Datensatzes](#informationen-zum-entstehungskontext-des-zfkd-datensatzes)  
-  - [Struktur des bundesweiten klinischen Krebsregisterdatensatzes](#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes)  
-  - [Hinweise zur Nachnutzung der Daten](#hinweise-zur-nachnutzung-der-daten)  
-<!-- TOC_END -->
 
 <br>
 
