@@ -59,7 +59,7 @@ Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. 
 
 Die Krebsregister der Bundesländer wiederum übermitteln nach Vorgabe des [Bundeskrebsregisterdatengesetzes (BKRG)](https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) einmal jährlich Angaben zu neu erfassten Erkrankungsfällen an das Zentrum für Krebsregisterdaten (ZfKD) am Robert Koch-Institut. Das ZfKD prüft die Qualität der Daten, führt sie zu einem bundesweiten Datensatz zusammen und stellt sie [auf Antrag für wissenschaftliche Forschungsprojekte](https://www.krebsdaten.de/info_antrag) zur Verfügung.
 
-In diesem Repository werden begleitende Informationen zur [**Struktur**](#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes) des bundesweiten ZfKD-Datensatzes bereitgestellt. Ein weiteres wesentliches Element der Krebsregisterdaten stellen [**Klassifikationen**](#klassifikationen) dar - Referenztabellen für Variablen des Datensatzes und ihre definierten Ausprägungen. Diese Tabellen werden durch beteiligte Akteure kontinuierlich harmonisiert. 
+In diesem Repository werden begleitende Informationen zur [Struktur](#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes) des bundesweiten ZfKD-Datensatzes bereitgestellt. Ein weiteres wesentliches Element der Krebsregisterdaten stellen [Klassifikationen](#klassifikationen) dar - Referenztabellen für Variablen des Datensatzes und ihre definierten Ausprägungen. Diese Tabellen werden durch beteiligte Akteure kontinuierlich harmonisiert. 
 
 > [!NOTE]
 > Der ZfKD-Datensatz ist nicht öffentlich zugänglich, kann aber auf Antrag für wissenschaftliche Forschungszwecke genutzt werden. Bitte verwenden Sie für Fragen zur Antragstellung die  E-Mail-Adresse des ZfKD: [krebsdaten@rki.de](mailto:krebsdaten@rki.de)  oder das auf der Internetseite des ZfKD bereitgestellte [Kontaktformular](https://www.krebsdaten.de/SharedDocs/Kontaktformulare/A/Antrag-krebsdaten/Integrator_SCU.html). Informationen zum gesetzlichen Auftrag, zu Methoden und Veröffentlichungen des ZfKD erhalten Sie ebenfalls auf den [Internetseiten des ZfKD](https://www.krebsdaten.de/). Bitte beachten Sie, dass das ZfKD an den Daten, die von den Krebsregistern übermittelt wurden, keine Änderungen vornimmt.
@@ -129,8 +129,6 @@ Ein XML-Schema, oft auch als XSD (XML Schema Definition) bezeichnet, bietet eine
 
 Detaillierte technische Informationen zum abgestimmten XML-Schema sind auf der [Internetseite der Plattform § 65c abrufbar](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/2064400/XML-Schema) (bis Version `3.0.0.8a_RKI`).
 
-Protokollierte Änderungen am Datenschema sind in den beigefügten [Release Notes](release-notes.md) der Versionen zu finden.
-
 ![Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes
 Die obenstehende Abbildung veranschaulicht die Struktur des klinischen Datensatzes. ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2023-06-28_XML-Schema_grob.png?raw=true)  
 > Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes. Quelle: eigene Darstellung.
@@ -158,10 +156,10 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
 ### Aufbau des Lieferdatensatzes
 
 - Das Auflösen des ursprünglichen `oBDS`-Schemas in ein relationales Modell führt zu einer großen Anzahl verschachtelter Tabellen
-- Dieses Modell vereinfacht die Beziehungen, indem Tabellen mit ähnlichem Kontext zusammengeführt werden
+- Tabellen mit ähnlichem Kontext sind aus Vereinfachungsgründen zusammengeführt
 - Vom ZfKD zusätzlich berechnete Variablen (Präfix `z_`) sind ebenfalls hier dokumentiert
 - Diese ZfKD-Variablen kommen in den meisten Tabellen vor:
-  - `z_tum_id` Ermöglicht es, von überall im Modell eine Verknüpfung zur zentralen Tumortabelle herzustellen (⚠️ Kardinalität, z. B.: 1 `Tumor` : n `OP` : n `OPS`)
+  - `z_tum_id` Ermöglicht es,überall im Modell eine Verknüpfung zur zentralen Tumortabelle herzustellen 
   - `z_kkr` Fügt jeder Tabelle Informationen über die Datenherkunft hinzu, um die Qualitätskontrolle zu vereinfachen
 - Die referenzielle Integrität wird in der Datenbank aus technischen Gründen **nicht** erzwungen
 
