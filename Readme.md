@@ -139,7 +139,7 @@ Die Elemente _Primärdiagnose_, _Folgeereignis_, _OP_, _ST_ und _SYST_ können m
 
 #### XML-Schema des Datensatzes
 
-Eine vollständige und maschinenlesbare Repräsentation des gesamten Datenschemas mit allen Details wird über das [XML-Schema](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.0.8a_RKI_Schema.xsd) bereitgestellt.
+Eine vollständige und maschinenlesbare Repräsentation des gesamten Datenschemas mit allen Details wird über das [XML-Schema](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.xsd) bereitgestellt.
 
 XML (Extensible Markup Language)-Schemata definieren den erlaubten Aufbau der ihnen zugeordneten XML-Dokumente. XML ist eine Auszeichnungssprache mit definierter Struktur und Syntax. XML-Dokumente sind textbasiert und repräsentieren Daten in einer hierarchischen und strukturierten Weise. Der Hauptzweck von XML besteht darin, Daten so zu beschreiben, dass sie sowohl für Menschen als auch für Maschinen leicht verständlich und interpretierbar sind.
 
@@ -178,7 +178,7 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
 - Tabellen mit ähnlichem Kontext sind aus Vereinfachungsgründen zusammengeführt
 - Vom ZfKD zusätzlich berechnete Variablen (Präfix `z_`) sind ebenfalls hier dokumentiert
 - Diese ZfKD-Variablen kommen in den meisten Tabellen vor:
-  - `z_tum_id` Ermöglicht es,überall im Modell eine Verknüpfung zur zentralen Tumortabelle herzustellen 
+  - `z_tum_id` Ermöglicht es, überall im Modell eine Verknüpfung zur zentralen Tumortabelle herzustellen 
   - `z_kkr` Fügt jeder Tabelle Informationen über die Datenherkunft hinzu, um die Qualitätskontrolle zu vereinfachen
 - Die referenzielle Integrität wird in der Datenbank aus technischen Gründen **nicht** erzwungen
 
@@ -490,8 +490,8 @@ Neben den im oBDS definierten Variablen enthält der Lieferdatensatz zudem weite
   - Sind beide Angaben eines Falls ungültig: -> `null`
   - Ist die Tagesanzahl ungültig, die Datumsdifferenz aber gültig: -> Datumsdifferenz
   - Andernfalls: -> Tagesanzahl
-- Die Datumsdifferenz wird als Differenz in Tagen zwischen den auf den `15`. des Monats gesetzten Datumsangaben berechnet
-- Diese Zeiträume werden zur Berechnung weiterer `z_`-Variablen herangezogen, z. B. für die korrekte Reihenfolge von Ereignissen
+- Die Datumsdifferenz zwischen Ereignissen basiert immer auf dem `15.` des Monats
+- Diese Zeiträume werden anschliessend zur Berechnung weiterer `z_`-Variablen herangezogen, z. B. für die korrekte Reihenfolge von Ereignissen
 
 ### Klassifikationen
 <a id="markdown-klassifikationen" name="klassifikationen"></a>
