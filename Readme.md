@@ -55,9 +55,9 @@ In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Kla
     - [Anmerkungen zu berechneten Variablen im Lieferdatensatz](#anmerkungen-zu-berechneten-variablen-im-lieferdatensatz)
     - [Klassifikationen](#klassifikationen)
     - [Beispieldaten](#beispieldaten)
-    - [Metadaten](#metadaten)
+- [Metadaten](#metadaten)
 - [Hinweise zur Nachnutzung der Daten](#hinweise-zur-nachnutzung-der-daten)
-    - [Lizenz](#lizenz)
+- [Lizenz](#lizenz)
 
 <!-- /TOC -->
 
@@ -157,7 +157,7 @@ Ergänzend zum XML-Schema wird das Datenschema auch als [Table Schema](https://d
 
 Table Schema ist ein offener, von [Data Package](https://datapackage.org) definierter Standard zur Beschreibung tabellarischer Daten: Er legt je Variable Name, Typ, Wertebereich und Verweise auf zugehörige Klassifikationen fest. Im Unterschied zum XML-Schema, das den vollständigen, verschachtelten Aufbau des Lieferdatensatzes abbildet, beschreibt das Table Schema die Variablen in ihrer bereits in Tabellen überführten (flachen) Form je Entität – wie sie z. B. für Auswertungen genutzt wird.
 
-Dieses Schema beschreibt den Lieferdatensatz exakt so, wie er Auswertenden zur Verfügung gestellt wird.
+Dieses Schema beschreibt den Lieferdatensatz exakt so, wie er Auswertenden zur Verfügung gestellt wird. Es enthält neben den fest definierten items des oBDS auch vom ZfKD zusätzlich berechnete `z_`-Variablen. Da diese Erweiterungen unabhängig vom oBDS fortgeschrieben werden, ist das Table Schema gesondert versioniert (siehe `version`-Feld).
 
 #### Downloads
 
@@ -170,6 +170,9 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
 | TXT-Schema | Variablen und mögliche Ausprägungen in stark vereinfachter textueller Darstellung zur erleichterten Erkennung von Änderungen. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema.txt) |
 | Schema (Abbildung) | Die grafische Darstellung des XML-Schemas als `.png`. Hinweise zur Notation des XML-Schemas sind auf der [Internetseite der Plattform § 65c](https://plattform65c.atlassian.net/wiki/spaces/P6/pages/59015169/Legende+zur+grafischen+Notation+des+XML-Schemas) zu finden. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Abbildung.png) |
 | Schema (Liste) | Optisch gestaltete und "druckfreundliche" Kurzübersicht zu Variablen und möglichen Ausprägungen als `.pdf`. | [💾](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/oBDS_v3.0.4_RKI_Schema_Liste.pdf) |
+
+<!-- stable anchor -->
+<a id="erm"></a>
 
 ### Aufbau des Lieferdatensatzes
 <a id="markdown-aufbau-des-lieferdatensatzes" name="aufbau-des-lieferdatensatzes"></a>
@@ -186,11 +189,13 @@ _Entity Relationship Model Stand 17.07.2026 (oBDS 3.0.4)_
 
 ![Entity Relationship Model des Lieferdatensatzes](/.github/images/2026-07-17_ERM.png)
 
+<!-- stable anchor -->
+<a id="variables"></a>
 
 ### Liste aller Variablen des Lieferdatensatzes
 <a id="markdown-liste-aller-variablen-des-lieferdatensatzes" name="liste-aller-variablen-des-lieferdatensatzes"></a>
 
-Die folgende Übersicht listet alle im [JSON-Schema](#json-schema-table-schema-des-datensatzes) enthaltenen Variablen je Ausgabetabelle auf, mit Typ, Beschreibung und Wertebereich. Sie wird automatisch aus der JSON-Datei generiert und bildet somit stets deren aktuellen Stand ab.
+Die folgende Übersicht listet alle im [JSON-Schema](#json-schema-des-lieferdatensatzes) enthaltenen Variablen je Ausgabetabelle auf, mit Typ, Beschreibung und Wertebereich. Sie wird automatisch aus der JSON-Datei generiert und bildet somit stets deren aktuellen Stand ab.
 
 Neben den im oBDS definierten Variablen enthält der Lieferdatensatz zudem weitere, vom ZfKD berechnete Variablen (Präfix `z_`).
 
@@ -493,6 +498,13 @@ Neben den im oBDS definierten Variablen enthält der Lieferdatensatz zudem weite
 - Die Datumsdifferenz zwischen Ereignissen basiert immer auf dem `15.` des Monats
 - Diese Zeiträume werden anschliessend zur Berechnung weiterer `z_`-Variablen herangezogen, z. B. für die korrekte Reihenfolge von Ereignissen
 
+**Freitext Kodierungen**
+
+- Für Substanzen sind zusätzliche Variablen bereitgestellt
+- Dabei werden die Freitexte für Substanzbezeichnungen über ein fuzzy matching Verfahren verarbeitet
+- Übereinstimmende Substanznamen aus der Referenztabelle sowie deren Matching Score sind ab einem Wert von `0.85` angehangen
+- Quellcode / Dokumentation des Verfahrens sind [auf diesem Repository](https://github.com/msauerberg/spacy_matching) abrufbar
+
 ### Klassifikationen
 <a id="markdown-klassifikationen" name="klassifikationen"></a>
 
@@ -509,7 +521,7 @@ Um die beim ZfKD beantragbaren Daten praktisch einschätzen zu können werden ko
 
 <!-- FOOTER_START: {"lang": "de"} -->
 
-### Metadaten
+## Metadaten
 <a id="markdown-metadaten" name="metadaten"></a>
 
 Zur Erhöhung der Auffindbarkeit sind die bereitgestellten Daten mit Metadaten beschrieben. Über GitHub Actions werden Metadaten an die entsprechenden Plattformen verteilt. Für jede Plattform existiert eine spezifische Metadatendatei, diese sind im Metadatenordner hinterlegt:  
@@ -548,7 +560,7 @@ Offene Forschungsdaten des RKI werden auf [Zenodo.org](http://Zenodo.org/), [Git
 
 
 
-### Lizenz
+## Lizenz
 <a id="markdown-lizenz" name="lizenz"></a>
 
 Der Datensatz "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen" ist lizenziert unter der [Creative Commons Namensnennung 4.0 International Public License | CC-BY 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.de).  
