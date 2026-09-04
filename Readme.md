@@ -508,14 +508,14 @@ Neben den im oBDS definierten Variablen enthält der Lieferdatensatz zudem weite
 ### Klassifikationen
 <a id="markdown-klassifikationen" name="klassifikationen"></a>
 
-Die im Datenschema verwendeten Klassifikationen erfahren regelmäßige Änderungen. Damit die jeweiligen Arbeitsstände in automatisierten Prozessen abgerufen werden können, sind die Klassifikationen in einem eigenen, englischsprachigen [Repository](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references) zur Verfügung gestellt. Die dem Datenschema entsprechenden Referenztabellen sind im Repository unter [`docs/readme-tables.md`](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-tables.md) verfügbar.
+Die im Datenschema verwendeten Klassifikationen erfahren regelmäßige Änderungen. Damit die jeweiligen Arbeitsstände in automatisierten Prozessen abgerufen werden können, sind die Klassifikationen in einem eigenen [Repository](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references) zur Verfügung gestellt. Die dem Datenschema entsprechenden Referenztabellen sind im Repository unter [`docs/readme-tables.md`](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-tables.md) verfügbar.
 
 > [https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references)
 
 ### Beispieldaten
 <a id="markdown-beispieldaten" name="beispieldaten"></a>
 
-Um die beim ZfKD beantragbaren Daten praktisch einschätzen zu können werden konforme Beispieldaten zur Verfügung gestellt, und können in Form einer [transportablen Datenbank](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator) abgerufen werden. Die Struktur dieser Beispieldaten ist exakt deckungsgleich mit den klinischen Krebsregisterdaten. Eine detaillierte Darstellung der dazu verwendeten [Tabellen und Relationen](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-dataset.md) erklärt, wie die Daten verknüpft werden können.
+Um die beim ZfKD beantragbaren Daten praktisch einschätzen zu können werden konforme Beispieldaten zur Verfügung gestellt. Diese sind in Form einer [transportablen Datenbank](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator) abrufbar. Die Struktur dieser Beispieldaten ist exakt deckungsgleich mit den hier beschriebenen klinischen Krebsregisterdaten.
 
 > [https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator)
 
