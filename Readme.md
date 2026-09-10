@@ -4,7 +4,6 @@
 Dokumentation  
 
 # Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen
-<a id="markdown-bundesweiter-klinischer-krebsregisterdatensatz---datenschema-und-klassifikationen" name="bundesweiter-klinischer-krebsregisterdatensatz---datenschema-und-klassifikationen"></a>
 
 <br> 
 <br> 
@@ -41,10 +40,31 @@ In diesem Strukturdatensatz werden begleitende Informationen zu Struktur und Kla
 
 <br>
 
+**Inhaltsverzeichnis**  
+
+<!-- TOC_START: {"heading_depth": 3} -->
+  - [Einleitung](#einleitung)  
+  - [Informationen zum Entstehungskontext des ZfKD-Datensatzes](#informationen-zum-entstehungskontext-des-zfkd-datensatzes)  
+    - [Administrative und organisatorische Angaben](#administrative-und-organisatorische-angaben)  
+    - [Datenübermittlung an das ZfKD](#datenübermittlung-an-das-zfkd)  
+  - [Struktur des bundesweiten klinischen Krebsregisterdatensatzes](#struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes)  
+    - [Datenschema](#datenschema)  
+    - [Downloads zum Datenschema](#downloads-zum-datenschema)  
+    - [Aufbau des Lieferdatensatzes](#aufbau-des-lieferdatensatzes)  
+    - [Liste aller Variablen des Lieferdatensatzes](#liste-aller-variablen-des-lieferdatensatzes)  
+    - [Anmerkungen zu berechneten Variablen im Lieferdatensatz](#anmerkungen-zu-berechneten-variablen-im-lieferdatensatz)  
+    - [Klassifikationen](#klassifikationen)  
+    - [Beispieldaten](#beispieldaten)  
+    - [Metadaten](#metadaten)  
+  - [Hinweise zur Nachnutzung der Daten](#hinweise-zur-nachnutzung-der-daten)  
+    - [Lizenz](#lizenz)  
+<!-- TOC_END -->
+
+<br>
+
 <!-- HEADER_END -->
 
 ## Einleitung
-<a id="markdown-einleitung" name="einleitung"></a>
 
 Die Krebsregistrierung in Deutschland erfolgt auf der Basis von Landesgesetzen. Diese verpflichten medizinische Einrichtungen (v. a. niedergelassene Ärztinnen und Ärzte, pathologische Institute, Kliniken, Screening-Einheiten), neu auftretende Krebsfälle und definierte Ereignisse im Krankheits- bzw. Behandlungsverlauf an das zuständige Krebsregister zu melden.
 
@@ -56,7 +76,6 @@ In diesem Repository werden begleitende Informationen zur [Struktur](#struktur-d
 > Der ZfKD-Datensatz ist nicht öffentlich zugänglich, kann aber auf Antrag für wissenschaftliche Forschungszwecke genutzt werden. Bitte verwenden Sie für Fragen zur Antragstellung die  E-Mail-Adresse des ZfKD: [krebsdaten@rki.de](mailto:krebsdaten@rki.de)  oder das auf der Internetseite des ZfKD bereitgestellte [Kontaktformular](https://www.krebsdaten.de/SharedDocs/Kontaktformulare/A/Antrag-krebsdaten/Integrator_SCU.html). Informationen zum gesetzlichen Auftrag, zu Methoden und Veröffentlichungen des ZfKD erhalten Sie ebenfalls auf den [Internetseiten des ZfKD](https://www.krebsdaten.de/). Bitte beachten Sie, dass das ZfKD an den Daten, die von den Krebsregistern übermittelt wurden, keine Änderungen vornimmt.
 
 ## Informationen zum Entstehungskontext des ZfKD-Datensatzes
-<a id="markdown-informationen-zum-entstehungskontext-des-zfkd-datensatzes" name="informationen-zum-entstehungskontext-des-zfkd-datensatzes"></a>
 
 Für die Erhebung klinischer Krebsregisterdaten wurde mit dem [Krebsfrüherkennungs- und -registergesetz (KFRG)](https://www.bgbl.de/xaver/bgbl/start.xav?start=//*%5B@attr_id=%27bgbl113s0617.pdf%27%5D#__bgbl__%2F%2F*%5B%40attr_id%3D%27bgbl113s0617.pdf%27%5D__1697181091765) im [§ 65c Fünftes Buch Sozialgesetzbuch (SGB V)](https://www.gesetze-im-internet.de/sgb_5/__65c.html) ein bundesrechtlicher Rahmen geschaffen. Die von den klinischen Krebsregistern zu erfassenden Angaben werden in dem von der Arbeitsgemeinschaft Deutscher Tumorzentren (ADT) und der Gesellschaft der epidemiologischen Krebsregister in Deutschland (GEKID, jetzt DKR e.V.) erarbeiteten [onkologischen Basisdatensatz (oBDS)](https://basisdatensatz.de/) spezifiziert und regelmäßig überarbeitet. Die letzte Anpassung des oBDS wurde am 12. Juli 2021 [im Bundesanzeiger publiziert](https://www.bundesanzeiger.de/pub/publication/bRrUsRox5lQ14casCXs/content/bRrUsRox5lQ14casCXs/BAnz%20AT%2012.07.2021%20B4.pdf). Einmal jährlich übermitteln die Krebsregister Daten nach Maßgabe des [Bundeskrebsregisterdatengesetzes (BKRG)](https://www.gesetze-im-internet.de/bkrg/BJNR270700009.html) an das ZfKD.
 
@@ -69,14 +88,12 @@ Das Arbeitsergebnis ist das hier beschriebene, für die Datenübermittlung ans Z
 Umfassende Informationen zur Krebsregistrierung sind hier verfügbar: [Manual der klinischen und epidemiologischen Krebsregistrierung](https://www.dkr.de/manual-der-krebsregistrierung) (Veröffentlichung 2018)
 
 ### Administrative und organisatorische Angaben
-<a id="markdown-administrative-und-organisatorische-angaben" name="administrative-und-organisatorische-angaben"></a>
 
 Das [Zentrum für Krebsregisterdaten (ZfKD)](https://www.krebsdaten.de/) des RKI ist zuständig für die bundesweite Krebsberichterstattung und stellt Dritten auf Antrag Daten für überregionale Forschungsprojekte zur Verfügung. Es prüft die Qualität der von den Krebsregistern übermittelten Daten und gibt den Krebsregistern diesbezüglich Rückmeldung.  
 
 Inhaltliche Fragen zur Datenerhebung, Datenauswertung und Datenkuration können direkt an das ZfKD gestellt werden (E-Mail-Adresse für Anfragen: [krebsdaten@rki.de](mailto:krebsdaten@rki.de)).
 
 ### Datenübermittlung an das ZfKD
-<a id="markdown-daten%C3%BCbermittlung-an-das-zfkd" name="daten%C3%BCbermittlung-an-das-zfkd"></a>
 
 Das 2009 verabschiedete BKRG regelt die jährliche Zusammenführung der wesentlichen Daten aus den Krebsregistern am ZfKD. Die Übermittlung erfolgt jeweils am Jahresende und enthält Informationen zu allen Fällen, die bis zum Ende des vorherigen Kalenderjahres diagnostiziert wurden, so dass auch Nachmeldungen und Korrekturen sowie Informationen zum Follow-up (z. B. Sterbefälle und Wegzüge) früherer Erkrankungsfälle enthalten sind.
 
@@ -89,14 +106,12 @@ Außerdem sind die Daten in den Krebsregistern bearbeitet worden: So wurden Meld
 > 💡 Eine fallweise Verknüpfung (Record Linkage) der am ZfKD vorliegenden Daten mit externen Datensätzen (Studien, Krankenkassen) ist nicht möglich.
 
 ## Struktur des bundesweiten klinischen Krebsregisterdatensatzes
-<a id="markdown-struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes" name="struktur-des-bundesweiten-klinischen-krebsregisterdatensatzes"></a>
 
 Der klinische Datensatz wird als `oBDS-RKI` bezeichnet. Die Bezeichnung geht zurück auf den zwischen ADT, GEKID und Plattform § 65c abgestimmten `einheitlichen onkologischen Basisdatensatz` (`oBDS`), der für die Entwicklung des `oBDS-RKI` als Vorlage und Arbeitsgrundlage diente (siehe [Informationen zum Datensatz und Entstehungskontext](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen#informationen-zum-entstehungskontext-des-zfkd-datensatzes)).
 
 Weil er die Struktur und Inhalte der von den Landeskrebsregistern ans ZfKD zu liefernden Daten definiert, wird der `oBDS-RKI` auch als `ZfKD-Lieferdatensatz` bezeichnet.
 
 ### Datenschema
-<a id="markdown-datenschema" name="datenschema"></a>
 
 Das Datenschema umfasst mehr als 120 Variablen, die verschiedenen Elementen zugeordnet sind. Die klinischen Daten können nicht in einer einfachen "Rechtecktabelle" wiedergegeben werden, da sie zum Teil komplexe Krankheitsverläufe abbilden. Im klinischen Datensatz sind die Daten daher in einem verschachtelten XML-Schema strukturiert.  
 
@@ -127,6 +142,7 @@ Detaillierte technische Informationen zum abgestimmten XML-Schema sind auf der [
 
 ![Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes
 Die obenstehende Abbildung veranschaulicht die Struktur des klinischen Datensatzes. ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2023-06-28_XML-Schema_grob.png?raw=true)  
+
 > Abbildung: Übersicht zum XML-Schema des klinischen Datensatzes. Quelle: eigene Darstellung.
 
 #### JSON-Schema des Lieferdatensatzes
@@ -138,7 +154,6 @@ Table Schema ist ein offener, von [Data Package](https://datapackage.org) defini
 Dieses Schema beschreibt den Lieferdatensatz exakt so, wie er Auswertenden zur Verfügung gestellt wird. Es enthält neben den fest definierten items des oBDS auch vom ZfKD zusätzlich berechnete `z_`-Variablen. Da diese Erweiterungen unabhängig vom oBDS fortgeschrieben werden, ist das Table Schema gesondert versioniert (siehe `version`-Feld).
 
 ### Downloads zum Datenschema
-<a id="markdown-downloads-zum-datenschema" name="downloads-zum-datenschema"></a>
 
 Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktuelle Datensatzversion ist `oBDS_v3.0.4_RKI`.
 
@@ -154,7 +169,6 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
 <a id="erm"></a>
 
 ### Aufbau des Lieferdatensatzes
-<a id="markdown-aufbau-des-lieferdatensatzes" name="aufbau-des-lieferdatensatzes"></a>
 
 - Das Auflösen des ursprünglichen `oBDS`-Schemas in ein relationales Modell führt zu einer großen Anzahl verschachtelter Tabellen
 - Tabellen mit ähnlichem Kontext sind aus Vereinfachungsgründen zusammengeführt
@@ -164,15 +178,15 @@ Das Datenschema wird in verschiedenen Formaten zum Download angeboten. Die aktue
   - `z_kkr` Fügt jeder Tabelle Informationen über die Datenherkunft hinzu, um die Qualitätskontrolle zu vereinfachen
 - Die referenzielle Integrität wird in der Datenbank aus technischen Gründen **nicht** erzwungen
 
-_Entity Relationship Model Stand 17.07.2026 (oBDS 3.0.4)_
 
-![Entity Relationship Model des Lieferdatensatzes](/.github/images/2026-07-17_ERM.png)
+![Entity Relationship Model des Lieferdatensatzes](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/.github/images/2026-07-17_ERM.png)  
+
+> Abbildung: Entity Relationship Model Stand 17.07.2026 (oBDS 3.0.4)
 
 <!-- stable anchor -->
 <a id="variables"></a>
 
 ### Liste aller Variablen des Lieferdatensatzes
-<a id="markdown-liste-aller-variablen-des-lieferdatensatzes" name="liste-aller-variablen-des-lieferdatensatzes"></a>
 
 Die folgende Übersicht listet alle im [JSON-Schema](#json-schema-des-lieferdatensatzes) enthaltenen Variablen je Ausgabetabelle auf, mit Typ, Beschreibung und Wertebereich. Sie wird automatisch aus der JSON-Datei generiert und bildet somit stets deren aktuellen Stand ab.
 
@@ -458,7 +472,6 @@ Neben den im oBDS definierten Variablen enthält der Lieferdatensatz zudem weite
 <!-- TABLEINSERT-END -->
 
 ### Anmerkungen zu berechneten Variablen im Lieferdatensatz
-<a id="markdown-anmerkungen-zu-berechneten-variablen-im-lieferdatensatz" name="anmerkungen-zu-berechneten-variablen-im-lieferdatensatz"></a>
 
 **Zeiträume**
 
@@ -485,14 +498,12 @@ Neben den im oBDS definierten Variablen enthält der Lieferdatensatz zudem weite
 - Quellcode / Dokumentation des Verfahrens sind [auf diesem Repository](https://github.com/msauerberg/spacy_matching) abrufbar
 
 ### Klassifikationen
-<a id="markdown-klassifikationen" name="klassifikationen"></a>
 
 Die im Datenschema verwendeten Klassifikationen erfahren regelmäßige Änderungen. Damit die jeweiligen Arbeitsstände in automatisierten Prozessen abgerufen werden können, sind die Klassifikationen in einem eigenen [Repository](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references) zur Verfügung gestellt. Die dem Datenschema entsprechenden Referenztabellen sind im Repository unter [`docs/readme-tables.md`](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references/-/blob/main/docs/readme-tables.md) verfügbar.
 
 > [https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-references)
 
 ### Beispieldaten
-<a id="markdown-beispieldaten" name="beispieldaten"></a>
 
 Um die beim ZfKD beantragbaren Daten praktisch einschätzen zu können werden konforme Beispieldaten zur Verfügung gestellt. Diese sind in Form einer [transportablen Datenbank](https://gitlab.opencode.de/robert-koch-institut/zentrum-fuer-krebsregisterdaten/cancerdata-generator) abrufbar. Die Struktur dieser Beispieldaten ist exakt deckungsgleich mit den hier beschriebenen klinischen Krebsregisterdaten.
 
@@ -500,8 +511,7 @@ Um die beim ZfKD beantragbaren Daten praktisch einschätzen zu können werden ko
 
 <!-- FOOTER_START: {"lang": "de"} -->
 
-## Metadaten
-<a id="markdown-metadaten" name="metadaten"></a>
+### Metadaten  
 
 Zur Erhöhung der Auffindbarkeit sind die bereitgestellten Daten mit Metadaten beschrieben. Über GitHub Actions werden Metadaten an die entsprechenden Plattformen verteilt. Für jede Plattform existiert eine spezifische Metadatendatei, diese sind im Metadatenordner hinterlegt:  
 
@@ -527,8 +537,7 @@ In der zenodo.json ist neben dem Publikationsdatum (`"publication_date"`) auch d
 
 
 
-## Hinweise zur Nachnutzung der Daten
-<a id="markdown-hinweise-zur-nachnutzung-der-daten" name="hinweise-zur-nachnutzung-der-daten"></a>
+## Hinweise zur Nachnutzung der Daten  
 
 Offene Forschungsdaten des RKI werden auf [Zenodo.org](http://Zenodo.org/), [GitHub.com](http://GitHub.com/), [OpenCoDE](https://gitlab.opencode.de) und [Edoc.rki.de](http://Edoc.rki.de/) bereitgestellt:  
 
@@ -539,10 +548,9 @@ Offene Forschungsdaten des RKI werden auf [Zenodo.org](http://Zenodo.org/), [Git
 
 
 
-## Lizenz
-<a id="markdown-lizenz" name="lizenz"></a>
+### Lizenz  
 
 Der Datensatz "Bundesweiter klinischer Krebsregisterdatensatz - Datenschema und Klassifikationen" ist lizenziert unter der [Creative Commons Namensnennung 4.0 International Public License | CC-BY 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.de).  
 
-Die im Datensatz bereitgestellten Daten sind, unter Bedingung der Namensnennung des Robert Koch-Instituts als Quelle, frei verfügbar. Das bedeutet, jede Person hat das Recht die Daten zu verarbeiten und zu verändern, Derivate des Datensatzes zu erstellen und sie für kommerzielle und nicht kommerzielle Zwecke zu nutzen. Weitere Informationen zur Lizenz finden sich in der [LICENSE](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/LICENSE) bzw. [LIZENZ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/LIZENZ) Datei des Datensatzes.  
+Die im Datensatz bereitgestellten Daten sind, unter Bedingung der Namensnennung des Robert Koch-Instituts als Quelle, frei verfügbar. Das bedeutet, dass jede Person das Recht hat, die Daten zu verarbeiten und zu verändern, Derivate des Datensatzes zu erstellen und sie für kommerzielle und nicht kommerzielle Zwecke zu nutzen. Weitere Informationen zur Lizenz finden sich in der [LICENSE](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/LICENSE) bzw. [LIZENZ](https://github.com/robert-koch-institut/Bundesweiter_klinischer_Krebsregisterdatensatz-Datenschema_und_Klassifikationen/blob/main/LIZENZ) Datei des Datensatzes.  
 <!-- FOOTER_END -->
